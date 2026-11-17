@@ -8,7 +8,7 @@ Phase 2: demo Streamlit, hoàn thiện code thực nghiệm và tài liệu chu�
 
 **Phase 2 thay thế trạng thái khung cũ bên dưới:** run `20261117T081201Z_fd32180f` đã hoàn tất huấn luyện lần đầu, 23 cell chạy qua kernel thật, xuất 3 Pipeline và 55 file kết quả, không stderr trong cell. `models/registry.json` khóa bộ mô hình demo, chọn KNN bằng mean CV macro F1. App hoạt động với ảnh mẫu/upload, xác suất và xử lý lỗi; **25/25 test qua trên môi trường sạch**, đã thử trực tiếp cả hai luồng bằng trình duyệt. Bằng chứng ở `outputs/demo_20261117T082316Z_b269f12c/phase2_status.json`. Nhóm còn tự viết phân tích chính, báo cáo/slide, phân công và bổ sung ảnh tự chụp. Các mục “chưa có mô hình”, “TODO SV-01…09”, “không Streamlit” bên dưới chỉ mô tả lịch sử Phase 1.
 
-**Cập nhật Git (2026-11-17):** đã khởi tạo, liên kết, commit và push bản khung lên https://github.com/shengs1/HandwrittenDigitRecognition, nhánh `main` theo yêu cầu người dùng. Commit nguồn đầu tiên `a5ded5b44d9fcfc3ae02f9fb6ca99bf69b814232` đã được xác minh trên remote; `main` theo dõi `origin/main`. Các ghi nhận “chưa khởi tạo Git” bên dưới là lịch sử trước yêu cầu này. Xem `git log -1` để lấy commit mới nhất, bao gồm các cập nhật nhật ký sau commit nguồn.
+**Cập nhật Git (2026-11-17):** đã commit/push Phase 2 lên https://github.com/shengs1/HandwrittenDigitRecognition, nhánh `main`, commit nguồn `0aacb47` đã xác minh trên remote. `main` theo dõi `origin/main`; bản ghi nhận kết quả push được lưu ở cập nhật tài liệu tiếp theo. Xem `git log -1` để lấy commit mới nhất. Các ghi nhận “chưa khởi tạo Git/chưa có mô hình” bên dưới là lịch sử Phase 1, không phải trạng thái hiện tại.
 
 **Ngày 2026-11-17 (Asia/Saigon): phần khung hỗ trợ đã chạy được; thực nghiệm cốt lõi chưa triển khai.** Notebook cuối có 51 cell (23 cell mã), chạy bằng kernel thật, 6 hình nhúng, 0 lỗi thực thi, 0 stderr trong cell. Không mô hình nào đã được huấn luyện. Các cụm bên dưới là nhật ký lịch sử; trạng thái ở đây và cụm 3 thay thế các dòng “đang chạy” trước đó.
 
@@ -162,4 +162,12 @@ Run cuối có 20 file thực tế: schema, summary, DESCR, data quality/flags, 
 2. Tự viết 6 nhận định EDA, nhật ký xử lý, phân tích kết quả/lỗi/curves/giới hạn, hoàn thành báo cáo 10 mục và slide 10–12 trang theo dàn ý. Đọc bảng/hình đúng run_id.
 3. Bổ sung ảnh tự chụp có nhãn/nguồn thực tế nếu muốn đánh giá camera; ghi cả dự đoán sai. Không chọn/tuning lại model vì ảnh demo/test đã xem.
 4. Điền phân công thật, tập 30 câu hỏi, giải thích và thay đổi được code. Chưa có thông tin để ghi tên hoặc đóng góp của thành viên.
-5. Trạng thái Git trước đồng bộ Phase 2: main theo dõi origin/main, có các file sửa/thêm/xóa liệt kê trong cụm này; giữ nguyên 3 run support cũ và PDF. Tiếp tục commit/push theo yêu cầu đồng bộ trước đó, không force-push; xác minh HEAD remote sau push.
+5. Giữ bộ model/run đã xác nhận và cập nhật HANDOFF khi có công việc mới; không train lại hoặc đổi registry theo điểm demo/test. Repo Phase 2 đã đồng bộ như ghi nhận bên dưới.
+
+### Đồng bộ Git Phase 2
+
+- Remote trước cập nhật ở `dd6c86c`, không có xung đột. Đã stage đúng code/tài liệu/output/model và xóa các file được yêu cầu; môi trường/cache/tmp không được track.
+- `git commit -m 'Complete fixed Digits experiments and Streamlit demo'`: commit `0aacb47`, 107 file thay đổi, 168 file trong toàn cây Git, khoảng 6.46 MB dữ liệu trước nén. Đã quét mẫu private key/token trong text, không phát hiện; PDF và model hash được giữ nguyên.
+- `git push origin main`: thành công, `dd6c86c..0aacb47`; sau đó kiểm tra remote khớp HEAD. Không force-push hoặc viết lại lịch sử.
+- Rà soát diff phát hiện một dòng trống thừa cuối RESULTS_INDEX.md; đã dọn trong cập nhật tài liệu sau push, không ảnh hưởng code/số liệu. Không chạy lại huấn luyện hay unit test cho chỉnh sửa tài liệu này.
+- Giới hạn bàn giao còn lại là nội dung phân tích/báo cáo/slide/phân công thật và ảnh tự chụp như nêu trên; không còn TODO code cốt lõi hoặc lỗi thực thi đã biết trong phạm vi đã kiểm thử.

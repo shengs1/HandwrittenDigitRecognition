@@ -143,4 +143,3 @@ Mẫu Digits đầu mỗi lớp: LR 10/10, KNN 9/10, MLP 9/10; không thay cho �
 10 MNIST bên ngoài chọn trước suy luận: mỗi mô hình 3/10. Đảo nền tạo cùng pixel đầu vào trong test chức năng,
 không tính như mẫu độc lập. Không train/tune từ dữ liệu này; checksum model trước/sau khớp.
 Chưa có ảnh chụp do nhóm cung cấp. Nhóm tự viết phân tích giới hạn, không suy ra accuracy tổng quát từ 10 mẫu.
-
