@@ -4,6 +4,8 @@
 
 **Final review trước bảo vệ:** [bảng PASS/FAIL/PARTIAL và lỗi còn mở](docs/FINAL_REVIEW.md). Sau sửa, 31/31 test và notebook đã chạy lại trên checkout sạch/venv mới; metric và dự đoán khớp bộ đã khóa. Nhận định của nhóm, báo cáo và slide chính thức vẫn cần hoàn thiện.
 
+Bản tổng hợp theo cấu trúc A–I: [FINAL_AUDIT.md](docs/FINAL_AUDIT.md).
+
 Notebook `digit_classification.ipynb` là tài liệu thực nghiệm chính, gồm 16 mục: dữ liệu/làm sạch, 6 EDA train, baseline Logistic Regression pixel thô, KNN/MLP bằng Pipeline, đối chứng chuẩn hóa, CV/tuning, đánh giá, phân tích lỗi và lưu mô hình. `app.py` là demo tiếng Việt, chỉ tải Pipeline đã lưu; mở app **không huấn luyện lại**.
 
 ## Kết quả đã chạy

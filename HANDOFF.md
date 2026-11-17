@@ -6,6 +6,8 @@ Final review trước bảo vệ: rà soát theo PDF, kiểm chứng tái lập,
 
 ## Trạng thái mới nhất đã xác minh
 
+**Phạm vi cập nhật:** theo yêu cầu mới nhất, bỏ đánh giá mục 6 của PDF khỏi checklist và việc cần làm. Không thay PDF, code hoặc kết quả. Các kiểm tra kỹ thuật notebook vẫn giữ; bản tổng hợp Final Audit theo A–I nằm tại `docs/FINAL_AUDIT.md`. Những phần thực sự còn thiếu là nhận định/phân tích được nhóm xác nhận, báo cáo/slide chính thức và phân công/vấn đáp.
+
 **Final review (2026-11-17):** 31/31 tests qua trên checkout sạch có dấu cách và venv mới từ requirements; notebook chạy đủ 23 code cells/15 hình, 0 lỗi/0 stderr trong cell. Metric chênh lệch=0 và 1.080 dự đoán test khớp bản chính thức; registry/3 model/metric/test prediction/report JSON gốc giữ nguyên checksum. Đã sửa 4 lỗi test do thiếu tmp, định dạng dòng accuracy ở 3 CSV, path hiển thị notebook và phân loại snapshot lịch sử. Không phát hiện Critical trong phạm vi kiểm tra. **Chưa sẵn sàng nộp**: nhận định EDA/phân tích chưa nhóm xác nhận; chưa có báo cáo và slide chính thức. Xem `docs/FINAL_REVIEW.md` và `outputs/review_20261117T090347Z_9df57e69/review_checks.json`.
 
 **Phase 2 thay thế trạng thái khung cũ bên dưới:** run `20261117T081201Z_fd32180f` đã hoàn tất huấn luyện lần đầu, 23 cell chạy qua kernel thật, xuất 3 Pipeline và 55 file kết quả, không stderr trong cell. `models/registry.json` khóa bộ mô hình demo, chọn KNN bằng mean CV macro F1. App hoạt động với ảnh mẫu/upload, xác suất và xử lý lỗi; **25/25 test qua trên môi trường sạch**, đã thử trực tiếp cả hai luồng bằng trình duyệt. Bằng chứng ở `outputs/demo_20261117T082316Z_b269f12c/phase2_status.json`. Nhóm còn tự viết phân tích chính, báo cáo/slide, phân công và bổ sung ảnh tự chụp. Các mục “chưa có mô hình”, “TODO SV-01…09”, “không Streamlit” bên dưới chỉ mô tả lịch sử Phase 1.
@@ -200,6 +202,15 @@ Run cuối có 20 file thực tế: schema, summary, DESCR, data quality/flags, 
 
 - Major còn mở: 6 nhận định EDA và phân tích chính/ảnh sai/learning curve chưa có xác nhận trong repo; báo cáo PDF/DOCX và slide nộp chưa có. Không viết thay các phần này.
 - Chưa xác nhận nhóm 3–5, đăng ký/≥3 mục tiêu được duyệt, phân công thật và khả năng vấn đáp. Dàn ý 10 mục/12 slide/30 câu hỏi không thay sản phẩm và bảo vệ thực tế.
-- PDF mục 6 có yêu cầu ghi công cụ/cách dùng; ngoại lệ được nêu trước đó chưa có xác nhận trong repo. Review ghi PARTIAL và để nhóm làm rõ với giảng viên, không tự khôi phục file đã yêu cầu xóa hoặc kết luận được miễn.
+- Hạng mục liên quan mục 6 của PDF trong review trước đã được loại khỏi phạm vi và danh sách việc tiếp theo theo yêu cầu mới.
 - 10 ảnh MNIST chỉ minh họa, mỗi model 3/10; chưa có ảnh camera do nhóm cung cấp. Chưa thử máy/OS khác. Không có BM06 để tự quy đổi điểm. ready_to_submit vẫn false.
 - Git: đã commit `2852161` (28 file thay đổi) và push `70ad779..2852161`; xác minh HEAD remote khớp local và working tree sạch tại thời điểm sau push. Không động code app/model/dependency, không force-push. Bản ghi nhận này nằm trong commit tài liệu tiếp theo.
+
+## Cụm 9: cập nhật phạm vi và tổng hợp Final Audit A–I
+
+- Đã đọc đầy đủ nội dung Final Audit người dùng đính kèm. Theo ngữ cảnh yêu cầu mới, bỏ mục 6 của PDF khỏi checklist và danh sách việc còn thiếu; vẫn giữ kiểm tra kỹ thuật notebook/code và PDF gốc.
+- Đã cập nhật AGENTS, HANDOFF, README, FINAL_REVIEW, REQUIREMENTS_MAP và metadata phạm vi review. Không tạo lại file nhật ký riêng. Không đổi model, code ứng dụng/notebook, dependency hoặc kết quả thực nghiệm.
+- Tạo `docs/FINAL_AUDIT.md` theo cấu trúc A–I: bảng đối chiếu, lỗi đã sửa, metric/cost/best params đọc từ artifact, kiểm thử đã chạy, khoảng điểm tham khảo có giới hạn, việc còn thiếu và lệnh Windows. Giữ macro F1 CV làm tiêu chí chọn đã định trước; không thay lựa chọn theo test hoặc cách gọi metric trong checklist mới.
+- Kiểm tra cập nhật này: cấu trúc A–I đủ 9 mục, liên kết tài liệu hợp lệ, không còn hạng mục mục 6 trong bảng đánh giá/việc tiếp theo; model/registry/metric/prediction/report JSON được bảo vệ vẫn khớp SHA256. Đây là chỉnh sửa tài liệu nên không chạy lại training hoặc lặp test code không thay đổi. Bằng chứng kỹ thuật gần nhất vẫn là 31/31 tests và rerun metric difference=0 ở cụm 8.
+- Trạng thái vẫn NOT READY vì nhận định/phân tích nhóm, báo cáo/slide chính thức và phân công/vấn đáp chưa hoàn thiện; hạng mục đã loại không còn là điều kiện cản trở.
+- Git: cập nhật phạm vi/tài liệu được lưu trong commit chứa cụm này, trên main nối tiếp `1d4714f`; xem git log để lấy hash mới nhất. Không sửa lịch sử hoặc force-push.

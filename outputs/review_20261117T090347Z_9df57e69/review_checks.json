@@ -40,7 +40,6 @@
   "eda_student_confirmations_found": 0,
   "student_report_file_found": false,
   "student_slide_deck_found": false,
-  "ai_usage_file_present": false,
   "protected_artifacts_unchanged": true,
   "corrected_csv_format_only": [
     "classification_report_logreg_raw.csv",
@@ -61,5 +60,8 @@
     "CSV accuracy row broadcast to support/precision/recall",
     "Absolute workspace path embedded in notebook output",
     "Stale Phase 1 snapshot under latest handoff heading"
+  ],
+  "scope_exclusions": [
+    "PDF section 6; excluded from follow-up requirements by user request"
   ]
 }

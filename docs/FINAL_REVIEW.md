@@ -1,6 +1,6 @@
 # Final review trước buổi bảo vệ — đề tài 13
 
-Ngày review: 2026-11-17, Asia/Saigon. Base Git: `70ad779`. Đã đọc toàn bộ 6 trang [PDF giảng viên](Huong_Dan_Do_An_CuoiKy.pdf), AGENTS/HANDOFF/README, notebook, app, tests, model/registry, số liệu và tài liệu hiện có. `AI_USAGE.md` không tồn tại vì đã được xóa theo yêu cầu trước; không tự tạo lại. Không có BM06 để đối chiếu thêm.
+Ngày review: 2026-11-17, Asia/Saigon. Base Git: `70ad779`. Đã đọc toàn bộ 6 trang [PDF giảng viên](Huong_Dan_Do_An_CuoiKy.pdf), AGENTS/HANDOFF/README, notebook, app, tests, model/registry, số liệu và tài liệu hiện có. Không có BM06 để đối chiếu thêm. Theo yêu cầu mới, mục 6 của PDF được loại khỏi phạm vi audit và không còn là việc cần xử lý. PDF gốc không bị chỉnh sửa. Bản tổng hợp A–I: [FINAL_AUDIT.md](FINAL_AUDIT.md).
 
 **Kết luận: phần kỹ thuật chạy và tái lập được sau sửa; đồ án chưa đủ điều kiện xác nhận sẵn sàng nộp.** Thiếu nhận định được nhóm xác nhận, nội dung phân tích chính, báo cáo/slide hoàn chỉnh và bằng chứng phân công/vấn đáp. Không viết thay các phần đó hoặc tự cho điểm.
 
@@ -78,7 +78,6 @@ PASS = đã có bằng chứng trong phạm vi ghi rõ; PARTIAL = có một ph�
 | A.4: báo cáo PDF/DOCX | FAIL | Chỉ có REPORT_OUTLINE.md; PDF hiện có là đề bài, không phải báo cáo nhóm |
 | A.4: slide trình bày | FAIL | Chỉ có SLIDE_OUTLINE.md, chưa có deck PDF/PPTX hoặc liên kết Slides |
 | A.4: Git hoặc zip | PASS | Repo Git; dùng git archive kiểm tra checkout độc lập; cache/venv/tmp không track |
-| A.6: chính sách sử dụng công cụ/đóng góp thực tế | PARTIAL | PDF yêu cầu ghi công cụ/cách dùng; file riêng đã xóa theo yêu cầu trước, chưa có xác nhận ngoại lệ của giảng viên trong repo; không tự suy ra PASS |
 | A.7: báo cáo theo 10 mục | PARTIAL | Dàn ý có 10 mục đúng nguồn, nhưng chưa có báo cáo chính thức |
 | A.8 câu 3: trình bày/demo/vấn đáp từng thành viên | PARTIAL | Demo đã test, có 30 câu gợi ý; chưa có buổi vấn đáp/đóng góp thành viên để xác minh |
 | Đường dẫn riêng máy phát triển | PASS | Không thấy hardcoded machine path trong source; đã bỏ path trong output notebook; checkout mới có dấu cách chạy được |
@@ -101,10 +100,9 @@ Phạm vi PASS về leakage: kiểm tra code và artifact hiện tại, không k
 1. Tự viết và xác nhận 6 nhận định EDA, nhật ký làm sạch; phân tích kết quả, lỗi, learning curve và giới hạn theo đúng số liệu.
 2. Hoàn thành báo cáo PDF/DOCX và slide chính thức; đối chiếu tên model, metric, tập dữ liệu, run_id và hình với RESULTS_INDEX/canonical run.
 3. Điền tên/đóng góp thật, xác nhận đăng ký đề tài và các yêu cầu với giảng viên; tập vấn đáp để mỗi người giải thích và sửa được code.
-4. Làm rõ với giảng viên yêu cầu mục 6 và ngoại lệ được nhóm nêu trước đó. Review không tự khôi phục file đã yêu cầu xóa và không xác nhận ngoại lệ khi chưa có bằng chứng.
-5. Nếu muốn tuyên bố chất lượng ảnh chụp, bổ sung bộ ảnh tự chụp có nhãn/nguồn; ghi cả ca sai. Không tối ưu lại model theo test/demo đã xem.
+4. Nếu muốn tuyên bố chất lượng ảnh chụp, bổ sung bộ ảnh tự chụp có nhãn/nguồn; ghi cả ca sai. Không tối ưu lại model theo test/demo đã xem.
 
-Không có cam kết điểm số. ready_to_submit vẫn false. Việc chưa kiểm chứng: BM06, thời hạn/đăng ký, nhóm 3–5/phân công, xác nhận nhận định và trình độ vấn đáp, máy/OS khác, ảnh camera, ngoại lệ chính sách môn học.
+Không có cam kết điểm số. ready_to_submit vẫn false. Việc chưa kiểm chứng: BM06, thời hạn/đăng ký, nhóm 3–5/phân công, xác nhận nhận định và trình độ vấn đáp, máy/OS khác, ảnh camera.
 
 ## Lệnh đã kiểm chứng
 

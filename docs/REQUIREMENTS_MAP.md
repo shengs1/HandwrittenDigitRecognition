@@ -4,6 +4,8 @@
 
 Kết quả kiểm tra cuối có trạng thái PASS/FAIL/PARTIAL và bằng chứng thực thi: [FINAL_REVIEW.md](FINAL_REVIEW.md). Bảng hướng dẫn dưới đây không thay cho trạng thái review và không chứng minh nhóm đã hoàn thành nhận định/báo cáo/vấn đáp.
 
+Phạm vi cập nhật theo yêu cầu mới: không đánh giá mục 6 của PDF; vẫn giữ kiểm tra notebook/code. Bản tổng hợp A–I: [FINAL_AUDIT.md](FINAL_AUDIT.md).
+
 ## Yêu cầu chung và thang điểm
 
 | Nguồn | Bằng chứng cần có | Vị trí / trạng thái phase hỗ trợ |
@@ -11,7 +13,6 @@ Kết quả kiểm tra cuối có trạng thái PASS/FAIL/PARTIAL và bằng ch�
 | Trang 1–2, quy trình 1–10 | Bài toán, nguồn, schema/tỷ lệ thiếu, làm sạch có lý do, EDA, đặc trưng, mô hình, đánh giá, phân tích lỗi, trình bày | Notebook 1–16 đã chạy thực nghiệm; nhận định/báo cáo chính do nhóm viết |
 | Trang 2, mục 4 | Báo cáo PDF/DOCX, mã chạy hết, requirements, README, slide, mô hình nếu demo; Git hoặc zip, môi trường sạch | Có notebook/Pipeline/demo và dàn ý báo cáo/slide; chưa có báo cáo hoặc slide nộp chính thức |
 | Trang 2, mục 5 | Baseline, Pipeline fit train, seed, phiên bản và giải thích độ đo | Notebook 1,4,6–12,15; đủ 3 mô hình đã chạy, khóa lựa chọn bằng CV |
-| Trang 2, mục 6 | Yêu cầu liêm chính/nguồn dữ liệu và hiểu, chỉnh sửa được bài trong PDF gốc | Nhóm kiểm tra yêu cầu với giảng viên, tự viết phân tích chính và bảo vệ; quyết định Phase 2 trong HANDOFF |
 | Câu 1: 4 điểm | Dữ liệu, baseline, làm sạch, ≥5 EDA có nhận định, đặc trưng không leakage, tái lập | Đã có 6 hình train và code cốt lõi; nhóm hoàn thiện nhật ký/nhận định |
 | Câu 2: 4 điểm | ≥2 mô hình so baseline; split, metric, confusion matrix, CV/tuning, phân tích lỗi | Đã chạy run cố định; hình/bảng thật trong RESULTS_INDEX; nhóm viết phân tích |
 | Câu 3: 2 điểm | Trình bày, demo và vấn đáp từng thành viên | Có Streamlit, dàn ý 12 slide và 30 câu hỏi; nhóm tập bảo vệ |
