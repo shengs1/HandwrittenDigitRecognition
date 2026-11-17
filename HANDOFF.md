@@ -10,7 +10,7 @@ Final review trước bảo vệ: rà soát theo PDF, kiểm chứng tái lập,
 
 **Phase 2 thay thế trạng thái khung cũ bên dưới:** run `20261117T081201Z_fd32180f` đã hoàn tất huấn luyện lần đầu, 23 cell chạy qua kernel thật, xuất 3 Pipeline và 55 file kết quả, không stderr trong cell. `models/registry.json` khóa bộ mô hình demo, chọn KNN bằng mean CV macro F1. App hoạt động với ảnh mẫu/upload, xác suất và xử lý lỗi; **25/25 test qua trên môi trường sạch**, đã thử trực tiếp cả hai luồng bằng trình duyệt. Bằng chứng ở `outputs/demo_20261117T082316Z_b269f12c/phase2_status.json`. Nhóm còn tự viết phân tích chính, báo cáo/slide, phân công và bổ sung ảnh tự chụp. Các mục “chưa có mô hình”, “TODO SV-01…09”, “không Streamlit” bên dưới chỉ mô tả lịch sử Phase 1.
 
-**Cập nhật Git (2026-11-17):** đã commit/push Phase 2 lên https://github.com/shengs1/HandwrittenDigitRecognition, nhánh `main`, commit nguồn `0aacb47` đã xác minh trên remote. `main` theo dõi `origin/main`; bản ghi nhận kết quả push được lưu ở cập nhật tài liệu tiếp theo. Xem `git log -1` để lấy commit mới nhất. Các ghi nhận “chưa khởi tạo Git/chưa có mô hình” bên dưới là lịch sử Phase 1, không phải trạng thái hiện tại.
+**Cập nhật Git (2026-11-17):** đã commit/push bản sửa và báo cáo final review lên https://github.com/shengs1/HandwrittenDigitRecognition, nhánh `main`, commit nội dung review `2852161` đã xác minh trên remote. `main` theo dõi `origin/main`; bản ghi nhận push được lưu trong cập nhật tài liệu tiếp theo. Xem `git log -1` để lấy commit mới nhất. Các ghi nhận Phase 1/2 bên dưới giữ nguyên lịch sử, không thay thế trạng thái final review.
 
 ## Snapshot Phase 1 — lịch sử, không phải trạng thái hiện tại
 
@@ -202,4 +202,4 @@ Run cuối có 20 file thực tế: schema, summary, DESCR, data quality/flags, 
 - Chưa xác nhận nhóm 3–5, đăng ký/≥3 mục tiêu được duyệt, phân công thật và khả năng vấn đáp. Dàn ý 10 mục/12 slide/30 câu hỏi không thay sản phẩm và bảo vệ thực tế.
 - PDF mục 6 có yêu cầu ghi công cụ/cách dùng; ngoại lệ được nêu trước đó chưa có xác nhận trong repo. Review ghi PARTIAL và để nhóm làm rõ với giảng viên, không tự khôi phục file đã yêu cầu xóa hoặc kết luận được miễn.
 - 10 ảnh MNIST chỉ minh họa, mỗi model 3/10; chưa có ảnh camera do nhóm cung cấp. Chưa thử máy/OS khác. Không có BM06 để tự quy đổi điểm. ready_to_submit vẫn false.
-- Git tại thời điểm lập bản review: sửa notebook/3 CSV/tests/tài liệu và thêm artifact review; không động code app/model/dependency. Cần commit/push bản review và xác minh remote theo yêu cầu đồng bộ dự án trước đó; không force-push.
+- Git: đã commit `2852161` (28 file thay đổi) và push `70ad779..2852161`; xác minh HEAD remote khớp local và working tree sạch tại thời điểm sau push. Không động code app/model/dependency, không force-push. Bản ghi nhận này nằm trong commit tài liệu tiếp theo.
