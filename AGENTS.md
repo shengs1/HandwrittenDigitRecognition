@@ -41,4 +41,6 @@ Theo yêu cầu Phase 2 mới, code cốt lõi được hoàn thiện và đư�
 
 Không bịa số liệu, đóng góp thành viên hoặc kết quả test; không dùng fixture tổng hợp như số liệu thực nghiệm thật. Người dùng yêu cầu xóa file nhật ký công cụ riêng; không tạo lại file đó. Giữ lịch sử kỹ thuật trong HANDOFF.md, không chỉnh sửa lịch sử Git đã công bố.
 
+Final review ở `docs/FINAL_REVIEW.md`. Chỉ PASS khi có bằng chứng; không biến dàn ý/TODO thành phân tích đã được nhóm xác nhận. Rerun kiểm chứng được phép trong checkout riêng theo yêu cầu review, giữ registry/model/số liệu canonical; không chọn run có điểm tốt hơn. Dòng accuracy trong CSV classification report là metric scalar: precision/recall để trống, support là số mẫu, không broadcast accuracy vào cột support.
+
 Sau mỗi cụm việc lớn cập nhật `HANDOFF.md`: phase, việc thực sự hoàn thành, file, quyết định, TODO sinh viên, lệnh và test thật, lỗi, bước tiếp theo, Git. Phân biệt chạy hết khung hỗ trợ và hoàn thành thực nghiệm; không tuyên bố đồ án hoàn tất khi TODO chưa triển khai.

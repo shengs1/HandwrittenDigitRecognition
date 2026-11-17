@@ -1,0 +1,11 @@
+{
+  "models/registry.json": "1e19d53f9a7372235db518748197a63174bcf39fecf9a677a8b59d746f102ec8",
+  "outputs/20261117T081201Z_fd32180f/model_comparison.csv": "ee5d8231c1bfa72d1d45d30784ef3d82aefc2c10ecf92c416185f37fcd9b0b78",
+  "outputs/20261117T081201Z_fd32180f/test_predictions.csv": "8bc38ba9f3b7b2b50abf3e4b30afd42df774308b793b6d95dbfcf69055676042",
+  "models/20261117T081201Z_fd32180f/logreg_raw.joblib": "4a8b780643e4c46d32a8cdd20692b16784c52470118c2668052f6c0fe5da95f8",
+  "models/20261117T081201Z_fd32180f/knn.joblib": "0ffb42df1ab1cf884f9c2b09bb1116602f0226153b71542300ffeb8d63211433",
+  "models/20261117T081201Z_fd32180f/mlp.joblib": "00ef926c4aeeb8aff5e8525d392f78a015d6ff1fca78f7c1f875aa55f17d725c",
+  "outputs/20261117T081201Z_fd32180f/classification_report_logreg_raw.json": "bea95d7ac1815e6bd616a3b508d8edfb32b5c13539fbc3091ab8ca05a0092a09",
+  "outputs/20261117T081201Z_fd32180f/classification_report_knn.json": "1cb7135e36a350cf840a062fb63385a94ac35f8c27053b08023fac0b4884b198",
+  "outputs/20261117T081201Z_fd32180f/classification_report_mlp.json": "d64fadd7d9412faee771eaabc52f86ab7e1f8f2895e4c1c316754e2552ff8f2d"
+}

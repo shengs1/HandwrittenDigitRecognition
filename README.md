@@ -2,6 +2,8 @@
 
 [Repository GitHub](https://github.com/shengs1/HandwrittenDigitRecognition) · Python 3.12 · Digits · Streamlit.
 
+**Final review trước bảo vệ:** [bảng PASS/FAIL/PARTIAL và lỗi còn mở](docs/FINAL_REVIEW.md). Sau sửa, 31/31 test và notebook đã chạy lại trên checkout sạch/venv mới; metric và dự đoán khớp bộ đã khóa. Nhận định của nhóm, báo cáo và slide chính thức vẫn cần hoàn thiện.
+
 Notebook `digit_classification.ipynb` là tài liệu thực nghiệm chính, gồm 16 mục: dữ liệu/làm sạch, 6 EDA train, baseline Logistic Regression pixel thô, KNN/MLP bằng Pipeline, đối chứng chuẩn hóa, CV/tuning, đánh giá, phân tích lỗi và lưu mô hình. `app.py` là demo tiếng Việt, chỉ tải Pipeline đã lưu; mở app **không huấn luyện lại**.
 
 ## Kết quả đã chạy
@@ -69,7 +71,7 @@ Chọn kernel `.venv`. Notebook đã có output thật; **không cần Run All �
 
 Test kiểm tra miền pixel, leakage, notebook, ảnh sáng/tối/trong suốt/trống/hỏng, checksum/mất model, xác suất, khớp 360 dự đoán test đã lưu và luồng Streamlit. `check_demo.py` chỉ suy luận, tạo thư mục `outputs/demo_...` với CSV/ảnh xử lý/báo cáo checksum, không fit hoặc thay model.
 
-Đã cài thử môi trường mới từ requirements: 120 gói tương thích và **25/25 test đạt**. [Log kiểm thử](outputs/demo_20261117T082316Z_b269f12c/tests_clean_environment.log), [phiên bản môi trường sạch](outputs/demo_20261117T082316Z_b269f12c/clean_environment.json), [trạng thái Phase 2](outputs/demo_20261117T082316Z_b269f12c/phase2_status.json). Đã thử trực tiếp chọn mẫu và upload ảnh trên trình duyệt; [ảnh giao diện](outputs/demo_20261117T082316Z_b269f12c/streamlit_demo.jpg).
+Ở Phase 2 đã cài môi trường mới: 120 gói tương thích và 25/25 test đạt ([log cũ](outputs/demo_20261117T082316Z_b269f12c/tests_clean_environment.log)). Final review bổ sung kiểm tra khoa học dữ liệu và sửa điều kiện checkout mới: **31/31 test đạt**, [log mới](outputs/review_20261117T090347Z_9df57e69/clean_checkout_tests.log), [môi trường mới](outputs/review_20261117T090347Z_9df57e69/clean_environment.json), [đối chiếu rerun](outputs/review_20261117T090347Z_9df57e69/review_checks.json). Ảnh chọn mẫu/upload đã thử ở Phase 2: [giao diện](outputs/demo_20261117T082316Z_b269f12c/streamlit_demo.jpg).
 
 [Bằng chứng kiểm thử ảnh](outputs/demo_20261117T082316Z_b269f12c/demo_verification.json): 10 ảnh mẫu Digits (ảnh đầu mỗi lớp), LR đúng 10/10, KNN và MLP đúng 9/10. Với 10 ảnh viết tay MNIST bên ngoài, cả ba đúng 3/10. Đây là minh họa rất nhỏ, **không phải accuracy tổng quát trên ảnh ngoài Digits**. Mẫu Digits có thể thuộc train. MNIST chỉ là fixture suy luận, không đổi dataset huấn luyện. Chưa thử ảnh tự chụp của nhóm. Xác suất cao vẫn có thể sai, chưa hiệu chỉnh. Không tối ưu lại sau các kết quả này.
 

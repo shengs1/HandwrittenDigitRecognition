@@ -1,0 +1,5 @@
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+Notebook executed successfully; code cells: 23
+Run: 20261117T091140Z_36eda884 | Chế độ notebook: thực nghiệm
+Giữ nguyên registry demo hiện có; run mới không tự thay mô hình đang dùng.
+Đã xuất kết quả thật: outputs/20261117T091140Z_36eda884 và models/20261117T091140Z_36eda884

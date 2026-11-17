@@ -70,6 +70,12 @@ class NotebookContractTests(unittest.TestCase):
         for cell in self.code:
             self.assertFalse(any(output.output_type == "error" for output in cell.get("outputs", [])))
 
+    def test_saved_notebook_output_does_not_embed_machine_paths(self):
+        for cell in self.code:
+            for output in cell.get("outputs", []):
+                text = output.get("text", "")
+                self.assertIsNone(re.search(r"(?<![\w])[A-Za-z]:[\\/]", text))
+
 
 class DatasetContractTests(unittest.TestCase):
     @classmethod

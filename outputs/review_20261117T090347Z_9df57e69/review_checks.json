@@ -1,0 +1,65 @@
+{
+  "review_id": "review_20261117T090347Z_9df57e69",
+  "base_commit": "70ad7797597932f769ba3affecdcc17a9b0150ab",
+  "canonical_run": "20261117T081201Z_fd32180f",
+  "rerun_id": "20261117T091140Z_36eda884",
+  "clean_checkout_path_has_spaces": true,
+  "baseline_tests": {
+    "run": 25,
+    "errors": 4,
+    "reason": "tmp missing in fresh checkout"
+  },
+  "final_tests": {
+    "run": 31,
+    "passed": true,
+    "duration_s": 7.283
+  },
+  "notebook_code_cells": 23,
+  "notebook_error_count": 0,
+  "notebook_stderr_count": 0,
+  "embedded_figure_count": 15,
+  "metrics_max_absolute_difference": 0.0,
+  "test_predictions_equal": true,
+  "cv_scaling_learning_curves_equal": {
+    "cv_summary.csv": true,
+    "mlp_scaling_cv.csv": true,
+    "learning_curve.csv": true,
+    "learning_curve_folds.csv": true
+  },
+  "classifier_params_equal": {
+    "logreg_raw": true,
+    "knn": true,
+    "mlp": true
+  },
+  "registry_unchanged": true,
+  "notebook_source_cells_changed": [
+    "digits-048"
+  ],
+  "tracked_machine_absolute_paths": [],
+  "report_ready_to_submit": false,
+  "eda_student_confirmations_found": 0,
+  "student_report_file_found": false,
+  "student_slide_deck_found": false,
+  "ai_usage_file_present": false,
+  "protected_artifacts_unchanged": true,
+  "corrected_csv_format_only": [
+    "classification_report_logreg_raw.csv",
+    "classification_report_knn.csv",
+    "classification_report_mlp.csv"
+  ],
+  "timing_details_consistent": true,
+  "schema_columns_checked": 65,
+  "critical_findings_found": 0,
+  "major_fixed": [
+    "Fresh checkout tests required untracked tmp/"
+  ],
+  "major_open": [
+    "Student-confirmed EDA/result/error/learning-curve analysis missing",
+    "Submission report and slide deck missing"
+  ],
+  "minor_fixed": [
+    "CSV accuracy row broadcast to support/precision/recall",
+    "Absolute workspace path embedded in notebook output",
+    "Stale Phase 1 snapshot under latest handoff heading"
+  ]
+}

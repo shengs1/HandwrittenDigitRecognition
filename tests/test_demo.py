@@ -21,6 +21,11 @@ sys.path.insert(0, str(ROOT))
 import app
 
 
+def setUpModule():
+    # tmp/ không được track: checkout mới phải tự tạo trước các test dùng TemporaryDirectory.
+    (ROOT / "tmp").mkdir(parents=True, exist_ok=True)
+
+
 def png_bytes(image):
     buffer = BytesIO()
     image.save(buffer, format="PNG")

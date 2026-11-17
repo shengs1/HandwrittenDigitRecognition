@@ -2,15 +2,19 @@
 
 ## Phase hiện tại
 
-Phase 2: demo Streamlit, hoàn thiện code thực nghiệm và tài liệu chuẩn bị báo cáo. Người dùng đã xác nhận huấn luyện lần đầu bằng cấu hình đã thống nhất. Không tự huấn luyện lại để cải thiện điểm.
+Final review trước bảo vệ: rà soát theo PDF, kiểm chứng tái lập, sửa lỗi kỹ thuật và lập bảng PASS/FAIL/PARTIAL. Đã chạy lại notebook trên bản checkout riêng theo yêu cầu review, không chọn tham số mới hoặc thay bộ mô hình đang xác nhận. Nhóm còn hoàn thiện nội dung nộp.
 
 ## Trạng thái mới nhất đã xác minh
+
+**Final review (2026-11-17):** 31/31 tests qua trên checkout sạch có dấu cách và venv mới từ requirements; notebook chạy đủ 23 code cells/15 hình, 0 lỗi/0 stderr trong cell. Metric chênh lệch=0 và 1.080 dự đoán test khớp bản chính thức; registry/3 model/metric/test prediction/report JSON gốc giữ nguyên checksum. Đã sửa 4 lỗi test do thiếu tmp, định dạng dòng accuracy ở 3 CSV, path hiển thị notebook và phân loại snapshot lịch sử. Không phát hiện Critical trong phạm vi kiểm tra. **Chưa sẵn sàng nộp**: nhận định EDA/phân tích chưa nhóm xác nhận; chưa có báo cáo và slide chính thức. Xem `docs/FINAL_REVIEW.md` và `outputs/review_20261117T090347Z_9df57e69/review_checks.json`.
 
 **Phase 2 thay thế trạng thái khung cũ bên dưới:** run `20261117T081201Z_fd32180f` đã hoàn tất huấn luyện lần đầu, 23 cell chạy qua kernel thật, xuất 3 Pipeline và 55 file kết quả, không stderr trong cell. `models/registry.json` khóa bộ mô hình demo, chọn KNN bằng mean CV macro F1. App hoạt động với ảnh mẫu/upload, xác suất và xử lý lỗi; **25/25 test qua trên môi trường sạch**, đã thử trực tiếp cả hai luồng bằng trình duyệt. Bằng chứng ở `outputs/demo_20261117T082316Z_b269f12c/phase2_status.json`. Nhóm còn tự viết phân tích chính, báo cáo/slide, phân công và bổ sung ảnh tự chụp. Các mục “chưa có mô hình”, “TODO SV-01…09”, “không Streamlit” bên dưới chỉ mô tả lịch sử Phase 1.
 
 **Cập nhật Git (2026-11-17):** đã commit/push Phase 2 lên https://github.com/shengs1/HandwrittenDigitRecognition, nhánh `main`, commit nguồn `0aacb47` đã xác minh trên remote. `main` theo dõi `origin/main`; bản ghi nhận kết quả push được lưu ở cập nhật tài liệu tiếp theo. Xem `git log -1` để lấy commit mới nhất. Các ghi nhận “chưa khởi tạo Git/chưa có mô hình” bên dưới là lịch sử Phase 1, không phải trạng thái hiện tại.
 
-**Ngày 2026-11-17 (Asia/Saigon): phần khung hỗ trợ đã chạy được; thực nghiệm cốt lõi chưa triển khai.** Notebook cuối có 51 cell (23 cell mã), chạy bằng kernel thật, 6 hình nhúng, 0 lỗi thực thi, 0 stderr trong cell. Không mô hình nào đã được huấn luyện. Các cụm bên dưới là nhật ký lịch sử; trạng thái ở đây và cụm 3 thay thế các dòng “đang chạy” trước đó.
+## Snapshot Phase 1 — lịch sử, không phải trạng thái hiện tại
+
+**Ngày 2026-11-17 (Asia/Saigon): phần khung hỗ trợ đã chạy được; thực nghiệm cốt lõi chưa triển khai.** Notebook lúc đó có 51 cell (23 cell mã), chạy bằng kernel thật, 6 hình nhúng, 0 lỗi thực thi, 0 stderr trong cell. Không mô hình nào được huấn luyện ở Phase 1. Các cụm bên dưới giữ lại lịch sử; trạng thái final review ở đầu file thay thế phần này.
 
 - Run hiện khớp với output nhúng trong notebook: `outputs/20261117T070246Z_4ebb5029/`.
 - Bằng chứng: `support_verification.json`, `run_status.json`, `environment.json`, CSV và 6 hình trong run đó.
@@ -171,3 +175,31 @@ Run cuối có 20 file thực tế: schema, summary, DESCR, data quality/flags, 
 - `git push origin main`: thành công, `dd6c86c..0aacb47`; sau đó kiểm tra remote khớp HEAD. Không force-push hoặc viết lại lịch sử.
 - Rà soát diff phát hiện một dòng trống thừa cuối RESULTS_INDEX.md; đã dọn trong cập nhật tài liệu sau push, không ảnh hưởng code/số liệu. Không chạy lại huấn luyện hay unit test cho chỉnh sửa tài liệu này.
 - Giới hạn bàn giao còn lại là nội dung phân tích/báo cáo/slide/phân công thật và ảnh tự chụp như nêu trên; không còn TODO code cốt lõi hoặc lỗi thực thi đã biết trong phạm vi đã kiểm thử.
+
+## Cụm 8: final review toàn repository
+
+### Phạm vi và bằng chứng
+
+- Git ban đầu sạch tại `70ad779`. Đã đọc đầy đủ 6 trang PDF, AGENTS/HANDOFF/README, notebook, app, tests, tất cả tài liệu, metadata/registry và bảng/ảnh thực nghiệm. File nhật ký công cụ riêng không còn tồn tại (đã xóa ở Phase 2); không tự tạo lại. BM06, báo cáo/slide chính thức và xác nhận của nhóm/giảng viên chưa có.
+- Tạo snapshot từ git archive trong checkout độc lập có dấu cách, không có tmp. Tái hiện `unittest discover`: 25 tests, 4 errors FileNotFoundError do test phụ thuộc thư mục tmp chưa được track. Log giữ trong `outputs/review_20261117T090347Z_9df57e69/baseline_fresh_checkout_tests.log`.
+- Tạo venv mới bằng `uv venv`, cài từ requirements qua cache offline (120 package), pip check tương thích. Áp dụng đúng các bản sửa vào checkout rồi chạy test trước khi runner notebook tạo tmp.
+- `unittest discover -s tests -p 'test_*.py' -v`: **31/31 PASS**, 7.283 giây. 6 kiểm tra bổ sung xác minh metric/report, confusion pairs/ảnh sai, CV/grid, scaler/test indices/bytes, learning curves/history và path output. Log/environment/review_checks ở thư mục review.
+- Chạy `tests/run_notebook.py` bằng venv mới trong snapshot: run `20261117T091140Z_36eda884`, 23 code cells, 15 hình, 0 error/0 stderr trong cell. Bộ registry vẫn trỏ canonical `20261117T081201Z_fd32180f`. Bản notebook đã chạy riêng và log được lưu trong outputs/review; không ghi đè output chính thức bằng timing rerun.
+- So sánh rerun: metric max absolute difference=0, 3×360 dự đoán test khớp; CV, scaling và learning-curve tổng hợp/từng fold khớp; tham số classifier không đổi. Không điều chỉnh seed, split, preprocessing, grid hoặc estimator để tăng điểm.
+- Artifact gốc được bảo vệ bằng SHA256 trước/sau: 3 Pipeline, registry, model_comparison, test_predictions và classification report JSON đều không đổi. Chỉ 3 CSV report được sửa format dòng accuracy, không thay metric hoặc dự đoán. Timing được kiểm độc lập: median 5 lượt predict, fit cuối và bytes khớp bảng.
+- Streamlit chạy bằng venv mới từ snapshot tại localhost:8502, HTTP 200; AppTest qua cả mẫu, upload ảnh thật, ảnh hỏng/trống, thiếu registry/model và kiểm không fit/không scale hai lần. Không sửa app hoặc thêm tính năng. Kiểm tra 15 PNG qua bản ghép QA; ảnh không bị thay dữ liệu.
+
+### Sửa đổi đã thực hiện
+
+- `tests/test_demo.py`: setUpModule tạo tmp cho checkout mới. `tests/test_artifacts.py`: kiểm tra độc lập các artifact khoa học dữ liệu, không fit. `tests/test_contracts.py`: thêm kiểm tra path riêng máy trong output notebook.
+- Notebook cell `digits-048`: accuracy là scalar, để precision/recall trống, support đúng số mẫu test; print đường dẫn tương đối. 3 CSV canonical tái xuất từ JSON gốc; output text của notebook bỏ prefix riêng máy. Các cell huấn luyện/tuning không đổi.
+- `docs/FINAL_REVIEW.md`: phân loại Critical/Major/Minor, ma trận đối chiếu PDF và 5 câu hỏi có PASS/FAIL/PARTIAL cùng file/bằng chứng. Cập nhật README/REQUIREMENTS_MAP dẫn tới review và HANDOFF tách rõ snapshot lịch sử.
+- Đã sửa lỗi tên thuộc tính `run` của test mới bị trùng unittest.TestCase.run trong lúc phát triển test; bản cuối đã qua đủ 31 tests. Đây không phải lỗi sản phẩm ban đầu. Cảnh báo kernel TCP và AppTest bare mode/ScriptRunContext giữ trong log, không bị tính nhầm thành lỗi thực thi.
+
+### Các phần chưa thể xác nhận / nhóm cần hoàn thiện
+
+- Major còn mở: 6 nhận định EDA và phân tích chính/ảnh sai/learning curve chưa có xác nhận trong repo; báo cáo PDF/DOCX và slide nộp chưa có. Không viết thay các phần này.
+- Chưa xác nhận nhóm 3–5, đăng ký/≥3 mục tiêu được duyệt, phân công thật và khả năng vấn đáp. Dàn ý 10 mục/12 slide/30 câu hỏi không thay sản phẩm và bảo vệ thực tế.
+- PDF mục 6 có yêu cầu ghi công cụ/cách dùng; ngoại lệ được nêu trước đó chưa có xác nhận trong repo. Review ghi PARTIAL và để nhóm làm rõ với giảng viên, không tự khôi phục file đã yêu cầu xóa hoặc kết luận được miễn.
+- 10 ảnh MNIST chỉ minh họa, mỗi model 3/10; chưa có ảnh camera do nhóm cung cấp. Chưa thử máy/OS khác. Không có BM06 để tự quy đổi điểm. ready_to_submit vẫn false.
+- Git tại thời điểm lập bản review: sửa notebook/3 CSV/tests/tài liệu và thêm artifact review; không động code app/model/dependency. Cần commit/push bản review và xác minh remote theo yêu cầu đồng bộ dự án trước đó; không force-push.
