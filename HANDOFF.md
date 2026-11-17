@@ -6,7 +6,7 @@ Hỗ trợ khung notebook và quy trình thực nghiệm; chưa phải đồ án
 
 ## Trạng thái mới nhất đã xác minh
 
-**Cập nhật Git (2026-11-17):** người dùng đã yêu cầu thực hiện các bước Git và đẩy bản hiện tại lên https://github.com/shengs1/HandwrittenDigitRecognition. Đã khởi tạo repository cục bộ nhánh `main`, đặt `origin` đúng repo. Kiểm tra remote trước đồng bộ chưa có ref; đang chuẩn bị commit/push. Các ghi nhận “chưa khởi tạo Git” bên dưới là lịch sử trước yêu cầu này.
+**Cập nhật Git (2026-11-17):** đã khởi tạo, liên kết, commit và push bản khung lên https://github.com/shengs1/HandwrittenDigitRecognition, nhánh `main` theo yêu cầu người dùng. Commit nguồn đầu tiên `a5ded5b44d9fcfc3ae02f9fb6ca99bf69b814232` đã được xác minh trên remote; `main` theo dõi `origin/main`. Các ghi nhận “chưa khởi tạo Git” bên dưới là lịch sử trước yêu cầu này. Xem `git log -1` để lấy commit mới nhất, bao gồm các cập nhật nhật ký sau commit nguồn.
 
 **Ngày 2026-11-17 (Asia/Saigon): phần khung hỗ trợ đã chạy được; thực nghiệm cốt lõi chưa triển khai.** Notebook cuối có 51 cell (23 cell mã), chạy bằng kernel thật, 6 hình nhúng, 0 lỗi thực thi, 0 stderr trong cell. Không mô hình nào đã được huấn luyện. Các cụm bên dưới là nhật ký lịch sử; trạng thái ở đây và cụm 3 thay thế các dòng “đang chạy” trước đó.
 
@@ -105,7 +105,11 @@ Run cuối có 20 file thực tế: schema, summary, DESCR, data quality/flags, 
 - Phạm vi đã được yêu cầu: làm các bước Git và push bản khung hiện tại. Giữ nguyên giới hạn hỗ trợ học thuật; không tự hoàn thành TODO cốt lõi hoặc viết nhận định thay nhóm.
 - Đã kiểm tra `git ls-remote <repo>.git`: exit 0, không ref; không có lịch sử remote cần ghi đè. Git author đã được cấu hình sẵn, không đổi danh tính hoặc cấu hình global.
 - `git init -b main`: thành công. `git remote add origin https://github.com/shengs1/HandwrittenDigitRecognition.git`: thành công.
-- `git check-ignore` xác nhận `.venv/`, `.uv-cache/`, `tmp/`, `tests/__pycache__/` bị loại. Dự kiến đưa notebook, PDF gốc, tài liệu, requirements, tests, thư mục models rỗng và cả 3 run hỗ trợ lên repo; không bỏ lịch sử output.
+- `git check-ignore` xác nhận `.venv/`, `.uv-cache/`, `tmp/`, `tests/__pycache__/` bị loại. Đã đưa notebook, PDF gốc, tài liệu, requirements, tests, thư mục models rỗng và cả 3 run hỗ trợ lên repo; không bỏ lịch sử output. Tổng 72 file, khoảng 3.29 MB dữ liệu file trước nén Git. Quét mẫu private key/token GitHub trên các file text trước stage không phát hiện khớp.
 - Kiểm tra trước push: `.venv/Scripts/python.exe -X utf8 -m unittest discover -s tests -p 'test_*.py' -v`: **8/8 qua**, 0.141 giây, không warning/lỗi. Không chạy lại notebook vì không thay mã thực nghiệm; bằng chứng kernel gần nhất vẫn là cụm 3.
 - Đã chỉnh `AGENTS.md` ghi rõ yêu cầu Git hiện tại; cập nhật `HANDOFF.md`, `AI_USAGE.md`. Chưa thay notebook hoặc kết quả.
-- Commit/push và xác minh remote: đang thực hiện, chưa công bố thành công ở thời điểm ghi mục này.
+- `git add -- <các đường dẫn đã kiểm tra>` và `git diff --cached --check`: thành công, không lỗi whitespace. Git có thông báo chuyển LF/CRLF theo cấu hình máy Windows, không gây lỗi commit.
+- `git commit -m 'Add Digits project scaffold and verified EDA outputs'`: thành công, commit `a5ded5b44d9fcfc3ae02f9fb6ca99bf69b814232`, 72 file.
+- `git -c credential.interactive=false push -u origin main`: thành công, tạo nhánh `main` trên remote và cấu hình upstream. Không force-push, không sửa lịch sử hoặc cấu hình Git global.
+- `git ls-remote origin refs/heads/main`: trả về đúng `a5ded5b44d9fcfc3ae02f9fb6ca99bf69b814232`. `git status --short --branch` sau push nguồn: `## main...origin/main`, không có thay đổi chưa commit tại thời điểm đó. Bản ghi nhận kết quả này được lưu ở cập nhật tài liệu tiếp theo.
+- Không phát hiện lỗi đồng bộ. Việc đưa mã lên GitHub không thay đổi trạng thái học thuật: TODO SV-01…SV-09, nhận định và các nhánh mô hình chưa triển khai/kiểm thử vẫn cần sinh viên thực hiện theo cụm 3.

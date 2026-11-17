@@ -10,7 +10,7 @@ Codex đã tra tài liệu API chính thức scikit-learn. Các lệnh/kết qu�
 
 Sau khi người dùng thông báo tạo repo GitHub `shengs1/HandwrittenDigitRecognition`, Codex kiểm tra Git cục bộ/remote ở chế độ chỉ đọc và cập nhật liên kết, trạng thái trong tài liệu. Ở bước đó chưa init, commit hoặc push. Việc tạo repo được người dùng thông báo; chưa có thông tin để gán công việc này cho một thành viên sinh viên cụ thể.
 
-Theo yêu cầu tiếp theo của người dùng, Codex đã khởi tạo Git nhánh `main`, liên kết `origin`, kiểm tra file bị loại bởi `.gitignore` và chạy lại 8 kiểm tra hợp đồng (đều qua), chuẩn bị commit/push bản khung. Kết quả push và kiểm tra đồng bộ sẽ ghi trong `HANDOFF.md`; không coi các thao tác Git là đóng góp triển khai thuật toán của nhóm.
+Theo yêu cầu tiếp theo của người dùng, Codex đã khởi tạo Git nhánh `main`, liên kết `origin`, kiểm tra file bị loại bởi `.gitignore`, chạy lại 8 kiểm tra hợp đồng (đều qua), commit và push 72 file của bản khung lên GitHub. Đã xác minh commit nguồn đầu tiên `a5ded5b44d9fcfc3ae02f9fb6ca99bf69b814232` khớp nhánh `main` trên remote; chi tiết trong `HANDOFF.md`. Không coi các thao tác Git là đóng góp triển khai thuật toán của nhóm.
 
 ## Đóng góp thực tế của nhóm sinh viên
 
