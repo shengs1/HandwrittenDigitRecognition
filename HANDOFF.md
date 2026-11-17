@@ -1,8 +1,10 @@
 # Chuyển giao Codex / Antigravity
 
-## Cập nhật yêu cầu Git (2026-11-17)
+## Git — đã push Final Completion (2026-11-17)
 
 Người dùng đã yêu cầu push phần code mới; cho phép commit và push toàn bộ thay đổi Final Completion cùng tài liệu/bằng chứng liên quan lên `origin/main`. Đã fetch remote, kiểm tra diff và xác minh lại mã đã test cùng 60 artifact chính thức khớp checksum. Snapshot “chưa commit/push” bên dưới mô tả lượt hoàn thiện trước yêu cầu mới này.
+
+Đã commit 22 file bằng `3a2c850` (`Complete notebook drafts and add saved test split demo`) và chạy `git push origin main` thành công. `git ls-remote origin refs/heads/main` xác nhận SHA `3a2c85041c091a898a7d15a30759bdeb63364869` trên GitHub; working tree sạch tại thời điểm kiểm tra. Commit tài liệu tiếp theo chỉ ghi nhận kết quả push này. Không chạy lại test vì code khớp bản đã qua 37/37 test; không đổi mô hình hoặc kết quả thực nghiệm. Không force-push.
 
 ## Trạng thái hiện tại — Final Completion (2026-11-17)
 
