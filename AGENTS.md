@@ -1,5 +1,11 @@
 # Hướng dẫn tiếp tục đồ án
 
+## Trạng thái hiện tại — Final Completion
+
+Run chính thức `20261117T081201Z_fd32180f` và registry/Pipeline/số liệu được giữ nguyên. Lượt hoàn thiện này được phép soạn nhận định **dự thảo có nguồn thật**, chưa xác nhận thay nhóm. Notebook là bản thực nghiệm đầy đủ, không còn TODO nhận định; báo cáo Markdown 10 mục và nội dung 12 slide vẫn cần nhóm rà soát và xuất bản nộp. Sau lượt hoàn thiện, người dùng đã yêu cầu **commit và push các thay đổi mới lên main** (2026-11-17); yêu cầu này thay thế việc giữ local ở lượt trước. Không force-push hoặc đổi lịch sử remote.
+
+Demo có nguồn “Ảnh test Digits” đọc đúng `outputs/<registry.run_id>/split_indices.csv`; không chia lại. Kiểm thử bất biến tiền xử lý dùng ảnh train; không dùng 10 MNIST đã xem để tối ưu. Chỉ sửa preprocessing khi có lỗi khách quan; hiện giữ thuật toán cũ. Đọc HANDOFF.md để lấy bằng chứng kiểm thử mới nhất; các phase cũ trong đó là lịch sử.
+
 ## Bắt đầu mỗi phiên
 
 Đọc toàn bộ `docs/Huong_Dan_Do_An_CuoiKy.pdf`, `HANDOFF.md`, notebook và outputs trước khi sửa. Chạy `git status --short --branch` và `git diff`. Không xóa hoặc ghi đè thay đổi của người dùng. Chỉ khởi tạo Git, commit hoặc push khi người dùng đã yêu cầu; không đổi dataset. Repo là `https://github.com/shengs1/HandwrittenDigitRecognition`, nhánh `main`. Không force-push hoặc thay đổi lịch sử remote.
@@ -37,7 +43,7 @@ Train/test 80/20, `stratify=y`, `random_state=42`. Baseline Logistic Regression 
 
 ## Nội dung báo cáo và tính trung thực
 
-Theo yêu cầu Phase 2 mới, code cốt lõi được hoàn thiện và được phép huấn luyện lần đầu; không còn giữ TODO triển khai cũ. Nhóm tự viết nhận định EDA, nội dung phân tích chính và báo cáo/slide theo mục 10 của yêu cầu hiện tại, hiểu và bảo vệ được quyết định. Dàn ý và bảng/hình hỗ trợ phải dẫn tới output thật.
+Code cốt lõi đã hoàn thiện và huấn luyện lần đầu được xác nhận; không còn TODO triển khai cũ. Theo yêu cầu Final Completion mới nhất, được viết nhận định dự thảo từ output thật; phải ghi chưa được nhóm xác nhận. Nhóm kiểm tra/sửa/xác nhận, hoàn thiện báo cáo/slide, hiểu và bảo vệ được quyết định. Không gán dự thảo hoặc công việc chưa xác minh thành đóng góp của sinh viên.
 
 Không bịa số liệu, đóng góp thành viên hoặc kết quả test; không dùng fixture tổng hợp như số liệu thực nghiệm thật. Người dùng yêu cầu xóa file nhật ký công cụ riêng; không tạo lại file đó. Giữ lịch sử kỹ thuật trong HANDOFF.md, không chỉnh sửa lịch sử Git đã công bố.
 

@@ -1,5 +1,7 @@
 # FINAL AUDIT — đề tài 13: Phân loại chữ số viết tay
 
+**Snapshot audit lịch sử.** Trạng thái mới nhất: [Final Completion trong FINAL_REVIEW](FINAL_REVIEW.md). Nhận định đã có dự thảo từ output thật và app có sampler test; chưa nhóm xác nhận, chưa báo cáo/slide chính thức. Kết quả37 tests mới và checksum xem HANDOFF; các số test/trạng thái bên dưới giữ theo thời điểm audit.
+
 Ngày cập nhật: 2026-11-17 (Asia/Saigon). Theo yêu cầu mới, mục 6 về sử dụng công cụ trong PDF không thuộc phạm vi audit và không nằm trong việc còn phải xử lý. Giữ nguyên PDF gốc; các kiểm tra kỹ thuật notebook/code vẫn giữ.
 
 Đây là bản tổng hợp A–I từ kiểm tra đã thực sự chạy ở lượt final review ngay trước. Lượt cập nhật này chỉ sửa phạm vi/tài liệu, không tuyên bố đã chạy lại một đợt train mới. Code, Pipeline, dependency và số liệu được bảo vệ bằng checksum vẫn giữ nguyên.

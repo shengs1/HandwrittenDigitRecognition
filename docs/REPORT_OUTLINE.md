@@ -1,49 +1,93 @@
-# Dàn ý báo cáo theo đúng 10 mục PDF
+# Dự thảo báo cáo — đúng 10 mục của PDF
 
-Cấu trúc theo mục 7, trang 2 của `Huong_Dan_Do_An_CuoiKy.pdf`. Đây là dàn ý và danh mục bằng chứng; nhóm tự viết nhận định, lý giải, kết luận và đóng góp thật. Run sử dụng: `20261117T081201Z_fd32180f`, chỉ mục nguồn tại RESULTS_INDEX.md.
+**Chưa được nhóm xác nhận; chưa phải bản nộp PDF/DOCX.** Các đoạn dưới để nhóm kiểm tra, sửa và sử dụng. Run chính thức: `20261117T081201Z_fd32180f`. [RESULTS_INDEX](RESULTS_INDEX.md) có bảng đầy đủ, nguồn CSV/JSON, hình và chú thích. Không lấy run hỗ trợ/log kiểm thử làm điểm mô hình.
 
 ## 1. Trang bìa
 
-Tên đề tài 13; học phần/lớp/giảng viên; tên nhóm, thành viên và mã sinh viên thật. Ngày nộp theo lịch giảng viên, không suy đoán.
+Đề tài 13: **Phân loại chữ số viết tay bằng Digits**. Học phần Lập trình cho Trí tuệ nhân tạo và Khoa học dữ liệu (04224), học kỳ I năm học 2026–2027 theo PDF.
+
+| Thông tin | Nội dung nhóm cần điền |
+|---|---|
+| Tên nhóm / lớp | [Chưa cung cấp] |
+| Họ tên / MSSV từng thành viên | [Chưa cung cấp] |
+| Giảng viên | [Chưa cung cấp] |
+| Ngày nộp | [Chưa xác nhận lịch] |
 
 ## 2. Giới thiệu bài toán và mục tiêu
 
-Phân lớp 0–9, ảnh 8×8 thành vector 64 pixel; phân biệt Digits/MNIST. Mục tiêu đặt trước: so baseline thô với KNN/MLP, chuẩn hóa, lỗi và chi phí. Chọn mean CV macro F1 cao nhất, hòa tuyệt đối theo tên tăng dần. Nhóm tự giải thích ứng dụng, tiêu chí và lựa chọn metric; không đặt mục tiêu “MLP nhất định tốt hơn”.
+Bài toán phân lớp có giám sát nhận một ảnh và dự đoán nhãn 0–9. Đồ án dùng Digits 8×8, không dùng MNIST để huấn luyện. Ba mục tiêu là so sánh LR pixel thô với KNN/MLP; kiểm tra chuẩn hóa lên MLP; phân tích lỗi và đánh đổi chi phí/độ chính xác.
+
+Chọn macro F1 trung bình CV cao nhất, hòa tuyệt đối theo tên tăng dần, trước khi xem test. Macro F1 cho mỗi chữ số vai trò ngang nhau, kết hợp precision/recall; accuracy bổ sung tỷ lệ dự đoán đúng dễ hiểu. Thành công còn gồm tái lập và không rò rỉ, không buộc mạng nơ-ron phải thắng. Phạm vi đã kiểm chứng là ảnh giống Digits, chưa đủ bằng chứng cho ảnh điện thoại.
 
 ## 3. Dữ liệu và làm sạch
 
-Nguồn load_digits/UCI ở notebook mục 2. Dẫn data_summary.json, column_schema.csv (tỷ lệ thiếu từng cột), data_quality.json, split_summary.json, cv_fold_audit.csv. Nêu 1.797 mẫu/64 đặc trưng, pixel 0–16, nhãn 0–9, không thiếu/trùng theo kiểm tra. 3 ảnh train có cờ IQR độ sáng không tự bị xóa.
+`load_digits()` có 1.797 ảnh 8×8; X=(1797,64) float64, y=(1797,) int64. Pixel thực tế nguyên trong 0–16, nhãn 0–9. Nguồn scikit-learn/UCI được ghi ở notebook mục 2 và dataset_description.txt. 64 pixel và nhãn đều thiếu 0%; không sai miền, ảnh hằng, ảnh trùng chính xác hoặc nhãn mâu thuẫn. Giữ toàn bộ dữ liệu, không thêm imputer khi không missing.
 
-Nhóm tự viết nhật ký giữ nguyên dữ liệu, bằng chứng xem ảnh và vì sao float64 chứa giá trị nguyên vẫn hợp lệ. Không dùng test thay chính sách làm sạch.
+Ba ảnh train id 1747/818/1766 vượt IQR độ sáng (mean 6,671875/6,765625/6,546875). Khi xem trực tiếp, chúng là số 1 nét dày, có 36/39/39 pixel khác 0, không hằng hoặc sai miền. Cờ thống kê không đủ lý do loại; run giữ cả ba. Nhóm cần kiểm tra/xác nhận nhật ký mục 3 notebook, không xem quyết định này là đã được nhóm thông qua.
+
+Chia 1.437 train/360 test, stratify=y, seed=42. Không có ảnh trùng chính xác xuyên train/test hay trong 5 folds. Chèn bảng schema/tỷ lệ thiếu và nhật ký; dẫn data_quality.json, train_image_diagnostics.csv, split_indices.csv, cv_fold_audit.csv trong RESULTS_INDEX.
 
 ## 4. Khám phá và trực quan hóa
 
-Đưa 6 hình EDA train: lớp, ảnh mẫu, histogram, ảnh trung bình, std heatmap, PCA 2D. Mỗi hình đủ tiêu đề/trục/chú thích và có nhận định do nhóm viết. PCA giữ khoảng 28,50% phương sai 2D, chỉ là EDA, không dùng trong mô hình. Tự bàn luận cân bằng lớp, nét/nền, biến thiên và giới hạn chiếu 2D; không suy ra accuracy từ PCA.
+Chèn đủ 6 hình train EDA 01–06, giữ tiêu đề/trục/thang màu; mỗi hình dùng nhận định dự thảo mục 5 notebook và chú thích trong RESULTS_INDEX:
 
-## 5. Phương pháp
+1. Lớp gần cân bằng, 139–146 mẫu; lớp 8 ít nhất, 1/3 nhiều nhất.
+2. Reshape 64 pixel theo hàng; nét nghiêng/dày/mỏng khác nhau, độ phân giải thấp mất chi tiết.
+3. 48,86% pixel train bằng 0: nền hợp lệ, không phải missing.
+4. Trung bình lớp 0 còn vùng giữa rỗng, lớp 1 nét dọc; trung bình làm mờ khác biệt vị trí.
+5. Std lớn nhất 6,5311 ở hàng 5/cột 2; giữ các vị trí hằng, std không phải tầm quan trọng dự đoán.
+6. PCA 2D giữ 28,5019% phương sai; nhiều lớp chồng lấn. Không suy ra accuracy mô hình 64 chiều từ hình chiếu.
 
-Train/test 80/20 stratify seed 42; CV 5 folds shuffle seed 42. Baseline LR passthrough C=1, max_iter=3000. KNN/MLP Pipeline; scaler học theo fold. MLP ban đầu (64,32)/relu/adam/early stopping; đối chứng scaler cùng điều kiện. Grid nhỏ như notebook, chỉ chọn bằng train/CV.
+PCA chỉ fit train để EDA, không nằm trong model. Nhóm cần xem lại hình và xác nhận các quan sát trực quan.
 
-Giải thích scaler fit train fold trước khi MLP tự chia validation nội bộ; khác outer validation/test. CV sau tuning có thiên lệch lựa chọn. Fit cuối đo riêng, predict median 5 lần sau warm-up, tuning wall time và bytes joblib compress=3.
+## 5. Phương pháp (đặc trưng, mô hình, cách đánh giá)
 
-## 6. Kết quả và so sánh baseline
+LR baseline: passthrough → LogisticRegression(C=1, lbfgs, max_iter=3000). Thô là đối chứng theo đề tài, không phải khẳng định LR không cần scaler. KNN/MLP dùng StandardScaler → estimator. MLP ban đầu (64,32), relu/adam, early_stopping=True, seed 42, max_iter300.
 
-Chèn model_comparison.csv và bảng scaling từ mlp_scaling_cv.csv. Tách CV mean/std khỏi test; KNN khóa bằng selection_lock trước test. Tách tuning khỏi fit cuối; baseline tuning=0 không có nghĩa CV miễn phí. Nhóm tự phân tích chênh lệch, độ ổn định và chi phí; không chọn lại mô hình theo test.
+StratifiedKFold(5, shuffle=True, random_state=42). KNN grid k={3,5,7}, weights={uniform, distance}; MLP hidden={(64,),(64,32)}, alpha={0.0001,0.001}. GridSearchCV scoring=f1_macro, refit=False, n_jobs=1 trên train. Đối chứng scaling cùng MLP/folds/seed. Chọn theo CV, lưu selection_lock rồi mới predict test; CV sau lựa chọn có thiên lệch.
+
+Scaler fit train fold trước khi MLP chia validation nội bộ, nên thấy đặc trưng của phần nội bộ này nhưng không thấy outer validation/test. Early stopping theo accuracy nội bộ, khác CV macro F1. Đo fit cuối bằng clone một lần, predict median 5 lần sau warm-up cùng test, một luồng; tuning và bytes joblib nén mức 3 đo riêng.
+
+## 6. Kết quả và so sánh với baseline
+
+Chèn bảng đầy đủ RESULTS_INDEX mục 2–5: precision/recall/F1, CV mean/std, cấu hình, scaling và chi phí. Tóm tắt:
+
+| Mô hình | CV macro F1 mean ± std (%) | Accuracy test (%) | Macro F1 test (%) |
+|---|---:|---:|---:|
+| LR thô | 96,3687 ± 0,7866 | 95,8333 | 95,8075 |
+| KNN | **97,6170 ± 0,7575** | 96,6667 | 96,6304 |
+| MLP | 96,2365 ± 0,8314 | 96,1111 | 96,0888 |
+
+KNN được chọn trước test (k=3/uniform/StandardScaler). MLP hơn LR 0,2778 điểm phần trăm accuracy test và 0,2813 điểm phần trăm F1 test, nhưng CV mean thấp hơn LR 0,1322 điểm phần trăm. Chênh lệch nhỏ trên một split chưa chứng minh MLP cải thiện chắc chắn; KNN không nhất thiết luôn tốt hơn.
+
+MLP StandardScaler có CV F1 94,3452%→ 96,2365%: +1,8913 điểm phần trăm, khoảng 2,00% tương đối; std 1,8458→ 0,8314 điểm phần trăm. Đây không phải accuracy test.
+
+KNN fit nhanh nhất (0,003107 s), predict chậm nhất (0,004730 s/360 ảnh). LR predict nhanh nhất (0,000798 s), nhỏ nhất (5.935 byte). MLP fit 0,279319 s, tuning 4,231378 s, chưa có lợi thế điểm số. Baseline tuning=0 vẫn có CV. Timing cùng máy/một luồng và fit một lần không bảo đảm thứ hạng tốc độ trên mọi máy/dataset.
 
 ## 7. Phân tích lỗi và giới hạn
 
-Ma trận nhầm lẫn cả 3, bảng cặp có hướng và ảnh sai. Dùng learning_curves.png/learning_curve.csv, mlp_training_history.png/mlp_history.json để tự đánh giá bằng chứng overfitting; có thể kết luận chưa đủ bằng chứng, không ép một điểm quá khớp.
+Chèn 3 confusion matrices, bảng cặp có hướng, vài ảnh sai, learning curve và MLP history. LR/KNN/MLP sai 15/12/14 ảnh; 8→ 1 nhiều nhất ở cả ba (4/3/3), KNN còn 4→ 7 hai lần. Ảnh 1553 (8→ 1) nét dọc nổi bật/vòng dưới kém rõ; 1022 (4→ 7) có nét ngang/chéo rõ; 1100 (9→ 8) vùng dưới có nét cong. Đây là giả thuyết trực quan, không chứng minh nguyên nhân quyết định của model. Không sửa nhãn hay xóa ảnh khó.
 
-Giới hạn: mẫu nhỏ, 8×8, chia ngẫu nhiên không bảo đảm tách người viết, CV dùng chọn tham số, xác suất chưa hiệu chỉnh. 10 MNIST chọn trước: mỗi model đúng 3/10; không suy ra accuracy ảnh chụp. Chưa có ảnh tự chụp; không loại hoặc giấu mẫu sai.
+Tăng train/fold 229→ 1.149, validation F1 tăng cả ba. Gap cuối LR/KNN/MLP là 3,70/1,15/3,11 điểm phần trăm. LR train 100% nhưng validation96,30% cho thấy khoảng cách tổng quát hóa, chưa đủ gọi quá khớp nghiêm trọng. MLP ít mẫu dao động hơn. MLP cuối chạy 52 iterations, loss2,3952→ 0,0208, best/cuối accuracy validation nội bộ97,9167%. Validation bão hòa; chưa xác định chính xác epoch quá khớp. Loss và accuracy khác đơn vị.
 
-## 8. Triển khai demo
+Giới hạn: dataset nhỏ/8×8, chia ngẫu nhiên chưa bảo đảm tách người viết, CV có thiên lệch lựa chọn, xác suất chưa hiệu chỉnh. Mỗi model đúng 3/10 MNIST đã thử; 10 mẫu không đại diện ảnh ngoài và không dùng tuning. Chưa có ảnh tự chụp nhóm. Hướng sau: thu ảnh thật có nhãn, chốt quy trình trước và dùng tập ngoài mới độc lập; không đổi run hiện tại theo test.
 
-Chụp giao diện thật: chọn model/mẫu/upload, ảnh gốc/sau xử lý, dự đoán/xác suất. Mô tả ảnh→8×8/0–16, không chuẩn hóa hai lần, mẫu Digits giữ nguyên. App chỉ load Pipeline; registry/checksum/cache; lỗi file hỏng/trống/mất model. Không backend riêng hoặc train trong UI.
+## 8. Triển khai (tùy chọn)
+
+Streamlit tiếng Việt chỉ load Pipeline qua registry/checksum, không fit. Chọn 3 model, mẫu toàn bộ Digits, mẫu test đúng split đã lưu hoặc upload. Mẫu Digits giữ nguyên pixel. Upload: EXIF → alpha/grayscale → nhận biết nền → nét sáng → crop → giữ tỷ lệ/căn giữa → 8×8/0–16. Flatten theo hàng, scaler chỉ trong Pipeline.
+
+Giao diện có ảnh gốc/8×8, dự đoán và xác suất 10 lớp chưa hiệu chỉnh. File trống/hỏng/quá lớn, thiếu registry/model/split báo lỗi, không tự train. Chèn screenshot thật và log kiểm thử cuối. Kiểm thử tương đương dùng train; giữ preprocessing vì chưa phát hiện lỗi khách quan, không sửa theo 10 MNIST.
 
 ## 9. Kết luận
 
-Nhóm tự trả lời 5 câu hỏi bằng số liệu đã dẫn; phần làm được/chưa kiểm chứng. Cải tiến chỉ đề xuất cho nghiên cứu sau (ảnh thật, đánh giá độc lập, tiền xử lý phù hợp hơn); không tuning mới sau test của thí nghiệm này.
+Đồ án có quy trình tái lập, 6 EDA, baseline và hai model Pipeline, scaling/CV/grid/lỗi/curves/demo. KNN được chọn bằng CV F1 97,6170%, accuracy test 96,6667%. LR nhẹ/nhanh khi predict; MLP chưa có lợi thế tổng thể. Chuẩn hóa giúp MLP trong đối chứng CV. Lỗi8→ 1 đáng chú ý; ảnh ngoài còn hạn chế, không cam kết mọi ảnh thực tế. Chưa xác định epoch quá khớp chính xác. Đối chiếu 5 câu trả lời cuối notebook trước chốt.
 
-## 10. Phân công, tài liệu tham khảo và phụ lục
+## 10. Phân công công việc, tài liệu tham khảo; phụ lục
 
-Bảng thành viên/công việc/bằng chứng commit hoặc cell/ngày/thời lượng do nhóm tự ghi. Tham khảo PDF học phần; API scikit-learn, UCI; Streamlit/Pillow; nguồn fixture CVDF MNIST. Phụ lục: requirements, lệnh, run_id/checksum, CV/report, cấu hình và nhật ký kiểm thử. Không có BM06 trong project để suy đoán thêm chi tiết chấm điểm.
+| Thành viên / MSSV | Công việc thực tế | Bằng chứng (commit/cell/tài liệu) | Xác nhận |
+|---|---|---|---|
+| [Chưa cung cấp] | [Nhóm tự điền việc đã làm] | [Chưa cung cấp] | [Chưa xác nhận] |
+
+Tham khảo: [PDF học phần](Huong_Dan_Do_An_CuoiKy.pdf); [scikit-learn load_digits](https://scikit-learn.org/1.7/modules/generated/sklearn.datasets.load_digits.html); [UCI Digits](https://archive.ics.uci.edu/dataset/80/optical+recognition+of+handwritten+digits); API Pipeline/MLP trong notebook; Streamlit/Pillow theo requirements; [nguồn MNIST fixture](../tests/fixtures/external_digits/README.md). Phụ lục: phiên bản/seed/grid/run_id/checksum, CV/report/CSV/hình và lệnh từ README/HANDOFF. Không có BM06 để suy đoán thêm thang điểm.
+
+Trước xuất PDF/DOCX: nhóm đọc/sửa/xác nhận dự thảo, điền thông tin thật, chèn hình đủ lớn có nguồn/chú thích, kiểm tra trang và số liệu, hoàn thành phân công và tập bảo vệ. Bản Markdown này chưa thay sản phẩm nộp.

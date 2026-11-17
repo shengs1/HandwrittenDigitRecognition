@@ -173,6 +173,28 @@ def sample_digits():
     return dataset.images, dataset.target
 
 
+def saved_test_indices(registry):
+    """Đọc đúng split của run trong registry; không chia lại hoặc chọn theo kết quả dự đoán."""
+    run_id = registry.get("run_id", "") if registry else ""
+    if not isinstance(run_id, str) or not run_id or any(c not in "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_" for c in run_id):
+        raise ValueError("Thiếu mã run hợp lệ để đọc tập test.")
+    path = ROOT / "outputs" / run_id / "split_indices.csv"
+    if not path.is_file():
+        raise FileNotFoundError("Thiếu split_indices.csv của run đã lưu. Không tự chia lại tập test.")
+    try:
+        split = pd.read_csv(path)
+        indices = split["sample_index"].to_numpy()
+        valid = (len(split) == 1797 and np.issubdtype(indices.dtype, np.integer)
+                 and np.array_equal(np.sort(indices), np.arange(1797))
+                 and split["split"].isin(["train", "test"]).all()
+                 and int((split["split"] == "test").sum()) == 360)
+    except (KeyError, ValueError, OSError) as exc:
+        raise ValueError("Không đọc được split Digits đã lưu.") from exc
+    if not valid:
+        raise ValueError("Split đã lưu không đúng cấu trúc Digits 1.437 train / 360 test.")
+    return indices[split["split"].to_numpy() == "test"]
+
+
 def main():
     st.set_page_config(page_title="Nhận dạng chữ số", page_icon="✍️", layout="centered")
     st.title("Nhận dạng chữ số viết tay")
@@ -189,18 +211,25 @@ def main():
     else:
         model_name = None
         st.selectbox("Mô hình", ["Chưa có Pipeline đã lưu"], disabled=True)
-    source = st.radio("Chọn nguồn ảnh", ["Ảnh mẫu Digits", "Tải ảnh từ máy"], horizontal=True, key="source")
+    source = st.radio("Chọn nguồn ảnh", ["Ảnh mẫu Digits", "Ảnh test Digits", "Tải ảnh từ máy"], horizontal=True, key="source")
     pixels, original, actual_label, info = None, None, None, {}
-    if source == "Ảnh mẫu Digits":
+    if source in {"Ảnh mẫu Digits", "Ảnh test Digits"}:
         images, labels = sample_digits()
-        label = st.selectbox("Chữ số mẫu", list(range(10)), key="sample_label")
-        indices = np.flatnonzero(labels == label).astype(int).tolist()
-        index = st.select_slider("Mã ảnh trong Digits", options=indices, value=indices[0], key=f"sample_{label}")
-        pixels = images[index].copy()
-        original = np.uint8(np.rint(pixels * 255/16))
-        actual_label = int(labels[index])
-        info = {"background": "Mẫu Digits: giữ nguyên 64 pixel gốc, không crop hoặc chuẩn hóa lại"}
-        st.caption(f"Nhãn gốc: {actual_label}. Mẫu minh họa có thể thuộc train hoặc test; đây không phải một lần đánh giá mới.")
+        test_mode = source == "Ảnh test Digits"
+        try:
+            available = saved_test_indices(registry) if test_mode else np.arange(len(labels))
+            label = st.selectbox("Chữ số mẫu", list(range(10)), key="sample_label")
+            indices = available[labels[available] == label].astype(int).tolist()
+            key = f"test_sample_{label}" if test_mode else f"sample_{label}"
+            index = st.select_slider("Mã ảnh trong Digits", options=indices, value=indices[0], key=key)
+            pixels = images[index].copy()
+            original = np.uint8(np.rint(pixels * 255/16))
+            actual_label = int(labels[index])
+            info = {"background": "Mẫu Digits: giữ nguyên 64 pixel gốc, không crop hoặc chuẩn hóa lại"}
+            scope = f"Tập test đã lưu · run {registry['run_id']}" if test_mode else "Mẫu có thể thuộc train hoặc test"
+            st.caption(f"Nhãn gốc: {actual_label}. {scope}; minh họa này không phải một lần đánh giá độc lập mới.")
+        except (FileNotFoundError, ValueError) as exc:
+            st.error(str(exc))
     else:
         st.info("Chọn ảnh chỉ chứa một chữ số, nét rõ, nền đơn giản; tránh ảnh nghiêng, bóng đổ hoặc nhiều ký tự.")
         upload = st.file_uploader("Ảnh chữ số (tối đa 10 MB)", type=["png", "jpg", "jpeg", "bmp", "webp"],

@@ -1,6 +1,6 @@
 # Đối chiếu PDF và phạm vi hỗ trợ
 
-Đã đọc toàn bộ `Huong_Dan_Do_An_CuoiKy.pdf` (6 trang). Bảng này hướng dẫn kiểm tra, không thay báo cáo. PDF nhắc BM06 nhưng project không có BM06; không suy đoán chi tiết chấm điểm ngoài bảng đã cung cấp.
+Đã đọc toàn bộ `Huong_Dan_Do_An_CuoiKy.pdf` (6 trang). Bảng này hướng dẫn kiểm tra, không thay báo cáo. Trạng thái mới nhất ở bảng Final Completion đầu FINAL_REVIEW: đã có dự thảo nhật ký/6 EDA/phân tích/5 câu hỏi, chưa nhóm xác nhận; báo cáo10 mục/12 slide mới là nội dung Markdown, chưa file nộp. PDF nhắc BM06 nhưng project không có BM06; không suy đoán chi tiết chấm điểm ngoài bảng đã cung cấp.
 
 Kết quả kiểm tra cuối có trạng thái PASS/FAIL/PARTIAL và bằng chứng thực thi: [FINAL_REVIEW.md](FINAL_REVIEW.md). Bảng hướng dẫn dưới đây không thay cho trạng thái review và không chứng minh nhóm đã hoàn thành nhận định/báo cáo/vấn đáp.
 

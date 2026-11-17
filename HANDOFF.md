@@ -1,10 +1,34 @@
 # Chuyển giao Codex / Antigravity
 
-## Phase hiện tại
+## Cập nhật yêu cầu Git (2026-11-17)
+
+Người dùng đã yêu cầu push phần code mới; cho phép commit và push toàn bộ thay đổi Final Completion cùng tài liệu/bằng chứng liên quan lên `origin/main`. Đã fetch remote, kiểm tra diff và xác minh lại mã đã test cùng 60 artifact chính thức khớp checksum. Snapshot “chưa commit/push” bên dưới mô tả lượt hoàn thiện trước yêu cầu mới này.
+
+## Trạng thái hiện tại — Final Completion (2026-11-17)
+
+**Kỹ thuật đã kiểm chứng; chưa xác nhận sẵn sàng nộp.** Run `20261117T081201Z_fd32180f`, 60 file model/registry/toàn outputs giữ nguyên SHA256; không retrain/tuning.23 mã cell notebook, output nhúng và hàm preprocessing không đổi. Notebook đã có 15 markdown cells được hoàn thiện, không TODO nhận định; mọi diễn giải ghi là **dự thảo chưa nhóm xác nhận**. Báo cáo 10 mục và 12 slide có nội dung Markdown, chưa PDF/DOCX/PPTX nộp.
+
+**Demo:** thêm “Ảnh test Digits” đọc đúng 360 id từ split run trong registry; giữ pixel gốc. Không chia lại hoặc fit. Thiếu/sai split báo lỗi. Kiểm thử ảnh tương đương trên 10 train (đảo nền, RGB/RGBA, dịch vị trí), EXIF, ảnh trống/tỷ lệ/centering đều qua; chưa thấy lỗi khách quan nên giữ preprocessing. Không dùng10 MNIST đã xem để tối ưu. Browser: KNN test id 10→ 0 đúng, proba1; upload MNIST 7→ 3 sai, proba1/3 đồng hạng3/5/8. Giới hạn ảnh ngoài được giữ nguyên/trình bày trung thực.
+
+**Kiểm thử mới:**37/37 PASS trên project(6,163s) và source checkout sạch có dấu cách, ban đầu không tmp(4,807s). Checkout mới lấy HEAD `909f53d`+diff hiện tại; dùng lại venv sạch Python 3.12.14 từ review trước, toàn pin requirements khớp, không cài lại lần này. nbformat/syntax hợp lệ, 23 cell đã có output, 15 PNG, 0 errors; không Run All thêm vì code không đổi và đã có rerun độc lập thành công trước. Streamlit127.0.0.1: 8503 HTTP 200 và thao tác sample/upload thật đã kiểm tra; hộp filechooser công cụ phản hồi chậm, Upload button thành công. Cảnh báo bare AppTest ScriptRunContext không là lỗi app.
+
+**File sửa:** app.py; tests/test_demo.py; digit_classification.ipynb(chỉ Markdown); README; AGENTS; HANDOFF; docs/REPORT_OUTLINE, SLIDE_OUTLINE, RESULTS_INDEX, VIVA_QUESTIONS, FINAL_REVIEW, FINAL_AUDIT, REQUIREMENTS_MAP. Bằng chứng mới ở `outputs/completion_20261117T100609Z_b8981ac1/`: protected_before/after, completion_checks, derived_train_statistics, clean_checkout_tests, clean_environment, streamlit_check, ảnh giao diện/ảnh kiểm tra. Script phụ/checkouts nằm tmp bị ignore, không thêm module/framework/dependency.
+
+**Lệnh thực tế:** `.venv/Scripts/python.exe -X utf8 -m unittest discover -s tests -p "test_*.py" -v`→ 37PASS; cùng lệnh với venv sạch/cwd checkout→ 37PASS; script tạm kiểm nbformat/compile/link/hash/pin→ PASS; `python -m streamlit run app.py --server.address 127.0.0.1 --server.port 8503 --server.headless true --browser.gatherUsageStats false`→ server chạy/HTTP 200; CUA thao tác test/upload→ kết quả trên. Không chạy lại notebook/train, không thay official model hoặc số liệu.
+
+**Còn cần nhóm:** đọc/sửa/xác nhận nhận định dự thảo và nhật ký giữ 3 IQR; điền tên/MSSV/lớp/giảng viên/phân công thật, xuất/kiểm trang báo cáoPDF/DOCX và slidePPTX/PDF, tập vấn đáp từng thành viên, thử ảnh tự chụp nếu muốn nêu khả năng thực tế (không dùng để tuning canonical). Chưa có BM06/ảnh tự chụp/xác nhận đăng ký, không suy đoán. Chưa ZIP; danh mục bản nộp ở README. Xem bảng PASS/PARTIAL đầu FINAL_REVIEW.
+
+**Git:** bắt đầu clean `main...origin/main`, HEAD909f53d. Thay đổi lượt này còn local, **không commit/push** theo yêu cầu hiện tại; không đổi lịch sử. Các nội dung bên dưới là lịch sử, không phải trạng thái mới nhất.
+
+Kiểm tra chốt lượt Final Completion: `git diff --check` qua; link Markdown nội bộ không hỏng; báo cáo có 10 mục, slide có 12 mục; các giá trị chính trong dự thảo khớp nguồn. Mã app/tests/notebook/requirements khớp bản đã test trên checkout sạch (bỏ khác biệt CRLF/LF ở hai file không sửa). Output nhúng notebook và execution_count khớp HEAD; kiểm lại 60 checksum đều giữ nguyên. Server thử cổng 8503 đã dừng sau kiểm tra; repo còn 13 file sửa và thư mục bằng chứng mới, chưa commit/push.
+
+## Lịch sử các phase và review trước
+
+## Snapshot phase review trước
 
 Final review trước bảo vệ: rà soát theo PDF, kiểm chứng tái lập, sửa lỗi kỹ thuật và lập bảng PASS/FAIL/PARTIAL. Đã chạy lại notebook trên bản checkout riêng theo yêu cầu review, không chọn tham số mới hoặc thay bộ mô hình đang xác nhận. Nhóm còn hoàn thiện nội dung nộp.
 
-## Trạng thái mới nhất đã xác minh
+## Snapshot trạng thái review trước
 
 **Phạm vi cập nhật:** theo yêu cầu mới nhất, bỏ đánh giá mục 6 của PDF khỏi checklist và việc cần làm. Không thay PDF, code hoặc kết quả. Các kiểm tra kỹ thuật notebook vẫn giữ; bản tổng hợp Final Audit theo A–I nằm tại `docs/FINAL_AUDIT.md`. Những phần thực sự còn thiếu là nhận định/phân tích được nhóm xác nhận, báo cáo/slide chính thức và phân công/vấn đáp.
 
@@ -187,9 +211,9 @@ Run cuối có 20 file thực tế: schema, summary, DESCR, data quality/flags, 
 - Tạo venv mới bằng `uv venv`, cài từ requirements qua cache offline (120 package), pip check tương thích. Áp dụng đúng các bản sửa vào checkout rồi chạy test trước khi runner notebook tạo tmp.
 - `unittest discover -s tests -p 'test_*.py' -v`: **31/31 PASS**, 7.283 giây. 6 kiểm tra bổ sung xác minh metric/report, confusion pairs/ảnh sai, CV/grid, scaler/test indices/bytes, learning curves/history và path output. Log/environment/review_checks ở thư mục review.
 - Chạy `tests/run_notebook.py` bằng venv mới trong snapshot: run `20261117T091140Z_36eda884`, 23 code cells, 15 hình, 0 error/0 stderr trong cell. Bộ registry vẫn trỏ canonical `20261117T081201Z_fd32180f`. Bản notebook đã chạy riêng và log được lưu trong outputs/review; không ghi đè output chính thức bằng timing rerun.
-- So sánh rerun: metric max absolute difference=0, 3×360 dự đoán test khớp; CV, scaling và learning-curve tổng hợp/từng fold khớp; tham số classifier không đổi. Không điều chỉnh seed, split, preprocessing, grid hoặc estimator để tăng điểm.
+- So sánh rerun: metric max absolute difference=0,3×360 dự đoán test khớp; CV, scaling và learning-curve tổng hợp/từng fold khớp; tham số classifier không đổi. Không điều chỉnh seed, split, preprocessing, grid hoặc estimator để tăng điểm.
 - Artifact gốc được bảo vệ bằng SHA256 trước/sau: 3 Pipeline, registry, model_comparison, test_predictions và classification report JSON đều không đổi. Chỉ 3 CSV report được sửa format dòng accuracy, không thay metric hoặc dự đoán. Timing được kiểm độc lập: median 5 lượt predict, fit cuối và bytes khớp bảng.
-- Streamlit chạy bằng venv mới từ snapshot tại localhost:8502, HTTP 200; AppTest qua cả mẫu, upload ảnh thật, ảnh hỏng/trống, thiếu registry/model và kiểm không fit/không scale hai lần. Không sửa app hoặc thêm tính năng. Kiểm tra 15 PNG qua bản ghép QA; ảnh không bị thay dữ liệu.
+- Streamlit chạy bằng venv mới từ snapshot tại localhost: 8502, HTTP 200; AppTest qua cả mẫu, upload ảnh thật, ảnh hỏng/trống, thiếu registry/model và kiểm không fit/không scale hai lần. Không sửa app hoặc thêm tính năng. Kiểm tra 15 PNG qua bản ghép QA; ảnh không bị thay dữ liệu.
 
 ### Sửa đổi đã thực hiện
 

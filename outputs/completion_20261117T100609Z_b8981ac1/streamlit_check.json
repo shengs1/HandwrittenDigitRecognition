@@ -1,0 +1,35 @@
+{
+  "url": "http://127.0.0.1:8503",
+  "http_status": 200,
+  "html_bytes": 7863,
+  "browser": "IAB desktop 1280x720",
+  "sample": {
+    "source": "Ảnh test Digits",
+    "sample_index": 10,
+    "true_label": 0,
+    "model": "knn",
+    "predicted_label": 0,
+    "probability": 1.0,
+    "image_preview": true,
+    "probability_chart_10_classes": true,
+    "run_caption": "20261117T081201Z_fd32180f"
+  },
+  "upload": {
+    "filename": "mnist_test_00000_label_7.png",
+    "true_label": 7,
+    "model": "knn",
+    "predicted_label": 3,
+    "predicted_probability": 0.3333333333333333,
+    "nonzero_probabilities": {
+      "3": 0.3333333333333333,
+      "5": 0.3333333333333333,
+      "8": 0.3333333333333333
+    },
+    "original_and_preprocessed_visible": true,
+    "inference_error": false
+  },
+  "layout_observation": "Two image columns, controls, prediction and chart readable; vertical scroll expected on desktop. Screenshot saves sample preview/result, header above scroll position.",
+  "browser_upload_note": "File input click timed out; associated Upload button succeeded. Chooser response was slow.",
+  "preprocessing_changed": false,
+  "independent_new_external_accuracy_claimed": false
+}

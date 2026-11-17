@@ -2,9 +2,9 @@
 
 [Repository GitHub](https://github.com/shengs1/HandwrittenDigitRecognition) · Python 3.12 · Digits · Streamlit.
 
-**Final review trước bảo vệ:** [bảng PASS/FAIL/PARTIAL và lỗi còn mở](docs/FINAL_REVIEW.md). Sau sửa, 31/31 test và notebook đã chạy lại trên checkout sạch/venv mới; metric và dự đoán khớp bộ đã khóa. Nhận định của nhóm, báo cáo và slide chính thức vẫn cần hoàn thiện.
+**Final Completion:** notebook có nhận định dự thảo từ kết quả thật, nội dung báo cáo 10 mục và 12 slide đã chuẩn bị, **chưa được nhóm xác nhận**. Demo có lựa chọn ảnh test đúng split. **37/37 test qua trên checkout sạch**; model, số liệu và mã huấn luyện không đổi. Xem [đối chiếu yêu cầu và kiểm thử mới nhất](docs/FINAL_REVIEW.md), [HANDOFF](HANDOFF.md). Báo cáo PDF/DOCX, slide chính thức, thông tin nhóm và phân công vẫn cần hoàn thiện.
 
-Bản tổng hợp theo cấu trúc A–I: [FINAL_AUDIT.md](docs/FINAL_AUDIT.md).
+Các kiểm tra lịch sử được giữ ở [FINAL_AUDIT](docs/FINAL_AUDIT.md).
 
 Notebook `digit_classification.ipynb` là tài liệu thực nghiệm chính, gồm 16 mục: dữ liệu/làm sạch, 6 EDA train, baseline Logistic Regression pixel thô, KNN/MLP bằng Pipeline, đối chứng chuẩn hóa, CV/tuning, đánh giá, phân tích lỗi và lưu mô hình. `app.py` là demo tiếng Việt, chỉ tải Pipeline đã lưu; mở app **không huấn luyện lại**.
 
@@ -44,9 +44,9 @@ Không cần activate hoặc thay ExecutionPolicy. Nếu `py`/`python` là alias
 .\.venv\Scripts\python.exe -m streamlit run app.py --server.address 127.0.0.1
 ```
 
-Mở [http://localhost:8501](http://localhost:8501). Chọn mô hình, chọn ảnh mẫu Digits hoặc tải PNG/JPEG/BMP/WebP từ máy, xem ảnh gốc/ảnh 8×8 rồi bấm **Dự đoán**. Bảng xác suất có đủ 10 chữ số. Model mặc định là KNN đã chọn bằng CV.
+Mở [http://localhost:8501](http://localhost:8501). Chọn mô hình, chọn **Ảnh mẫu Digits** (toàn dataset), **Ảnh test Digits** (360 id đúng split đã lưu) hoặc tải PNG/JPEG/BMP/WebP từ máy, xem ảnh gốc/ảnh 8×8 rồi bấm **Dự đoán**. Bảng xác suất có đủ 10 chữ số. Model mặc định là KNN đã chọn bằng CV.
 
-Ảnh Digits giữ đúng pixel gốc. Ảnh tải lên: đọc hướng EXIF, grayscale/ghép alpha, nhận biết nền từ viền (hoặc chọn màu nền), lấy vùng nét, giữ tỷ lệ, căn giữa và thu nhỏ về 8×8, đổi miền về 0–16. Không gọi StandardScaler bên ngoài Pipeline. Giới hạn file 10 MB, 16 triệu pixel; file hỏng, ảnh trống và thiếu model được báo trong giao diện.
+Nguồn ảnh test đọc `outputs/<registry.run_id>/split_indices.csv`, không chia lại; thiếu/sai split thì báo lỗi. Dùng mẫu test để minh họa sau đánh giá không tạo một đánh giá độc lập mới. Ảnh Digits giữ đúng pixel gốc. Ảnh tải lên: đọc hướng EXIF, grayscale/ghép alpha, nhận biết nền từ viền (hoặc chọn màu nền), lấy vùng nét, giữ tỷ lệ, căn giữa và thu nhỏ về 8×8, đổi miền về 0–16. Không gọi StandardScaler bên ngoài Pipeline. Giới hạn file 10 MB, 16 triệu pixel; file hỏng, ảnh trống và thiếu model được báo trong giao diện.
 
 Registry trỏ đến đúng run và checksum của cả Pipeline. Giữ toàn bộ `models/<run_id>/`; không chỉ copy estimator. Nếu thiếu registry/model, khôi phục từ bản đã xác nhận trong Git; app không tự fit để bù. Chỉ sử dụng joblib do project tin cậy. Khi sai phiên bản sklearn, cài đúng requirements.
 
@@ -92,4 +92,20 @@ Test kiểm tra miền pixel, leakage, notebook, ảnh sáng/tối/trong suốt/
 | `docs/VIVA_QUESTIONS.md` | Câu hỏi vấn đáp và thao tác code |
 | `AGENTS.md`, `HANDOFF.md` | Quyết định và trạng thái chuyển giao |
 
-Nhóm tự viết nhận định EDA/nội dung phân tích chính, hoàn thành báo cáo/slide, phân công thật và tập bảo vệ. Nguồn: [PDF đồ án](docs/Huong_Dan_Do_An_CuoiKy.pdf), [đối chiếu yêu cầu](docs/REQUIREMENTS_MAP.md).
+Nhóm kiểm tra, sửa và xác nhận các nhận định dự thảo; xuất báo cáo/slide chính thức, điền thông tin/phân công thật và tập bảo vệ. Nguồn: [PDF đồ án](docs/Huong_Dan_Do_An_CuoiKy.pdf), [đối chiếu yêu cầu](docs/REQUIREMENTS_MAP.md).
+
+
+## Kiểm tra phiên bản hiện tại và danh sách bản nộp
+
+Lượt hoàn thiện: **37/37 tests PASS** (checkout sạch 4,807 s theo unittest), [log](outputs/completion_20261117T100609Z_b8981ac1/clean_checkout_tests.log), [kiểm tra notebook/checksum](outputs/completion_20261117T100609Z_b8981ac1/completion_checks.json), [phiên bản thư viện](outputs/completion_20261117T100609Z_b8981ac1/clean_environment.json), [Streamlit HTTP/giao diện/upload](outputs/completion_20261117T100609Z_b8981ac1/streamlit_check.json), [ảnh demo test](outputs/completion_20261117T100609Z_b8981ac1/streamlit_test_sample.jpg). Dùng lại venv sạch đã cài từ requirements ở lượt review trước; lượt này tạo bản nguồn sạch mới có diff hiện tại, ban đầu không có tmp. Không cài lại môi trường hoặc rerun huấn luyện: requirements và toàn bộ mã cell không đổi; lượt review trước đã Run All thành công với metric/prediction trùng. Cảnh báo ScriptRunContext khi chạy AppTest ở chế độ bare không phải lỗi ứng dụng.
+
+Những file cần đưa vào bản nộp cuối:
+
+- `digit_classification.ipynb` có output; `app.py`, `requirements.txt`, `README.md`.
+- `models/registry.json` và toàn bộ `models/20261117T081201Z_fd32180f/`.
+- Toàn bộ `outputs/20261117T081201Z_fd32180f/` (CSV/JSON/15 hình); giữ run_id nhất quán.
+- `tests/*.py`, fixture ảnh/manifest/nguồn trong `tests/fixtures/`; PDF và tài liệu tham khảo ở `docs/`.
+- Báo cáo **PDF hoặc DOCX** và slide **PPTX/PDF** sau nhóm hoàn thiện; hiện mới có nội dung Markdown dự thảo.
+- AGENTS/HANDOFF, bảng đối chiếu và bằng chứng kiểm thử cần thiết nếu nộp repo.
+
+Không đưa `.venv/`, `.uv-cache/`, `__pycache__/`, `.ipynb_checkpoints/`, `tmp/`, bản checkout thử hoặc log không cần thiết vào gói nộp. Giữ lịch sử/artifact có giá trị trong repo, nhưng gói nộp chỉ chọn run chính thức và bằng chứng cần thiết; không trộn các run hỗ trợ cũ vào bảng kết quả. Chưa tạo ZIP vì báo cáo/slide chính thức chưa hoàn thành. Lượt này không commit/push.

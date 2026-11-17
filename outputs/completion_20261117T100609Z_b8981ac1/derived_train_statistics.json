@@ -1,0 +1,32 @@
+{
+  "train_class_counts": [
+    142,
+    146,
+    142,
+    146,
+    145,
+    145,
+    145,
+    143,
+    139,
+    144
+  ],
+  "train_zero_pixel_fraction": 0.48855036534446766,
+  "train_pixel_std_max": 6.531127862009092,
+  "train_pixel_std_max_flat_index": 42,
+  "train_constant_flat_indices": [
+    0,
+    32,
+    39
+  ],
+  "scaling_mean": {
+    "raw": 0.9434519210669727,
+    "standard": 0.9623645265689509
+  },
+  "scaling_std_ddof0": {
+    "raw": 0.018458169128003264,
+    "standard": 0.008314060666369404
+  },
+  "scaling_delta_percentage_points": 1.8912605501978152,
+  "scaling_relative_improvement_percent": 2.0046178379274915
+}

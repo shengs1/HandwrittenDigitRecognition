@@ -1,5 +1,61 @@
 # Final review trước buổi bảo vệ — đề tài 13
 
+## Trạng thái mới nhất — Final Completion (2026-11-17)
+
+**Thay thế kết luận về TODO nội dung của snapshot phía dưới.** Đã bổ sung 15 markdown cells: nhật ký làm sạch, 6 EDA, lỗi/learning history, so sánh/chi phí/giới hạn và đủ 5 câu đề tài. Đây là **dự thảo chưa được nhóm xác nhận**. Báo cáo 10 mục và nội dung 12 slide đã có trong Markdown; chưa có sản phẩm PDF/DOCX/PPTX chính thức. Phần kỹ thuật đã kiểm chứng, chưa xác nhận sẵn sàng nộp.
+
+Không phát hiện Critical mới. Hai thiếu sót thực tế đã xử lý: notebook còn TODO nhận định; app chưa phân biệt mẫu test. Thuật toán tiền xử lý chưa phát hiện lỗi khách quan qua kiểm thử, được giữ nguyên. Các lỗi cũ và bằng chứng Run All ở phần lịch sử phía dưới.
+
+| Mức | Vấn đề hiện tại | Trạng thái |
+|---|---|---|
+| Critical | Chưa phát hiện lỗi làm sai kết quả trong phạm vi kiểm tra | Không có lỗi mở được xác định |
+| Major | Thiếu báo cáo/slide chính thức và thông tin, phân công thật | Còn mở; đã chuẩn bị nội dung dự thảo |
+| Major | Nhận định và quyết định dữ liệu chưa được nhóm xác nhận | Còn mở; đã có dự thảo có bằng chứng |
+| Minor | Mẫu Digits trong demo chưa phân biệt train/test | Đã sửa; thêm nguồn test theo split lưu và kiểm thử |
+
+| Kiểm tra hiện tại | Trạng thái / bằng chứng |
+|---|---|
+| Toàn bộ test trên source checkout sạch với diff mới, không tmp ban đầu | **37/37 PASS**, 4,807 s; [log](../outputs/completion_20261117T100609Z_b8981ac1/clean_checkout_tests.log) |
+| Môi trường | Dùng lại venv Python 3.12.14 sạch của review trước; mọi pin requirements khớp; [versions](../outputs/completion_20261117T100609Z_b8981ac1/clean_environment.json) |
+| Notebook | nbformat/syntax hợp lệ; 23/23 cell có execution_count, 15 PNG, 0 error; markdown không TODO; mã cell không đổi; [checks](../outputs/completion_20261117T100609Z_b8981ac1/completion_checks.json) |
+| Artifact canonical | 60 file gồm model/registry/toàn outputs chính thức giữ SHA256; [trước](../outputs/completion_20261117T100609Z_b8981ac1/protected_before.json), [sau](../outputs/completion_20261117T100609Z_b8981ac1/protected_after.json) |
+| Preprocessing | Source hash không đổi; đảo nền/RGB/RGBA/vị trí trên 10 ảnh train, EXIF, ảnh trống, tỷ lệ/centering và miền pixel qua tests |
+| Ảnh test trong app | 360 id đọc từ split chính thức, membership khớp prediction cả 3 model; AppTest kiểm tra mỗi lớp và dự đoán 3 model |
+| Streamlit thật | HTTP 200; KNN test id 10→ 0 đúng; upload MNIST 7→ 3 (33,3%, đồng hạng3/5/8), có gốc/8×8/chart; [ghi nhận](../outputs/completion_20261117T100609Z_b8981ac1/streamlit_check.json), [ảnh](../outputs/completion_20261117T100609Z_b8981ac1/streamlit_test_sample.jpg) |
+| Mã notebook | Không Run All thêm lượt này vì mã/output không đổi; sử dụng bằng chứng rerun độc lập thành công bên dưới, không huấn luyện để tăng điểm |
+
+### Đối chiếu PDF sau hoàn thiện
+
+PASS chỉ cho nội dung kỹ thuật có bằng chứng; PARTIAL không phải đã được nhóm xác nhận.
+
+| Yêu cầu PDF | Trạng thái | File và bằng chứng |
+|---|---|---|
+| Nhóm 3–5, đăng ký nguồn và ≥3 mục tiêu, giảng viên xác nhận | PARTIAL | Có 3 mục tiêu ở notebook/REPORT_OUTLINE; chưa có danh sách/đăng ký/xác nhận thật |
+| Bài toán/nhãn/tiêu chí/baseline | PASS | Notebook 1,6,15; model_comparison/selection_lock; test_artifacts |
+| Nguồn, shape/dtype/tỷ lệ thiếu từng cột | PASS | Notebook 2–3, data_summary/column_schema; test_contracts |
+| Làm sạch có bằng chứng và lý do | PARTIAL | Nhật ký dự thảo notebook 3, kiểm tra 0 lỗi, 3 IQR giữ nguyên; nhóm còn xác nhận |
+| ≥5 EDA đủ nhãn và nhận định | PARTIAL | 6 PNG train + 6 nhận định dự thảo notebook 5, đã xem hình; chưa nhóm xác nhận |
+| Đặc trưng/Pipeline, fit train, chống leakage | PASS | Notebook 4–9/15; cv_fold_audit, tests kiểm trùng/scaler/selection |
+| ≥2 mô hình so baseline, split đúng | PASS | LR thô/KNN/MLP, 1437/360, stratify42; artifacts và test_artifacts |
+| Độ đo phù hợp và giải thích | PASS | Notebook 1/11/15 nêu macro F1/accuracy; metric tính lại từ 1080 predictions khớp |
+| CV/tuning trong Pipeline | PASS | StratifiedKFold 5/shuffle42, grid nhỏ, cv_details; tests đối chiếu best params/CV |
+| Phân tích lỗi/giới hạn | PARTIAL | Notebook 13–15 + REPORT_OUTLINE 7 có dự thảo và ảnh thật; nhóm xác nhận diễn giải |
+| Demo/lưu toàn Pipeline (tùy chọn) | PASS | app/registry/3 joblib; 37 tests + HTTP/browser; không fit |
+| Seed/phiên bản/tái lập môi trường sạch | PASS | environment/requirements; rerun notebook review trước + checkout 37 tests hiện tại |
+| Báo cáoPDF/DOCX theo 10 mục | PARTIAL | REPORT_OUTLINE đã có nội dung10 mục; chưa xuất và rà soát bản nộp |
+| Mã chạy từ đầu đến cuối | PASS | Rerun review 23cell/0error, code hash không đổi; 37 test mới qua |
+| requirements/README/data hoặc nguồn/model | PASS | READMEWindows, pin khớp, modelhash và nguồn dataset có thật |
+| Slide, trình bày/phân công/vấn đáp | PARTIAL |12 slide nội dung + VIVA; thiếu file trình chiếu, thông tin/đóng góp và xác nhận tập bảo vệ |
+| Đề tài13: vector/shape/chuẩn hóa | PASS | Notebook 2/5/8 và câu1 cuối; scalingCV + stats |
+| Đề tài13: baseline/MLP cải thiện thế nào | PASS | Notebook 15/câu2; LR 95,8333%, MLP 96,1111% test accuracy; không ép kết luận cải thiện chắc chắn |
+| Đề tài13: cặp nhầm | PASS | Notebook 13/15/câu3; 8→ 1: 4/3/3; test so CM với CSV/predictions |
+| Đề tài13: learning curve/overfitting | PASS | Notebook 14/câu4; learningcurve/history khớp; nêu chưa đủ xác định epoch |
+| Đề tài13: chi phí/độ chính xác | PASS | Notebook 12/15/câu5; fit/predict/tuning/bytes tách riêng, số thật |
+
+Các PASS của 5 câu hỏi xác nhận có câu trả lời và bằng chứng số liệu; không xác nhận thay khả năng giải thích của từng thành viên. Chưa có ảnh điện thoại của nhóm, BM06, báo cáo/slide nộp, thông tin cá nhân hoặc bằng chứng vấn đáp. Không auto commit/push. Danh mục bản nộp ở README.
+
+## Snapshot Final Review trước hoàn thiện — lịch sử
+
 Ngày review: 2026-11-17, Asia/Saigon. Base Git: `70ad779`. Đã đọc toàn bộ 6 trang [PDF giảng viên](Huong_Dan_Do_An_CuoiKy.pdf), AGENTS/HANDOFF/README, notebook, app, tests, model/registry, số liệu và tài liệu hiện có. Không có BM06 để đối chiếu thêm. Theo yêu cầu mới, mục 6 của PDF được loại khỏi phạm vi audit và không còn là việc cần xử lý. PDF gốc không bị chỉnh sửa. Bản tổng hợp A–I: [FINAL_AUDIT.md](FINAL_AUDIT.md).
 
 **Kết luận: phần kỹ thuật chạy và tái lập được sau sửa; đồ án chưa đủ điều kiện xác nhận sẵn sàng nộp.** Thiếu nhận định được nhóm xác nhận, nội dung phân tích chính, báo cáo/slide hoàn chỉnh và bằng chứng phân công/vấn đáp. Không viết thay các phần đó hoặc tự cho điểm.
@@ -89,9 +145,9 @@ Phạm vi PASS về leakage: kiểm tra code và artifact hiện tại, không k
 
 | Câu hỏi PDF trang 5–6 | Trạng thái | Bằng chứng / phần còn thiếu |
 |---|---|---|
-| Biểu diễn vector, shape; vì sao chuẩn hóa pixel | PASS | Notebook 2/7/8: 8×8→64; lý do về thang đầu vào/khoảng cách/tối ưu và thí nghiệm scaling train/CV |
+| Biểu diễn vector, shape; vì sao chuẩn hóa pixel | PASS | Notebook 2/7/8: 8×8→ 64; lý do về thang đầu vào/khoảng cách/tối ưu và thí nghiệm scaling train/CV |
 | Baseline đạt bao nhiêu, MLP cải thiện ra sao | PARTIAL | Test LR=0.958333, MLP=0.961111; CV mean=0.963687/0.962365. Có bảng nhưng nhóm chưa viết so sánh có giới hạn |
-| Cặp chữ số nào hay nhầm | PARTIAL | Ví dụ KNN 8→1 có 3 ca, 4→7 có 2; bảng/ảnh khớp dự đoán, chưa có phân tích nhóm |
+| Cặp chữ số nào hay nhầm | PARTIAL | Ví dụ KNN 8→ 1 có 3 ca, 4→ 7 có 2; bảng/ảnh khớp dự đoán, chưa có phân tích nhóm |
 | Learning curve cho thấy quá khớp ở đâu | PARTIAL | Có curves/raw fold/loss/validation; không có kết luận nhóm xác nhận, không tự bịa một mốc quá khớp |
 | So chi phí và độ chính xác mô hình đơn giản/mạng nơ-ron | PARTIAL | Có timing/bytes/metrics đúng nguồn; chưa có diễn giải trade-off của nhóm |
 

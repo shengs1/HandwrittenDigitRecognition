@@ -79,6 +79,39 @@ class ImagePreprocessingTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             app.preprocess_uploaded_image(png_bytes(self.image), "unknown")
 
+    def test_train_digits_keep_input_under_polarity_mode_and_translation(self):
+        # Chỉ kiểm tra tính chất của ảnh tương đương trên train, không tối ưu theo test/MNIST.
+        registry = app.read_model_registry()
+        split = pd.read_csv(ROOT / 'outputs' / registry['run_id'] / 'split_indices.csv')
+        train_ids = split.loc[split.split == 'train', 'sample_index'].to_numpy()
+        digits = load_digits()
+        for label in range(10):
+            index = int(train_ids[digits.target[train_ids] == label][0])
+            glyph = Image.fromarray(np.uint8(np.rint(digits.images[index] * 255/16))).resize(
+                (80, 80), Image.Resampling.NEAREST)
+            first = Image.new('L', (180, 180), 0)
+            first.paste(glyph, (10, 20))
+            shifted = Image.new('L', (220, 200), 0)
+            shifted.paste(glyph, (120, 100))
+            rgba = first.convert('RGBA')
+            rgba.putalpha(first.point(lambda value: 255 if value else 0))
+            expected = app.preprocess_uploaded_image(png_bytes(first))[1]
+            for variant in [shifted, first.convert('RGB'), rgba, ImageOps.invert(first)]:
+                with self.subTest(train_id=index, mode=variant.mode, size=variant.size):
+                    actual = app.preprocess_uploaded_image(png_bytes(variant))[1]
+                    np.testing.assert_array_equal(expected, actual)
+
+    def test_exif_orientation_is_applied_before_crop(self):
+        # PNG giữ nguyên pixel để không lẫn tác động nén JPEG vào phép kiểm tra orientation.
+        rotated_storage = self.image.transpose(Image.Transpose.ROTATE_90)
+        exif = Image.Exif()
+        exif[274] = 6  # hiển thị xoay 90 độ theo chiều kim đồng hồ
+        buffer = BytesIO()
+        rotated_storage.save(buffer, format='PNG', exif=exif)
+        expected = app.preprocess_uploaded_image(png_bytes(self.image))[1]
+        actual = app.preprocess_uploaded_image(buffer.getvalue())[1]
+        np.testing.assert_array_equal(expected, actual)
+
 
 class SavedPipelineTests(unittest.TestCase):
     @classmethod
@@ -140,6 +173,25 @@ class SavedPipelineTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "khớp mã"):
                 app.load_saved_pipeline(str(path), "0"*64, 1, 7)
 
+    def test_demo_test_indices_equal_official_prediction_membership(self):
+        indices = app.saved_test_indices(self.registry)
+        records = pd.read_csv(ROOT / 'outputs' / self.registry['run_id'] / 'test_predictions.csv')
+        self.assertEqual(len(indices), 360)
+        for name in self.registry['models']:
+            np.testing.assert_array_equal(np.sort(indices), np.sort(records.loc[records.model == name, 'sample_index']))
+        with self.assertRaises(ValueError):
+            app.saved_test_indices({'run_id': '../invalid'})
+        with self.assertRaises(FileNotFoundError):
+            app.saved_test_indices({'run_id': 'missing_run'})
+
+    def test_invalid_saved_split_is_rejected(self):
+        with tempfile.TemporaryDirectory(dir=ROOT / 'tmp') as directory:
+            run = Path(directory) / 'outputs' / 'example'
+            run.mkdir(parents=True)
+            pd.DataFrame({'sample_index': [0, 0], 'split': ['test', 'test']}).to_csv(run / 'split_indices.csv', index=False)
+            with patch.object(app, 'ROOT', Path(directory)), self.assertRaises(ValueError):
+                app.saved_test_indices({'run_id': 'example'})
+
     def test_external_images_only_inference_and_both_polarities(self):
         directory = ROOT / "tests" / "fixtures" / "external_digits"
         manifest = json.loads((directory / "manifest.json").read_text(encoding="utf-8"))
@@ -158,6 +210,36 @@ class SavedPipelineTests(unittest.TestCase):
 
 
 class AppFlowTests(unittest.TestCase):
+    def test_test_only_sampler_uses_saved_split_and_each_pipeline(self):
+        registry = app.read_model_registry()
+        digits = load_digits()
+        records = pd.read_csv(ROOT / 'outputs' / registry['run_id'] / 'test_predictions.csv')
+        test_ids = app.saved_test_indices(registry)
+        with patch.object(Pipeline, 'fit', side_effect=AssertionError('App must not fit')), \
+             patch.object(app, 'preprocess_uploaded_image', side_effect=AssertionError('Digits must stay unchanged')):
+            at = AppTest.from_string('from app import main\nmain()', default_timeout=30).run()
+            at.radio(key='source').set_value('Ảnh test Digits').run()
+            for label in range(10):
+                at.selectbox(key='sample_label').select(label).run()
+                expected = test_ids[digits.target[test_ids] == label].tolist()
+                self.assertEqual(at.select_slider(key=f'test_sample_{label}').options, [str(i) for i in expected])
+            at.selectbox(key='sample_label').select(0).run()
+            index = int(at.select_slider(key='test_sample_0').value)
+            for name in registry['models']:
+                at.selectbox(key='model').select(name).run()
+                at.button[0].click().run()
+                self.assertFalse(at.exception)
+                expected = records.loc[(records.model == name) & (records.sample_index == index), 'predicted_label'].item()
+                self.assertEqual(int(at.metric[0].value), expected)
+
+    def test_missing_saved_split_disables_test_prediction(self):
+        with patch.object(app, 'saved_test_indices', side_effect=FileNotFoundError('Thiếu split_indices.csv')):
+            at = AppTest.from_string('from app import main\nmain()', default_timeout=30).run()
+            at.radio(key='source').set_value('Ảnh test Digits').run()
+            self.assertFalse(at.exception)
+            self.assertTrue(at.error)
+            self.assertTrue(at.button[0].disabled)
+
     def test_dataset_mode_predicts_with_each_saved_model_without_fit(self):
         with patch.object(Pipeline, "fit", side_effect=AssertionError("App must not fit")), \
              patch.object(app, "preprocess_uploaded_image", side_effect=AssertionError("Digits must stay unchanged")):

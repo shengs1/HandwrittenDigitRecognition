@@ -1,0 +1,61 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "numpy": {
+      "required": "2.3.5",
+      "installed": "2.3.5"
+    },
+    "pandas": {
+      "required": "2.3.3",
+      "installed": "2.3.3"
+    },
+    "matplotlib": {
+      "required": "3.11.2",
+      "installed": "3.11.2"
+    },
+    "seaborn": {
+      "required": "0.13.2",
+      "installed": "0.13.2"
+    },
+    "scikit-learn": {
+      "required": "1.7.2",
+      "installed": "1.7.2"
+    },
+    "joblib": {
+      "required": "1.6.0",
+      "installed": "1.6.0"
+    },
+    "notebook": {
+      "required": "7.6.5",
+      "installed": "7.6.5"
+    },
+    "ipykernel": {
+      "required": "7.4.0",
+      "installed": "7.4.0"
+    },
+    "nbformat": {
+      "required": "5.11.1",
+      "installed": "5.11.1"
+    },
+    "nbclient": {
+      "required": "0.10.4",
+      "installed": "0.10.4"
+    },
+    "scipy": {
+      "required": "1.18.1",
+      "installed": "1.18.1"
+    },
+    "threadpoolctl": {
+      "required": "3.8.0",
+      "installed": "3.8.0"
+    },
+    "streamlit": {
+      "required": "1.67.0",
+      "installed": "1.67.0"
+    },
+    "pillow": {
+      "required": "13.0.0",
+      "installed": "13.0.0"
+    }
+  }
+}
