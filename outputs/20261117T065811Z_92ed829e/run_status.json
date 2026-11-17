@@ -1,0 +1,19 @@
+{
+  "support_run_completed": true,
+  "student_experiments_completed": false,
+  "selected_model": null,
+  "pending_student_tasks": [
+    "SV-01",
+    "SV-02",
+    "SV-03",
+    "SV-04",
+    "SV-05",
+    "SV-06",
+    "SV-07",
+    "SV-08",
+    "SV-09"
+  ],
+  "student_interpretations_reviewed": false,
+  "ready_to_submit": false,
+  "note": "Chạy hết khung không đồng nghĩa hoàn thành đồ án; nhóm cần nhận định và rà soát trước nộp."
+}

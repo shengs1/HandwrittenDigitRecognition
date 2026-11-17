@@ -1,0 +1,32 @@
+{
+  "X_shape": [
+    1797,
+    64
+  ],
+  "images_shape": [
+    1797,
+    8,
+    8
+  ],
+  "y_shape": [
+    1797
+  ],
+  "n_samples": 1797,
+  "n_features": 64,
+  "labels": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "pixel_min": 0.0,
+  "pixel_max": 16.0,
+  "X_dtype": "float64",
+  "y_dtype": "int64"
+}

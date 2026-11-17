@@ -1,0 +1,9 @@
+{
+  "train_n": 1437,
+  "test_n": 360,
+  "test_size": 0.2,
+  "stratify": "y",
+  "random_state": 42,
+  "overlap_images": 0,
+  "data_sha256": "f6d9e39f37dc45d327f6db33428ee58970ccceabb2535a5c179de35886b70443"
+}

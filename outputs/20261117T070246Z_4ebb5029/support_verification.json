@@ -1,0 +1,102 @@
+{
+  "run_id": "20261117T070246Z_4ebb5029",
+  "status": "passed_support_only",
+  "data_summary": {
+    "X_shape": [
+      1797,
+      64
+    ],
+    "images_shape": [
+      1797,
+      8,
+      8
+    ],
+    "y_shape": [
+      1797
+    ],
+    "n_samples": 1797,
+    "n_features": 64,
+    "labels": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 16.0,
+    "X_dtype": "float64",
+    "y_dtype": "int64"
+  },
+  "data_quality": {
+    "missing_cells": 0,
+    "nonnumeric_pixels": 0,
+    "invalid_pixel_cells": 0,
+    "invalid_labels": 0,
+    "duplicate_image_rows": 0,
+    "duplicate_extra_rows": 0,
+    "conflicting_image_groups": 0,
+    "constant_images": 0
+  },
+  "split": {
+    "train_n": 1437,
+    "test_n": 360,
+    "test_size": 0.2,
+    "stratify": "y",
+    "random_state": 42,
+    "overlap_images": 0,
+    "data_sha256": "f6d9e39f37dc45d327f6db33428ee58970ccceabb2535a5c179de35886b70443"
+  },
+  "figures": [
+    "eda_01_class_distribution.png",
+    "eda_02_sample_images.png",
+    "eda_03_pixel_histogram.png",
+    "eda_04_class_mean_images.png",
+    "eda_05_pixel_std_heatmap.png",
+    "eda_06_pca_2d.png"
+  ],
+  "cv_fold_audit": [
+    {
+      "fold": 1,
+      "fit_n": 1149,
+      "validation_n": 288,
+      "overlap_images": 0
+    },
+    {
+      "fold": 2,
+      "fit_n": 1149,
+      "validation_n": 288,
+      "overlap_images": 0
+    },
+    {
+      "fold": 3,
+      "fit_n": 1150,
+      "validation_n": 287,
+      "overlap_images": 0
+    },
+    {
+      "fold": 4,
+      "fit_n": 1150,
+      "validation_n": 287,
+      "overlap_images": 0
+    },
+    {
+      "fold": 5,
+      "fit_n": 1150,
+      "validation_n": 287,
+      "overlap_images": 0
+    }
+  ],
+  "models_trained": 0,
+  "model_metrics_available": false,
+  "student_core_tested": false,
+  "pca_explained_variance_ratio": [
+    0.14759158271185724,
+    0.13742697243389737
+  ]
+}
