@@ -1,0 +1,31 @@
+{
+  "selected_model": "knn",
+  "rule": "highest_cv_f1_macro_mean_then_name_ascending",
+  "cv_summary": [
+    {
+      "model": "logreg_raw",
+      "cv_f1_macro_mean": 0.9636868303513293,
+      "cv_f1_macro_std": 0.007865819742016274
+    },
+    {
+      "model": "knn",
+      "cv_f1_macro_mean": 0.9761695766858736,
+      "cv_f1_macro_std": 0.007575249805188257
+    },
+    {
+      "model": "mlp",
+      "cv_f1_macro_mean": 0.9623645265689509,
+      "cv_f1_macro_std": 0.008314060666369473
+    }
+  ],
+  "parameters": {
+    "logreg_raw": "{'memory': None, 'steps': [('scale', 'passthrough'), ('clf', LogisticRegression(max_iter=3000, random_state=42))], 'transform_input': None, 'verbose': False, 'scale': 'passthrough', 'clf': LogisticRegression(max_iter=3000, random_state=42), 'clf__C': 1.0, 'clf__class_weight': None, 'clf__dual': False, 'clf__fit_intercept': True, 'clf__intercept_scaling': 1, 'clf__l1_ratio': None, 'clf__max_iter': 3000, 'clf__multi_class': 'deprecated', 'clf__n_jobs': None, 'clf__penalty': 'l2', 'clf__random_state': 42, 'clf__solver': 'lbfgs', 'clf__tol': 0.0001, 'clf__verbose': 0, 'clf__warm_start': False}",
+    "knn": "{'memory': None, 'steps': [('scale', StandardScaler()), ('clf', KNeighborsClassifier(n_jobs=1, n_neighbors=3))], 'transform_input': None, 'verbose': False, 'scale': StandardScaler(), 'clf': KNeighborsClassifier(n_jobs=1, n_neighbors=3), 'scale__copy': True, 'scale__with_mean': True, 'scale__with_std': True, 'clf__algorithm': 'auto', 'clf__leaf_size': 30, 'clf__metric': 'minkowski', 'clf__metric_params': None, 'clf__n_jobs': 1, 'clf__n_neighbors': 3, 'clf__p': 2, 'clf__weights': 'uniform'}",
+    "mlp": "{'memory': None, 'steps': [('scale', StandardScaler()), ('clf', MLPClassifier(early_stopping=True, hidden_layer_sizes=(64, 32), max_iter=300,\n              n_iter_no_change=15, random_state=42))], 'transform_input': None, 'verbose': False, 'scale': StandardScaler(), 'clf': MLPClassifier(early_stopping=True, hidden_layer_sizes=(64, 32), max_iter=300,\n              n_iter_no_change=15, random_state=42), 'scale__copy': True, 'scale__with_mean': True, 'scale__with_std': True, 'clf__activation': 'relu', 'clf__alpha': 0.0001, 'clf__batch_size': 'auto', 'clf__beta_1': 0.9, 'clf__beta_2': 0.999, 'clf__early_stopping': True, 'clf__epsilon': 1e-08, 'clf__hidden_layer_sizes': (64, 32), 'clf__learning_rate': 'constant', 'clf__learning_rate_init': 0.001, 'clf__max_fun': 15000, 'clf__max_iter': 300, 'clf__momentum': 0.9, 'clf__n_iter_no_change': 15, 'clf__nesterovs_momentum': True, 'clf__power_t': 0.5, 'clf__random_state': 42, 'clf__shuffle': True, 'clf__solver': 'adam', 'clf__tol': 0.0001, 'clf__validation_fraction': 0.1, 'clf__verbose': False, 'clf__warm_start': False}"
+  },
+  "cleaning_decision": "Giữ nguyên dữ liệu: không thiếu, sai miền hoặc trùng; cờ IQR độ sáng không đủ bằng chứng loại ảnh.",
+  "student_protocol_note": "Huấn luyện lần đầu đã được cho phép; giữ seed/split/grid/tiêu chí CV trước khi xem test.",
+  "test_used_at_lock": false,
+  "data_sha256": "f6d9e39f37dc45d327f6db33428ee58970ccceabb2535a5c179de35886b70443",
+  "locked_at_utc": "2026-11-17T08:12:14.690103+00:00"
+}

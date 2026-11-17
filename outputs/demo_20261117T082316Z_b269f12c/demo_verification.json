@@ -1,0 +1,28 @@
+{
+  "demo_run_id": "demo_20261117T082316Z_b269f12c",
+  "training_run_id": "20261117T081201Z_fd32180f",
+  "inference_only": true,
+  "model_files_unchanged": true,
+  "model_sha256": {
+    "logreg_raw": "4a8b780643e4c46d32a8cdd20692b16784c52470118c2668052f6c0fe5da95f8",
+    "knn": "0ffb42df1ab1cf884f9c2b09bb1116602f0226153b71542300ffeb8d63211433",
+    "mlp": "00ef926c4aeeb8aff5e8525d392f78a015d6ff1fca78f7c1f875aa55f17d725c"
+  },
+  "app_sha256": "bfc83729a5b999393e94350e9c971fc4efe2e791b954d422c947cbd249aa5c94",
+  "digits_examples_per_model": 10,
+  "external_examples_per_model": 10,
+  "digits_correct_per_model": {
+    "knn": 9,
+    "logreg_raw": 10,
+    "mlp": 9
+  },
+  "external_correct_per_model": {
+    "knn": 3,
+    "logreg_raw": 3,
+    "mlp": 3
+  },
+  "external_source": "https://github.com/cvdfoundation/mnist",
+  "selection_rule": "First image of each label in original test order, chosen before inference",
+  "camera_photos_tested": false,
+  "limitations": "10 MNIST examples are a small illustrative check, not an accuracy estimate for arbitrary camera photos."
+}

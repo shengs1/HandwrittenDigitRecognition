@@ -1,0 +1,10 @@
+{
+  "missing_cells": 0,
+  "nonnumeric_pixels": 0,
+  "invalid_pixel_cells": 0,
+  "invalid_labels": 0,
+  "duplicate_image_rows": 0,
+  "duplicate_extra_rows": 0,
+  "conflicting_image_groups": 0,
+  "constant_images": 0
+}

@@ -1,0 +1,19 @@
+{
+  "run_id": "20261117T081201Z_fd32180f",
+  "selected_model": "knn",
+  "sklearn_version": "1.7.2",
+  "models": {
+    "logreg_raw": {
+      "path": "20261117T081201Z_fd32180f/logreg_raw.joblib",
+      "sha256": "4a8b780643e4c46d32a8cdd20692b16784c52470118c2668052f6c0fe5da95f8"
+    },
+    "knn": {
+      "path": "20261117T081201Z_fd32180f/knn.joblib",
+      "sha256": "0ffb42df1ab1cf884f9c2b09bb1116602f0226153b71542300ffeb8d63211433"
+    },
+    "mlp": {
+      "path": "20261117T081201Z_fd32180f/mlp.joblib",
+      "sha256": "00ef926c4aeeb8aff5e8525d392f78a015d6ff1fca78f7c1f875aa55f17d725c"
+    }
+  }
+}

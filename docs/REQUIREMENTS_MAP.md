@@ -6,13 +6,13 @@
 
 | Nguồn | Bằng chứng cần có | Vị trí / trạng thái phase hỗ trợ |
 |---|---|---|
-| Trang 1–2, quy trình 1–10 | Bài toán, nguồn, schema/tỷ lệ thiếu, làm sạch có lý do, EDA, đặc trưng, mô hình, đánh giá, phân tích lỗi, trình bày | Notebook 1–16; huấn luyện/nhận định còn TODO sinh viên |
-| Trang 2, mục 4 | Báo cáo PDF/DOCX, mã chạy hết, requirements, README, slide, mô hình nếu demo; Git hoặc zip, môi trường sạch | Khung và môi trường được kiểm tra; bài nộp hoàn chỉnh, báo cáo/slide chưa có |
-| Trang 2, mục 5 | Baseline, Pipeline fit train, seed, phiên bản và giải thích độ đo | Notebook 1,4,6–12,15; baseline là TODO, không có điểm giả |
-| Trang 2, mục 6 | Khai báo AI, không toàn bộ code/phân tích do AI; hiểu và chỉnh sửa được bài | AI_USAGE.md; SV-01…SV-09 và mọi nhận định thuộc sinh viên |
-| Câu 1: 4 điểm | Dữ liệu, baseline, làm sạch, ≥5 EDA có nhận định, đặc trưng không leakage, tái lập | Đã có 6 hình train; nhật ký/nhận định và code cốt lõi chờ nhóm |
-| Câu 2: 4 điểm | ≥2 mô hình so baseline; split, metric, confusion matrix, CV/tuning, phân tích lỗi | Có hợp đồng và khung điều phối, chưa có thí nghiệm mô hình |
-| Câu 3: 2 điểm | Trình bày, demo và vấn đáp từng thành viên | Nhóm chuẩn bị trực tiếp; phase này không Streamlit |
+| Trang 1–2, quy trình 1–10 | Bài toán, nguồn, schema/tỷ lệ thiếu, làm sạch có lý do, EDA, đặc trưng, mô hình, đánh giá, phân tích lỗi, trình bày | Notebook 1–16 đã chạy thực nghiệm; nhận định/báo cáo chính do nhóm viết |
+| Trang 2, mục 4 | Báo cáo PDF/DOCX, mã chạy hết, requirements, README, slide, mô hình nếu demo; Git hoặc zip, môi trường sạch | Có notebook/Pipeline/demo và dàn ý báo cáo/slide; chưa có báo cáo hoặc slide nộp chính thức |
+| Trang 2, mục 5 | Baseline, Pipeline fit train, seed, phiên bản và giải thích độ đo | Notebook 1,4,6–12,15; đủ 3 mô hình đã chạy, khóa lựa chọn bằng CV |
+| Trang 2, mục 6 | Yêu cầu liêm chính/nguồn dữ liệu và hiểu, chỉnh sửa được bài trong PDF gốc | Nhóm kiểm tra yêu cầu với giảng viên, tự viết phân tích chính và bảo vệ; quyết định Phase 2 trong HANDOFF |
+| Câu 1: 4 điểm | Dữ liệu, baseline, làm sạch, ≥5 EDA có nhận định, đặc trưng không leakage, tái lập | Đã có 6 hình train và code cốt lõi; nhóm hoàn thiện nhật ký/nhận định |
+| Câu 2: 4 điểm | ≥2 mô hình so baseline; split, metric, confusion matrix, CV/tuning, phân tích lỗi | Đã chạy run cố định; hình/bảng thật trong RESULTS_INDEX; nhóm viết phân tích |
+| Câu 3: 2 điểm | Trình bày, demo và vấn đáp từng thành viên | Có Streamlit, dàn ý 12 slide và 30 câu hỏi; nhóm tập bảo vệ |
 
 ## Năm câu hỏi đề tài 13 (trang 5–6)
 
@@ -26,6 +26,6 @@
 
 ## Thứ tự thực thi và đầu ra
 
-Mục 1–5 và cấu hình/hàm hỗ trợ chạy ngay. Mục 6–14 định nghĩa/gợi ý, không predict test. Mục 15 chỉ gọi sau khi nhóm triển khai TODO và xác nhận quy trình; chọn bằng CV, lưu selection_lock rồi đánh giá test. Mục 16 xuất số liệu thật và kiểm tra tải lại Pipeline. Cách sắp xếp giữ nguyên thứ tự trình bày 16 mục nhưng bảo vệ test.
+Mục 1–5 kiểm tra dữ liệu/EDA. Mục 6–14 định nghĩa hàm và cấu hình, không predict test. Mục 15 thực thi: chọn bằng CV, lưu selection_lock rồi đánh giá test. Mục 16 xuất số liệu và kiểm tra tải lại Pipeline. Giữ đúng thứ tự 16 mục nhưng bảo vệ test.
 
-Chỉ kết quả `run_status.json` có `student_experiments_completed=true` mới có thể chứa kết quả huấn luyện đã chạy. Giá trị này không xác nhận chất lượng nhận định hoặc sẵn sàng nộp; `ready_to_submit` mặc định false cho đến khi nhóm rà soát đầy đủ. File hỗ trợ và notebook hiện có không đủ để nộp hoàn chỉnh.
+Run xác nhận `20261117T081201Z_fd32180f` có `experiments_completed=true`; ba run support cũ không có điểm mô hình. Trạng thái này không xác nhận chất lượng nhận định hoặc sẵn sàng nộp: ready_to_submit vẫn false để nhóm rà soát báo cáo/phân công. App chỉ load registry/Pipeline của run cố định, không train; 10 MNIST test chỉ dùng kiểm thử ngoài Digits.

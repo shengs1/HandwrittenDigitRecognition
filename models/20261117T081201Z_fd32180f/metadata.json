@@ -1,0 +1,48 @@
+{
+  "selected_model": "knn",
+  "run_id": "20261117T081201Z_fd32180f",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.3.3",
+      "matplotlib": "3.11.2",
+      "seaborn": "0.13.2",
+      "scikit-learn": "1.7.2",
+      "joblib": "1.6.0",
+      "notebook": "7.6.5",
+      "ipykernel": "7.4.0",
+      "nbformat": "5.11.1",
+      "nbclient": "0.10.4",
+      "scipy": "1.18.1",
+      "threadpoolctl": "3.8.0"
+    },
+    "seed": 42,
+    "run_id": "20261117T081201Z_fd32180f",
+    "selection_rule": "highest_cv_f1_macro_mean_then_name_ascending",
+    "student_experiments_requested": true
+  },
+  "data_sha256": "f6d9e39f37dc45d327f6db33428ee58970ccceabb2535a5c179de35886b70443",
+  "input_shape": [
+    null,
+    64
+  ],
+  "pixel_range": [
+    0,
+    16
+  ],
+  "labels": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "selection_lock": "outputs/20261117T081201Z_fd32180f/selection_lock.json"
+}

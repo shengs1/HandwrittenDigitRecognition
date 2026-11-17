@@ -2,9 +2,11 @@
 
 ## Phase hiện tại
 
-Hỗ trợ khung notebook và quy trình thực nghiệm; chưa phải đồ án hoàn chỉnh. Không Streamlit.
+Phase 2: demo Streamlit, hoàn thiện code thực nghiệm và tài liệu chuẩn bị báo cáo. Người dùng đã xác nhận huấn luyện lần đầu bằng cấu hình đã thống nhất. Không tự huấn luyện lại để cải thiện điểm.
 
 ## Trạng thái mới nhất đã xác minh
+
+**Phase 2 thay thế trạng thái khung cũ bên dưới:** run `20261117T081201Z_fd32180f` đã hoàn tất huấn luyện lần đầu, 23 cell chạy qua kernel thật, xuất 3 Pipeline và 55 file kết quả, không stderr trong cell. `models/registry.json` khóa bộ mô hình demo, chọn KNN bằng mean CV macro F1. App hoạt động với ảnh mẫu/upload, xác suất và xử lý lỗi; **25/25 test qua trên môi trường sạch**, đã thử trực tiếp cả hai luồng bằng trình duyệt. Bằng chứng ở `outputs/demo_20261117T082316Z_b269f12c/phase2_status.json`. Nhóm còn tự viết phân tích chính, báo cáo/slide, phân công và bổ sung ảnh tự chụp. Các mục “chưa có mô hình”, “TODO SV-01…09”, “không Streamlit” bên dưới chỉ mô tả lịch sử Phase 1.
 
 **Cập nhật Git (2026-11-17):** đã khởi tạo, liên kết, commit và push bản khung lên https://github.com/shengs1/HandwrittenDigitRecognition, nhánh `main` theo yêu cầu người dùng. Commit nguồn đầu tiên `a5ded5b44d9fcfc3ae02f9fb6ca99bf69b814232` đã được xác minh trên remote; `main` theo dõi `origin/main`. Các ghi nhận “chưa khởi tạo Git” bên dưới là lịch sử trước yêu cầu này. Xem `git log -1` để lấy commit mới nhất, bao gồm các cập nhật nhật ký sau commit nguồn.
 
@@ -113,3 +115,51 @@ Run cuối có 20 file thực tế: schema, summary, DESCR, data quality/flags, 
 - `git -c credential.interactive=false push -u origin main`: thành công, tạo nhánh `main` trên remote và cấu hình upstream. Không force-push, không sửa lịch sử hoặc cấu hình Git global.
 - `git ls-remote origin refs/heads/main`: trả về đúng `a5ded5b44d9fcfc3ae02f9fb6ca99bf69b814232`. `git status --short --branch` sau push nguồn: `## main...origin/main`, không có thay đổi chưa commit tại thời điểm đó. Bản ghi nhận kết quả này được lưu ở cập nhật tài liệu tiếp theo.
 - Không phát hiện lỗi đồng bộ. Việc đưa mã lên GitHub không thay đổi trạng thái học thuật: TODO SV-01…SV-09, nhận định và các nhánh mô hình chưa triển khai/kiểm thử vẫn cần sinh viên thực hiện theo cụm 3.
+
+## Cụm 6: Phase 2 — hoàn thiện thực nghiệm và dựng demo
+
+- Đã đọc lại đầy đủ 6 trang PDF, AGENTS, HANDOFF, notebook và tất cả trạng thái run cũ; Git ban đầu sạch trên main, commit dd6c86c. Xác minh chưa có Pipeline trước Phase 2.
+- Người dùng xác nhận rõ được huấn luyện **lần đầu theo cấu hình hiện tại**. Đã triển khai đủ 9 hàm cốt lõi, giữ nguyên split/seed/grids/kiến trúc/tiêu chí CV. Không giả định kết quả tồn tại trước đó, không tuning sau test.
+- `.venv/Scripts/python.exe -X utf8 tests/run_notebook.py`: thành công; run `20261117T081201Z_fd32180f`, chọn `knn`, 3 Pipeline round-trip joblib khớp dự đoán test. Đây là lần chạy đầy đủ đầu tiên, không phải thay một kết quả đã xác nhận.
+- Kết quả test thật (accuracy / macro F1): Logistic Regression 0.958333 / 0.958075; KNN 0.966667 / 0.966304; MLP 0.961111 / 0.960888. Mean CV macro F1: 0.963687 / 0.976170 / 0.962365. Chi tiết thời gian, độ lệch chuẩn và kích thước có trong model_comparison.csv.
+- Đã tạo `app.py`, `tests/run_notebook.py`, `tests/test_demo.py`, 10 fixture MNIST test có manifest nguồn/checksum; cập nhật notebook, requirements, tests/test_contracts và AGENTS. Thay runner hỗ trợ cũ bằng runner notebook đầy đủ. Xóa file nhật ký công cụ riêng theo yêu cầu mới.
+- App không fit: đọc registry, kiểm checksum/cache Pipeline; hai nguồn ảnh, grayscale/đảo nền/alpha/căn giữa/resize 8×8/0–16, preview và xác suất; ảnh Digits không đi qua nhánh crop/resize upload.
+- Cài Streamlit 1.67.0 và Pillow 13.0.0 trong .venv; các phiên bản tính toán đã dùng trước đó được giữ nguyên.
+- Đang kiểm thử chức năng và chuẩn bị dàn ý báo cáo/slide/vấn đáp; chưa coi Phase 2 hoàn tất. Nhóm vẫn cần tự viết phân tích chính và phân công thực tế.
+
+## Cụm 7: Phase 2 — kiểm thử, tài liệu và bàn giao
+
+### File và chức năng
+
+- `app.py`: chọn 3 mô hình, chọn lớp/id mẫu Digits hoặc upload PNG/JPEG/BMP/WebP; preview gốc/8×8, dự đoán và xác suất đúng classes_. Nhận dạng nền tự động hoặc chọn nền, alpha/EXIF/grayscale, crop/căn giữa/giữ tỷ lệ/resize, miền 0–16; không StandardScaler bên ngoài Pipeline. File 10 MB/16 triệu pixel; lỗi ảnh hỏng/trống/thiếu model được hiển thị gọn.
+- `models/registry.json`, `models/20261117T081201Z_fd32180f/{logreg_raw,knn,mlp}.joblib`, `metadata.json`: artifact thật. Checksum của cả 3 không đổi sau kiểm thử/demo. KNN k=3, uniform; MLP (64,32), alpha=0.0001, chuẩn hóa, relu/adam/early stopping; baseline LR C=1 pixel thô. Giữ mọi quyết định CV đã đặt trước.
+- Notebook đã triển khai code cốt lõi, giữ 16 mục, chưa viết thay nhóm các nhận định EDA/nội dung phân tích chính. Tạo đủ CV/scaling/report/errors/learning curve/history/cost/export trong run nêu trên; không chạy lại training khi sửa app.
+- `requirements.txt`: thêm Streamlit 1.67.0/Pillow 13.0.0, giữ nguyên phiên bản tính toán. `README.md`: Windows setup, notebook/demo/tests, run cố định, lỗi và giới hạn. `AGENTS.md`: cập nhật scope Phase 2, khóa model, chống leakage và quy tắc ảnh upload.
+- `docs/REPORT_OUTLINE.md`: đúng 10 mục PDF; `docs/SLIDE_OUTLINE.md`: 12 slide; `docs/VIVA_QUESTIONS.md`: 30 câu; `docs/RESULTS_INDEX.md`: bảng metric/cost/scaling/cặp nhầm/curves và liên kết nguồn thật. Cập nhật REQUIREMENTS_MAP cho trạng thái mới.
+- `tests/test_demo.py`, `tests/test_contracts.py`, `tests/check_demo.py`, `tests/run_notebook.py`, fixture MNIST và manifest. Runner support cũ đã thay. File nhật ký riêng được xóa đúng yêu cầu, không tạo lại.
+
+### Lệnh đã chạy và kết quả thật
+
+- `uv --cache-dir .uv-cache pip install --python .venv/Scripts/python.exe 'streamlit>=1.40,<2' 'pillow==13.0.0'`: thành công; sau đó requirements ghim đúng bản đã dùng.
+- `.venv/Scripts/python.exe -X utf8 tests/run_notebook.py`: hoàn tất lần train đầu, 23 code cells; joblib round-trip kiểm khớp test. Không train lại sau đó.
+- `.venv/Scripts/python.exe -X utf8 -m unittest discover -s tests -p 'test_*.py' -v`: sau sửa loader, 24/24 qua, 3.585 giây theo unittest. Sau đó bổ sung một test nhánh thiếu file Pipeline.
+- `uv --cache-dir .uv-cache venv tmp/clean-env --python .venv/Scripts/python.exe` và `uv --cache-dir .uv-cache pip install --offline --python tmp/clean-env/Scripts/python.exe -r requirements.txt`: tạo môi trường mới, cài đủ 120 gói từ cache. `uv ... pip check --python tmp/clean-env/Scripts/python.exe`: tất cả tương thích.
+- `tmp/clean-env/Scripts/python.exe -X utf8 -m unittest discover -s tests -p 'test_*.py' -v`: **25/25 qua, 14.673 giây**, log lưu trong run demo. Không fit trong tests; có test chặn Pipeline.fit, khớp lại 360 dự đoán test cho từng model và đối chiếu xác suất với nguyên Pipeline.
+- `.venv/Scripts/python.exe -X utf8 tests/check_demo.py`: xuất run `demo_20261117T082316Z_b269f12c`, CSV từng dự đoán, 10 PNG sau xử lý, bảng ghép ảnh và checksum trước/sau khớp. Mẫu Digits đầu mỗi lớp: LR 10/10, KNN 9/10, MLP 9/10 (không phải phép đo test độc lập). **10 MNIST test ngoài Digits: mỗi model 3/10**; chọn ảnh trước suy luận, không chỉnh mô hình hoặc tiền xử lý theo accuracy này.
+- `.venv/Scripts/python.exe -m streamlit run app.py --server.headless true --server.address 127.0.0.1 --server.port 8501 --browser.gatherUsageStats false`: server local khởi động; đã thử mẫu Digits và upload thật qua browser. Ảnh MNIST test id=0, nhãn 7, KNN đoán 3 với xác suất 33.3%; giữ ảnh sai làm bằng chứng, không giấu. Screenshot tại `outputs/demo_20261117T082316Z_b269f12c/streamlit_demo.jpg`.
+- Kiểm tra nbformat/cú pháp, liên kết Markdown nội bộ, file đã yêu cầu xóa, Git diff --check, checksum artifact: qua. Đã xem trực tiếp learning curves, MLP history, confusion matrix/ảnh sai KNN và giao diện.
+
+### Lỗi đã sửa và giới hạn còn lại
+
+- Lỗi cú pháp ngoặc trong test mới đã sửa trước chạy kiểm thử. Loader ban đầu dùng Pipeline.n_features_in_ bị lỗi với bước đầu passthrough ở sklearn 1.7; đã lấy metadata từ classifier khi cần, sửa feature_names fallback. Không đụng trọng số hoặc fit lại.
+- Sandbox chặn socketpair khiến AppTest ban đầu kẹt; đã dừng và chạy test với localhost được phép. Import Streamlit ngoài runtime/AppTest có cảnh báo bare mode/ScriptRunContext; tests vẫn qua, không che lỗi. Kernel Jupyter có cảnh báo TCP lúc khởi động; notebook không stderr.
+- Chưa có ảnh chụp của nhóm, chưa chứng minh chất lượng trên camera/nền phức tạp/nhiều ký tự. 10 MNIST chỉ là minh họa nhỏ; 3/10 không phải accuracy tổng quát. Xác suất chưa calibration, không bảo đảm đúng.
+- Môi trường sạch được cài và test trên cùng máy Windows/Python 3.12.14, chưa thử máy khác. Dàn ý Markdown không phải báo cáo DOCX/PDF hoặc slide PPTX đã nộp. ready_to_submit vẫn false vì nội dung chính và phân công thuộc nhóm.
+
+### Việc nhóm cần làm tiếp
+
+1. Dùng app và bộ model cố định, không cần Run All notebook để demo. Nếu thiếu file thì khôi phục đúng registry/model, không train tự động.
+2. Tự viết 6 nhận định EDA, nhật ký xử lý, phân tích kết quả/lỗi/curves/giới hạn, hoàn thành báo cáo 10 mục và slide 10–12 trang theo dàn ý. Đọc bảng/hình đúng run_id.
+3. Bổ sung ảnh tự chụp có nhãn/nguồn thực tế nếu muốn đánh giá camera; ghi cả dự đoán sai. Không chọn/tuning lại model vì ảnh demo/test đã xem.
+4. Điền phân công thật, tập 30 câu hỏi, giải thích và thay đổi được code. Chưa có thông tin để ghi tên hoặc đóng góp của thành viên.
+5. Trạng thái Git trước đồng bộ Phase 2: main theo dõi origin/main, có các file sửa/thêm/xóa liệt kê trong cụm này; giữ nguyên 3 run support cũ và PDF. Tiếp tục commit/push theo yêu cầu đồng bộ trước đó, không force-push; xác minh HEAD remote sau push.

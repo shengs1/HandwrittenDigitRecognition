@@ -1,0 +1,11 @@
+{
+  "support_run_completed": true,
+  "experiments_completed": true,
+  "selected_model": "knn",
+  "pending_student_tasks": [
+    "Nhận định EDA, phân tích kết quả, báo cáo/slide và phân công thực tế"
+  ],
+  "student_interpretations_reviewed": false,
+  "ready_to_submit": false,
+  "note": "Kết quả đo trực tiếp; nhóm cần tự viết phân tích và rà soát trước nộp."
+}

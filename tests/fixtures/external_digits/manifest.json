@@ -1,0 +1,73 @@
+{
+  "source": "MNIST test, CVDF mirror (LeCun, Cortes, Burges)",
+  "source_page": "https://github.com/cvdfoundation/mnist",
+  "download_base_url": "https://storage.googleapis.com/cvdf-datasets/mnist/",
+  "download_sha256": {
+    "t10k-images-idx3-ubyte.gz": "8d422c7b0a1c1c79245a5bcf07fe86e33eeafee792b84584aec276f5a2dbc4e6",
+    "t10k-labels-idx1-ubyte.gz": "f7ae60f92e00ec6debd23a6088c31dbd2371eca3ffa0defaefb259924204aec6"
+  },
+  "selection_rule": "First image of each label in original test order, chosen before inference",
+  "purpose": "External inference only; never used to train, tune, select models or fit preprocessing",
+  "images": [
+    {
+      "filename": "mnist_test_00003_label_0.png",
+      "label": 0,
+      "mnist_test_index": 3,
+      "sha256": "c2599743473c4f7412b0c851c480e925b1282e8e9bf444d3a01c4c4417aba446"
+    },
+    {
+      "filename": "mnist_test_00002_label_1.png",
+      "label": 1,
+      "mnist_test_index": 2,
+      "sha256": "8e17a6a60feaee1ee55298c8dae2ac26854a07555d1d425c2492886cae178155"
+    },
+    {
+      "filename": "mnist_test_00001_label_2.png",
+      "label": 2,
+      "mnist_test_index": 1,
+      "sha256": "52549bd621af45d5f1ab260575c188a99e923a7ea98b4755081a85c56a6a85d0"
+    },
+    {
+      "filename": "mnist_test_00018_label_3.png",
+      "label": 3,
+      "mnist_test_index": 18,
+      "sha256": "1dd7447d769796d80651c7833f7a4a4c39d4f6f93c971c3165792914b535aec8"
+    },
+    {
+      "filename": "mnist_test_00004_label_4.png",
+      "label": 4,
+      "mnist_test_index": 4,
+      "sha256": "2a245788620da246af1d0c491e5d170785dd13c0e2582151c700da8677b1a703"
+    },
+    {
+      "filename": "mnist_test_00008_label_5.png",
+      "label": 5,
+      "mnist_test_index": 8,
+      "sha256": "b2801078dee32f7251f47ac4db2b2c546db35fe358736e9ac6223bd1ecdf2b09"
+    },
+    {
+      "filename": "mnist_test_00011_label_6.png",
+      "label": 6,
+      "mnist_test_index": 11,
+      "sha256": "38e0be200f53cb2fdb7b62be21459fe619b49ae9d89ae7a7f34276d1bafa471d"
+    },
+    {
+      "filename": "mnist_test_00000_label_7.png",
+      "label": 7,
+      "mnist_test_index": 0,
+      "sha256": "b810ffb1e5336b506a0ac0d43c6c8033ddd60046107e23edf9f33602a7fade97"
+    },
+    {
+      "filename": "mnist_test_00061_label_8.png",
+      "label": 8,
+      "mnist_test_index": 61,
+      "sha256": "f496d3603da21094ab0d2fe6b0ae572d9ef27e3e4e16e5a6dfacc497eab2f067"
+    },
+    {
+      "filename": "mnist_test_00007_label_9.png",
+      "label": 9,
+      "mnist_test_index": 7,
+      "sha256": "f49f9d78269268c43d6eb4dcb29577c89c4bcc1d9ac684b8c8e76f1ff326ec3d"
+    }
+  ]
+}

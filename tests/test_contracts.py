@@ -1,4 +1,4 @@
-"""Kiểm tra hợp đồng khoa học dữ liệu; không thực hiện TODO thay sinh viên."""
+"""Kiểm tra hợp đồng notebook và phòng tránh rò rỉ dữ liệu."""
 import ast
 import re
 import unittest
@@ -28,7 +28,7 @@ class NotebookContractTests(unittest.TestCase):
                     for match in re.finditer(r"^## (\d+)\.", cell.source, re.MULTILINE)]
         self.assertEqual(headings, list(range(1, 17)))
 
-    def test_default_run_cannot_train_or_select(self):
+    def test_experiment_switch_and_core_functions_are_defined(self):
         assignments = {}
         for cell in self.code:
             for node in ast.parse(cell.source).body:
@@ -36,8 +36,9 @@ class NotebookContractTests(unittest.TestCase):
                     for target in node.targets:
                         if isinstance(target, ast.Name):
                             assignments[target.id] = node.value.value
-        self.assertIs(assignments["RUN_STUDENT_EXPERIMENTS"], False)
-        self.assertTrue(any("student-core" in cell.metadata.get("tags", []) for cell in self.code))
+        self.assertIsInstance(assignments["RUN_EXPERIMENTS"], bool)
+        self.assertFalse(any('raise NotImplementedError' in cell.source for cell in self.code))
+        self.assertTrue(any("experiment" in cell.metadata.get("tags", []) for cell in self.code))
 
     def test_no_top_level_model_fit_before_lock_section(self):
         section = 0

@@ -1,0 +1,25 @@
+{
+  "phase": 2,
+  "training_run_id": "20261117T081201Z_fd32180f",
+  "selected_model": "knn",
+  "notebook_run_completed": true,
+  "test_count": 25,
+  "test_duration_s": 14.673,
+  "tests_passed": true,
+  "clean_environment_verified": true,
+  "browser_dataset_prediction_verified": true,
+  "browser_file_upload_prediction_verified": true,
+  "model_sha256_unchanged": {
+    "logreg_raw": "4a8b780643e4c46d32a8cdd20692b16784c52470118c2668052f6c0fe5da95f8",
+    "knn": "0ffb42df1ab1cf884f9c2b09bb1116602f0226153b71542300ffeb8d63211433",
+    "mlp": "00ef926c4aeeb8aff5e8525d392f78a015d6ff1fca78f7c1f875aa55f17d725c"
+  },
+  "current_app_sha256": "daccba96992a10b59a35f2e82110b9c8ab950fdb4479db4bd7e781a51f27d443",
+  "student_report_and_slides_complete": false,
+  "camera_photos_tested": false,
+  "remaining": [
+    "Nhóm tự viết nhận định/phân tích chính và hoàn thiện báo cáo/slide",
+    "Phân công thực tế và luyện vấn đáp",
+    "Bổ sung ảnh tự chụp nếu muốn đánh giá ảnh camera"
+  ]
+}
