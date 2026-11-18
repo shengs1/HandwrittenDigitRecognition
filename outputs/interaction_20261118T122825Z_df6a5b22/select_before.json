@@ -1,0 +1,71 @@
+{
+  "button": {
+    "bottom": 244.5,
+    "height": 40,
+    "left": 640.4000244140625,
+    "right": 668.4000244140625,
+    "top": 204.5,
+    "width": 28,
+    "x": 640.4000244140625,
+    "y": 204.5
+  },
+  "group": {
+    "display": "flex",
+    "gap": "normal",
+    "padding": "0px",
+    "rect": {
+      "bottom": 238.6999969482422,
+      "height": 35,
+      "left": 88,
+      "right": 669.2000122070312,
+      "top": 203.6999969482422,
+      "width": 581.2000122070312,
+      "x": 88,
+      "y": 203.6999969482422
+    }
+  },
+  "hits": [
+    {
+      "fraction": 0.15,
+      "label": "Mô hình phân loại",
+      "role": "combobox",
+      "tag": "INPUT"
+    },
+    {
+      "fraction": 0.6,
+      "label": "Mô hình phân loại",
+      "role": "combobox",
+      "tag": "INPUT"
+    },
+    {
+      "fraction": 0.97,
+      "label": null,
+      "role": null,
+      "tag": "svg"
+    }
+  ],
+  "input": {
+    "flex": "1 1 auto",
+    "rect": {
+      "bottom": 237.9000015258789,
+      "height": 33.400001525878906,
+      "left": 88.80000305175781,
+      "right": 640.4000396728516,
+      "top": 204.5,
+      "width": 551.6000366210938,
+      "x": 88.80000305175781,
+      "y": 204.5
+    },
+    "width": "551.6px"
+  },
+  "root": {
+    "bottom": 238.6999969482422,
+    "height": 35,
+    "left": 88,
+    "right": 669.2000122070312,
+    "top": 203.6999969482422,
+    "width": 581.2000122070312,
+    "x": 88,
+    "y": 203.6999969482422
+  }
+}

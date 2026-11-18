@@ -1,0 +1,524 @@
+[
+  {
+    "source": "Ảnh test",
+    "model": "logreg_raw",
+    "dpr": 1.0000000149011612,
+    "imageCount": 1,
+    "mainClient": 768,
+    "mainHeight": 768,
+    "meta": "Tập test chính thức · ID 10 · Nhãn 0 · 8×8",
+    "modelText": "Xác suất ảnh này · Logistic Regression",
+    "prediction": "0",
+    "probabilities": [
+      {
+        "label": "0",
+        "text": "100,00%"
+      },
+      {
+        "label": "8",
+        "text": "0,00%"
+      },
+      {
+        "label": "7",
+        "text": "0,00%"
+      },
+      {
+        "label": "5",
+        "text": "0,00%"
+      },
+      {
+        "label": "6",
+        "text": "0,00%"
+      },
+      {
+        "label": "4",
+        "text": "0,00%"
+      },
+      {
+        "label": "9",
+        "text": "0,00%"
+      },
+      {
+        "label": "1",
+        "text": "0,00%"
+      },
+      {
+        "label": "2",
+        "text": "0,00%"
+      },
+      {
+        "label": "3",
+        "text": "0,00%"
+      }
+    ],
+    "scale": 1,
+    "viewport": [
+      1366,
+      768
+    ]
+  },
+  {
+    "source": "Ảnh test",
+    "model": "knn",
+    "dpr": 1.0000000149011612,
+    "imageCount": 1,
+    "mainClient": 768,
+    "mainHeight": 768,
+    "meta": "Tập test chính thức · ID 10 · Nhãn 0 · 8×8",
+    "modelText": "Xác suất ảnh này · KNN",
+    "prediction": "0",
+    "probabilities": [
+      {
+        "label": "0",
+        "text": "100,00%"
+      },
+      {
+        "label": "1",
+        "text": "0,00%"
+      },
+      {
+        "label": "2",
+        "text": "0,00%"
+      },
+      {
+        "label": "3",
+        "text": "0,00%"
+      },
+      {
+        "label": "4",
+        "text": "0,00%"
+      },
+      {
+        "label": "5",
+        "text": "0,00%"
+      },
+      {
+        "label": "6",
+        "text": "0,00%"
+      },
+      {
+        "label": "7",
+        "text": "0,00%"
+      },
+      {
+        "label": "8",
+        "text": "0,00%"
+      },
+      {
+        "label": "9",
+        "text": "0,00%"
+      }
+    ],
+    "scale": 1,
+    "viewport": [
+      1366,
+      768
+    ]
+  },
+  {
+    "source": "Ảnh test",
+    "model": "mlp",
+    "dpr": 1.0000000149011612,
+    "imageCount": 1,
+    "mainClient": 768,
+    "mainHeight": 768,
+    "meta": "Tập test chính thức · ID 10 · Nhãn 0 · 8×8",
+    "modelText": "Xác suất ảnh này · MLP",
+    "prediction": "0",
+    "probabilities": [
+      {
+        "label": "0",
+        "text": "99,07%"
+      },
+      {
+        "label": "6",
+        "text": "0,46%"
+      },
+      {
+        "label": "4",
+        "text": "0,29%"
+      },
+      {
+        "label": "9",
+        "text": "0,07%"
+      },
+      {
+        "label": "7",
+        "text": "0,04%"
+      },
+      {
+        "label": "1",
+        "text": "0,03%"
+      },
+      {
+        "label": "5",
+        "text": "0,03%"
+      },
+      {
+        "label": "3",
+        "text": "0,00%"
+      },
+      {
+        "label": "2",
+        "text": "0,00%"
+      },
+      {
+        "label": "8",
+        "text": "0,00%"
+      }
+    ],
+    "scale": 1,
+    "viewport": [
+      1366,
+      768
+    ]
+  },
+  {
+    "source": "Ảnh mẫu",
+    "model": "logreg_raw",
+    "dpr": 1.0000000149011612,
+    "imageCount": 1,
+    "mainClient": 768,
+    "mainHeight": 768,
+    "meta": "Toàn bộ Digits · gồm train/test · ID 0 · Nhãn 0 · 8×8",
+    "modelText": "Xác suất ảnh này · Logistic Regression",
+    "prediction": "0",
+    "probabilities": [
+      {
+        "label": "0",
+        "text": "100,00%"
+      },
+      {
+        "label": "7",
+        "text": "0,00%"
+      },
+      {
+        "label": "5",
+        "text": "0,00%"
+      },
+      {
+        "label": "9",
+        "text": "0,00%"
+      },
+      {
+        "label": "8",
+        "text": "0,00%"
+      },
+      {
+        "label": "2",
+        "text": "0,00%"
+      },
+      {
+        "label": "3",
+        "text": "0,00%"
+      },
+      {
+        "label": "6",
+        "text": "0,00%"
+      },
+      {
+        "label": "4",
+        "text": "0,00%"
+      },
+      {
+        "label": "1",
+        "text": "0,00%"
+      }
+    ],
+    "scale": 1,
+    "viewport": [
+      1366,
+      768
+    ]
+  },
+  {
+    "source": "Ảnh mẫu",
+    "model": "knn",
+    "dpr": 1.0000000149011612,
+    "imageCount": 1,
+    "mainClient": 768,
+    "mainHeight": 768,
+    "meta": "Toàn bộ Digits · gồm train/test · ID 0 · Nhãn 0 · 8×8",
+    "modelText": "Xác suất ảnh này · KNN",
+    "prediction": "0",
+    "probabilities": [
+      {
+        "label": "0",
+        "text": "100,00%"
+      },
+      {
+        "label": "1",
+        "text": "0,00%"
+      },
+      {
+        "label": "2",
+        "text": "0,00%"
+      },
+      {
+        "label": "3",
+        "text": "0,00%"
+      },
+      {
+        "label": "4",
+        "text": "0,00%"
+      },
+      {
+        "label": "5",
+        "text": "0,00%"
+      },
+      {
+        "label": "6",
+        "text": "0,00%"
+      },
+      {
+        "label": "7",
+        "text": "0,00%"
+      },
+      {
+        "label": "8",
+        "text": "0,00%"
+      },
+      {
+        "label": "9",
+        "text": "0,00%"
+      }
+    ],
+    "scale": 1,
+    "viewport": [
+      1366,
+      768
+    ]
+  },
+  {
+    "source": "Ảnh mẫu",
+    "model": "mlp",
+    "dpr": 1.0000000149011612,
+    "imageCount": 1,
+    "mainClient": 768,
+    "mainHeight": 768,
+    "meta": "Toàn bộ Digits · gồm train/test · ID 0 · Nhãn 0 · 8×8",
+    "modelText": "Xác suất ảnh này · MLP",
+    "prediction": "0",
+    "probabilities": [
+      {
+        "label": "0",
+        "text": "99,83%"
+      },
+      {
+        "label": "6",
+        "text": "0,06%"
+      },
+      {
+        "label": "4",
+        "text": "0,05%"
+      },
+      {
+        "label": "9",
+        "text": "0,04%"
+      },
+      {
+        "label": "7",
+        "text": "0,01%"
+      },
+      {
+        "label": "5",
+        "text": "0,00%"
+      },
+      {
+        "label": "1",
+        "text": "0,00%"
+      },
+      {
+        "label": "3",
+        "text": "0,00%"
+      },
+      {
+        "label": "2",
+        "text": "0,00%"
+      },
+      {
+        "label": "8",
+        "text": "0,00%"
+      }
+    ],
+    "scale": 1,
+    "viewport": [
+      1366,
+      768
+    ]
+  },
+  {
+    "source": "Upload harness",
+    "model": "logreg_raw",
+    "dpr": 1.0000000149011612,
+    "imageCount": 2,
+    "mainClient": 768,
+    "mainHeight": 768,
+    "meta": "28×28 → 8×8 · Nền tối → giữ nét sáng",
+    "modelText": "Xác suất ảnh này · Logistic Regression",
+    "prediction": "7",
+    "probabilities": [
+      {
+        "label": "7",
+        "text": "91,26%"
+      },
+      {
+        "label": "2",
+        "text": "8,74%"
+      },
+      {
+        "label": "3",
+        "text": "0,00%"
+      },
+      {
+        "label": "9",
+        "text": "0,00%"
+      },
+      {
+        "label": "5",
+        "text": "0,00%"
+      },
+      {
+        "label": "0",
+        "text": "0,00%"
+      },
+      {
+        "label": "4",
+        "text": "0,00%"
+      },
+      {
+        "label": "8",
+        "text": "0,00%"
+      },
+      {
+        "label": "1",
+        "text": "0,00%"
+      },
+      {
+        "label": "6",
+        "text": "0,00%"
+      }
+    ],
+    "scale": 1,
+    "viewport": [
+      1366,
+      768
+    ]
+  },
+  {
+    "source": "Upload harness",
+    "model": "knn",
+    "dpr": 1.0000000149011612,
+    "imageCount": 2,
+    "mainClient": 768,
+    "mainHeight": 768,
+    "meta": "28×28 → 8×8 · Nền tối → giữ nét sáng",
+    "modelText": "Xác suất ảnh này · KNN",
+    "prediction": "3",
+    "probabilities": [
+      {
+        "label": "3",
+        "text": "33,33%"
+      },
+      {
+        "label": "5",
+        "text": "33,33%"
+      },
+      {
+        "label": "8",
+        "text": "33,33%"
+      },
+      {
+        "label": "0",
+        "text": "0,00%"
+      },
+      {
+        "label": "1",
+        "text": "0,00%"
+      },
+      {
+        "label": "2",
+        "text": "0,00%"
+      },
+      {
+        "label": "4",
+        "text": "0,00%"
+      },
+      {
+        "label": "6",
+        "text": "0,00%"
+      },
+      {
+        "label": "7",
+        "text": "0,00%"
+      },
+      {
+        "label": "9",
+        "text": "0,00%"
+      }
+    ],
+    "scale": 1,
+    "viewport": [
+      1366,
+      768
+    ]
+  },
+  {
+    "source": "Upload harness",
+    "model": "mlp",
+    "dpr": 1.0000000149011612,
+    "imageCount": 2,
+    "mainClient": 768,
+    "mainHeight": 768,
+    "meta": "28×28 → 8×8 · Nền tối → giữ nét sáng",
+    "modelText": "Xác suất ảnh này · MLP",
+    "prediction": "7",
+    "probabilities": [
+      {
+        "label": "7",
+        "text": "94,19%"
+      },
+      {
+        "label": "2",
+        "text": "4,95%"
+      },
+      {
+        "label": "3",
+        "text": "0,27%"
+      },
+      {
+        "label": "0",
+        "text": "0,17%"
+      },
+      {
+        "label": "8",
+        "text": "0,16%"
+      },
+      {
+        "label": "1",
+        "text": "0,14%"
+      },
+      {
+        "label": "6",
+        "text": "0,08%"
+      },
+      {
+        "label": "9",
+        "text": "0,02%"
+      },
+      {
+        "label": "4",
+        "text": "0,01%"
+      },
+      {
+        "label": "5",
+        "text": "0,01%"
+      }
+    ],
+    "scale": 1,
+    "viewport": [
+      1366,
+      768
+    ]
+  }
+]

@@ -1,0 +1,218 @@
+[
+  {
+    "state": "test_empty",
+    "bodyZoom": "1",
+    "buttonBottom": 684,
+    "documentHeight": 1080,
+    "dpr": 1.0000000149011612,
+    "horizontalOverflow": 0,
+    "mainClient": 1080,
+    "mainHeight": 1080,
+    "resultBottom": 622.5,
+    "rootTransform": "none",
+    "scale": 1,
+    "verticalOverflow": 0,
+    "viewport": [
+      1920,
+      1080
+    ]
+  },
+  {
+    "state": "test_empty",
+    "bodyZoom": "1",
+    "buttonBottom": 684,
+    "documentHeight": 900,
+    "dpr": 1.0000000149011612,
+    "horizontalOverflow": 0,
+    "mainClient": 900,
+    "mainHeight": 900,
+    "resultBottom": 622.5,
+    "rootTransform": "none",
+    "scale": 1,
+    "verticalOverflow": 0,
+    "viewport": [
+      1920,
+      900
+    ]
+  },
+  {
+    "state": "test_empty",
+    "bodyZoom": "1",
+    "buttonBottom": 684,
+    "documentHeight": 864,
+    "dpr": 1.0000000149011612,
+    "horizontalOverflow": 0,
+    "mainClient": 864,
+    "mainHeight": 864,
+    "resultBottom": 622.5,
+    "rootTransform": "none",
+    "scale": 1,
+    "verticalOverflow": 0,
+    "viewport": [
+      1536,
+      864
+    ]
+  },
+  {
+    "state": "test_empty",
+    "bodyZoom": "1",
+    "buttonBottom": 662.7999877929688,
+    "documentHeight": 768,
+    "dpr": 1.0000000149011612,
+    "horizontalOverflow": 0,
+    "mainClient": 768,
+    "mainHeight": 768,
+    "resultBottom": 593.3000183105469,
+    "rootTransform": "none",
+    "scale": 1,
+    "verticalOverflow": 0,
+    "viewport": [
+      1366,
+      768
+    ]
+  },
+  {
+    "state": "test_empty",
+    "bodyZoom": "1",
+    "buttonBottom": 636.7999877929688,
+    "documentHeight": 720,
+    "dpr": 1.0000000149011612,
+    "horizontalOverflow": 0,
+    "mainClient": 720,
+    "mainHeight": 720,
+    "resultBottom": 553.3000183105469,
+    "rootTransform": "none",
+    "scale": 1,
+    "verticalOverflow": 0,
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  {
+    "state": "test_prediction",
+    "bodyZoom": "1",
+    "buttonBottom": 684,
+    "documentHeight": 1080,
+    "dpr": 1.0000000149011612,
+    "horizontalOverflow": 0,
+    "mainClient": 1080,
+    "mainHeight": 1080,
+    "resultBottom": 473.0500030517578,
+    "rootTransform": "none",
+    "scale": 1,
+    "verticalOverflow": 0,
+    "viewport": [
+      1920,
+      1080
+    ]
+  },
+  {
+    "state": "test_prediction",
+    "bodyZoom": "1",
+    "buttonBottom": 684,
+    "documentHeight": 900,
+    "dpr": 1.0000000149011612,
+    "horizontalOverflow": 0,
+    "mainClient": 900,
+    "mainHeight": 900,
+    "resultBottom": 473.0500030517578,
+    "rootTransform": "none",
+    "scale": 1,
+    "verticalOverflow": 0,
+    "viewport": [
+      1920,
+      900
+    ]
+  },
+  {
+    "state": "test_prediction",
+    "bodyZoom": "1",
+    "buttonBottom": 684,
+    "documentHeight": 864,
+    "dpr": 1.0000000149011612,
+    "horizontalOverflow": 0,
+    "mainClient": 864,
+    "mainHeight": 864,
+    "resultBottom": 473.0500030517578,
+    "rootTransform": "none",
+    "scale": 1,
+    "verticalOverflow": 0,
+    "viewport": [
+      1536,
+      864
+    ]
+  },
+  {
+    "state": "test_prediction",
+    "bodyZoom": "1",
+    "buttonBottom": 662.7999877929688,
+    "documentHeight": 768,
+    "dpr": 1.0000000149011612,
+    "horizontalOverflow": 0,
+    "mainClient": 768,
+    "mainHeight": 768,
+    "resultBottom": 455.8500213623047,
+    "rootTransform": "none",
+    "scale": 1,
+    "verticalOverflow": 0,
+    "viewport": [
+      1366,
+      768
+    ]
+  },
+  {
+    "state": "test_prediction",
+    "bodyZoom": "1",
+    "buttonBottom": 636.7999877929688,
+    "documentHeight": 720,
+    "dpr": 1.0000000149011612,
+    "horizontalOverflow": 0,
+    "mainClient": 720,
+    "mainHeight": 720,
+    "resultBottom": 431.8500213623047,
+    "rootTransform": "none",
+    "scale": 1,
+    "verticalOverflow": 0,
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  {
+    "state": "upload_prediction_harness",
+    "bodyZoom": "1",
+    "buttonBottom": 678.4000244140625,
+    "documentHeight": 768,
+    "dpr": 1.0000000149011612,
+    "horizontalOverflow": 0,
+    "mainClient": 768,
+    "mainHeight": 768,
+    "resultBottom": 437.25001525878906,
+    "rootTransform": "none",
+    "scale": 1,
+    "verticalOverflow": 0,
+    "viewport": [
+      1366,
+      768
+    ]
+  },
+  {
+    "state": "closed_after_technical_mlp",
+    "bodyZoom": "1",
+    "buttonBottom": 662.7999877929688,
+    "documentHeight": 768,
+    "dpr": 1.0000000149011612,
+    "horizontalOverflow": 0,
+    "mainClient": 768,
+    "mainHeight": 768,
+    "resultBottom": 593.3000183105469,
+    "rootTransform": "none",
+    "scale": 1,
+    "verticalOverflow": 0,
+    "viewport": [
+      1366,
+      768
+    ]
+  }
+]

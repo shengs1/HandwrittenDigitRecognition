@@ -1,5 +1,17 @@
 # Hướng dẫn tiếp tục đồ án
 
+## UI FROZEN — phiên bản chính thức (2026-11-18)
+
+Người dùng đã duyệt và chốt giao diện hiện tại. Không tiếp tục đổi thiết kế, màu, typography, bố cục hoặc thêm tính năng. Chỉ sửa lỗi chức năng có bằng chứng khi được yêu cầu. Không tự fit/tuning/chỉnh notebook, tiền xử lý hay artifact để thay đổi kết quả demo. Đọc mục UI FROZEN trong HANDOFF để lấy kiểm thử cuối và trạng thái Git; các mục UI bên dưới là lịch sử quyết định. Người dùng đã yêu cầu commit/push toàn bộ phiên bản UI đã duyệt và bằng chứng lên origin/main sau khi kiểm thử đạt; không force-push.
+
+## UI hiện tại (2026-11-18)
+
+Technical expander dùng bảng thông số đọc trực tiếp Pipeline đã lưu và metadata dữ liệu; không repr/code block, run ID/checksum dài trên giao diện người dùng. Giữ kết quả MNIST3/10 mỗi model trong notebook/README/tài liệu/artifact. Văn bản technical tự giãn/đổi dòng, không fixed height. Reset cả margin âm stCaptionContainer trong phạm vi demo. CSS nút predict không được ép min-height lên nút native dropdown; giữ hành vi chuột/bàn phím native. Bằng chứng mới nhất15 vùng bấm/3 model/43 tests và screenshot trong HANDOFF mục Interaction Fix.
+
+Bản Responsive Fix đặt chọn chữ số/ID selectbox trong cột ảnh, chỉ lấy option từ đúng nguồn/lớp/split đã lưu. Không đưa slider ID ra hàng toàn trang. Đánh giá vừa màn hình phải đo cả document và stMain (Streamlit có vùng cuộn riêng), ở zoom100% và actual innerWidth/innerHeight. Không dùng CSS zoom/scale/giấu nội dung để vượt kiểm tra. Margin âm của Markdown đã được reset trong phạm vi demo để wrapper HTML không chồng nhau. Bằng chứng45 trạng thái/năm viewport và40 tests mới nhất ở đầu HANDOFF.
+
+Giao diện được thiết kế lại trong app.py + `.streamlit/config.toml`, giữ nguyên notebook/requirements/Pipeline/tiền xử lý. Mặc định nguồn test đúng split; preview Digits nearest-neighbor chỉ phục vụ hiển thị. Overview đọc artifact chính thức. Session state lưu kết quả kèm ngữ cảnh model/checksum/nguồn/ID/nền/ảnh, phải xóa kết quả khi ngữ cảnh đổi. Giữ các kiểm tra chức năng khi chỉnh widget, không thay số liệu hoặc xác suất để giống ảnh tham chiếu. CSS ưu tiên class riêng và class theo key container, không dùng class sinh ngẫu nhiên. Đọc HANDOFF để lấy log 40 tests, screenshot 3 viewport và trạng thái Git mới nhất.
+
 ## Trạng thái hiện tại — Final Completion
 
 Run chính thức `20261117T081201Z_fd32180f` và registry/Pipeline/số liệu được giữ nguyên. Lượt hoàn thiện này được phép soạn nhận định **dự thảo có nguồn thật**, chưa xác nhận thay nhóm. Notebook là bản thực nghiệm đầy đủ, không còn TODO nhận định; báo cáo Markdown 10 mục và nội dung 12 slide vẫn cần nhóm rà soát và xuất bản nộp. Sau lượt hoàn thiện, người dùng đã yêu cầu **commit và push các thay đổi mới lên main** (2026-11-17); yêu cầu này thay thế việc giữ local ở lượt trước. Không force-push hoặc đổi lịch sử remote.

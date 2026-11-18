@@ -1,5 +1,121 @@
 # Chuyển giao Codex / Antigravity
 
+## UI FROZEN — phiên bản chính thức đã được duyệt (2026-11-18)
+
+**Trạng thái: UI FROZEN.** Người dùng chốt giao diện hiện tại; dừng chỉnh thiết kế/màu/typography/bố cục và thêm tính năng. Lượt này không phát hiện lỗi chức năng cần sửa, không đổi app.py, .streamlit/config.toml, tests/test_demo.py hoặc requirements.txt. Chỉ bổ sung trạng thái trong README/AGENTS/HANDOFF và bằng chứng kiểm thử cuối; giữ toàn bộ thay đổi UI đã duyệt từ các lượt trước để đưa vào Git.
+
+**Kiểm thử thật:** toàn bộ43/43 unittest PASS,9,618s. Kiểm tra AppTest bổ sung9/9 tổ hợp KNN/MLP/LR × ảnh test/mẫu/upload; nhãn dự đoán và xác suất khớp Pipeline thật, đủ10 lớp. Có15 tình huống xóa kết quả cũ khi đổi model/nguồn/chữ số/ID/nội dung ảnh upload, gồm thay bytes rồi khôi phục ảnh với cả3 model. Các test bổ sung chặn Pipeline.fit; không fit/tuning hoặc chạy notebook.
+
+**Trình duyệt thật:** resetCtrl+0; kiểm đủ9/9 tổ hợp, dự đoán và10 xác suất hiển thị khớp suy luận Pipeline (so cả phần làm tròn). 15/15 lần bấm phần chữ/khoảng giữa/mũi tên trên5 dropdown đều mở. ArrowDown mở, Escape giữ lựa chọn, Tab chuyển sang nguồn; chọn bằng Enter được dùng suốt ma trận. Kiểm cả3 bảng cấu hình: không ô/dòng bị cắt, không chồng nhóm/tràn ngang, min-height auto/overflow visible, cuộn tự nhiên khi mở. Cả10 trạng thái empty/prediction ở5 actual viewport1920×1080,1920×900,1536×864,1366×768,1280×720 có tràn dọc/ngang0px khi đóng technical; scale1/dpr≈1. Có12 screenshot viewport (không full-page).
+
+**Nguồn ảnh và giới hạn kiểm tra:** ảnh test ID10 và mẫu ID0 đều dự đoán0 trên3 model. Upload fixture MNIST7: LR→7(91,26%), KNN→3(33,33%, đồng hạng3/5/8), MLP→7(94,19%); giữ nguyên kết quả thật. File hỏng hiện thông báo, khóa nút và không giữ prediction cũ. Upload qua harness tạm giữ native widget/call app.main nhưng mock bytes trả về, và AppTest; **không thử lại hộp chọn file Windows** trong lượt này. Không tuyên bố đã kiểm thao tác chọn file OS. Kết quả thí nghiệm cũ10 MNIST vẫn3/10 mỗi model, không thay bằng kết quả một fixture.
+
+**Checksum:**3 Pipeline khớp SHA256 trong registry;94 file bảo vệ (notebook, model/registry, artifact canonical, fixture, kết quả ảnh ngoài, tài liệu nguồn số liệu) giữ nguyên SHA256 và không có diff so HEAD. SHA256 của4 file app/theme/tests/requirements khớp snapshot đầu lượt, xác nhận giữ nguyên UI được duyệt. Không sửa thuật toán ảnh, dataset, metadata hoặc kết quả; không thêm dependency. Syntax/diff-check và HTTP health app/harness đều200.
+
+**Bằng chứng mới:** `outputs/freeze_20261118T154422Z_32ced9af/`: FREEZE_REVIEW.md, unittest.log, functional_matrix.json/log, browser_matrix.json, browser_stale_checks.json, dropdown/keyboard/technical/layout/error JSON, verification.json/log, checksum trước/sau, frozen_source.json, git_before.txt và12 JPEG. Scripts kiểm thêm ở tmp bị ignore. README đã có trạng thái mới; lệnh tạo môi trường/chạy demo hiện tại vẫn đúng. Không tạo lại file nhật ký công cụ đã được yêu cầu xóa.
+
+**Lệnh đã chạy:** `.venv/Scripts/python.exe -X utf8 -m unittest discover -s tests -p "test_*.py" -v`; `.venv/Scripts/python.exe -X utf8 tmp/check_frozen_demo.py`; `.venv/Scripts/python.exe -X utf8 tmp/verify_freeze.py`; `python -m streamlit run app.py --server.address 127.0.0.1 --server.port 8512 --server.headless true --browser.gatherUsageStats false`; harness tạm cổng8513; `git fetch origin main`; `git diff --check`. Kiểm HTTP cần quyền socket loopback của môi trường; lần gọi bị sandbox chặn đã chạy lại có quyền và đạt, không sửa app.
+
+Đã dừng hai server thử8512/8513, đóng các tab kiểm tra và reset viewport; không để harness thay luồng ứng dụng. Kiểm tra chốt liên kết nội bộ và git diff --check đều qua.
+
+Kiểm tra chốt kích thước screenshot phát hiện lượt đo responsive đầu áp viewport lên tab upload đang active, còn tab app vẫn1366×768. Đã giữ bản đầu riêng layout_initial_diagnostic.json, mở lại duy nhất app cổng8514 và đo lại với assertion actual viewport phải khớp từng kích thước yêu cầu. Bảng layout_checks.json cuối đúng5 viewport,10 trạng thái, tràn0px; screenshot1366×768 và1920×900 có kích thước pixel đúng. Không sửa giao diện để xử lý lỗi thao tác công cụ này.
+
+Server đo lại8514 cũng đã dừng; viewport trả mặc định. HTTP health8514 đạt200 trước khi dừng; ghi cùng các health check trước trong verification.json.
+
+**Lỗi còn tồn tại/việc nhóm cần làm:** không phát hiện lỗi chức năng trong phạm vi đã kiểm. Ảnh ngoài Digits vẫn có giới hạn đã ghi; hộp chọn file OS chưa thử lại. Nhóm hoàn thiện/xác nhận báo cáo, slide, thông tin và phân công thật, tập bảo vệ; không tiếp tục chỉnh UI đã chốt. Phần kiểm UI không thay việc hoàn thiện tài liệu nộp.
+
+**Git:** đầu lượt main...origin/main tại45ce4b8 với5 file UI/tài liệu đã sửa, .streamlit và4 thư mục bằng chứng UI chưa commit. Fetch xác nhận không lệch remote. Người dùng đã yêu cầu commit và push bản UI này sau kiểm thử; tất cả kiểm tra đã đạt. Kết quả commit/push được ghi ở mục xác nhận ngay dưới khi hoàn tất. Các phần sau là lịch sử trước đóng băng.
+
+## Trạng thái hiện tại — Final UI Interaction & Technical Information Fix (2026-11-18)
+
+Đã sửa đúng phạm vi giao diện, giữ bản compact/dark hiện tại. Nguyên nhân chồng chữ được đo trên DOM trước sửa: caption có margin-bottom=-14px; dòng chữ cao19,6px nhưng wrapper chỉ5,6px, code block bắt đầu trước đáy chữ6px. Đã reset margin caption trong phạm vi demo; thay repr/code block bằng HTML ngữ nghĩa có chiều cao tự nhiên, line-height và khoảng cách rõ, tự xuống dòng. Không fixed/min-height vùng văn bản. Khi mở expander, trang cuộn tự nhiên; khi đóng không tăng chiều cao chính.
+
+Thông tin kỹ thuật gồm4 nhóm: dữ liệu đọc metadata run chính thức; bảng cấu hình đọc trực tiếp estimator.get_params/scaler của Pipeline đã lưu; quy trình ảnh đúng EXIF/alpha/grayscale/nền/crop/giữ tỷ lệ/căn giữa/8×8/0–16/vector theo hàng; giới hạn ngắn theo yêu cầu. Digits giữ nguyên pixel; chuẩn hóa chỉ trong Pipeline. Đổi KNN/MLP/LR cập nhật đúng bảng. Không hiển thị run ID/checksum hoặc đoạn kết quả MNIST dài trên giao diện; toàn bộ thông tin và kết quả3/10 mỗi mô hình vẫn giữ trong notebook/README/tài liệu/artifact, xác minh94 SHA256 không đổi.
+
+Dropdown: DOM cho thấy input đã phủ phần thanh; bấm khoảng giữa mô hình trước sửa vẫn mở được. Xung đột thực tế là CSS button chung min-height40px làm nút mũi tên vượt field35px. Đã scope lại nút native listbox (min-height0, tự giãn theo field), input flex/min-width/cursor. Sau sửa nút33,4px nằm trong field35px. Không JS chặn sự kiện, overlay hoặc custom dropdown. Trình duyệt thật kiểm15/15 lần bấm: phần chữ/khoảng giữa/mũi tên của mô hình, nguồn, chữ số, ID và màu nền. ArrowDown mở, Escape đóng/giữ lựa chọn, Enter chọn, Tab sang nguồn ảnh hoạt động.
+
+**Kiểm thử:** 43/43 unittest PASS,6,843s; giữ40 test cũ và thêm3 test kiểm tra thông số thật, đọc tham số động không fit/không đổi artifact, bảng đổi theo3 model. Lần đầu test mới lọc nhầm cả style HTML chứa tên class nên thất bại; sửa bộ lọc nhận đúng div nội dung, giữ assertion so toàn bộ HTML. Lần đầu còn lỗi socket WinError10055 của môi trường AppTest; chạy lại có quyền loopback thì cả43 qua. Log đầu/cuối được giữ. Không sửa test cũ để bỏ điều kiện, không fit/tuning/chạy notebook.
+
+**Trình duyệt:** zoom100% (scale1, dpr≈1, CSS zoom1/transform none), actual viewport1920×1080,1920×900,1536×864,1366×768,1280×720; cả10 trạng thái test empty/prediction có document/stMain scrollHeight đúng chiều cao viewport, tràn dọc/ngang0px. Đóng lại expander MLP ở1366×768 vẫn0px. Thêm upload prediction tổng12 phép đo đóng không tràn. Sáu phép kiểm technical gồm cả3 model,1920×900 và390×844: không ô/dòng chữ bị cắt hoặc tràn ngang, nhóm cách nhau≥18px, overflow visible/min-height auto; nội dung dài cuộn tự nhiên. Screenshot viewport thực, không full-page; ảnh mobile do công cụ trả390×843 dù innerHeight844, ghi rõ trong verification.
+
+Đã dự đoán test KNN id10/nhãn0→0,100%; đổi chữ số1/ID21 hợp lệ rồi dự đoán→1; đổi model xóa kết quả cũ. Mẫu toàn bộ Digits id7/nhãn7→7,100%. Upload fixture MNIST7 có cả ảnh gốc và8×8, dự đoán3,33,33% (đồng hạng3/5/8); file hỏng hiện lỗi, khóa nút và không giữ kết quả cũ. **Giới hạn kiểm thử upload:** harness tạm mock giá trị trả về của uploader native, gọi đúng app.main/preprocessing/Pipeline; không thử lại hộp chọn file Windows trong lượt này do độ trễ công cụ đã ghi trước. Tests vẫn kiểm upload thực qua bytes, ảnh trống/hỏng/nền.
+
+**File lượt này:** app.py, tests/test_demo.py, AGENTS.md, README.md, HANDOFF.md; bằng chứng mới `outputs/interaction_20261118T122825Z_df6a5b22/` có INTERACTION_REVIEW.md,16 screenshot, JSON DOM/dropdown/layout/bảng cấu hình, checksum và log tests. Script tạm tmp/verify_interaction.py và harness bị ignore, không thuộc luồng ứng dụng. Tám hàm registry/load/preprocess/predict/data/split/preview/prediction HTML giữ nguyên AST đầu lượt. Notebook,94 file bảo vệ, model/registry, fixture, tài liệu số liệu và requirements không đổi; không thêm dependency.
+
+**Lệnh thực tế:** `.venv/Scripts/python.exe -X utf8 -m unittest discover -s tests -p "test_*.py" -v`; `.venv/Scripts/python.exe -X utf8 tmp/verify_interaction.py`; `.venv/Scripts/python.exe -m streamlit run app.py --server.address 127.0.0.1 --server.port 8510 --server.headless true --browser.gatherUsageStats false`; harness tương tự cổng8511. Syntax, bảng trình duyệt so Pipeline thật,94 checksum và git diff --check qua. Server thử đã dừng và viewport đã reset.
+
+**Lỗi/việc còn lại:** không còn lỗi đã xác định trong các trạng thái đã kiểm tra. Chưa thử lại hộp chọn file OS; nâng phiên bản Streamlit cần kiểm CSS/native DOM. Nhóm xem screenshot, xác nhận báo cáo/slide và chuẩn bị bảo vệ như lịch sử bên dưới. Không tuyên bố tài liệu nộp của nhóm đã hoàn tất.
+
+**Git:** main...origin/main tại45ce4b8; đầu lượt đã có thay đổi UI chưa commit trong5 file và .streamlit cùng3 thư mục evidence UI. Giữ toàn bộ; thêm evidence interaction, không commit/push hoặc sửa lịch sử trong lượt này. Các phần sau là lịch sử.
+
+## Trạng thái hiện tại — Final Responsive Layout Fix (2026-11-18)
+
+Đã sửa bố cục để dùng ở browser zoom100%, giữ dark mode/màu sắc/typography. Khung max-width1280px, padding20px; giảm gap và khoảng trống theo chiều cao viewport. Chuyển chữ số/ID vào cột ảnh, thay slider dài bằng selectbox, giữ đúng danh sách ID và key theo nguồn/lớp. Model/nguồn vẫn nằm cùng hàng trên. Ảnh Digits200px ở viewport thấp,212px ở màn hình cao; nearest-neighbor không đổi. Empty state280–320px; bố cục dự đoán không làm giao diện vượt viewport. Upload có hai preview nhỏ hơn phù hợp chiều cao.
+
+Nguyên nhân kỹ thuật đã xác định: hàng slider toàn chiều rộng tốn chỗ; min-height empty quá lớn; margin-bottom âm14px của Streamlit Markdown làm wrapper HTML tính thiếu chiều cao và có thể chồng chữ. Đã đặt margin-bottom=0 trong phạm vi demo, sau đó tính lại luồng bố cục thật. Không dùng CSS zoom/transform scale hoặc overflow hidden để giấu nội dung. CSS overflow có sẵn trong thanh xác suất chỉ để vẽ track, không áp lên khung ứng dụng.
+
+**Kiểm tra trình duyệt thật:** resetCtrl+0; đo trực tiếp window.innerWidth/innerHeight, visualViewport.scale=1, devicePixelRatio≈1, CSS zoom1/transform none. Kiểm cả document.scrollingElement và vùng stMain của Streamlit; không suy ra vừa màn hình từ full-page screenshot. Tất cả ảnh dùng fullPage=false. Có45 phép đo tại5 viewport,40 trạng thái đóng technical đều tràn dọc0px và không tràn ngang;5 trạng thái mở technical cuộn tự nhiên, đóng lại trở về0px.
+
+| Viewport thực tế | document scrollHeight lớn nhất khi đóng | stMain scrollHeight lớn nhất khi đóng | Tràn dọc/ngang |
+|---|---:|---:|---|
+|1920×1080|1080|1080|0px / Không|
+|1920×900|900|900|0px / Không|
+|1536×864|864|864|0px / Không|
+|1366×768|768|768|0px / Không|
+|1280×720|720|720|0px / Không|
+
+Mỗi viewport đã thử empty, dự đoán test, đổi MLP/xóa kết quả cũ, đổi chữ số1 và ID21 hợp lệ/xóa kết quả cũ, dự đoán mới, mở/đóng technical, upload preview và upload prediction. Dự đoán test đối chiếu CSV canonical khớp. Nhánh upload kiểm bằng harness tạm cung cấp fixture qua mock return của uploader, vẫn render widget native và gọi chính app.main/preprocessing/Pipeline; không thử lại hộp chọn file OS vì độ trễ công cụ đã ghi nhận ở lượt trước. Harness được reload module app trước các lần đo cuối để tránh CSS cũ trong cache; không sửa ứng dụng để chạy fixture. Các lần đo chẩn đoán tràn nhỏ trước sửa giữ riêng ở layout_diagnostics.json.
+
+**Bảo toàn và test:** toàn bộ40 unittest PASS,14,551s. Test chỉ đổi truy cập slider sang selectbox và thao tác select; giữ assertion đầy đủ option từng lớp đúng saved test indices và cả3 Pipeline, không bỏ/giảm test. Chín hàm ngoài main khớp AST với snapshot đầu lượt, gồm registry/load/preprocess/predict/data/split/summary/preview/prediction HTML. Notebook cùng60 artifact/model/registry chính thức giữ nguyên61 SHA256; không fit, tuning hoặc chạy notebook. Không dependency mới.
+
+**File chỉnh lượt này:** app.py, tests/test_demo.py, HANDOFF.md, AGENTS.md, README.md. Bằng chứng mới: `outputs/responsive_20261118T035501Z_c6f49df4/` có browser_matrix.json(45 dòng), layout_diagnostics.json, verification.json, tests_initial.log/tests_final.log, protected_before/after.json, LAYOUT_REVIEW.md và40 screenshot viewport. Giữ nguyên mọi thay đổi UI chưa commit từ các lượt trước, không ghi đè nội dung khác. Script fixture chỉ ở tmp bị ignore.
+
+**Lệnh thực tế:** `.venv/Scripts/python.exe -X utf8 -m unittest discover -s tests -p "test_*.py" -v`; `python -m streamlit run app.py --server.address 127.0.0.1 --server.port 8507 --server.headless true --browser.gatherUsageStats false`; tương tự cho harness tạm cổng8508. Syntax/diff-check được kiểm tra; kết quả chi tiết trong verification.json. Khi technical mở, stMain cao1079–1135px tùy viewport là cuộn hợp lệ, không giấu nội dung. Màn hình nhỏ hơn các viewport kiểm tra vẫn cuộn tự nhiên. Widget upload native còn vài nhãn tiếng Anh như trước.
+
+Kiểm tra chốt: syntax, link tài liệu nội bộ, diff-check và61 checksum kiểm lại đều qua. Đã dừng server thử8507/8508 và reset viewport; không để harness thay luồng chạy chính.
+
+**Git:** tiếp tục trên45ce4b8 với các thay đổi local có sẵn; không commit/push trong lượt này. Việc tiếp: xem screenshot đặc biệt1366×768 và1920×900 ở empty/prediction, hoặc chạy app bình thường với zoom100%; nhóm tiếp tục hoàn thiện báo cáo/slide. Các trạng thái bên dưới là lịch sử.
+
+## Trạng thái hiện tại — Final UI Polish (2026-11-18)
+
+Đã tinh chỉnh vừa đủ trên bản UI Redesign đang có, không thiết kế lại: tiêu đề chính 25px ở viewport thấp/26px desktop lớn; tiêu đề khu vực 17px/weight600; số liệu thẻ20px; số dự đoán80/88px. Tăng tương phản chữ phụ, khoảng cách giữa thống kê và cấu hình; ảnh Digits224/232px, vẫn nearest-neighbor. Chọn chữ số/ID cùng hàng theo tỷ lệ1:4, giữ nguyên toàn bộ option/key/split. Phân biệt rõ “Accuracy test” ở tổng quan với “Xác suất ảnh này” ở kết quả; có nhãn “Đúng/Sai · nhãn gốc”. Giữ dark mode, màu sắc, hai cột và các thanh xác suất hiện có.
+
+Sửa selector `.section-heading span` thành `.section-heading > span`: selector cũ áp luôn font chữ phụ vào span mà Streamlit chèn trong h2, khiến chữ tiêu đề thực tế nhỏ hơn cấu hình. Đã kiểm computed style trên chính span chứa chữ:17px/600. Empty state cao369px ở1366×768, vùng kết quả thực368,35px, chênh dưới1px nên hai trạng thái gần như giữ nguyên vị trí nội dung dưới. Radius12px và padding/thang chữ được thống nhất trong các card hiện có.
+
+**File chỉnh lượt này:** `app.py`, `HANDOFF.md`; thêm bằng chứng `outputs/ui_polish_20261118T033513Z_4b692dfe/`. `.streamlit/config.toml`, requirements, tests và notebook không sửa thêm. Có script kiểm tra tạm `tmp/ui_polish_fixture.py`, không phải chức năng sản phẩm, bị Git ignore. Giữ nguyên các thay đổi UI Redesign chưa commit từ lượt trước; không ghi đè hoặc loại bỏ chúng.
+
+**Kiểm thử:** `.venv/Scripts/python.exe -X utf8 -m unittest discover -s tests -p "test_*.py" -v` →40/40 PASS,18,004s; syntax qua. Notebook và60 file artifact/model/registry chính thức (tổng61 file) giữ nguyên SHA256. Tám hàm ngoài phần trình bày/main khớp AST với snapshot đầu lượt, gồm preprocessing, suy luận, đọc dữ liệu/split/registry, summary và preview. Không fit, tuning hoặc chạy notebook; không tạo số liệu/dự đoán giả.
+
+**Trình duyệt thật:** app chính cổng8505 được kiểm tại1366×768 và1920×1080, có screenshot empty/prediction. Không tràn ngang; ảnh, nút và card kết quả chính nằm trong viewport. KNN id10→0,100%; id1790 nhãn8→1,66,67%, xác nhận trực tiếp cả nhãn đúng/sai. Các dự đoán dùng nguyên Pipeline. Footer/expander kỹ thuật ở viewport768px có thể cần cuộn ngắn.
+
+**Giới hạn phép thử upload:** dùng trang kiểm thử tạm cổng8506 nhập đúng `app.main`, vẫn vẽ widget file native nhưng thay giá trị trả về bằng bytes fixture qua mock. Đây là kiểm tra trực quan nhánh upload/lỗi với dữ liệu kiểm thử, **không phải thử lại hộp chọn file OS** trong lượt này. Tránh lặp lại độ trễ công cụ setFiles54 phút của lượt trước. Fixture MNIST7 hiển thị gốc/8×8, Pipeline vẫn dự đoán3 với33,33%; file không hợp lệ hiện lỗi và khóa nút, không có kết quả cũ. Chức năng upload/ảnh trống/file hỏng tiếp tục được toàn bộ unittest kiểm tra. Không đưa harness vào app hoặc bản nộp.
+
+**Bằng chứng:** `tests.log`, `protected_before/after.json`, `browser_checks.json`, `polish_checks.json`, `screenshots.md` và8 JPEG. Tên screenshot thể hiện viewport kiểm tra; kích thước JPEG thực được ghi trong polish_checks vì công cụ có thể giới hạn/thu ảnh màn hình lớn. Không dùng ảnh screenshot để suy ra cỡ font; lấy computed style của DOM. Thư viện và thuật toán ảnh không thay đổi; các hạn chế ảnh ngoài và vài nhãn tiếng Anh của widget native vẫn như cũ.
+
+Kiểm tra cuối: `git diff --check` qua, syntax và61 checksum kiểm lại vẫn khớp; đã dừng hai server thử8505/8506, trả viewport mặc định. Không để harness/server thử thay luồng chạy chính.
+
+**Git:** đầu lượt đã có thay đổi local của UI Redesign trên `45ce4b8`; giữ nguyên các thay đổi đó. Lượt polish không commit/push. Việc tiếp theo: xem screenshot hoặc chạy app; nhóm tiếp tục báo cáo/slide theo lịch sử bên dưới. Các mục sau mô tả những lượt trước.
+
+## Trạng thái hiện tại — UI Redesign (2026-11-18)
+
+Đã thiết kế lại giao diện theo ảnh tham chiếu: dark mode, màu nhấn xanh, khung giữa giới hạn 1.200 px, header/trạng thái, 3 thẻ tổng quan đọc từ artifact, cấu hình gọn và hai cột ảnh/kết quả. Mặc định ảnh test đúng split. Mẫu Digits chỉ có một preview phóng to nearest-neighbor; upload giữ ảnh gốc và ảnh 8×8 cạnh nhau. Nút “Nhận diện chữ số” dưới ảnh; kết quả có chữ số lớn, model, xác suất, đúng/sai khi có nhãn và 10 thanh ngang. Các giải thích dài chuyển vào expander; cảnh báo xác suất/giới hạn vẫn được giữ.
+
+Kết quả lưu trong session state, gắn với model/checksum/nguồn/ID/nền/nội dung ảnh. Đổi model, ảnh, nguồn, chế độ nền hoặc xóa upload thì xóa kết quả cũ. Overview lấy từ data_summary, selection_lock và model_comparison của registry, không hardcode điểm/nhãn/xác suất. Không thêm dependency, framework hoặc thay kiến trúc notebook + app.
+
+**File sửa/tạo:** `app.py`, `.streamlit/config.toml`, `tests/test_demo.py`, `README.md`, `AGENTS.md`, `HANDOFF.md`; bằng chứng ở `outputs/ui_20261118T015852Z_1c47689a/`. Notebook và requirements không sửa. Sáu hàm đọc registry/tải Pipeline/tiền xử lý/predict/đọc Digits/đọc split khớp AST với HEAD. SHA256 của 61 file (notebook cùng toàn bộ 60 artifact/model/registry chính thức) trước/sau khớp.
+
+**Kiểm thử thực tế:** `.venv/Scripts/python.exe -X utf8 -m unittest discover -s tests -p "test_*.py" -v` → **40/40 PASS, 5,885 s**. Giữ toàn bộ kiểm tra chức năng cũ; đổi truy cập widget nguồn từ radio sang selectbox, đổi kiểm tra st.metric thành kiểm tra dữ liệu thật và HTML kết quả/10 lớp. Thêm 3 test về empty state/overview/một preview, xóa kết quả khi đổi lựa chọn và khi đổi nền/xóa upload. Lần đầu có 3 lỗi ở test mới do gọi thuộc tính filtered_state không thuộc API AppTest hiện tại; đã sửa sang kiểm tra key qua mapping session_state rồi chạy lại cả 40 test. Không bỏ hoặc làm yếu kiểm tra chức năng.
+
+`python -m streamlit run app.py --server.address 127.0.0.1 --server.port 8504 --server.headless true --browser.gatherUsageStats false` chạy thành công, HTTP200. Đã thao tác bằng trình duyệt thật tại **1366×768, 1920×1080, 390×844**, kiểm tra và chụp empty/test/upload/preview/kết quả. Không tràn ngang; ảnh, nút và card kết quả nằm trong viewport desktop. Hai cột bắt đầu cùng độ cao; màn hình nhỏ xếp dọc, có cuộn. KNN test id43 nhãn7 →7, xác suất100%; upload MNIST nhãn7 →3, xác suất33,33% (đồng hạng3/5/8) đúng như suy luận trước, không sửa model để làm đẹp demo.
+
+**Bằng chứng:** `tests_initial.log`, `tests_final.log`, `ui_checks.json`, `browser_layout_checks.json`, `protected_before.json`, `protected_after.json` và 8 JPEG. So với ảnh tham chiếu: giữ cấu trúc header/overview/cấu hình/hai cột/kết quả xanh/thanh ngang; dùng dữ liệu và xác suất thật thay số minh họa. Công cụ filechooser setFiles mất khoảng54 phút dù có timeout; sau cùng upload thành công. Đây là độ trễ công cụ kiểm tra, không đưa vào số đo thời gian suy luận của app.
+
+**Giới hạn:** màn hình nhỏ cần cuộn dọc; nút Upload và nhắc dung lượng do Streamlit native tạo vẫn có tiếng Anh. CSS dùng class riêng, key container có tài liệu và một số data-testid; nâng Streamlit cần kiểm tra lại hình thức. Không còn lỗi giao diện được xác định trong các trạng thái đã kiểm tra. Hạn chế ảnh ngoài Digits, nhóm chưa xác nhận dự thảo/báo cáo/slide vẫn giữ như trước.
+
+Kiểm tra chốt: syntax app/tests, link nội bộ README/HANDOFF/AGENTS và 61 checksum đều qua; `git diff --check` không lỗi. Đã dừng server thử cổng8504 sau khi kiểm tra, trả viewport trình duyệt về mặc định. Không huấn luyện lại hoặc chạy notebook.
+
+**Git:** đầu lượt sạch ở `45ce4b8`, `main...origin/main`. Các thay đổi UI hiện còn local, chưa commit/push trong lượt thiết kế này. Không thay artifact chính thức hoặc lịch sử Git. Công việc tiếp: nhóm xem ảnh/giao diện mới, tiếp tục hoàn thiện tài liệu nộp theo mục bên dưới. Các mục tiếp theo là lịch sử trước UI Redesign.
+
 ## Git — đã push Final Completion (2026-11-17)
 
 Người dùng đã yêu cầu push phần code mới; cho phép commit và push toàn bộ thay đổi Final Completion cùng tài liệu/bằng chứng liên quan lên `origin/main`. Đã fetch remote, kiểm tra diff và xác minh lại mã đã test cùng 60 artifact chính thức khớp checksum. Snapshot “chưa commit/push” bên dưới mô tả lượt hoàn thiện trước yêu cầu mới này.

@@ -1,0 +1,57 @@
+2026-11-18 10:40:32.747 WARNING streamlit.runtime.caching.cache_data_api: No runtime found, using MemoryCacheStorageManager
+test_confusion_pairs_and_mistakes_match_predictions (test_artifacts.ArtifactConsistencyTests.test_confusion_pairs_and_mistakes_match_predictions) ... ok
+test_cv_summary_and_grid_choice_match_saved_folds (test_artifacts.ArtifactConsistencyTests.test_cv_summary_and_grid_choice_match_saved_folds) ... ok
+test_learning_curve_and_mlp_history_are_consistent (test_artifacts.ArtifactConsistencyTests.test_learning_curve_and_mlp_history_are_consistent) ... ok
+test_metrics_and_report_csv_match_predictions (test_artifacts.ArtifactConsistencyTests.test_metrics_and_report_csv_match_predictions) ... ok
+test_registry_scaler_and_test_indices_are_consistent (test_artifacts.ArtifactConsistencyTests.test_registry_scaler_and_test_indices_are_consistent) ... ok
+test_no_identical_image_crosses_train_test_or_cv (test_contracts.DatasetContractTests.test_no_identical_image_crosses_train_test_or_cv) ... ok
+test_official_shape_pixel_and_label_domain (test_contracts.DatasetContractTests.test_official_shape_pixel_and_label_domain) ... ok
+test_core_selection_signature_has_no_test_input (test_contracts.NotebookContractTests.test_core_selection_signature_has_no_test_input) ... ok
+test_experiment_switch_and_core_functions_are_defined (test_contracts.NotebookContractTests.test_experiment_switch_and_core_functions_are_defined) ... ok
+test_no_top_level_model_fit_before_lock_section (test_contracts.NotebookContractTests.test_no_top_level_model_fit_before_lock_section) ... ok
+test_notebook_schema_and_python_syntax (test_contracts.NotebookContractTests.test_notebook_schema_and_python_syntax) ... ok
+test_saved_notebook_has_no_execution_errors (test_contracts.NotebookContractTests.test_saved_notebook_has_no_execution_errors) ... ok
+test_saved_notebook_output_does_not_embed_machine_paths (test_contracts.NotebookContractTests.test_saved_notebook_output_does_not_embed_machine_paths) ... ok
+test_sixteen_sections_in_required_order (test_contracts.NotebookContractTests.test_sixteen_sections_in_required_order) ... ok
+test_changed_model_label_id_or_source_clears_previous_result (test_demo.AppFlowTests.test_changed_model_label_id_or_source_clears_previous_result) ... 2026-11-18 10:40:33.919 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_dataset_mode_predicts_with_each_saved_model_without_fit (test_demo.AppFlowTests.test_dataset_mode_predicts_with_each_saved_model_without_fit) ... 2026-11-18 10:40:37.236 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_default_test_source_has_honest_empty_state_and_artifact_overview (test_demo.AppFlowTests.test_default_test_source_has_honest_empty_state_and_artifact_overview) ... 2026-11-18 10:40:38.432 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_missing_pipeline_file_shows_error_without_crash (test_demo.AppFlowTests.test_missing_pipeline_file_shows_error_without_crash) ... 2026-11-18 10:40:39.919 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_missing_registry_disables_prediction_but_keeps_preview (test_demo.AppFlowTests.test_missing_registry_disables_prediction_but_keeps_preview) ... 2026-11-18 10:40:42.427 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_missing_saved_split_disables_test_prediction (test_demo.AppFlowTests.test_missing_saved_split_disables_test_prediction) ... 2026-11-18 10:40:43.448 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_test_only_sampler_uses_saved_split_and_each_pipeline (test_demo.AppFlowTests.test_test_only_sampler_uses_saved_split_and_each_pipeline) ... 2026-11-18 10:40:44.304 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_upload_background_change_and_removal_clear_prediction (test_demo.AppFlowTests.test_upload_background_change_and_removal_clear_prediction) ... 2026-11-18 10:40:45.709 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-18 10:40:46.862 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_upload_flow_with_real_external_image (test_demo.AppFlowTests.test_upload_flow_with_real_external_image) ... 2026-11-18 10:40:46.905 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_upload_invalid_file_is_a_user_error_not_crash (test_demo.AppFlowTests.test_upload_invalid_file_is_a_user_error_not_crash) ... 2026-11-18 10:40:48.048 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_blank_corrupt_empty_and_transparent_are_rejected (test_demo.ImagePreprocessingTests.test_blank_corrupt_empty_and_transparent_are_rejected) ... ok
+test_exif_orientation_is_applied_before_crop (test_demo.ImagePreprocessingTests.test_exif_orientation_is_applied_before_crop) ... ok
+test_file_and_pixel_limits (test_demo.ImagePreprocessingTests.test_file_and_pixel_limits) ... ok
+test_invalid_background_is_rejected (test_demo.ImagePreprocessingTests.test_invalid_background_is_rejected) ... ok
+test_off_center_digit_is_centered_without_stretch (test_demo.ImagePreprocessingTests.test_off_center_digit_is_centered_without_stretch) ... ok
+test_opaque_polarities_produce_same_input (test_demo.ImagePreprocessingTests.test_opaque_polarities_produce_same_input) ... ok
+test_train_digits_keep_input_under_polarity_mode_and_translation (test_demo.ImagePreprocessingTests.test_train_digits_keep_input_under_polarity_mode_and_translation) ... ok
+test_transparent_white_and_black_strokes (test_demo.ImagePreprocessingTests.test_transparent_white_and_black_strokes) ... ok
+test_demo_test_indices_equal_official_prediction_membership (test_demo.SavedPipelineTests.test_demo_test_indices_equal_official_prediction_membership) ... ok
+test_external_images_only_inference_and_both_polarities (test_demo.SavedPipelineTests.test_external_images_only_inference_and_both_polarities) ... ok
+test_invalid_feature_domain_is_rejected (test_demo.SavedPipelineTests.test_invalid_feature_domain_is_rejected) ... ok
+test_invalid_saved_split_is_rejected (test_demo.SavedPipelineTests.test_invalid_saved_split_is_rejected) ... ok
+test_missing_or_corrupt_pipeline (test_demo.SavedPipelineTests.test_missing_or_corrupt_pipeline) ... ok
+test_missing_registry_and_path_traversal (test_demo.SavedPipelineTests.test_missing_registry_and_path_traversal) ... ok
+test_probability_labels_and_no_double_scaling (test_demo.SavedPipelineTests.test_probability_labels_and_no_double_scaling) ... ok
+test_saved_test_predictions_match_all_three_pipelines (test_demo.SavedPipelineTests.test_saved_test_predictions_match_all_three_pipelines) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 18.004s
+
+OK

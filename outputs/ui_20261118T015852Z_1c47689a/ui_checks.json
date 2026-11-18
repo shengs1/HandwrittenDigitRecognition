@@ -1,0 +1,76 @@
+{
+  "date": "2026-11-18",
+  "base_git": "45ce4b8",
+  "protected_files_unchanged": true,
+  "protected_file_count": 61,
+  "inference_functions_unchanged": {
+    "read_model_registry": true,
+    "load_saved_pipeline": true,
+    "preprocess_uploaded_image": true,
+    "predict_digit": true,
+    "sample_digits": true,
+    "saved_test_indices": true
+  },
+  "notebook_unchanged": true,
+  "requirements_unchanged": true,
+  "unittest": {
+    "count": 40,
+    "seconds": 5.885,
+    "exit_code": 0,
+    "log": "tests_final.log"
+  },
+  "initial_ui_tests": {
+    "count": 40,
+    "test_errors": 3,
+    "reason": "New tests used unsupported AppTest filtered_state attribute; changed to assert missing prediction_result through the public state mapping."
+  },
+  "http_status": 200,
+  "viewports": [
+    {
+      "height": 768,
+      "width": 1366
+    },
+    {
+      "height": 1080,
+      "width": 1920
+    },
+    {
+      "height": 844,
+      "width": 390
+    },
+    {
+      "height": 768,
+      "width": 1366
+    }
+  ],
+  "no_horizontal_overflow": true,
+  "desktop_input_button_and_result_visible": true,
+  "test_browser_result": {
+    "sample_index": 43,
+    "model": "knn",
+    "true_label": 7,
+    "predicted": 7,
+    "probability": 1.0
+  },
+  "upload_browser_result": {
+    "file": "mnist_test_00000_label_7.png",
+    "model": "knn",
+    "true_label": 7,
+    "predicted": 3,
+    "probability": 0.3333333333333333,
+    "both_previews_visible": true
+  },
+  "browser_filechooser_note": "Browser automation setFiles took about54 minutes despite timeout; selection and upload eventually succeeded. This tool latency was not measured as app inference time.",
+  "limitations": [
+    "Small viewport stacks columns and requires vertical scrolling.",
+    "Native Streamlit upload button and size hint retain English text.",
+    "Custom CSS uses own class names and a small set of Streamlit test-id selectors; future Streamlit updates may require visual review."
+  ],
+  "committed_or_pushed_this_turn": false,
+  "final_syntax_and_doc_links_checked": true,
+  "final_source_sha256": {
+    "app.py": "cea2df6b4315e0f5cc65fa2a0279d5ea3b1e0d15700beb10d2d0ecc76af4516b",
+    "tests/test_demo.py": "5b844e635e75ebfc58f195ef7617908108e9039fd148eeb70a87eee991b303fa",
+    ".streamlit/config.toml": "fa4d763a2e23286b851faa774e24fdfe9093ca3926bf5ffe19887d2b689ffd64"
+  }
+}

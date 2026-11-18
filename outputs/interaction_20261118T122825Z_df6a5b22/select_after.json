@@ -1,0 +1,20 @@
+[
+  {
+    "buttonHeight": 33.400001525878906,
+    "groupHeight": 35,
+    "label": "Mô hình phân loại",
+    "minHeight": "0px"
+  },
+  {
+    "buttonHeight": 33.400001525878906,
+    "groupHeight": 35,
+    "label": "Nguồn ảnh",
+    "minHeight": "0px"
+  },
+  {
+    "buttonHeight": 33.400001525878906,
+    "groupHeight": 35,
+    "label": "Màu nền",
+    "minHeight": "0px"
+  }
+]

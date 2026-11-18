@@ -1,0 +1,10 @@
+2026-11-18 22:45:59.989 WARNING streamlit.runtime.caching.cache_data_api: No runtime found, using MemoryCacheStorageManager
+2026-11-18 22:45:59.992 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-18 22:46:01.054 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-18 22:46:01.502 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-18 22:46:01.539 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-18 22:46:01.630 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-18 22:46:01.671 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-18 22:46:01.772 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-18 22:46:01.815 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+{"matrix_pass": 9, "stale_result_checks_pass": 15, "no_training": true}

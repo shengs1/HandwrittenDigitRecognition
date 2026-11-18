@@ -1,0 +1,95 @@
+{
+  "matrix": [
+    {
+      "model": "logreg_raw",
+      "source": "Ảnh test Digits",
+      "sample_id": 10,
+      "prediction": 0,
+      "max_probability": 0.9999992254312422,
+      "matches_saved_pipeline": true
+    },
+    {
+      "model": "knn",
+      "source": "Ảnh test Digits",
+      "sample_id": 10,
+      "prediction": 0,
+      "max_probability": 1.0,
+      "matches_saved_pipeline": true
+    },
+    {
+      "model": "mlp",
+      "source": "Ảnh test Digits",
+      "sample_id": 10,
+      "prediction": 0,
+      "max_probability": 0.9906661074526166,
+      "matches_saved_pipeline": true
+    },
+    {
+      "model": "logreg_raw",
+      "source": "Ảnh mẫu Digits",
+      "sample_id": 0,
+      "prediction": 0,
+      "max_probability": 0.9999999491579218,
+      "matches_saved_pipeline": true
+    },
+    {
+      "model": "knn",
+      "source": "Ảnh mẫu Digits",
+      "sample_id": 0,
+      "prediction": 0,
+      "max_probability": 1.0,
+      "matches_saved_pipeline": true
+    },
+    {
+      "model": "mlp",
+      "source": "Ảnh mẫu Digits",
+      "sample_id": 0,
+      "prediction": 0,
+      "max_probability": 0.998300049665871,
+      "matches_saved_pipeline": true
+    },
+    {
+      "model": "logreg_raw",
+      "source": "Tải ảnh từ máy",
+      "sample_id": null,
+      "prediction": 4,
+      "max_probability": 0.936054728967084,
+      "matches_saved_pipeline": true
+    },
+    {
+      "model": "knn",
+      "source": "Tải ảnh từ máy",
+      "sample_id": null,
+      "prediction": 0,
+      "max_probability": 1.0,
+      "matches_saved_pipeline": true
+    },
+    {
+      "model": "mlp",
+      "source": "Tải ảnh từ máy",
+      "sample_id": null,
+      "prediction": 4,
+      "max_probability": 0.8483924399442833,
+      "matches_saved_pipeline": true
+    }
+  ],
+  "stale_result_checks": [
+    "model logreg_raw -> knn / Ảnh test Digits",
+    "model knn -> mlp / Ảnh test Digits",
+    "model logreg_raw -> knn / Ảnh mẫu Digits",
+    "model knn -> mlp / Ảnh mẫu Digits",
+    "upload bytes changed / logreg_raw",
+    "upload bytes restored / logreg_raw",
+    "model logreg_raw -> knn / Tải ảnh từ máy",
+    "upload bytes changed / knn",
+    "upload bytes restored / knn",
+    "model knn -> mlp / Tải ảnh từ máy",
+    "upload bytes changed / mlp",
+    "upload bytes restored / mlp",
+    "upload -> test source",
+    "digit 0 -> 1",
+    "test ID changed within digit 1"
+  ],
+  "no_fit_guard": true,
+  "upload_method": "AppTest patches native uploader return bytes; OS chooser not exercised"
+}

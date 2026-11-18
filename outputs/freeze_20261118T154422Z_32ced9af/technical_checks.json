@@ -1,0 +1,298 @@
+[
+  {
+    "model": "mlp",
+    "clipped": [],
+    "groups": [
+      {
+        "bottom": 461.65000915527344,
+        "minHeight": "auto",
+        "overflow": "visible",
+        "title": "Thông tin dữ liệu",
+        "top": 148.0500030517578
+      },
+      {
+        "bottom": 461.65000915527344,
+        "minHeight": "auto",
+        "overflow": "visible",
+        "title": "Cấu hình mô hình",
+        "top": 148.0500030517578
+      },
+      {
+        "bottom": 619.5500030517578,
+        "minHeight": "auto",
+        "overflow": "visible",
+        "title": "Quy trình xử lý ảnh",
+        "top": 481.6499938964844
+      },
+      {
+        "bottom": 716.4499893188477,
+        "minHeight": "auto",
+        "overflow": "visible",
+        "title": "Giới hạn mô hình",
+        "top": 639.5499877929688
+      }
+    ],
+    "horizontalOverflow": false,
+    "tables": [
+      {
+        "name": "Thông tin dữ liệu",
+        "rows": [
+          [
+            "Dataset",
+            "Digits · scikit-learn"
+          ],
+          [
+            "Số lượng mẫu",
+            "1.797"
+          ],
+          [
+            "Kích thước ảnh",
+            "8×8"
+          ],
+          [
+            "Số đặc trưng",
+            "64"
+          ],
+          [
+            "Miền pixel",
+            "0–16"
+          ]
+        ]
+      },
+      {
+        "name": "Cấu hình mô hình đang chọn",
+        "rows": [
+          [
+            "Thuật toán",
+            "MLP"
+          ],
+          [
+            "Kiến trúc lớp ẩn",
+            "64 → 32"
+          ],
+          [
+            "Activation",
+            "relu"
+          ],
+          [
+            "Optimizer / solver",
+            "adam"
+          ],
+          [
+            "Alpha",
+            "0.0001"
+          ],
+          [
+            "Early stopping",
+            "Có"
+          ],
+          [
+            "Số vòng lặp tối đa",
+            "300"
+          ],
+          [
+            "Chuẩn hóa",
+            "StandardScaler"
+          ]
+        ]
+      }
+    ],
+    "text": "Thông tin dữ liệuDatasetDigits · scikit-learnSố lượng mẫu1.797Kích thước ảnh8×8Số đặc trưng64Miền pixel0–16Cấu hình mô hìnhThuật toánMLPKiến trúc lớp ẩn64 → 32ActivationreluOptimizer / solveradamAlpha0.0001Early stoppingCóSố vòng lặp tối đa300Chuẩn hóaStandardScalerQuy trình xử lý ảnhẢnh upload → Grayscale và xử lý nền → Crop, giữ tỷ lệ và căn giữa → Resize 8×8 (0–16) → Vector 64 pixel theo hàng → Pipeline → Kết quả dự đoánẢnh mẫu/test Digits giữ nguyên 64 pixel gốc, không crop hoặc resize lại. Mẫu test lấy từ split đã lưu; minh họa sau khi xem test không phải đánh giá độc lập mới.Ảnh upload còn được xử lý hướng EXIF và ghép alpha trước grayscale. Chuẩn hóa chỉ thực hiện bên trong Pipeline, không chuẩn hóa hai lần.Giới hạn mô hìnhMô hình được huấn luyện trên bộ dữ liệu Digits. Nên sử dụng ảnh chứa một chữ số, nền đơn giản và nét viết rõ ràng. Độ chính xác có thể giảm đối với ảnh bên ngoài do sự khác biệt về nét viết, kích thước và chất lượng ảnh. Xác suất dự đoán không bảo đảm kết quả luôn đúng.",
+    "viewport": [
+      1366,
+      768
+    ]
+  },
+  {
+    "model": "knn",
+    "clipped": [],
+    "groups": [
+      {
+        "bottom": 461.5,
+        "minHeight": "auto",
+        "overflow": "visible",
+        "title": "Thông tin dữ liệu",
+        "top": 217.8000030517578
+      },
+      {
+        "bottom": 461.5,
+        "minHeight": "auto",
+        "overflow": "visible",
+        "title": "Cấu hình mô hình",
+        "top": 217.8000030517578
+      },
+      {
+        "bottom": 619.4000091552734,
+        "minHeight": "auto",
+        "overflow": "visible",
+        "title": "Quy trình xử lý ảnh",
+        "top": 481.5
+      },
+      {
+        "bottom": 716.3000259399414,
+        "minHeight": "auto",
+        "overflow": "visible",
+        "title": "Giới hạn mô hình",
+        "top": 639.4000244140625
+      }
+    ],
+    "horizontalOverflow": false,
+    "tables": [
+      {
+        "name": "Thông tin dữ liệu",
+        "rows": [
+          [
+            "Dataset",
+            "Digits · scikit-learn"
+          ],
+          [
+            "Số lượng mẫu",
+            "1.797"
+          ],
+          [
+            "Kích thước ảnh",
+            "8×8"
+          ],
+          [
+            "Số đặc trưng",
+            "64"
+          ],
+          [
+            "Miền pixel",
+            "0–16"
+          ]
+        ]
+      },
+      {
+        "name": "Cấu hình mô hình đang chọn",
+        "rows": [
+          [
+            "Thuật toán",
+            "K-Nearest Neighbors"
+          ],
+          [
+            "Số láng giềng",
+            "3"
+          ],
+          [
+            "Trọng số",
+            "Uniform"
+          ],
+          [
+            "Metric khoảng cách",
+            "minkowski"
+          ],
+          [
+            "Bậc khoảng cách (p)",
+            "2"
+          ],
+          [
+            "Chuẩn hóa",
+            "StandardScaler"
+          ]
+        ]
+      }
+    ],
+    "text": "Thông tin dữ liệuDatasetDigits · scikit-learnSố lượng mẫu1.797Kích thước ảnh8×8Số đặc trưng64Miền pixel0–16Cấu hình mô hìnhThuật toánK-Nearest NeighborsSố láng giềng3Trọng sốUniformMetric khoảng cáchminkowskiBậc khoảng cách (p)2Chuẩn hóaStandardScalerQuy trình xử lý ảnhẢnh upload → Grayscale và xử lý nền → Crop, giữ tỷ lệ và căn giữa → Resize 8×8 (0–16) → Vector 64 pixel theo hàng → Pipeline → Kết quả dự đoánẢnh mẫu/test Digits giữ nguyên 64 pixel gốc, không crop hoặc resize lại. Mẫu test lấy từ split đã lưu; minh họa sau khi xem test không phải đánh giá độc lập mới.Ảnh upload còn được xử lý hướng EXIF và ghép alpha trước grayscale. Chuẩn hóa chỉ thực hiện bên trong Pipeline, không chuẩn hóa hai lần.Giới hạn mô hìnhMô hình được huấn luyện trên bộ dữ liệu Digits. Nên sử dụng ảnh chứa một chữ số, nền đơn giản và nét viết rõ ràng. Độ chính xác có thể giảm đối với ảnh bên ngoài do sự khác biệt về nét viết, kích thước và chất lượng ảnh. Xác suất dự đoán không bảo đảm kết quả luôn đúng.",
+    "viewport": [
+      1366,
+      768
+    ]
+  },
+  {
+    "model": "logreg_raw",
+    "clipped": [],
+    "groups": [
+      {
+        "bottom": 461.5,
+        "minHeight": "auto",
+        "overflow": "visible",
+        "title": "Thông tin dữ liệu",
+        "top": 217.8000030517578
+      },
+      {
+        "bottom": 461.5,
+        "minHeight": "auto",
+        "overflow": "visible",
+        "title": "Cấu hình mô hình",
+        "top": 217.8000030517578
+      },
+      {
+        "bottom": 619.4000091552734,
+        "minHeight": "auto",
+        "overflow": "visible",
+        "title": "Quy trình xử lý ảnh",
+        "top": 481.5
+      },
+      {
+        "bottom": 716.3000259399414,
+        "minHeight": "auto",
+        "overflow": "visible",
+        "title": "Giới hạn mô hình",
+        "top": 639.4000244140625
+      }
+    ],
+    "horizontalOverflow": false,
+    "tables": [
+      {
+        "name": "Thông tin dữ liệu",
+        "rows": [
+          [
+            "Dataset",
+            "Digits · scikit-learn"
+          ],
+          [
+            "Số lượng mẫu",
+            "1.797"
+          ],
+          [
+            "Kích thước ảnh",
+            "8×8"
+          ],
+          [
+            "Số đặc trưng",
+            "64"
+          ],
+          [
+            "Miền pixel",
+            "0–16"
+          ]
+        ]
+      },
+      {
+        "name": "Cấu hình mô hình đang chọn",
+        "rows": [
+          [
+            "Thuật toán",
+            "Logistic Regression"
+          ],
+          [
+            "C",
+            "1.0"
+          ],
+          [
+            "Solver",
+            "lbfgs"
+          ],
+          [
+            "Penalty",
+            "l2"
+          ],
+          [
+            "Số vòng lặp tối đa",
+            "3000"
+          ],
+          [
+            "Chuẩn hóa",
+            "Không chuẩn hóa · pixel thô"
+          ]
+        ]
+      }
+    ],
+    "text": "Thông tin dữ liệuDatasetDigits · scikit-learnSố lượng mẫu1.797Kích thước ảnh8×8Số đặc trưng64Miền pixel0–16Cấu hình mô hìnhThuật toánLogistic RegressionC1.0SolverlbfgsPenaltyl2Số vòng lặp tối đa3000Chuẩn hóaKhông chuẩn hóa · pixel thôQuy trình xử lý ảnhẢnh upload → Grayscale và xử lý nền → Crop, giữ tỷ lệ và căn giữa → Resize 8×8 (0–16) → Vector 64 pixel theo hàng → Pipeline → Kết quả dự đoánẢnh mẫu/test Digits giữ nguyên 64 pixel gốc, không crop hoặc resize lại. Mẫu test lấy từ split đã lưu; minh họa sau khi xem test không phải đánh giá độc lập mới.Ảnh upload còn được xử lý hướng EXIF và ghép alpha trước grayscale. Chuẩn hóa chỉ thực hiện bên trong Pipeline, không chuẩn hóa hai lần.Giới hạn mô hìnhMô hình được huấn luyện trên bộ dữ liệu Digits. Nên sử dụng ảnh chứa một chữ số, nền đơn giản và nét viết rõ ràng. Độ chính xác có thể giảm đối với ảnh bên ngoài do sự khác biệt về nét viết, kích thước và chất lượng ảnh. Xác suất dự đoán không bảo đảm kết quả luôn đúng.",
+    "viewport": [
+      1366,
+      768
+    ]
+  }
+]

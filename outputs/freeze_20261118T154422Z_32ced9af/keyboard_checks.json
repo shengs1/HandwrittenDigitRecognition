@@ -1,0 +1,11 @@
+[
+  {
+    "action": "ArrowDown",
+    "expanded": "true"
+  },
+  {
+    "action": "Escape then Tab",
+    "activeLabel": "Nguồn ảnh",
+    "modelValue": "K láng giềng gần nhất (KNN)"
+  }
+]

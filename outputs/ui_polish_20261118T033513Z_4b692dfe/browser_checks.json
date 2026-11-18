@@ -1,0 +1,199 @@
+[
+  {
+    "actualHeadingFonts": [
+      {
+        "font": "25px",
+        "text": "Nhận diện chữ số viết tay",
+        "weight": "650"
+      },
+      {
+        "font": "17px",
+        "text": "Ảnh đầu vào",
+        "weight": "600"
+      },
+      {
+        "font": "17px",
+        "text": "Kết quả dự đoán",
+        "weight": "600"
+      }
+    ],
+    "emptyHeight": 369,
+    "horizontalOverflow": false,
+    "state": "empty",
+    "viewport": {
+      "height": 768,
+      "width": 1366
+    }
+  },
+  {
+    "actualHeadingFonts": [
+      {
+        "font": "25px",
+        "text": "Nhận diện chữ số viết tay",
+        "weight": "650"
+      },
+      {
+        "font": "17px",
+        "text": "Ảnh đầu vào",
+        "weight": "600"
+      },
+      {
+        "font": "17px",
+        "text": "Kết quả dự đoán",
+        "weight": "600"
+      }
+    ],
+    "digitFont": "80px",
+    "horizontalOverflow": false,
+    "imageSize": 224,
+    "parts": {
+      ".image-card": {
+        "bottom": 607.8000183105469,
+        "height": 252,
+        "left": 132.8000030517578,
+        "right": 664.0000152587891,
+        "top": 355.8000183105469,
+        "width": 531.2000122070312,
+        "x": 132.8000030517578,
+        "y": 355.8000183105469
+      },
+      ".result-card": {
+        "bottom": 518.3500213623047,
+        "height": 162.5500030517578,
+        "left": 692,
+        "right": 1223.2000122070312,
+        "top": 355.8000183105469,
+        "width": 531.2000122070312,
+        "x": 692,
+        "y": 355.8000183105469
+      },
+      ".st-key-workspace button": {
+        "bottom": 670.7999877929688,
+        "height": 40,
+        "left": 132.8000030517578,
+        "right": 664.0000152587891,
+        "top": 630.7999877929688,
+        "width": 531.2000122070312,
+        "x": 132.8000030517578,
+        "y": 630.7999877929688
+      }
+    },
+    "resultPanelHeight": 368.3500061035156,
+    "state": "prediction",
+    "viewport": {
+      "height": 768,
+      "width": 1366
+    }
+  },
+  {
+    "actualHeadingFonts": [
+      {
+        "font": "26px",
+        "text": "Nhận diện chữ số viết tay",
+        "weight": "650"
+      },
+      {
+        "font": "17px",
+        "text": "Ảnh đầu vào",
+        "weight": "600"
+      },
+      {
+        "font": "17px",
+        "text": "Kết quả dự đoán",
+        "weight": "600"
+      }
+    ],
+    "digitFont": "88px",
+    "horizontalOverflow": false,
+    "imageSize": 232,
+    "parts": {
+      ".image-card": {
+        "bottom": 649,
+        "height": 268,
+        "left": 416.8000183105469,
+        "right": 946.000030517578,
+        "top": 381,
+        "width": 529.2000122070312,
+        "x": 416.8000183105469,
+        "y": 381
+      },
+      ".result-card": {
+        "bottom": 551.5500030517578,
+        "height": 170.5500030517578,
+        "left": 974,
+        "right": 1503.2000122070312,
+        "top": 381,
+        "width": 529.2000122070312,
+        "x": 974,
+        "y": 381
+      },
+      ".st-key-workspace button": {
+        "bottom": 720,
+        "height": 40,
+        "left": 416.8000183105469,
+        "right": 946.000030517578,
+        "top": 680,
+        "width": 529.2000122070312,
+        "x": 416.8000183105469,
+        "y": 680
+      }
+    },
+    "resultPanelHeight": 385.35003662109375,
+    "state": "prediction",
+    "viewport": {
+      "height": 1080,
+      "width": 1920
+    }
+  },
+  {
+    "errorVisible": true,
+    "horizontalOverflow": false,
+    "predictionDisabled": true,
+    "state": "invalid_fixture",
+    "viewport": {
+      "height": 768,
+      "width": 1366
+    }
+  },
+  {
+    "digitFont": "80px",
+    "horizontalOverflow": false,
+    "parts": {
+      ".image-card": {
+        "bottom": 572.2000122070312,
+        "height": 252,
+        "left": 132.8000030517578,
+        "right": 664.0000152587891,
+        "top": 320.20001220703125,
+        "width": 531.2000122070312,
+        "x": 132.8000030517578,
+        "y": 320.20001220703125
+      },
+      ".result-card": {
+        "bottom": 464.15000915527344,
+        "height": 143.9499969482422,
+        "left": 692,
+        "right": 1223.2000122070312,
+        "top": 320.20001220703125,
+        "width": 531.2000122070312,
+        "x": 692,
+        "y": 320.20001220703125
+      },
+      ".st-key-workspace button": {
+        "bottom": 635.2000122070312,
+        "height": 40,
+        "left": 132.8000030517578,
+        "right": 664.0000152587891,
+        "top": 595.2000122070312,
+        "width": 531.2000122070312,
+        "x": 132.8000030517578,
+        "y": 595.2000122070312
+      }
+    },
+    "state": "upload_fixture",
+    "viewport": {
+      "height": 768,
+      "width": 1366
+    }
+  }
+]

@@ -1,0 +1,78 @@
+{
+  "caption": [
+    {
+      "height": "19.6px",
+      "lineHeight": "19.6px",
+      "margin": "0px 0px -14px",
+      "overflow": "visible",
+      "rect": {
+        "bottom": 870.2000370025635,
+        "height": 19.600000381469727,
+        "left": 97.5999984741211,
+        "right": 1258.400047302246,
+        "top": 850.6000366210938,
+        "width": 1160.800048828125,
+        "x": 97.5999984741211,
+        "y": 850.6000366210938
+      },
+      "tag": "DIV",
+      "testid": "stCaptionContainer"
+    },
+    {
+      "height": "5.6px",
+      "lineHeight": "22.4px",
+      "margin": "0px",
+      "overflow": "visible",
+      "rect": {
+        "bottom": 856.2000365257263,
+        "height": 5.599999904632568,
+        "left": 97.5999984741211,
+        "right": 1258.400047302246,
+        "top": 850.6000366210938,
+        "width": 1160.800048828125,
+        "x": 97.5999984741211,
+        "y": 850.6000366210938
+      },
+      "tag": "DIV",
+      "testid": null
+    },
+    {
+      "height": "5.6px",
+      "lineHeight": "22.4px",
+      "margin": "0px",
+      "overflow": "visible",
+      "rect": {
+        "bottom": 856.2000365257263,
+        "height": 5.599999904632568,
+        "left": 97.5999984741211,
+        "right": 1258.400047302246,
+        "top": 850.6000366210938,
+        "width": 1160.800048828125,
+        "x": 97.5999984741211,
+        "y": 850.6000366210938
+      },
+      "tag": "DIV",
+      "testid": "stMarkdown"
+    },
+    {
+      "height": "5.6px",
+      "lineHeight": "22.4px",
+      "margin": "0px",
+      "overflow": "visible",
+      "rect": {
+        "bottom": 856.2000365257263,
+        "height": 5.599999904632568,
+        "left": 97.5999984741211,
+        "right": 1258.400047302246,
+        "top": 850.6000366210938,
+        "width": 1160.800048828125,
+        "x": 97.5999984741211,
+        "y": 850.6000366210938
+      },
+      "tag": "DIV",
+      "testid": "stElementContainer"
+    }
+  ],
+  "codeTop": 864.2000122070312,
+  "select": "<div class=\"stSelectbox\" data-testid=\"stSelectbox\"><label data-testid=\"stWidgetLabel\" class=\"st-emotion-cache-1ygy96c eyxlljl0\"><span aria-hidden=\"true\"><div class=\"st-emotion-cache-183k2vq e1yqkw3v0\" data-testid=\"stMarkdownContainer\"><p>Mô hình phân loại</p></div></span></label><template><div class=\"st-emotion-cache-yv5avw equpb2c0\" data-rac=\"\" role=\"group\"></div></template><div class=\"react-aria-ComboBox\" data-rac=\"\"><div class=\"st-emotion-cache-yv5avw equpb2c0\" data-rac=\"\" role=\"group\"><input aria-label=\"Mô hình phân loại\" type=\"text\" aria-autocomplete=\"list\" autocomplete=\"off\" placeholder=\"Choose an option\" autocorrect=\"off\" spellcheck=\"false\" tabindex=\"0\" id=\"react-aria3894404940-:r13:\" role=\"combobox\" aria-expanded=\"false\" class=\"st-emotion-cache-3gdzoc equpb2c4\" data-rac=\"\" value=\"K láng giềng gần nhất (KNN)\"><button id=\"react-aria3894404940-:rv:\" class=\"st-emotion-cache-xr137t equpb2c5\" data-rac=\"\" type=\"button\" tabindex=\"-1\" data-react-aria-pressable=\"true\" aria-label=\"Open\" aria-haspopup=\"listbox\" aria-expanded=\"false\"><svg viewBox=\"0 0 24 24\" height=\"1.25rem\" width=\"1.25rem\" aria-hidden=\"true\" focusable=\"false\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\" class=\"st-emotion-cache-1eamic5 ex0cdmw0\"><path fill=\"none\" d=\"M0 0h24v24H0V0z\"></path><path d=\"M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z\"></path></svg></button></div></div></div>"
+}

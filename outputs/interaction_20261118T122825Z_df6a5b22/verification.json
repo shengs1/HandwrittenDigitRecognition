@@ -1,0 +1,191 @@
+{
+  "protected_files": 94,
+  "protected_sha256_unchanged": true,
+  "unchanged_function_ast": {
+    "read_model_registry": true,
+    "load_saved_pipeline": true,
+    "preprocess_uploaded_image": true,
+    "predict_digit": true,
+    "sample_digits": true,
+    "saved_test_indices": true,
+    "preview_image_html": true,
+    "prediction_html": true
+  },
+  "syntax_ok": true,
+  "browser_pipeline_tables": {
+    "logreg_raw": {
+      "equal": true,
+      "parameters": [
+        [
+          "Thuật toán",
+          "Logistic Regression"
+        ],
+        [
+          "C",
+          "1.0"
+        ],
+        [
+          "Solver",
+          "lbfgs"
+        ],
+        [
+          "Penalty",
+          "l2"
+        ],
+        [
+          "Số vòng lặp tối đa",
+          "3000"
+        ],
+        [
+          "Chuẩn hóa",
+          "Không chuẩn hóa · pixel thô"
+        ]
+      ]
+    },
+    "knn": {
+      "equal": true,
+      "parameters": [
+        [
+          "Thuật toán",
+          "K-Nearest Neighbors"
+        ],
+        [
+          "Số láng giềng",
+          "3"
+        ],
+        [
+          "Trọng số",
+          "Uniform"
+        ],
+        [
+          "Metric khoảng cách",
+          "minkowski"
+        ],
+        [
+          "Bậc khoảng cách (p)",
+          "2"
+        ],
+        [
+          "Chuẩn hóa",
+          "StandardScaler"
+        ]
+      ]
+    },
+    "mlp": {
+      "equal": true,
+      "parameters": [
+        [
+          "Thuật toán",
+          "MLP"
+        ],
+        [
+          "Kiến trúc lớp ẩn",
+          "64 → 32"
+        ],
+        [
+          "Activation",
+          "relu"
+        ],
+        [
+          "Optimizer / solver",
+          "adam"
+        ],
+        [
+          "Alpha",
+          "0.0001"
+        ],
+        [
+          "Early stopping",
+          "Có"
+        ],
+        [
+          "Số vòng lặp tối đa",
+          "300"
+        ],
+        [
+          "Chuẩn hóa",
+          "StandardScaler"
+        ]
+      ]
+    }
+  },
+  "technical_checks": 6,
+  "technical_no_clipping_or_overlap": true,
+  "dropdown_clicks_pass": 15,
+  "layout_checks_zero_overflow": 12,
+  "screenshot_dimensions": {
+    "01_closed_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "02_technical_knn_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "03_technical_mlp_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "04_technical_logreg_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "05_empty_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "05_empty_1920x900.jpg": [
+      1920,
+      900
+    ],
+    "06_prediction_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "06_prediction_1920x900.jpg": [
+      1920,
+      900
+    ],
+    "07_technical_knn_1920x900.jpg": [
+      1920,
+      900
+    ],
+    "08_technical_mobile_390x844.jpg": [
+      390,
+      843
+    ],
+    "09_sample_prediction_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "10_upload_preview_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "11_upload_prediction_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "12_upload_invalid_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "13_test_id21_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "14_technical_mlp_final_1366x768.jpg": [
+      1366,
+      768
+    ]
+  },
+  "unittest": {
+    "count": 43,
+    "seconds": 6.843,
+    "result": "PASS",
+    "log": "tests_final.log"
+  },
+  "diff_check_ok": true,
+  "upload_limit": "Fixture harness exercises real app.main and inference; OS file chooser not repeated.",
+  "no_training_or_notebook_execution": true
+}

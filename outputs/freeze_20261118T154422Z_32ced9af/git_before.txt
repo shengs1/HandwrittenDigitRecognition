@@ -1,0 +1,12 @@
+## main...origin/main
+ M AGENTS.md
+ M HANDOFF.md
+ M README.md
+ M app.py
+ M tests/test_demo.py
+?? .streamlit/
+?? outputs/freeze_20261118T154422Z_32ced9af/
+?? outputs/interaction_20261118T122825Z_df6a5b22/
+?? outputs/responsive_20261118T035501Z_c6f49df4/
+?? outputs/ui_20261118T015852Z_1c47689a/
+?? outputs/ui_polish_20261118T033513Z_4b692dfe/

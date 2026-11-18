@@ -1,0 +1,133 @@
+{
+  "date": "2026-11-18",
+  "scope": "Final UI Polish; changes extend prior uncommitted UI Redesign without discarding it",
+  "protected_files_unchanged": 61,
+  "notebook_unchanged": true,
+  "preprocessing_and_inference_functions_unchanged": {
+    "read_model_registry": true,
+    "load_saved_pipeline": true,
+    "preprocess_uploaded_image": true,
+    "predict_digit": true,
+    "sample_digits": true,
+    "saved_test_indices": true,
+    "read_demo_summary": true,
+    "preview_image_html": true
+  },
+  "tests": {
+    "count": 40,
+    "seconds": 18.004,
+    "result": "OK"
+  },
+  "screenshots": {
+    "01_empty_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "02_prediction_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "03_prediction_1920x1080.jpg": [
+      1920,
+      1061
+    ],
+    "04_wrong_prediction_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "04_wrong_prediction_1920x1080.jpg": [
+      1708,
+      960
+    ],
+    "05_upload_fixture_preview_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "06_upload_fixture_result_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "07_invalid_fixture_1366x768.jpg": [
+      1366,
+      768
+    ]
+  },
+  "actual_heading_fonts": [
+    [
+      {
+        "font": "25px",
+        "text": "Nhận diện chữ số viết tay",
+        "weight": "650"
+      },
+      {
+        "font": "17px",
+        "text": "Ảnh đầu vào",
+        "weight": "600"
+      },
+      {
+        "font": "17px",
+        "text": "Kết quả dự đoán",
+        "weight": "600"
+      }
+    ],
+    [
+      {
+        "font": "26px",
+        "text": "Nhận diện chữ số viết tay",
+        "weight": "650"
+      },
+      {
+        "font": "17px",
+        "text": "Ảnh đầu vào",
+        "weight": "600"
+      },
+      {
+        "font": "17px",
+        "text": "Kết quả dự đoán",
+        "weight": "600"
+      }
+    ]
+  ],
+  "digit_sizes": [
+    "80px",
+    "88px"
+  ],
+  "image_sizes": [
+    224,
+    232
+  ],
+  "empty_prediction_height_difference_px": 0.649993896484375,
+  "desktop_main_elements_within_viewport": true,
+  "horizontal_overflow": false,
+  "browser_predictions": [
+    {
+      "sample_index": 10,
+      "true_label": 0,
+      "predicted_label": 0,
+      "probability": 1.0
+    },
+    {
+      "sample_index": 1790,
+      "true_label": 8,
+      "predicted_label": 1,
+      "probability": 0.6666666666666666
+    }
+  ],
+  "upload_error_visual_testing": {
+    "method": "Temporary Streamlit harness imports the production app and supplies fixed fixture bytes through a mocked file_uploader return; native widget still rendered. No OS file chooser tested in this polish turn.",
+    "valid_fixture": "mnist_test_00000_label_7.png",
+    "predicted_label": 3,
+    "probability": 0.3333333333333333,
+    "invalid_fixture": "non-image bytes",
+    "invalid_message_observed": true,
+    "invalid_prediction_button_disabled_observed": true
+  },
+  "limitations": [
+    "At1366x768 the technical expander/footer can require a short vertical scroll; input, prediction button and result card stay visible.",
+    "Browser upload/error screenshots use the documented fixture harness, not a fresh native-file selection.",
+    "Native upload labels retain some English, unchanged from prior design."
+  ],
+  "commit_push_this_turn": false,
+  "temporary_servers_stopped": true,
+  "app_sha256": "1d9e8df1cb68d2a45cfeacaf14cd3702de854d3ccaeec9b153002dd7b86a22ac"
+}

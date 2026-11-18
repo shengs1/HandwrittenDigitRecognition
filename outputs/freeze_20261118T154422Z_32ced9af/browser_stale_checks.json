@@ -1,0 +1,32 @@
+[
+  {
+    "source": "Ảnh test",
+    "model": "knn",
+    "cleared": true
+  },
+  {
+    "source": "Ảnh test",
+    "model": "mlp",
+    "cleared": true
+  },
+  {
+    "source": "Ảnh mẫu",
+    "model": "knn",
+    "cleared": true
+  },
+  {
+    "source": "Ảnh mẫu",
+    "model": "mlp",
+    "cleared": true
+  },
+  {
+    "source": "Upload harness",
+    "model": "knn",
+    "cleared": true
+  },
+  {
+    "source": "Upload harness",
+    "model": "mlp",
+    "cleared": true
+  }
+]

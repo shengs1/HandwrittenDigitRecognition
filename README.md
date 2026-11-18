@@ -2,6 +2,14 @@
 
 [Repository GitHub](https://github.com/shengs1/HandwrittenDigitRecognition) · Python 3.12 · Digits · Streamlit.
 
+**UI FROZEN — 18/11/2026:** giao diện hiện tại đã được người dùng duyệt làm bản chính thức. Giữ nguyên thiết kế/chức năng; chỉ sửa lỗi đã xác minh. Kiểm tra chốt **43/43 unittest**, đủ **3 mô hình × 3 nguồn ảnh**, dropdown và checksum đều đạt. [Bằng chứng đóng băng](outputs/freeze_20261118T154422Z_32ced9af/FREEZE_REVIEW.md), [log unittest](outputs/freeze_20261118T154422Z_32ced9af/unittest.log). Các mục kiểm tra UI bên dưới là lịch sử; hướng dẫn cài/chạy vẫn áp dụng.
+
+**Thông tin kỹ thuật và tương tác:** expander hiển thị dữ liệu, bảng tham số đọc từ Pipeline đang chọn, quy trình ảnh và giới hạn ngắn. Cả5 dropdown giữ tương tác native; đã thử15 vị trí bấm và bàn phím. [Bằng chứng mới nhất, screenshot và giới hạn kiểm thử upload](outputs/interaction_20261118T122825Z_df6a5b22/INTERACTION_REVIEW.md), [43/43 unittest](outputs/interaction_20261118T122825Z_df6a5b22/tests_final.log). Không đổi model/notebook/kết quả thực nghiệm.
+
+**Responsive ở zoom100%:** chọn chữ số/ID gọn trong cột ảnh; đã đo thực5 viewport từ1280×720 đến1920×1080, các trạng thái đóng thông tin kỹ thuật không tràn dọc/ngang. Xem [bảng kiểm và screenshot](outputs/responsive_20261118T035501Z_c6f49df4/LAYOUT_REVIEW.md), [40 tests](outputs/responsive_20261118T035501Z_c6f49df4/tests_final.log). Không cần giảm browser zoom; mở phần kỹ thuật sẽ cho phép cuộn tự nhiên.
+
+**Giao diện mới (2026-11-18):** dark mode, hai cột ảnh/kết quả, nút nhận diện xanh và 10 thanh xác suất. Mặc định **Ảnh test Digits**; đổi lựa chọn sẽ xóa kết quả cũ. [Ảnh demo test](outputs/ui_20261118T015852Z_1c47689a/02_test_result_1366x768.jpg), [ảnh upload](outputs/ui_20261118T015852Z_1c47689a/08_upload_result_1366x768.jpg), [40/40 test](outputs/ui_20261118T015852Z_1c47689a/tests_final.log), [kiểm tra giao diện/checksum](outputs/ui_20261118T015852Z_1c47689a/ui_checks.json). Đã kiểm tra trực tiếp 1366×768, 1920×1080 và 390×844; không đổi notebook, model, tiền xử lý hoặc kết quả thực nghiệm.
+
 **Final Completion:** notebook có nhận định dự thảo từ kết quả thật, nội dung báo cáo 10 mục và 12 slide đã chuẩn bị, **chưa được nhóm xác nhận**. Demo có lựa chọn ảnh test đúng split. **37/37 test qua trên checkout sạch**; model, số liệu và mã huấn luyện không đổi. Xem [đối chiếu yêu cầu và kiểm thử mới nhất](docs/FINAL_REVIEW.md), [HANDOFF](HANDOFF.md). Báo cáo PDF/DOCX, slide chính thức, thông tin nhóm và phân công vẫn cần hoàn thiện.
 
 Các kiểm tra lịch sử được giữ ở [FINAL_AUDIT](docs/FINAL_AUDIT.md).
@@ -44,7 +52,7 @@ Không cần activate hoặc thay ExecutionPolicy. Nếu `py`/`python` là alias
 .\.venv\Scripts\python.exe -m streamlit run app.py --server.address 127.0.0.1
 ```
 
-Mở [http://localhost:8501](http://localhost:8501). Chọn mô hình, chọn **Ảnh mẫu Digits** (toàn dataset), **Ảnh test Digits** (360 id đúng split đã lưu) hoặc tải PNG/JPEG/BMP/WebP từ máy, xem ảnh gốc/ảnh 8×8 rồi bấm **Dự đoán**. Bảng xác suất có đủ 10 chữ số. Model mặc định là KNN đã chọn bằng CV.
+Mở [http://localhost:8501](http://localhost:8501). Chọn mô hình, chọn **Ảnh mẫu Digits** (toàn dataset), **Ảnh test Digits** (360 id đúng split đã lưu, mặc định) hoặc tải PNG/JPEG/BMP/WebP từ máy rồi bấm **Nhận diện chữ số**. Ảnh Digits hiển thị một lần, phóng to rõ từng pixel; upload có ảnh gốc và ảnh sau tiền xử lý. Kết quả bên phải có đủ 10 thanh xác suất. Model mặc định là KNN đã chọn bằng CV; các thẻ tổng quan đọc số liệu chính thức. Giải thích Pipeline/thông số/giới hạn nằm trong expander phía dưới.
 
 Nguồn ảnh test đọc `outputs/<registry.run_id>/split_indices.csv`, không chia lại; thiếu/sai split thì báo lỗi. Dùng mẫu test để minh họa sau đánh giá không tạo một đánh giá độc lập mới. Ảnh Digits giữ đúng pixel gốc. Ảnh tải lên: đọc hướng EXIF, grayscale/ghép alpha, nhận biết nền từ viền (hoặc chọn màu nền), lấy vùng nét, giữ tỷ lệ, căn giữa và thu nhỏ về 8×8, đổi miền về 0–16. Không gọi StandardScaler bên ngoài Pipeline. Giới hạn file 10 MB, 16 triệu pixel; file hỏng, ảnh trống và thiếu model được báo trong giao diện.
 

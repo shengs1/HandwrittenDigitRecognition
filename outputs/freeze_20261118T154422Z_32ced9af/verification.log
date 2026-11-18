@@ -1,0 +1,80 @@
+2026-11-18 22:53:54.986 WARNING streamlit.runtime.caching.cache_data_api: No runtime found, using MemoryCacheStorageManager
+2026-11-18 22:53:55.144 WARNING streamlit.runtime.caching.cache_data_api: No runtime found, using MemoryCacheStorageManager
+{
+  "status": "UI FROZEN",
+  "approved_ui_source_unchanged": true,
+  "protected_count": 94,
+  "protected_sha256_unchanged": true,
+  "protected_git_diff_empty": true,
+  "pipeline_sha256_matches_registry": {
+    "logreg_raw": "4a8b780643e4c46d32a8cdd20692b16784c52470118c2668052f6c0fe5da95f8",
+    "knn": "0ffb42df1ab1cf884f9c2b09bb1116602f0226153b71542300ffeb8d63211433",
+    "mlp": "00ef926c4aeeb8aff5e8525d392f78a015d6ff1fca78f7c1f875aa55f17d725c"
+  },
+  "unittest": {
+    "count": 43,
+    "seconds": 9.618,
+    "result": "PASS"
+  },
+  "browser_prediction_comparisons": [
+    {
+      "source": "Ảnh test",
+      "model": "logreg_raw",
+      "matches_saved_pipeline": true
+    },
+    {
+      "source": "Ảnh test",
+      "model": "knn",
+      "matches_saved_pipeline": true
+    },
+    {
+      "source": "Ảnh test",
+      "model": "mlp",
+      "matches_saved_pipeline": true
+    },
+    {
+      "source": "Ảnh mẫu",
+      "model": "logreg_raw",
+      "matches_saved_pipeline": true
+    },
+    {
+      "source": "Ảnh mẫu",
+      "model": "knn",
+      "matches_saved_pipeline": true
+    },
+    {
+      "source": "Ảnh mẫu",
+      "model": "mlp",
+      "matches_saved_pipeline": true
+    },
+    {
+      "source": "Upload harness",
+      "model": "logreg_raw",
+      "matches_saved_pipeline": true
+    },
+    {
+      "source": "Upload harness",
+      "model": "knn",
+      "matches_saved_pipeline": true
+    },
+    {
+      "source": "Upload harness",
+      "model": "mlp",
+      "matches_saved_pipeline": true
+    }
+  ],
+  "dropdown_click_checks": 15,
+  "technical_models_no_clipping": 3,
+  "desktop_layout_checks_zero_overflow": 10,
+  "streamlit_health_http": {
+    "8512": 200,
+    "8513": 200,
+    "8514": 200
+  },
+  "no_fit_guard": true,
+  "diff_check": true,
+  "known_limitations": [
+    "Upload verified with real app via fixture harness and AppTest; Windows OS chooser not repeated.",
+    "External-image reliability remains limited; original MNIST 3/10 per model results preserved."
+  ]
+}

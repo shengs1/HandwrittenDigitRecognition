@@ -1,0 +1,14 @@
+[theme]
+base = "dark"
+primaryColor = "#3B82F6"
+backgroundColor = "#101012"
+secondaryBackgroundColor = "#222225"
+textColor = "#F4F4F5"
+borderColor = "#343438"
+baseRadius = "0.65rem"
+buttonRadius = "0.65rem"
+baseFontSize = 14
+font = "sans serif"
+
+[client]
+toolbarMode = "minimal"

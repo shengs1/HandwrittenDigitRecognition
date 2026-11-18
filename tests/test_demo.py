@@ -14,6 +14,7 @@ import pandas as pd
 from PIL import Image, ImageDraw, ImageOps
 from sklearn.datasets import load_digits
 from sklearn.pipeline import Pipeline
+from sklearn.base import clone
 from streamlit.testing.v1 import AppTest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -147,6 +148,38 @@ class SavedPipelineTests(unittest.TestCase):
                 self.assertEqual(predicted, int(pipeline.predict(features)[0]))
                 self.assertEqual(list(table.index), [str(i) for i in range(10)])
 
+    def test_parameter_table_values_come_from_saved_pipelines(self):
+        for name in self.registry['models']:
+            pipeline = self.load(name)
+            rows = dict(app.model_parameter_rows(pipeline))
+            params = pipeline.steps[-1][1].get_params(deep=False)
+            if name == 'knn':
+                self.assertEqual(rows['Số láng giềng'], str(params['n_neighbors']))
+                self.assertEqual(rows['Trọng số'].lower(), params['weights'])
+                self.assertEqual(rows['Metric khoảng cách'], params['metric'])
+            elif name == 'mlp':
+                self.assertEqual(rows['Kiến trúc lớp ẩn'], ' → '.join(map(str, params['hidden_layer_sizes'])))
+                self.assertEqual(rows['Activation'], params['activation'])
+                self.assertEqual(rows['Optimizer / solver'], params['solver'])
+                self.assertEqual(rows['Alpha'], str(params['alpha']))
+            else:
+                self.assertEqual(rows['C'], str(params['C']))
+                self.assertEqual(rows['Solver'], params['solver'])
+                self.assertIn('pixel thô', rows['Chuẩn hóa'])
+            if name != 'logreg_raw':
+                self.assertEqual(rows['Chuẩn hóa'], type(pipeline.named_steps['scale']).__name__)
+
+    def test_parameter_reader_is_dynamic_without_training_or_changing_artifact(self):
+        original = self.load('knn')
+        old_neighbors = original.named_steps['clf'].n_neighbors
+        # Chỉ thử API đọc tham số trên clone chưa fit; không tuning hoặc lưu model mới.
+        with patch.object(Pipeline, 'fit', side_effect=AssertionError('Parameter display must not fit')):
+            alternative = clone(original).set_params(clf__n_neighbors=old_neighbors + 2, clf__weights='distance')
+            rows = dict(app.model_parameter_rows(alternative))
+        self.assertEqual(rows['Số láng giềng'], str(old_neighbors + 2))
+        self.assertEqual(rows['Trọng số'], 'Distance')
+        self.assertEqual(original.named_steps['clf'].n_neighbors, old_neighbors)
+
     def test_invalid_feature_domain_is_rejected(self):
         pipeline = self.load("knn")
         for array in [np.zeros((7, 8)), np.full((8, 8), np.nan), np.full((8, 8), 17), np.full((8, 8), -1)]:
@@ -210,6 +243,41 @@ class SavedPipelineTests(unittest.TestCase):
 
 
 class AppFlowTests(unittest.TestCase):
+    def test_technical_information_updates_for_each_selected_model(self):
+        registry = app.read_model_registry()
+        summary = app.read_demo_summary(registry)
+        with patch.object(Pipeline, 'fit', side_effect=AssertionError('Technical information must not fit')):
+            at = AppTest.from_string('from app import main\nmain()', default_timeout=30).run()
+            for name, entry in registry['models'].items():
+                at.selectbox(key='model').select(name).run()
+                self.assertFalse(at.exception)
+                bodies = [item.proto.body for item in at.get('html') if '<div class="technical-info">' in item.proto.body]
+                self.assertEqual(len(bodies), 1)
+                path = ROOT / 'models' / entry['path']
+                stat = path.stat()
+                pipeline = app.load_saved_pipeline(str(path), entry['sha256'], stat.st_mtime_ns, stat.st_size)
+                self.assertEqual(bodies[0], app.technical_information_html(summary, app.model_parameter_rows(pipeline)))
+                for heading in ['Thông tin dữ liệu', 'Cấu hình mô hình', 'Quy trình xử lý ảnh', 'Giới hạn mô hình']:
+                    self.assertIn(heading, bodies[0])
+                self.assertIn(app.MODEL_LIMITS_TEXT, bodies[0])
+                self.assertNotIn(registry['run_id'], bodies[0])
+                self.assertNotIn(entry['sha256'], bodies[0])
+                self.assertNotIn('3/10', bodies[0])
+
+    def assert_visible_prediction(self, at):
+        """Kiểm cả kết quả thật và HTML hiển thị, thay cho hai st.metric của giao diện cũ."""
+        self.assertFalse(at.exception)
+        result = at.session_state['prediction_result']
+        self.assertEqual(result['classes'], [str(i) for i in range(10)])
+        self.assertEqual(len(result['probabilities']), 10)
+        self.assertAlmostEqual(sum(result['probabilities']), 1)
+        rendered = '\n'.join(item.value for item in at.markdown)
+        self.assertIn(f'data-prediction="{result["predicted"]}"', rendered)
+        for label in result['classes']:
+            self.assertIn(f'data-label="{label}"', rendered)
+        self.assertIn('Xác suất chưa hiệu chỉnh', rendered)
+        return result
+
     def test_test_only_sampler_uses_saved_split_and_each_pipeline(self):
         registry = app.read_model_registry()
         digits = load_digits()
@@ -218,24 +286,24 @@ class AppFlowTests(unittest.TestCase):
         with patch.object(Pipeline, 'fit', side_effect=AssertionError('App must not fit')), \
              patch.object(app, 'preprocess_uploaded_image', side_effect=AssertionError('Digits must stay unchanged')):
             at = AppTest.from_string('from app import main\nmain()', default_timeout=30).run()
-            at.radio(key='source').set_value('Ảnh test Digits').run()
+            at.selectbox(key='source').select('Ảnh test Digits').run()
             for label in range(10):
                 at.selectbox(key='sample_label').select(label).run()
                 expected = test_ids[digits.target[test_ids] == label].tolist()
-                self.assertEqual(at.select_slider(key=f'test_sample_{label}').options, [str(i) for i in expected])
+                self.assertEqual(at.selectbox(key=f'test_sample_{label}').options, [str(i) for i in expected])
             at.selectbox(key='sample_label').select(0).run()
-            index = int(at.select_slider(key='test_sample_0').value)
+            index = int(at.selectbox(key='test_sample_0').value)
             for name in registry['models']:
                 at.selectbox(key='model').select(name).run()
                 at.button[0].click().run()
                 self.assertFalse(at.exception)
                 expected = records.loc[(records.model == name) & (records.sample_index == index), 'predicted_label'].item()
-                self.assertEqual(int(at.metric[0].value), expected)
+                self.assertEqual(self.assert_visible_prediction(at)['predicted'], expected)
 
     def test_missing_saved_split_disables_test_prediction(self):
         with patch.object(app, 'saved_test_indices', side_effect=FileNotFoundError('Thiếu split_indices.csv')):
             at = AppTest.from_string('from app import main\nmain()', default_timeout=30).run()
-            at.radio(key='source').set_value('Ảnh test Digits').run()
+            at.selectbox(key='source').select('Ảnh test Digits').run()
             self.assertFalse(at.exception)
             self.assertTrue(at.error)
             self.assertTrue(at.button[0].disabled)
@@ -245,12 +313,14 @@ class AppFlowTests(unittest.TestCase):
              patch.object(app, "preprocess_uploaded_image", side_effect=AssertionError("Digits must stay unchanged")):
             at = AppTest.from_string("from app import main\nmain()", default_timeout=30).run()
             self.assertFalse(at.exception)
+            at.selectbox(key='source').select('Ảnh mẫu Digits').run()
             for name in app.read_model_registry()["models"]:
                 at.selectbox(key="model").select(name).run()
                 at.button[0].click().run()
                 self.assertFalse(at.exception)
-                self.assertEqual(len(at.metric), 2)
-                self.assertIn(int(at.metric[0].value), range(10))
+                result = self.assert_visible_prediction(at)
+                self.assertIn(result['predicted'], range(10))
+                self.assertEqual(result['model'], name)
 
     def test_upload_flow_with_real_external_image(self):
         fixture = next((ROOT / "tests/fixtures/external_digits").glob("*.png"))
@@ -258,16 +328,16 @@ class AppFlowTests(unittest.TestCase):
                   f"from pathlib import Path\ndata=Path({str(fixture)!r}).read_bytes()\n"
                   "with patch.object(app.st, 'file_uploader', return_value=BytesIO(data)):\n    app.main()")
         at = AppTest.from_string(script, default_timeout=30).run()
-        at.radio(key="source").set_value("Tải ảnh từ máy").run()
+        at.selectbox(key="source").select("Tải ảnh từ máy").run()
         at.button[0].click().run()
         self.assertFalse(at.exception)
-        self.assertEqual(len(at.metric), 2)
+        self.assert_visible_prediction(at)
 
     def test_upload_invalid_file_is_a_user_error_not_crash(self):
         script = ("from io import BytesIO\nfrom unittest.mock import patch\nimport app\n"
                   "with patch.object(app.st, 'file_uploader', return_value=BytesIO(b'broken')):\n    app.main()")
         at = AppTest.from_string(script, default_timeout=30).run()
-        at.radio(key="source").set_value("Tải ảnh từ máy").run()
+        at.selectbox(key="source").select("Tải ảnh từ máy").run()
         self.assertFalse(at.exception)
         self.assertTrue(at.error)
         self.assertTrue(at.button[0].disabled)
@@ -280,6 +350,7 @@ class AppFlowTests(unittest.TestCase):
             self.assertFalse(at.exception)
             self.assertTrue(at.warning)
             self.assertTrue(at.button[0].disabled)
+            self.assertIn('image-card', '\n'.join(item.value for item in at.markdown))
 
     def test_missing_pipeline_file_shows_error_without_crash(self):
         with tempfile.TemporaryDirectory(dir=ROOT / "tmp") as directory:
@@ -291,6 +362,63 @@ class AppFlowTests(unittest.TestCase):
             self.assertFalse(at.exception)
             self.assertTrue(at.error)
             self.assertIn("Thiếu file Pipeline", at.error[0].value)
+
+    def test_default_test_source_has_honest_empty_state_and_artifact_overview(self):
+        at = AppTest.from_string('from app import main\nmain()', default_timeout=30).run()
+        self.assertFalse(at.exception)
+        self.assertEqual(at.selectbox(key='source').value, 'Ảnh test Digits')
+        with self.assertRaises(KeyError):
+            at.session_state['prediction_result']
+        rendered = '\n'.join(item.value for item in at.markdown)
+        self.assertIn('result-empty', rendered)
+        self.assertNotIn('data-prediction=', rendered)
+        summary = app.read_demo_summary(app.read_model_registry())
+        self.assertIn(f'{summary["accuracy"]:.2%}'.replace('.', ','), rendered)
+        self.assertIn(f'{summary["n_samples"]:,}'.replace(',', '.'), rendered)
+        # Mẫu Digits chỉ có một ảnh pixel-grid, không nhân đôi preview gốc/8×8.
+        self.assertEqual(rendered.count('data:image/png;base64,'), 1)
+        self.assertIn('pixel-grid', rendered)
+
+    def test_changed_model_label_id_or_source_clears_previous_result(self):
+        at = AppTest.from_string('from app import main\nmain()', default_timeout=30).run()
+        at.button(key='predict').click().run()
+        self.assert_visible_prediction(at)
+        actions = [lambda: at.selectbox(key='model').select('mlp').run(),
+                   lambda: at.selectbox(key='sample_label').select(1).run(),
+                   lambda: at.selectbox(key='test_sample_1').select(
+                       int(at.selectbox(key='test_sample_1').options[1])).run(),
+                   lambda: at.selectbox(key='source').select('Ảnh mẫu Digits').run()]
+        for action in actions:
+            action()
+            self.assertFalse(at.exception)
+            with self.assertRaises(KeyError):
+                at.session_state['prediction_result']
+            self.assertFalse(any('data-prediction=' in item.value for item in at.markdown))
+            at.button(key='predict').click().run()
+            self.assert_visible_prediction(at)
+
+    def test_upload_background_change_and_removal_clear_prediction(self):
+        fixture = next((ROOT / 'tests/fixtures/external_digits').glob('*.png'))
+        script = ('from io import BytesIO\nfrom unittest.mock import patch\nfrom pathlib import Path\nimport app\n'
+                  f'data=Path({str(fixture)!r}).read_bytes()\n'
+                  "upload=BytesIO(data) if app.st.session_state.get('mock_upload', True) else None\n"
+                  "with patch.object(app.st, 'file_uploader', return_value=upload):\n    app.main()")
+        at = AppTest.from_string(script, default_timeout=30).run()
+        at.selectbox(key='source').select('Tải ảnh từ máy').run()
+        self.assertEqual('\n'.join(item.value for item in at.markdown).count('data:image/png;base64,'), 2)
+        at.button(key='predict').click().run()
+        self.assert_visible_prediction(at)
+        at.selectbox(key='background').select('Nền tối, nét sáng').run()
+        with self.assertRaises(KeyError):
+            at.session_state['prediction_result']
+        at.button(key='predict').click().run()
+        self.assert_visible_prediction(at)
+        at.session_state['mock_upload'] = False
+        at.run()
+        self.assertFalse(at.exception)
+        with self.assertRaises(KeyError):
+            at.session_state['prediction_result']
+        self.assertTrue(at.button(key='predict').disabled)
 
 
 if __name__ == "__main__":

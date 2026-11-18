@@ -1,0 +1,125 @@
+{
+  "clickRows": [
+    {
+      "label": "Mô hình phân loại",
+      "zone": "text",
+      "x": 104,
+      "y": 221.1999969482422,
+      "expanded": true
+    },
+    {
+      "label": "Mô hình phân loại",
+      "zone": "middle",
+      "x": 436.7200073242187,
+      "y": 221.1999969482422,
+      "expanded": true
+    },
+    {
+      "label": "Mô hình phân loại",
+      "zone": "arrow",
+      "x": 655.2000122070312,
+      "y": 221.1999969482422,
+      "expanded": true
+    },
+    {
+      "label": "Nguồn ảnh",
+      "zone": "text",
+      "x": 713.2000122070312,
+      "y": 221.1999969482422,
+      "expanded": true
+    },
+    {
+      "label": "Nguồn ảnh",
+      "zone": "middle",
+      "x": 1045.92001953125,
+      "y": 221.1999969482422,
+      "expanded": true
+    },
+    {
+      "label": "Nguồn ảnh",
+      "zone": "arrow",
+      "x": 1264.4000244140625,
+      "y": 221.1999969482422,
+      "expanded": true
+    },
+    {
+      "label": "Chữ số mẫu",
+      "zone": "text",
+      "x": 104,
+      "y": 335.3000183105469,
+      "expanded": true
+    },
+    {
+      "label": "Chữ số mẫu",
+      "zone": "middle",
+      "x": 200.63500366210934,
+      "y": 335.3000183105469,
+      "expanded": true
+    },
+    {
+      "label": "Chữ số mẫu",
+      "zone": "arrow",
+      "x": 261.7250061035156,
+      "y": 335.3000183105469,
+      "expanded": true
+    },
+    {
+      "label": "ID ảnh trong Digits",
+      "zone": "text",
+      "x": 303.7250061035156,
+      "y": 335.3000183105469,
+      "expanded": true
+    },
+    {
+      "label": "ID ảnh trong Digits",
+      "zone": "middle",
+      "x": 516.610009765625,
+      "y": 335.3000183105469,
+      "expanded": true
+    },
+    {
+      "label": "ID ảnh trong Digits",
+      "zone": "arrow",
+      "x": 655.2000122070312,
+      "y": 335.3000183105469,
+      "expanded": true
+    },
+    {
+      "label": "Màu nền",
+      "zone": "text",
+      "x": 500.2625122070313,
+      "y": 335.3000183105469,
+      "expanded": true
+    },
+    {
+      "label": "Màu nền",
+      "zone": "middle",
+      "x": 592.105014038086,
+      "y": 335.3000183105469,
+      "expanded": true
+    },
+    {
+      "label": "Màu nền",
+      "zone": "arrow",
+      "x": 650.0000152587891,
+      "y": 335.3000183105469,
+      "expanded": true
+    }
+  ],
+  "keyboardRows": [
+    {
+      "action": "ArrowDown",
+      "expanded": "true"
+    },
+    {
+      "action": "Escape",
+      "expanded": "false",
+      "value": "K láng giềng gần nhất (KNN)"
+    },
+    {
+      "action": "Tab after Enter",
+      "focus": "Nguồn ảnh"
+    }
+  ],
+  "all15Opened": true
+}

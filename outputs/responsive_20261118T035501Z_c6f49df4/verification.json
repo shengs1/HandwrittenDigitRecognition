@@ -1,0 +1,253 @@
+{
+  "date": "2026-11-18",
+  "browser_reset_zoom": "Ctrl+0",
+  "css_zoom": "1",
+  "visual_viewport_scale": 1,
+  "device_pixel_ratio_approximately": 1,
+  "viewport_measurement": "window.innerWidth/innerHeight; no inference from JPEG dimensions",
+  "matrix_rows": 45,
+  "closed_rows": 40,
+  "expanded_rows": 5,
+  "all_closed_states_no_vertical_or_horizontal_overflow": true,
+  "no_overlap_between_image_metadata_and_button": true,
+  "all_test_predictions_match_canonical": true,
+  "summary": [
+    {
+      "viewport": "1920x1080",
+      "closed_document_scrollHeight_max": 1080,
+      "closed_main_scrollHeight_max": 1080,
+      "closed_vertical_overflow_max": 0,
+      "closed_horizontal_overflow": false,
+      "expanded_main_scrollHeight": 1135
+    },
+    {
+      "viewport": "1920x900",
+      "closed_document_scrollHeight_max": 900,
+      "closed_main_scrollHeight_max": 900,
+      "closed_vertical_overflow_max": 0,
+      "closed_horizontal_overflow": false,
+      "expanded_main_scrollHeight": 1135
+    },
+    {
+      "viewport": "1536x864",
+      "closed_document_scrollHeight_max": 864,
+      "closed_main_scrollHeight_max": 864,
+      "closed_vertical_overflow_max": 0,
+      "closed_horizontal_overflow": false,
+      "expanded_main_scrollHeight": 1135
+    },
+    {
+      "viewport": "1366x768",
+      "closed_document_scrollHeight_max": 768,
+      "closed_main_scrollHeight_max": 768,
+      "closed_vertical_overflow_max": 0,
+      "closed_horizontal_overflow": false,
+      "expanded_main_scrollHeight": 1106
+    },
+    {
+      "viewport": "1280x720",
+      "closed_document_scrollHeight_max": 720,
+      "closed_main_scrollHeight_max": 720,
+      "closed_vertical_overflow_max": 0,
+      "closed_horizontal_overflow": false,
+      "expanded_main_scrollHeight": 1079
+    }
+  ],
+  "unittest": {
+    "count": 40,
+    "seconds": 14.551,
+    "result": "OK"
+  },
+  "protected_file_count": 61,
+  "all_protected_files_unchanged": true,
+  "functions_unchanged_except_main": {
+    "read_model_registry": true,
+    "load_saved_pipeline": true,
+    "preprocess_uploaded_image": true,
+    "predict_digit": true,
+    "sample_digits": true,
+    "saved_test_indices": true,
+    "read_demo_summary": true,
+    "preview_image_html": true,
+    "prediction_html": true
+  },
+  "app_sha256": "bc80017e976b634011133e20ef39be4bc32d6b03fdabb1e7c2f372ab7395e6bc",
+  "tests_sha256": "b57f7c550d16afdcc83f954fdc03991acd1f2ba2b70dd9b947815e4ae6262dad",
+  "screenshots": {
+    "changed_input_prediction_1280x720.jpg": [
+      1280,
+      720
+    ],
+    "changed_input_prediction_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "changed_input_prediction_1536x864.jpg": [
+      1536,
+      864
+    ],
+    "changed_input_prediction_1920x1080.jpg": [
+      1920,
+      1061
+    ],
+    "changed_input_prediction_1920x900.jpg": [
+      1920,
+      900
+    ],
+    "digit_id_changed_1280x720.jpg": [
+      1280,
+      720
+    ],
+    "digit_id_changed_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "digit_id_changed_1536x864.jpg": [
+      1536,
+      864
+    ],
+    "digit_id_changed_1920x1080.jpg": [
+      1920,
+      1061
+    ],
+    "digit_id_changed_1920x900.jpg": [
+      1920,
+      900
+    ],
+    "empty_1280x720.jpg": [
+      1280,
+      720
+    ],
+    "empty_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "empty_1536x864.jpg": [
+      1536,
+      864
+    ],
+    "empty_1920x1080.jpg": [
+      1920,
+      1061
+    ],
+    "empty_1920x900.jpg": [
+      1920,
+      900
+    ],
+    "model_changed_1280x720.jpg": [
+      1280,
+      720
+    ],
+    "model_changed_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "model_changed_1536x864.jpg": [
+      1536,
+      864
+    ],
+    "model_changed_1920x1080.jpg": [
+      1920,
+      1061
+    ],
+    "model_changed_1920x900.jpg": [
+      1920,
+      900
+    ],
+    "prediction_1280x720.jpg": [
+      1280,
+      720
+    ],
+    "prediction_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "prediction_1536x864.jpg": [
+      1536,
+      864
+    ],
+    "prediction_1920x1080.jpg": [
+      1920,
+      1061
+    ],
+    "prediction_1920x900.jpg": [
+      1920,
+      900
+    ],
+    "technical_open_1280x720.jpg": [
+      1280,
+      720
+    ],
+    "technical_open_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "technical_open_1536x864.jpg": [
+      1536,
+      864
+    ],
+    "technical_open_1920x1080.jpg": [
+      1920,
+      1061
+    ],
+    "technical_open_1920x900.jpg": [
+      1920,
+      900
+    ],
+    "upload_prediction_1280x720.jpg": [
+      1280,
+      720
+    ],
+    "upload_prediction_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "upload_prediction_1536x864.jpg": [
+      1536,
+      864
+    ],
+    "upload_prediction_1920x1080.jpg": [
+      1920,
+      1061
+    ],
+    "upload_prediction_1920x900.jpg": [
+      1920,
+      900
+    ],
+    "upload_preview_1280x720.jpg": [
+      1280,
+      720
+    ],
+    "upload_preview_1366x768.jpg": [
+      1366,
+      768
+    ],
+    "upload_preview_1536x864.jpg": [
+      1536,
+      864
+    ],
+    "upload_preview_1920x1080.jpg": [
+      1920,
+      1061
+    ],
+    "upload_preview_1920x900.jpg": [
+      1920,
+      900
+    ]
+  },
+  "upload_method": "Visual fixture harness imports production app, renders native uploader and supplies fixed fixture bytes through mock; OS file chooser not repeated. Native chooser was tested in prior UI Redesign.",
+  "diagnostic_findings": [
+    "Global ID slider consumed an extra full-width row.",
+    "Streamlit Markdown negative bottom margin reduced HTML wrapper heights by14px and caused overlap.",
+    "Upload harness initially cached old app module; reloaded production module before final measurements."
+  ],
+  "git_commit_push_this_turn": false,
+  "final_checks": {
+    "syntax": true,
+    "local_doc_links": true,
+    "git_diff_check": true,
+    "protected_checksums_rechecked": true,
+    "temporary_servers_stopped": true,
+    "viewport_override_reset": true
+  }
+}

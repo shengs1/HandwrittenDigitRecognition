@@ -1,0 +1,1240 @@
+[
+  {
+    "cssTransform": "none",
+    "cssZoom": "1",
+    "devicePixelRatio": 1.0000000149011612,
+    "documentScrollHeight": 768,
+    "horizontalOverflow": false,
+    "main": {
+      "clientHeight": 768,
+      "scrollHeight": 768,
+      "scrollTop": 0
+    },
+    "parts": {
+      ".demo-header": {
+        "bottom": 94.79999923706056,
+        "gap": "16px",
+        "height": 62,
+        "padding": "0px 0px 8px",
+        "top": 32.79999923706055,
+        "width": 1190.4000244140625
+      },
+      ".image-card": {
+        "bottom": 546.8000183105469,
+        "gap": "12px",
+        "height": 228,
+        "padding": "12px",
+        "top": 318.8000183105469,
+        "width": 581.2000122070312
+      },
+      ".overview-card": {
+        "bottom": 155.20000457763672,
+        "gap": "normal",
+        "height": 64.4000015258789,
+        "padding": "8px 12px",
+        "top": 90.8000030517578,
+        "width": 390.125
+      },
+      ".result-empty": {
+        "bottom": 551.3000030517578,
+        "gap": "normal",
+        "height": 300,
+        "padding": "24px",
+        "top": 251.3000030517578,
+        "width": 581.2000122070312
+      },
+      ".st-key-controls": {
+        "bottom": 210.6999969482422,
+        "gap": "8px",
+        "height": 59.5,
+        "padding": "0px",
+        "top": 151.1999969482422,
+        "width": 1190.4000244140625
+      },
+      ".st-key-demo": {
+        "bottom": 660.2000122070312,
+        "gap": "10px",
+        "height": 648.2000122070312,
+        "padding": "20px",
+        "top": 12,
+        "width": 1232
+      },
+      ".st-key-predict": {
+        "bottom": 592.7999877929688,
+        "gap": "normal",
+        "height": 40,
+        "padding": "0px",
+        "top": 552.7999877929688,
+        "width": 581.2000122070312
+      },
+      ".st-key-technical": {
+        "bottom": 639.3999900817871,
+        "gap": "normal",
+        "height": 34.60000228881836,
+        "padding": "0px",
+        "top": 604.7999877929688,
+        "width": 1190.4000244140625
+      },
+      ".st-key-workspace": {
+        "bottom": 592.8000030517578,
+        "gap": "8px",
+        "height": 372.1000061035156,
+        "padding": "12px 0px 0px",
+        "top": 220.6999969482422,
+        "width": 1190.4000244140625
+      }
+    },
+    "prediction": null,
+    "verticalOverflow": 0,
+    "viewport": {
+      "height": 768,
+      "width": 1366
+    },
+    "visualScale": 1,
+    "state": "empty_initial"
+  },
+  {
+    "cssTransform": "none",
+    "cssZoom": "1",
+    "devicePixelRatio": 1.0000000149011612,
+    "documentScrollHeight": 768,
+    "horizontalOverflow": false,
+    "main": {
+      "clientHeight": 768,
+      "scrollHeight": 768,
+      "scrollTop": 0
+    },
+    "parts": {
+      ".demo-header": {
+        "bottom": 94.79999923706056,
+        "gap": "16px",
+        "height": 62,
+        "padding": "0px 0px 8px",
+        "top": 32.79999923706055,
+        "width": 1190.4000244140625
+      },
+      ".image-card": {
+        "bottom": 588.8000183105469,
+        "gap": "12px",
+        "height": 228,
+        "padding": "12px",
+        "top": 360.8000183105469,
+        "width": 581.2000122070312
+      },
+      ".overview-card": {
+        "bottom": 169.20000457763672,
+        "gap": "normal",
+        "height": 64.4000015258789,
+        "padding": "8px 12px",
+        "top": 104.8000030517578,
+        "width": 390.125
+      },
+      ".result-empty": {
+        "bottom": 593.3000183105469,
+        "gap": "normal",
+        "height": 300,
+        "padding": "24px",
+        "top": 293.3000183105469,
+        "width": 581.2000122070312
+      },
+      ".st-key-controls": {
+        "bottom": 238.6999969482422,
+        "gap": "8px",
+        "height": 59.5,
+        "padding": "0px",
+        "top": 179.1999969482422,
+        "width": 1190.4000244140625
+      },
+      ".st-key-demo": {
+        "bottom": 730.2000122070312,
+        "gap": "10px",
+        "height": 718.2000122070312,
+        "padding": "20px",
+        "top": 12,
+        "width": 1232
+      },
+      ".st-key-predict": {
+        "bottom": 662.7999877929688,
+        "gap": "normal",
+        "height": 40,
+        "padding": "0px",
+        "top": 622.7999877929688,
+        "width": 581.2000122070312
+      },
+      ".st-key-technical": {
+        "bottom": 709.3999900817871,
+        "gap": "normal",
+        "height": 34.60000228881836,
+        "padding": "0px",
+        "top": 674.7999877929688,
+        "width": 1190.4000244140625
+      },
+      ".st-key-workspace": {
+        "bottom": 662.8000030517578,
+        "gap": "8px",
+        "height": 414.1000061035156,
+        "padding": "12px 0px 0px",
+        "top": 248.6999969482422,
+        "width": 1190.4000244140625
+      }
+    },
+    "prediction": null,
+    "verticalOverflow": 0,
+    "viewport": {
+      "height": 768,
+      "width": 1366
+    },
+    "visualScale": 1,
+    "state": "empty_margin_fixed"
+  },
+  {
+    "cssTransform": "none",
+    "cssZoom": "1",
+    "devicePixelRatio": 1.0000000149011612,
+    "documentScrollHeight": 768,
+    "horizontalOverflow": false,
+    "main": {
+      "clientHeight": 768,
+      "scrollHeight": 768,
+      "scrollTop": 0
+    },
+    "parts": {
+      ".demo-header": {
+        "bottom": 94.79999923706056,
+        "gap": "16px",
+        "height": 62,
+        "padding": "0px 0px 8px",
+        "top": 32.79999923706055,
+        "width": 1190.4000244140625
+      },
+      ".image-card": {
+        "bottom": 588.8000183105469,
+        "gap": "12px",
+        "height": 228,
+        "padding": "12px",
+        "top": 360.8000183105469,
+        "width": 581.2000122070312
+      },
+      ".overview-card": {
+        "bottom": 169.20000457763672,
+        "gap": "normal",
+        "height": 64.4000015258789,
+        "padding": "8px 12px",
+        "top": 104.8000030517578,
+        "width": 390.125
+      },
+      ".probability-list": {
+        "bottom": 652.6499938964844,
+        "gap": "2px",
+        "height": 158,
+        "padding": "0px",
+        "top": 494.6499938964844,
+        "width": 581.2000122070312
+      },
+      ".result-card": {
+        "bottom": 455.8500213623047,
+        "gap": "normal",
+        "height": 162.5500030517578,
+        "padding": "8px 16px",
+        "top": 293.3000183105469,
+        "width": 581.2000122070312
+      },
+      ".st-key-controls": {
+        "bottom": 238.6999969482422,
+        "gap": "8px",
+        "height": 59.5,
+        "padding": "0px",
+        "top": 179.1999969482422,
+        "width": 1190.4000244140625
+      },
+      ".st-key-demo": {
+        "bottom": 746.0499877929688,
+        "gap": "10px",
+        "height": 734.0499877929688,
+        "padding": "20px",
+        "top": 12,
+        "width": 1232
+      },
+      ".st-key-predict": {
+        "bottom": 662.7999877929688,
+        "gap": "normal",
+        "height": 40,
+        "padding": "0px",
+        "top": 622.7999877929688,
+        "width": 581.2000122070312
+      },
+      ".st-key-technical": {
+        "bottom": 725.2500267028809,
+        "gap": "normal",
+        "height": 34.60000228881836,
+        "padding": "0px",
+        "top": 690.6500244140625,
+        "width": 1190.4000244140625
+      },
+      ".st-key-workspace": {
+        "bottom": 678.6500091552734,
+        "gap": "8px",
+        "height": 429.9500122070313,
+        "padding": "12px 0px 0px",
+        "top": 248.6999969482422,
+        "width": 1190.4000244140625
+      }
+    },
+    "prediction": "0",
+    "verticalOverflow": 0,
+    "viewport": {
+      "height": 768,
+      "width": 1366
+    },
+    "visualScale": 1,
+    "state": "prediction_margin_fixed"
+  },
+  {
+    "cssTransform": "none",
+    "cssZoom": "1",
+    "devicePixelRatio": 1.0000000149011612,
+    "documentScrollHeight": 720,
+    "horizontalOverflow": false,
+    "main": {
+      "clientHeight": 720,
+      "scrollHeight": 720,
+      "scrollTop": 0
+    },
+    "parts": {
+      ".demo-header": {
+        "bottom": 86.80000114440918,
+        "gap": "16px",
+        "height": 60,
+        "padding": "0px 0px 6px",
+        "top": 26.80000114440918,
+        "width": 1190.4000244140625
+      },
+      ".image-card": {
+        "bottom": 566.8000183105469,
+        "gap": "12px",
+        "height": 228,
+        "padding": "12px",
+        "top": 338.8000183105469,
+        "width": 581.2000122070312
+      },
+      ".overview-card": {
+        "bottom": 159.20000457763672,
+        "gap": "normal",
+        "height": 64.4000015258789,
+        "padding": "8px 12px",
+        "top": 94.8000030517578,
+        "width": 390.125
+      },
+      ".probability-list": {
+        "bottom": 624.6499938964844,
+        "gap": "2px",
+        "height": 158,
+        "padding": "0px",
+        "top": 466.6499938964844,
+        "width": 581.2000122070312
+      },
+      ".result-card": {
+        "bottom": 431.8500213623047,
+        "gap": "normal",
+        "height": 158.5500030517578,
+        "padding": "6px 16px",
+        "top": 273.3000183105469,
+        "width": 581.2000122070312
+      },
+      ".st-key-controls": {
+        "bottom": 226.6999969482422,
+        "gap": "6px",
+        "height": 59.5,
+        "padding": "0px",
+        "top": 167.1999969482422,
+        "width": 1190.4000244140625
+      },
+      ".st-key-demo": {
+        "bottom": 714.0499877929688,
+        "gap": "8px",
+        "height": 708.0499877929688,
+        "padding": "20px",
+        "top": 6,
+        "width": 1232
+      },
+      ".st-key-predict": {
+        "bottom": 636.7999877929688,
+        "gap": "normal",
+        "height": 40,
+        "padding": "0px",
+        "top": 596.7999877929688,
+        "width": 581.2000122070312
+      },
+      ".st-key-technical": {
+        "bottom": 693.2500267028809,
+        "gap": "normal",
+        "height": 34.60000228881836,
+        "padding": "0px",
+        "top": 658.6500244140625,
+        "width": 1190.4000244140625
+      },
+      ".st-key-workspace": {
+        "bottom": 648.6500091552734,
+        "gap": "6px",
+        "height": 413.9500122070313,
+        "padding": "8px 0px 0px",
+        "top": 234.6999969482422,
+        "width": 1190.4000244140625
+      }
+    },
+    "prediction": "0",
+    "verticalOverflow": 0,
+    "viewport": {
+      "height": 720,
+      "width": 1280
+    },
+    "visualScale": 1,
+    "state": "prediction_720_diagnostic"
+  },
+  {
+    "cssTransform": "none",
+    "cssZoom": "1",
+    "devicePixelRatio": 1.0000000149011612,
+    "documentScrollHeight": 768,
+    "horizontalOverflow": false,
+    "inputs": [
+      "K láng giềng gần nhất (KNN)",
+      "Tải ảnh từ máy",
+      "Tự động"
+    ],
+    "main": {
+      "clientHeight": 768,
+      "overflowY": "auto",
+      "scrollHeight": 770,
+      "scrollTop": 0
+    },
+    "parts": {
+      ".demo-header": {
+        "bottom": 94.79999923706056,
+        "height": 62,
+        "left": 82.80000305175781,
+        "right": 1273.2000274658203,
+        "top": 32.79999923706055,
+        "width": 1190.4000244140625,
+        "x": 82.80000305175781,
+        "y": 32.79999923706055
+      },
+      ".image-card": {
+        "bottom": 616.3999938964844,
+        "height": 228,
+        "left": 82.80000305175781,
+        "right": 664.0000152587891,
+        "top": 388.3999938964844,
+        "width": 581.2000122070312,
+        "x": 82.80000305175781,
+        "y": 388.3999938964844
+      },
+      ".image-meta": {
+        "bottom": 642.4000244140625,
+        "height": 18,
+        "left": 82.80000305175781,
+        "right": 664.0000152587891,
+        "top": 624.4000244140625,
+        "width": 581.2000122070312,
+        "x": 82.80000305175781,
+        "y": 624.4000244140625
+      },
+      ".overview-card": {
+        "bottom": 169.20000457763672,
+        "height": 64.4000015258789,
+        "left": 82.80000305175781,
+        "right": 472.9250030517578,
+        "top": 104.8000030517578,
+        "width": 390.125,
+        "x": 82.80000305175781,
+        "y": 104.8000030517578
+      },
+      ".result-empty": {
+        "bottom": 593.3000183105469,
+        "height": 300,
+        "left": 692,
+        "right": 1273.2000122070312,
+        "top": 293.3000183105469,
+        "width": 581.2000122070312,
+        "x": 692,
+        "y": 293.3000183105469
+      },
+      ".st-key-controls": {
+        "bottom": 238.6999969482422,
+        "height": 59.5,
+        "left": 82.80000305175781,
+        "right": 1273.2000274658203,
+        "top": 179.1999969482422,
+        "width": 1190.4000244140625,
+        "x": 82.80000305175781,
+        "y": 179.1999969482422
+      },
+      ".st-key-demo": {
+        "bottom": 757.7999877929688,
+        "height": 745.7999877929688,
+        "left": 62,
+        "right": 1294,
+        "top": 12,
+        "width": 1232,
+        "x": 62,
+        "y": 12
+      },
+      ".st-key-predict": {
+        "bottom": 690.4000244140625,
+        "height": 40,
+        "left": 82.80000305175781,
+        "right": 664.0000152587891,
+        "top": 650.4000244140625,
+        "width": 581.2000122070312,
+        "x": 82.80000305175781,
+        "y": 650.4000244140625
+      },
+      ".st-key-technical": {
+        "bottom": 737.0000267028809,
+        "height": 34.60000228881836,
+        "left": 82.80000305175781,
+        "right": 1273.2000274658203,
+        "top": 702.4000244140625,
+        "width": 1190.4000244140625,
+        "x": 82.80000305175781,
+        "y": 702.4000244140625
+      },
+      ".st-key-workspace": {
+        "bottom": 690.4000091552734,
+        "height": 441.7000122070313,
+        "left": 82.80000305175781,
+        "right": 1273.2000274658203,
+        "top": 248.6999969482422,
+        "width": 1190.4000244140625,
+        "x": 82.80000305175781,
+        "y": 248.6999969482422
+      }
+    },
+    "prediction": null,
+    "resultLabel": null,
+    "technicalExpanded": false,
+    "titleFonts": [
+      "25px",
+      "17px",
+      "17px"
+    ],
+    "verticalOverflow": 2,
+    "viewport": {
+      "height": 768,
+      "width": 1366
+    },
+    "visualScale": 1,
+    "state": "upload_preview",
+    "screenshot": "upload_preview_1366x768.jpg"
+  },
+  {
+    "cssTransform": "none",
+    "cssZoom": "1",
+    "devicePixelRatio": 1.0000000149011612,
+    "documentScrollHeight": 768,
+    "horizontalOverflow": false,
+    "inputs": [
+      "K láng giềng gần nhất (KNN)",
+      "Tải ảnh từ máy",
+      "Tự động"
+    ],
+    "main": {
+      "clientHeight": 768,
+      "overflowY": "auto",
+      "scrollHeight": 770,
+      "scrollTop": 1.600000023841858
+    },
+    "parts": {
+      ".demo-header": {
+        "bottom": 93.20000076293944,
+        "height": 62,
+        "left": 82.80000305175781,
+        "right": 1273.2000274658203,
+        "top": 31.200000762939453,
+        "width": 1190.4000244140625,
+        "x": 82.80000305175781,
+        "y": 31.200000762939453
+      },
+      ".image-card": {
+        "bottom": 614.8000183105469,
+        "height": 228,
+        "left": 82.80000305175781,
+        "right": 664.0000152587891,
+        "top": 386.8000183105469,
+        "width": 581.2000122070312,
+        "x": 82.80000305175781,
+        "y": 386.8000183105469
+      },
+      ".image-meta": {
+        "bottom": 640.7999877929688,
+        "height": 18,
+        "left": 82.80000305175781,
+        "right": 664.0000152587891,
+        "top": 622.7999877929688,
+        "width": 581.2000122070312,
+        "x": 82.80000305175781,
+        "y": 622.7999877929688
+      },
+      ".overview-card": {
+        "bottom": 167.60000610351562,
+        "height": 64.4000015258789,
+        "left": 82.80000305175781,
+        "right": 472.9250030517578,
+        "top": 103.20000457763672,
+        "width": 390.125,
+        "x": 82.80000305175781,
+        "y": 103.20000457763672
+      },
+      ".probability-list": {
+        "bottom": 632.4500122070312,
+        "height": 158,
+        "left": 692,
+        "right": 1273.2000122070312,
+        "top": 474.4500122070313,
+        "width": 581.2000122070312,
+        "x": 692,
+        "y": 474.4500122070313
+      },
+      ".result-card": {
+        "bottom": 435.65000915527344,
+        "height": 143.9499969482422,
+        "left": 692,
+        "right": 1273.2000122070312,
+        "top": 291.70001220703125,
+        "width": 581.2000122070312,
+        "x": 692,
+        "y": 291.70001220703125
+      },
+      ".st-key-controls": {
+        "bottom": 237.1000061035156,
+        "height": 59.5,
+        "left": 82.80000305175781,
+        "right": 1273.2000274658203,
+        "top": 177.60000610351562,
+        "width": 1190.4000244140625,
+        "x": 82.80000305175781,
+        "y": 177.60000610351562
+      },
+      ".st-key-demo": {
+        "bottom": 756.1999883651733,
+        "height": 745.7999877929688,
+        "left": 62,
+        "right": 1294,
+        "top": 10.40000057220459,
+        "width": 1232,
+        "x": 62,
+        "y": 10.40000057220459
+      },
+      ".st-key-predict": {
+        "bottom": 688.7999877929688,
+        "height": 40,
+        "left": 82.80000305175781,
+        "right": 664.0000152587891,
+        "top": 648.7999877929688,
+        "width": 581.2000122070312,
+        "x": 82.80000305175781,
+        "y": 648.7999877929688
+      },
+      ".st-key-technical": {
+        "bottom": 735.3999900817871,
+        "height": 34.60000228881836,
+        "left": 82.80000305175781,
+        "right": 1273.2000274658203,
+        "top": 700.7999877929688,
+        "width": 1190.4000244140625,
+        "x": 82.80000305175781,
+        "y": 700.7999877929688
+      },
+      ".st-key-workspace": {
+        "bottom": 688.8000183105469,
+        "height": 441.7000122070313,
+        "left": 82.80000305175781,
+        "right": 1273.2000274658203,
+        "top": 247.1000061035156,
+        "width": 1190.4000244140625,
+        "x": 82.80000305175781,
+        "y": 247.1000061035156
+      }
+    },
+    "prediction": "3",
+    "resultLabel": "Xác suất ảnh này · KNN",
+    "technicalExpanded": false,
+    "titleFonts": [
+      "25px",
+      "17px",
+      "17px"
+    ],
+    "verticalOverflow": 2,
+    "viewport": {
+      "height": 768,
+      "width": 1366
+    },
+    "visualScale": 1,
+    "state": "upload_prediction",
+    "screenshot": "upload_prediction_1366x768.jpg"
+  },
+  {
+    "cssTransform": "none",
+    "cssZoom": "1",
+    "devicePixelRatio": 1.0000000149011612,
+    "documentScrollHeight": 720,
+    "horizontalOverflow": false,
+    "inputs": [
+      "K láng giềng gần nhất (KNN)",
+      "Tải ảnh từ máy",
+      "Tự động"
+    ],
+    "main": {
+      "clientHeight": 720,
+      "overflowY": "auto",
+      "scrollHeight": 736,
+      "scrollTop": 0
+    },
+    "parts": {
+      ".demo-header": {
+        "bottom": 86.80000114440918,
+        "height": 60,
+        "left": 44.79999923706055,
+        "right": 1224.7999992370603,
+        "top": 26.80000114440918,
+        "width": 1180,
+        "x": 44.79999923706055,
+        "y": 26.80000114440918
+      },
+      ".image-card": {
+        "bottom": 594.3999938964844,
+        "height": 228,
+        "left": 44.79999923706055,
+        "right": 620.7999992370605,
+        "top": 366.3999938964844,
+        "width": 576,
+        "x": 44.79999923706055,
+        "y": 366.3999938964844
+      },
+      ".image-meta": {
+        "bottom": 618.4000244140625,
+        "height": 18,
+        "left": 44.79999923706055,
+        "right": 620.7999992370605,
+        "top": 600.4000244140625,
+        "width": 576,
+        "x": 44.79999923706055,
+        "y": 600.4000244140625
+      },
+      ".overview-card": {
+        "bottom": 159.20000457763672,
+        "height": 64.4000015258789,
+        "left": 44.79999923706055,
+        "right": 431.4625053405762,
+        "top": 94.8000030517578,
+        "width": 386.6625061035156,
+        "x": 44.79999923706055,
+        "y": 94.8000030517578
+      },
+      ".result-empty": {
+        "bottom": 553.3000183105469,
+        "height": 280,
+        "left": 648.7999877929688,
+        "right": 1224.7999877929688,
+        "top": 273.3000183105469,
+        "width": 576,
+        "x": 648.7999877929688,
+        "y": 273.3000183105469
+      },
+      ".st-key-controls": {
+        "bottom": 226.6999969482422,
+        "height": 59.5,
+        "left": 44.79999923706055,
+        "right": 1224.7999992370603,
+        "top": 167.1999969482422,
+        "width": 1180,
+        "x": 44.79999923706055,
+        "y": 167.1999969482422
+      },
+      ".st-key-demo": {
+        "bottom": 729.7999877929688,
+        "height": 723.7999877929688,
+        "left": 24,
+        "right": 1245.5999755859375,
+        "top": 6,
+        "width": 1221.5999755859375,
+        "x": 24,
+        "y": 6
+      },
+      ".st-key-predict": {
+        "bottom": 664.4000244140625,
+        "height": 40,
+        "left": 44.79999923706055,
+        "right": 620.7999992370605,
+        "top": 624.4000244140625,
+        "width": 576,
+        "x": 44.79999923706055,
+        "y": 624.4000244140625
+      },
+      ".st-key-technical": {
+        "bottom": 709.0000267028809,
+        "height": 34.60000228881836,
+        "left": 44.79999923706055,
+        "right": 1224.7999992370603,
+        "top": 674.4000244140625,
+        "width": 1180,
+        "x": 44.79999923706055,
+        "y": 674.4000244140625
+      },
+      ".st-key-workspace": {
+        "bottom": 664.4000091552734,
+        "height": 429.7000122070313,
+        "left": 44.79999923706055,
+        "right": 1224.7999992370603,
+        "top": 234.6999969482422,
+        "width": 1180,
+        "x": 44.79999923706055,
+        "y": 234.6999969482422
+      }
+    },
+    "prediction": null,
+    "resultLabel": null,
+    "technicalExpanded": false,
+    "titleFonts": [
+      "25px",
+      "17px",
+      "17px"
+    ],
+    "verticalOverflow": 16,
+    "viewport": {
+      "height": 720,
+      "width": 1280
+    },
+    "visualScale": 1,
+    "state": "upload_preview",
+    "screenshot": "upload_preview_1280x720.jpg"
+  },
+  {
+    "cssTransform": "none",
+    "cssZoom": "1",
+    "devicePixelRatio": 1.0000000149011612,
+    "documentScrollHeight": 720,
+    "horizontalOverflow": false,
+    "inputs": [
+      "K láng giềng gần nhất (KNN)",
+      "Tải ảnh từ máy",
+      "Tự động"
+    ],
+    "main": {
+      "clientHeight": 720,
+      "overflowY": "auto",
+      "scrollHeight": 736,
+      "scrollTop": 16
+    },
+    "parts": {
+      ".demo-header": {
+        "bottom": 70.80000019073486,
+        "height": 60,
+        "left": 44.79999923706055,
+        "right": 1224.7999992370603,
+        "top": 10.800000190734863,
+        "width": 1180,
+        "x": 44.79999923706055,
+        "y": 10.800000190734863
+      },
+      ".image-card": {
+        "bottom": 578.3999938964844,
+        "height": 228,
+        "left": 44.79999923706055,
+        "right": 620.7999992370605,
+        "top": 350.3999938964844,
+        "width": 576,
+        "x": 44.79999923706055,
+        "y": 350.3999938964844
+      },
+      ".image-meta": {
+        "bottom": 602.4000244140625,
+        "height": 18,
+        "left": 44.79999923706055,
+        "right": 620.7999992370605,
+        "top": 584.4000244140625,
+        "width": 576,
+        "x": 44.79999923706055,
+        "y": 584.4000244140625
+      },
+      ".overview-card": {
+        "bottom": 143.20000457763672,
+        "height": 64.4000015258789,
+        "left": 44.79999923706055,
+        "right": 431.4625053405762,
+        "top": 78.80000305175781,
+        "width": 386.6625061035156,
+        "x": 44.79999923706055,
+        "y": 78.80000305175781
+      },
+      ".probability-list": {
+        "bottom": 590.0500183105469,
+        "height": 158,
+        "left": 648.7999877929688,
+        "right": 1224.7999877929688,
+        "top": 432.0500183105469,
+        "width": 576,
+        "x": 648.7999877929688,
+        "y": 432.0500183105469
+      },
+      ".result-card": {
+        "bottom": 397.25001525878906,
+        "height": 139.9499969482422,
+        "left": 648.7999877929688,
+        "right": 1224.7999877929688,
+        "top": 257.3000183105469,
+        "width": 576,
+        "x": 648.7999877929688,
+        "y": 257.3000183105469
+      },
+      ".st-key-controls": {
+        "bottom": 210.6999969482422,
+        "height": 59.5,
+        "left": 44.79999923706055,
+        "right": 1224.7999992370603,
+        "top": 151.1999969482422,
+        "width": 1180,
+        "x": 44.79999923706055,
+        "y": 151.1999969482422
+      },
+      ".st-key-demo": {
+        "bottom": 713.7999877929688,
+        "height": 723.7999877929688,
+        "left": 24,
+        "right": 1245.5999755859375,
+        "top": -10,
+        "width": 1221.5999755859375,
+        "x": 24,
+        "y": -10
+      },
+      ".st-key-predict": {
+        "bottom": 648.4000244140625,
+        "height": 40,
+        "left": 44.79999923706055,
+        "right": 620.7999992370605,
+        "top": 608.4000244140625,
+        "width": 576,
+        "x": 44.79999923706055,
+        "y": 608.4000244140625
+      },
+      ".st-key-technical": {
+        "bottom": 693.0000267028809,
+        "height": 34.60000228881836,
+        "left": 44.79999923706055,
+        "right": 1224.7999992370603,
+        "top": 658.4000244140625,
+        "width": 1180,
+        "x": 44.79999923706055,
+        "y": 658.4000244140625
+      },
+      ".st-key-workspace": {
+        "bottom": 648.4000091552734,
+        "height": 429.7000122070313,
+        "left": 44.79999923706055,
+        "right": 1224.7999992370603,
+        "top": 218.6999969482422,
+        "width": 1180,
+        "x": 44.79999923706055,
+        "y": 218.6999969482422
+      }
+    },
+    "prediction": "3",
+    "resultLabel": "Xác suất ảnh này · KNN",
+    "technicalExpanded": false,
+    "titleFonts": [
+      "25px",
+      "17px",
+      "17px"
+    ],
+    "verticalOverflow": 16,
+    "viewport": {
+      "height": 720,
+      "width": 1280
+    },
+    "visualScale": 1,
+    "state": "upload_prediction",
+    "screenshot": "upload_prediction_1280x720.jpg"
+  },
+  {
+    "cssTransform": "none",
+    "cssZoom": "1",
+    "devicePixelRatio": 1.0000000149011612,
+    "documentScrollHeight": 768,
+    "horizontalOverflow": false,
+    "inputs": [
+      "K láng giềng gần nhất (KNN)",
+      "Tải ảnh từ máy",
+      "Tự động"
+    ],
+    "main": {
+      "clientHeight": 768,
+      "overflowY": "auto",
+      "scrollHeight": 770,
+      "scrollTop": 0
+    },
+    "parts": {
+      ".demo-header": {
+        "bottom": 94.79999923706056,
+        "height": 62,
+        "left": 82.80000305175781,
+        "right": 1273.2000274658203,
+        "top": 32.79999923706055,
+        "width": 1190.4000244140625,
+        "x": 82.80000305175781,
+        "y": 32.79999923706055
+      },
+      ".image-card": {
+        "bottom": 616.3999938964844,
+        "height": 228,
+        "left": 82.80000305175781,
+        "right": 664.0000152587891,
+        "top": 388.3999938964844,
+        "width": 581.2000122070312,
+        "x": 82.80000305175781,
+        "y": 388.3999938964844
+      },
+      ".image-meta": {
+        "bottom": 642.4000244140625,
+        "height": 18,
+        "left": 82.80000305175781,
+        "right": 664.0000152587891,
+        "top": 624.4000244140625,
+        "width": 581.2000122070312,
+        "x": 82.80000305175781,
+        "y": 624.4000244140625
+      },
+      ".overview-card": {
+        "bottom": 169.20000457763672,
+        "height": 64.4000015258789,
+        "left": 82.80000305175781,
+        "right": 472.9250030517578,
+        "top": 104.8000030517578,
+        "width": 390.125,
+        "x": 82.80000305175781,
+        "y": 104.8000030517578
+      },
+      ".result-empty": {
+        "bottom": 593.3000183105469,
+        "height": 300,
+        "left": 692,
+        "right": 1273.2000122070312,
+        "top": 293.3000183105469,
+        "width": 581.2000122070312,
+        "x": 692,
+        "y": 293.3000183105469
+      },
+      ".st-key-controls": {
+        "bottom": 238.6999969482422,
+        "height": 59.5,
+        "left": 82.80000305175781,
+        "right": 1273.2000274658203,
+        "top": 179.1999969482422,
+        "width": 1190.4000244140625,
+        "x": 82.80000305175781,
+        "y": 179.1999969482422
+      },
+      ".st-key-demo": {
+        "bottom": 757.7999877929688,
+        "height": 745.7999877929688,
+        "left": 62,
+        "right": 1294,
+        "top": 12,
+        "width": 1232,
+        "x": 62,
+        "y": 12
+      },
+      ".st-key-predict": {
+        "bottom": 690.4000244140625,
+        "height": 40,
+        "left": 82.80000305175781,
+        "right": 664.0000152587891,
+        "top": 650.4000244140625,
+        "width": 581.2000122070312,
+        "x": 82.80000305175781,
+        "y": 650.4000244140625
+      },
+      ".st-key-technical": {
+        "bottom": 737.0000267028809,
+        "height": 34.60000228881836,
+        "left": 82.80000305175781,
+        "right": 1273.2000274658203,
+        "top": 702.4000244140625,
+        "width": 1190.4000244140625,
+        "x": 82.80000305175781,
+        "y": 702.4000244140625
+      },
+      ".st-key-workspace": {
+        "bottom": 690.4000091552734,
+        "height": 441.7000122070313,
+        "left": 82.80000305175781,
+        "right": 1273.2000274658203,
+        "top": 248.6999969482422,
+        "width": 1190.4000244140625,
+        "x": 82.80000305175781,
+        "y": 248.6999969482422
+      }
+    },
+    "prediction": null,
+    "resultLabel": null,
+    "technicalExpanded": false,
+    "titleFonts": [
+      "25px",
+      "17px",
+      "17px"
+    ],
+    "verticalOverflow": 2,
+    "viewport": {
+      "height": 768,
+      "width": 1366
+    },
+    "visualScale": 1,
+    "state": "upload_preview",
+    "screenshot": "upload_preview_1366x768.jpg"
+  },
+  {
+    "cssTransform": "none",
+    "cssZoom": "1",
+    "devicePixelRatio": 1.0000000149011612,
+    "documentScrollHeight": 768,
+    "horizontalOverflow": false,
+    "inputs": [
+      "K láng giềng gần nhất (KNN)",
+      "Tải ảnh từ máy",
+      "Tự động"
+    ],
+    "main": {
+      "clientHeight": 768,
+      "overflowY": "auto",
+      "scrollHeight": 770,
+      "scrollTop": 1.600000023841858
+    },
+    "parts": {
+      ".demo-header": {
+        "bottom": 93.20000076293944,
+        "height": 62,
+        "left": 82.80000305175781,
+        "right": 1273.2000274658203,
+        "top": 31.200000762939453,
+        "width": 1190.4000244140625,
+        "x": 82.80000305175781,
+        "y": 31.200000762939453
+      },
+      ".image-card": {
+        "bottom": 614.8000183105469,
+        "height": 228,
+        "left": 82.80000305175781,
+        "right": 664.0000152587891,
+        "top": 386.8000183105469,
+        "width": 581.2000122070312,
+        "x": 82.80000305175781,
+        "y": 386.8000183105469
+      },
+      ".image-meta": {
+        "bottom": 640.7999877929688,
+        "height": 18,
+        "left": 82.80000305175781,
+        "right": 664.0000152587891,
+        "top": 622.7999877929688,
+        "width": 581.2000122070312,
+        "x": 82.80000305175781,
+        "y": 622.7999877929688
+      },
+      ".overview-card": {
+        "bottom": 167.60000610351562,
+        "height": 64.4000015258789,
+        "left": 82.80000305175781,
+        "right": 472.9250030517578,
+        "top": 103.20000457763672,
+        "width": 390.125,
+        "x": 82.80000305175781,
+        "y": 103.20000457763672
+      },
+      ".probability-list": {
+        "bottom": 632.4500122070312,
+        "height": 158,
+        "left": 692,
+        "right": 1273.2000122070312,
+        "top": 474.4500122070313,
+        "width": 581.2000122070312,
+        "x": 692,
+        "y": 474.4500122070313
+      },
+      ".result-card": {
+        "bottom": 435.65000915527344,
+        "height": 143.9499969482422,
+        "left": 692,
+        "right": 1273.2000122070312,
+        "top": 291.70001220703125,
+        "width": 581.2000122070312,
+        "x": 692,
+        "y": 291.70001220703125
+      },
+      ".st-key-controls": {
+        "bottom": 237.1000061035156,
+        "height": 59.5,
+        "left": 82.80000305175781,
+        "right": 1273.2000274658203,
+        "top": 177.60000610351562,
+        "width": 1190.4000244140625,
+        "x": 82.80000305175781,
+        "y": 177.60000610351562
+      },
+      ".st-key-demo": {
+        "bottom": 756.1999883651733,
+        "height": 745.7999877929688,
+        "left": 62,
+        "right": 1294,
+        "top": 10.40000057220459,
+        "width": 1232,
+        "x": 62,
+        "y": 10.40000057220459
+      },
+      ".st-key-predict": {
+        "bottom": 688.7999877929688,
+        "height": 40,
+        "left": 82.80000305175781,
+        "right": 664.0000152587891,
+        "top": 648.7999877929688,
+        "width": 581.2000122070312,
+        "x": 82.80000305175781,
+        "y": 648.7999877929688
+      },
+      ".st-key-technical": {
+        "bottom": 735.3999900817871,
+        "height": 34.60000228881836,
+        "left": 82.80000305175781,
+        "right": 1273.2000274658203,
+        "top": 700.7999877929688,
+        "width": 1190.4000244140625,
+        "x": 82.80000305175781,
+        "y": 700.7999877929688
+      },
+      ".st-key-workspace": {
+        "bottom": 688.8000183105469,
+        "height": 441.7000122070313,
+        "left": 82.80000305175781,
+        "right": 1273.2000274658203,
+        "top": 247.1000061035156,
+        "width": 1190.4000244140625,
+        "x": 82.80000305175781,
+        "y": 247.1000061035156
+      }
+    },
+    "prediction": "3",
+    "resultLabel": "Xác suất ảnh này · KNN",
+    "technicalExpanded": false,
+    "titleFonts": [
+      "25px",
+      "17px",
+      "17px"
+    ],
+    "verticalOverflow": 2,
+    "viewport": {
+      "height": 768,
+      "width": 1366
+    },
+    "visualScale": 1,
+    "state": "upload_prediction",
+    "screenshot": "upload_prediction_1366x768.jpg"
+  }
+]
