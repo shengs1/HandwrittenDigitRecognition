@@ -26,6 +26,8 @@ Server đo lại8514 cũng đã dừng; viewport trả mặc định. HTTP healt
 
 **Git:** đầu lượt main...origin/main tại45ce4b8 với5 file UI/tài liệu đã sửa, .streamlit và4 thư mục bằng chứng UI chưa commit. Fetch xác nhận không lệch remote. Người dùng đã yêu cầu commit và push bản UI này sau kiểm thử; tất cả kiểm tra đã đạt. Kết quả commit/push được ghi ở mục xác nhận ngay dưới khi hoàn tất. Các phần sau là lịch sử trước đóng băng.
 
+**Xác nhận commit/push UI FROZEN:** đã commit toàn bộ UI đã duyệt và bằng chứng bằng `36148add08ef5f05f6491dd614553978b604c750` (`Freeze approved demo UI and record final verification`), chạy `git push origin main` thành công. `git ls-remote origin refs/heads/main` xác nhận đúng SHA36148ad trên GitHub; `git status --short --branch` sạch và đồng bộ tại thời điểm kiểm tra. Commit tài liệu tiếp theo chỉ ghi nhận kết quả push này, không thay code/UI/model hoặc kết quả test. Không force-push. Phiên bản mới nhất xem `git log -1`; giữ UI FROZEN cho các lượt tiếp theo.
+
 ## Trạng thái hiện tại — Final UI Interaction & Technical Information Fix (2026-11-18)
 
 Đã sửa đúng phạm vi giao diện, giữ bản compact/dark hiện tại. Nguyên nhân chồng chữ được đo trên DOM trước sửa: caption có margin-bottom=-14px; dòng chữ cao19,6px nhưng wrapper chỉ5,6px, code block bắt đầu trước đáy chữ6px. Đã reset margin caption trong phạm vi demo; thay repr/code block bằng HTML ngữ nghĩa có chiều cao tự nhiên, line-height và khoảng cách rõ, tự xuống dòng. Không fixed/min-height vùng văn bản. Khi mở expander, trang cuộn tự nhiên; khi đóng không tăng chiều cao chính.
