@@ -2,6 +2,8 @@
 
 ## FINAL OPTIMIZATION REVIEW — CODE FREEZE (19/11/2026)
 
+**Xác nhận phát hành:**đã commit bản tốiưu/bằngchứng bằng `a15bcbef95a12d16bdad9297423bde383326c862` (`Freeze validated external digit recognition release`) và `git push origin main` thành công. `git ls-remote origin refs/heads/main` xác nhận đúngSHA này;workingtree sạch/đồngbộ ngay saupush. Commit tài liệu tiếp theo chỉ ghi xácnhận này,không đổi code/model/metric/test;SHA mới nhất xem `git log -1`. Không force-push. Bộ2161 hash trong frozen_artifacts_sha256.json chốt mã/dữliệu/model/artifact;UI/CODE/EXPERIMENTS tiếp tụcFROZEN,tài liệu/thuyếttrình IN PROGRESS.
+
 **UI FROZEN · CODE FROZEN · EXPERIMENTS FROZEN · DOCUMENTATION AND PRESENTATION IN PROGRESS.** Người dùng đã review/duyệt giữ gray_bbox và MLP MNIST28 với điều kiện qua kiểm tra cuối; các kiểm tra kỹ thuật dưới đã đạt. Không huấn luyện/tuning/notebook hoặc thay app.py/external_preprocessing.py/model/registry/CSS/requirements trong lượt này. Người dùng đã yêu cầu commit và push bản tối ưu lên main sau PASS; yêu cầu này thay trạng thái chờ review/chưa push trong mục lịch sử bên dưới. Không force-push.
 
 Bằng chứng: `outputs/optimization_freeze_20261119T045133Z_728f35c1/REVIEW.md` và JSON/log/screenshot cùng thư mục. Đã đọc PDF6 trang,AGENTS/HANDOFF/notebook51 cell,app/module ảnh,kết quả/lock/protocol/split/metadata/manifest/source/license. AI_USAGE.md không tồn tại theo quyết định trước,không tạo lại.
