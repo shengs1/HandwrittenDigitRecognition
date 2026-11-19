@@ -1,0 +1,38 @@
+{
+  "optimization_run": "external_optimization_20261118T175401Z_4ca3a08f",
+  "selection_lock_sha256": "44d44ea10fe91dc40ec4ffe2623a1437a5876ff3e84494fd41043de7ca9655c3",
+  "preprocessing_module_sha256": "51a87adb661b5e54e931674416db1bbad6cb06f342c804497f388ec831f56443",
+  "shared_variant": "gray_bbox",
+  "specialist_enabled": true,
+  "specialist": {
+    "path": "external_optimization_20261118T175401Z_4ca3a08f/mlp_mnist.joblib",
+    "sha256": "1618a82694c6fd6255b06fb2c1a6fd8e5233d2851693077418fc58e3f8594638",
+    "input_features": 784,
+    "image_shape": [
+      28,
+      28
+    ],
+    "pixel_range": [
+      0,
+      255
+    ],
+    "dataset": "MNIST train",
+    "train_n": 54000,
+    "parameters": {
+      "hidden_layer_sizes": [
+        128,
+        64
+      ],
+      "activation": "relu",
+      "solver": "adam",
+      "alpha": 0.0001,
+      "early_stopping": true,
+      "n_iter_no_change": 8,
+      "max_iter": 60,
+      "batch_size": 256,
+      "random_state": 42
+    },
+    "fit_seconds": 23.89557110000169,
+    "model_bytes": 1221502
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "checkout_files_byte_identical": 2455,
+  "mismatches": [],
+  "autocrlf_true_safe_via_attributes": true,
+  "notebook_and_artifacts_working_bytes_unchanged": true,
+  "checkout_relative_path": "tmp/gix_728f35c1",
+  "long_path_issue_documented": true
+}

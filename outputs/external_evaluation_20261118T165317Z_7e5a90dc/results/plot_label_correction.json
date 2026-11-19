@@ -1,0 +1,7 @@
+{
+  "change": "Histogram title >20% corrected to ≥20%; descriptor formula already used >= throughout.",
+  "source": "results/image_descriptors.csv",
+  "inference_or_metrics_recomputed": false,
+  "script_snapshot_sha256": "45014c9d2d95f3c4d8608dc27bb019e6e53f5218b752f44749c6d35086ebcd14",
+  "current_script_sha256": "8a9029de1bcbb39a4af171f185976c6aea3133dc3caf13013ad63b1ea7fd7e5f"
+}

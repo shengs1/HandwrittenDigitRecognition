@@ -1,0 +1,6 @@
+2026-11-18 23:53:40.243 WARNING streamlit.runtime.caching.cache_data_api: No runtime found, using MemoryCacheStorageManager
+     model  n_images  correct  accuracy  f1_macro  precision_macro  recall_macro
+logreg_raw       100       46      0.46  0.480071         0.628755          0.46
+       knn       100       40      0.40  0.422498         0.503718          0.40
+       mlp       100       37      0.37  0.371433         0.499637          0.37
+EXTERNAL_EVALUATION_COMPLETE outputs/external_evaluation_20261118T165317Z_7e5a90dc

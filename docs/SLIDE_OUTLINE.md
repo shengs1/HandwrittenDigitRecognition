@@ -2,6 +2,8 @@
 
 **Chưa được nhóm xác nhận; chưa có PPTX/PDF nộp chính thức.** Run `20261117T081201Z_fd32180f`; nguồn bảng/hình tại [RESULTS_INDEX](RESULTS_INDEX.md). Mỗi slide 3–4 ý, hình đủ lớn; nhóm diễn đạt lại lời nói.
 
+Phân biệtA:Digits chính (slide2–9), B:mở rộng ảnh ngoài (slide10), demo/giới hạn (11). UI/CODE/EXPERIMENTS FROZEN; phần thuyết trình đang hoàn thiện. Không thay score Digits bằng score MNIST.
+
 ## 1. Đề tài
 
 - Phân loại chữ số viết tay — đề tài 13.
@@ -10,7 +12,7 @@
 
 Hình/bảng: Một ảnh Digits 8×8.
 
-Gợi ý lời nói: Nêu ngay dataset là Digits, MNIST chỉ fixture ngoài.
+Gợi ý lời nói: Digits là thực nghiệm chính; MLP MNIST là mô hình mở rộng riêng cho upload, không thay lựa chọn KNN chính.
 
 ## 2. Bài toán và mục tiêu
 
@@ -94,32 +96,33 @@ Hình/bảng: Confusion KNN + ảnh 1553/1022 + learning curve; history để ph
 
 Gợi ý lời nói: Mô tả nét chỉ là giả thuyết; không sửa model sau test.
 
-## 10. Demo
+## 10. B — Mở rộng nhận diện ảnh ngoài
 
-- Chọn model và Ảnh test Digits đúng split lưu.
-- Upload: ảnh gốc/8×8/0–16, dự đoán và xác suất10 lớp.
-- Không fit/scale hai lần; file hỏng/trống/mất model báo lỗi.
-- 10 MNIST đã thử: 3/10 đúng mỗi model; xác suất chưa hiệu chỉnh.
+-600 ảnh gốc,3 nguồn,300 validation/300 test;seed42,khóa trước suy luận.
+-gray_bbox thắng mean validation F1 0,59260 so0,48980;KNN ngoài48%→58%.
+-Một MLP MNIST28:54000 train/6000 validation;test loại110 ảnh đã xem,còn9890,đạt97,39%.
+-Ngoài300:262 đúng/38 sai,87,33%,F1 0,8713;BHMSDS/Bitmap/HwD:82/82/98 trên100 ảnh mỗi nguồn.
 
-Hình/bảng: Screenshot thật lượt kiểm tra cuối.
+Hình/bảng: Bảng riêng từng tập từ RESULTS_INDEX mục11;confusion MLP28/ảnh lỗi trước-sau trong run mở rộng.
 
-Gợi ý lời nói: Mẫu test đã xem không là đánh giá độc lập mới; chuẩn bị ảnh offline dự phòng.
+Gợi ý lời nói: Chọn bằng validation trước test. MLP28 thay data/kiến trúc/resolution nên không quy toàn bộ tăng cho preprocessing; đây không phải điểm Digits chính thức.
 
-## 11. Giới hạn và hướng sau
+## 11. Demo và giới hạn
 
-- Digits nhỏ/8×8; random split chưa bảo đảm tách người viết.
-- CV dùng chọn tham số; timing phụ thuộc máy.
-- 10 ảnh ngoài ít, chưa có ảnh tự chụp; kiểu nét/nền có thể khác.
-- Thu ảnh có nhãn, chốt quy trình rồi đánh giá tập ngoài mới.
+-Digits vẫn3 Pipeline/8×8 gốc;upload chọn rõ MLP MNIST28 hoặc model Digits/gray_bbox.
+-Không train/tự chọn theo confidence;preview đúng input,scaler trong Pipeline;53 tests venv mới đạt.
+-Nguồn ngoài gồm giấy đã cắt/scan/vẽ tay số;chưa kiểm ảnh điện thoại nhóm,chưa tách writer,Bitmap thiếu mapping từng ảnh.
+-Giữ38 lỗi,không tuning lại từ test;xác suất cao vẫn có thể sai.
 
-Hình/bảng: Một ví dụ ảnh ngoài sai, có nguồn fixture.
+Hình/bảng: Screenshot [demo sạch](../outputs/optimization_freeze_20261119T045133Z_728f35c1/clean_upload_1366x768.jpg),một lỗi MLP28 và nguồn ảnh thật.
 
-Gợi ý lời nói: Tiền xử lý hợp lệ không bảo đảm cùng phân phối; không tuning10 ảnh đã xem.
+Gợi ý lời nói: Ba thẻ đầu là số liệu Digits,không phải accuracy của model đang upload. Chuẩn bị ảnh dự phòng offline và ghi nhận ảnh tự chụp riêng,không tạo số liệu thay thế.
 
 ## 12. Kết luận và phân công
 
 - Đủ quy trình6 EDA, baseline+KNN/MLP, scaling/CV/grid/lỗi/curves/demo.
 - KNN tốt nhất run này; LR gọn; MLP chưa có lợi thế tổng thể.
+- MLP MNIST28 là kết quả mở rộng, không thay lựa chọn KNN trên Digits.
 - Đối chiếu5 câu trả lời cuối notebook.
 - Phân công thật:**[Nhóm điền người, việc, bằng chứng]**.
 

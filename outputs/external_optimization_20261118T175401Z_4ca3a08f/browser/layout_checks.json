@@ -1,0 +1,62 @@
+[
+  {
+    "docHeight": 1080,
+    "dpr": 1.0000000149011612,
+    "horizontalOverflow": 0,
+    "mainClient": 1080,
+    "mainHeight": 1080,
+    "scale": 1,
+    "viewport": [
+      1920,
+      1080
+    ]
+  },
+  {
+    "docHeight": 900,
+    "dpr": 1.0000000149011612,
+    "horizontalOverflow": 0,
+    "mainClient": 900,
+    "mainHeight": 900,
+    "scale": 1,
+    "viewport": [
+      1920,
+      900
+    ]
+  },
+  {
+    "docHeight": 864,
+    "dpr": 1.0000000149011612,
+    "horizontalOverflow": 0,
+    "mainClient": 864,
+    "mainHeight": 864,
+    "scale": 1,
+    "viewport": [
+      1536,
+      864
+    ]
+  },
+  {
+    "docHeight": 768,
+    "dpr": 1.0000000149011612,
+    "horizontalOverflow": 0,
+    "mainClient": 768,
+    "mainHeight": 768,
+    "scale": 1,
+    "viewport": [
+      1366,
+      768
+    ]
+  },
+  {
+    "docHeight": 720,
+    "dpr": 1.0000000149011612,
+    "horizontalOverflow": 0,
+    "mainClient": 720,
+    "mainHeight": 720,
+    "scale": 1,
+    "viewport": [
+      1280,
+      720
+    ]
+  }
+]

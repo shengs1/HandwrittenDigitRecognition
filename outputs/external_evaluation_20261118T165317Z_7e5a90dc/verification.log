@@ -1,0 +1,18 @@
+2026-11-19 00:04:26.674 WARNING streamlit.runtime.caching.cache_data_api: No runtime found, using MemoryCacheStorageManager
+{
+  "verified_at_utc": "2026-11-18T17:04:28.512836+00:00",
+  "sample_lock_unchanged": true,
+  "selection_reproduced": true,
+  "images_per_model": 100,
+  "classes": 10,
+  "images_per_class": 10,
+  "replayed_preprocessing_equal": 100,
+  "replayed_predictions_equal": 300,
+  "saved_probability_rows_checked": 300,
+  "metric_formula_checks": true,
+  "correct_incorrect_lists_partition_sample": true,
+  "protected_count": 332,
+  "protected_sha256_unchanged": true,
+  "pipelines_match_registry": true,
+  "ui_frozen": true
+}

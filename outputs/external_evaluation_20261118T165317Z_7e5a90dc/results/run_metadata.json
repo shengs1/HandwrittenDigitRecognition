@@ -1,0 +1,37 @@
+{
+  "finished_at_utc": "2026-11-18T16:53:54.848720+00:00",
+  "sample_lock_sha256": "388ce6152a4c12d71ba31e4884624a11689ad7ba9461de6fdc5303c010e80cf1",
+  "training_run_id": "20261117T081201Z_fd32180f",
+  "official_selected_model_unchanged": "knn",
+  "preprocessing_api": "app.preprocess_uploaded_image(data, background=\"Tự động\")",
+  "prediction_api": "app.predict_digit(saved_pipeline, pixels)",
+  "no_fit_guard": true,
+  "n_images": 100,
+  "class_counts": [
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10
+  ],
+  "old_id_overlap": 0,
+  "old_image_pixel_overlap": 0,
+  "preprocessing_rejections": 0,
+  "preprocessing_repeat_checks": 100,
+  "background_inversion_checks": 100,
+  "data_sha256": "f6d9e39f37dc45d327f6db33428ee58970ccceabb2535a5c179de35886b70443",
+  "protected_count": 332,
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pillow": "13.0.0",
+    "matplotlib": "3.11.2",
+    "joblib": "1.6.0"
+  }
+}

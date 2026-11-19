@@ -1,0 +1,3 @@
+# Artifact, manifest va ma nguon duoc doi chieu SHA256 theo byte.
+# Khong tu doi LF/CRLF khi add/checkout tren Windows hoac Linux.
+* -text whitespace=trailing-space,space-before-tab,cr-at-eol

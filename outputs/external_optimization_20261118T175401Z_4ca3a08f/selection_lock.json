@@ -1,0 +1,51 @@
+{
+  "locked_at_utc": "2026-11-18T18:12:59.215812+00:00",
+  "protocol_sha256": "56196bc96c401f70f7e5b94ede2649e828c1aef53e6e4897882fba928d0bb76f",
+  "validation_metrics_sha256": "f7fcd60fcbf71b9c3b16570198a6aacaa334975512be10e9d9f67bdeb963af04",
+  "external_manifest_sha256": "0ce0ba8f07e760e35bae945ba3e7b0e07777d952ccd564b0fa231136d0b768c0",
+  "preprocessing_module_sha256": "51a87adb661b5e54e931674416db1bbad6cb06f342c804497f388ec831f56443",
+  "shared_variant": "gray_bbox",
+  "best_validation_variant": "gray_bbox",
+  "shared_upload_update": true,
+  "specialist_upload_option": true,
+  "evaluation_systems": [
+    {
+      "system": "logreg_raw--baseline",
+      "model": "logreg_raw",
+      "variant": "baseline"
+    },
+    {
+      "system": "knn--baseline",
+      "model": "knn",
+      "variant": "baseline"
+    },
+    {
+      "system": "mlp--baseline",
+      "model": "mlp",
+      "variant": "baseline"
+    },
+    {
+      "system": "logreg_raw--gray_bbox",
+      "model": "logreg_raw",
+      "variant": "gray_bbox"
+    },
+    {
+      "system": "knn--gray_bbox",
+      "model": "knn",
+      "variant": "gray_bbox"
+    },
+    {
+      "system": "mlp--gray_bbox",
+      "model": "mlp",
+      "variant": "gray_bbox"
+    },
+    {
+      "system": "mlp_mnist--mnist28",
+      "model": "mlp_mnist",
+      "variant": "mnist28",
+      "sha256": "1618a82694c6fd6255b06fb2c1a6fd8e5233d2851693077418fc58e3f8594638"
+    }
+  ],
+  "test_used_to_choose": false,
+  "official_digits_selected_model": "knn"
+}

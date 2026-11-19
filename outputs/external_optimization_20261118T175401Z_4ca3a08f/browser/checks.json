@@ -1,0 +1,225 @@
+{
+  "predictions": [
+    {
+      "source": "Ảnh test",
+      "model": "Logistic Regression",
+      "meta": "Tập test chính thức · ID 10 · Nhãn 0 · 8×8",
+      "prediction": "0",
+      "probability": "100,00%"
+    },
+    {
+      "source": "Ảnh test",
+      "model": "KNN",
+      "meta": "Tập test chính thức · ID 10 · Nhãn 0 · 8×8",
+      "prediction": "0",
+      "probability": "100,00%"
+    },
+    {
+      "source": "Ảnh test",
+      "model": "MLP",
+      "meta": "Tập test chính thức · ID 10 · Nhãn 0 · 8×8",
+      "prediction": "0",
+      "probability": "99,07%"
+    },
+    {
+      "source": "Ảnh mẫu",
+      "model": "Logistic Regression",
+      "meta": "Toàn bộ Digits · gồm train/test · ID 0 · Nhãn 0 · 8×8",
+      "prediction": "0",
+      "probability": "100,00%"
+    },
+    {
+      "source": "Ảnh mẫu",
+      "model": "KNN",
+      "meta": "Toàn bộ Digits · gồm train/test · ID 0 · Nhãn 0 · 8×8",
+      "prediction": "0",
+      "probability": "100,00%"
+    },
+    {
+      "source": "Ảnh mẫu",
+      "model": "MLP",
+      "meta": "Toàn bộ Digits · gồm train/test · ID 0 · Nhãn 0 · 8×8",
+      "prediction": "0",
+      "probability": "99,83%"
+    },
+    {
+      "source": "Upload validation/hwd1000/7/7-007.png",
+      "model": "Logistic Regression",
+      "meta": "28×28 → 8×8 · Nền sáng → đảo nét",
+      "prediction": "7",
+      "probability": "100,00%"
+    },
+    {
+      "source": "Upload validation/hwd1000/7/7-007.png",
+      "model": "KNN",
+      "meta": "28×28 → 8×8 · Nền sáng → đảo nét",
+      "prediction": "3",
+      "probability": "33,33%"
+    },
+    {
+      "source": "Upload validation/hwd1000/7/7-007.png",
+      "model": "MLP",
+      "meta": "28×28 → 8×8 · Nền sáng → đảo nét",
+      "prediction": "7",
+      "probability": "65,60%"
+    },
+    {
+      "source": "Upload validation/hwd1000/7/7-007.png",
+      "model": "MLP · MNIST",
+      "meta": "28×28 → 28×28 · Nền sáng → đảo nét",
+      "prediction": "7",
+      "probability": "100,00%"
+    }
+  ],
+  "dropdowns": [
+    {
+      "label": "Mô hình phân loại",
+      "zone": "text",
+      "expanded": true
+    },
+    {
+      "label": "Mô hình phân loại",
+      "zone": "middle",
+      "expanded": true
+    },
+    {
+      "label": "Mô hình phân loại",
+      "zone": "arrow",
+      "expanded": true
+    },
+    {
+      "label": "Nguồn ảnh",
+      "zone": "text",
+      "expanded": true
+    },
+    {
+      "label": "Nguồn ảnh",
+      "zone": "middle",
+      "expanded": true
+    },
+    {
+      "label": "Nguồn ảnh",
+      "zone": "arrow",
+      "expanded": true
+    },
+    {
+      "label": "Chữ số mẫu",
+      "zone": "text",
+      "expanded": true
+    },
+    {
+      "label": "Chữ số mẫu",
+      "zone": "middle",
+      "expanded": true
+    },
+    {
+      "label": "Chữ số mẫu",
+      "zone": "arrow",
+      "expanded": true
+    },
+    {
+      "label": "ID ảnh trong Digits",
+      "zone": "text",
+      "expanded": true
+    },
+    {
+      "label": "ID ảnh trong Digits",
+      "zone": "middle",
+      "expanded": true
+    },
+    {
+      "label": "ID ảnh trong Digits",
+      "zone": "arrow",
+      "expanded": true
+    },
+    {
+      "label": "Màu nền",
+      "zone": "text",
+      "expanded": true
+    },
+    {
+      "label": "Màu nền",
+      "zone": "middle",
+      "expanded": true
+    },
+    {
+      "label": "Màu nền",
+      "zone": "arrow",
+      "expanded": true
+    }
+  ],
+  "technical": {
+    "clipped": [],
+    "tables": [
+      [
+        [
+          "Dataset",
+          "MNIST train"
+        ],
+        [
+          "Số lượng mẫu",
+          "54.000"
+        ],
+        [
+          "Kích thước ảnh",
+          "28×28"
+        ],
+        [
+          "Số đặc trưng",
+          "784"
+        ],
+        [
+          "Miền pixel",
+          "0–255"
+        ]
+      ],
+      [
+        [
+          "Thuật toán",
+          "MLP"
+        ],
+        [
+          "Kiến trúc lớp ẩn",
+          "128 → 64"
+        ],
+        [
+          "Activation",
+          "relu"
+        ],
+        [
+          "Optimizer / solver",
+          "adam"
+        ],
+        [
+          "Alpha",
+          "0.0001"
+        ],
+        [
+          "Early stopping",
+          "Có"
+        ],
+        [
+          "Số vòng lặp tối đa",
+          "60"
+        ],
+        [
+          "Chuẩn hóa",
+          "MinMaxScaler"
+        ]
+      ]
+    ],
+    "text": "Thông tin dữ liệuDatasetMNIST trainSố lượng mẫu54.000Kích thước ảnh28×28Số đặc trưng784Miền pixel0–255Cấu hình mô hìnhThuật toánMLPKiến trúc lớp ẩn128 → 64ActivationreluOptimizer / solveradamAlpha0.0001Early stoppingCóSố vòng lặp tối đa60Chuẩn hóaMinMaxScalerQuy trình xử lý ảnhẢnh upload → Grayscale và xử lý nền → Crop, giữ tỷ lệ và căn giữa → Resize 28×28 (0–255) → Vector 784 pixel theo hàng → Pipeline → Kết quả dự đoánMô hình MNIST chỉ dùng cho ảnh upload. Ảnh mẫu/test Digits tiếp tục dùng ba Pipeline 8×8 chính thức. Số mẫu trên là phần MNIST train thực sự dùng để fit, không gồm validation ngoài.Ảnh upload còn được xử lý hướng EXIF và ghép alpha trước grayscale. Scaler của mô hình chỉ thực hiện bên trong Pipeline, không áp dụng scaler hai lần.Giới hạn mô hìnhMô hình được huấn luyện trên bộ dữ liệu MNIST train. Nên sử dụng ảnh chứa một chữ số, nền đơn giản và nét viết rõ ràng. Độ chính xác có thể giảm đối với ảnh bên ngoài do sự khác biệt về nét viết, kích thước và chất lượng ảnh. Xác suất dự đoán không bảo đảm kết quả luôn đúng."
+  },
+  "scanResult": {
+    "meta": "128×128 → 28×28 · Nền sáng → đảo nét",
+    "prediction": "0",
+    "probability": "100,00%"
+  },
+  "errorResult": {
+    "disabled": true,
+    "message": "Không đọc được file ảnh hợp lệ.",
+    "prediction": false
+  },
+  "uploadMethod": "Temporary native-uploader return fixture; real app.main; Windows OS file chooser not repeated.",
+  "navigationNote": "On source/query changes, wait for new case-specific content before selecting; initial early actions raced Streamlit session reload."
+}

@@ -1,0 +1,2902 @@
+[
+  {
+    "sample_order": 0,
+    "mnist_test_index": 997,
+    "true_label": 0,
+    "original_file": "originals/mnist_test_00997_label_0.png",
+    "original_png_sha256": "1d72cc9f8901355b59577523eae5ed892b0fc1d4882aec90953e977302eb171b",
+    "raw_pixels_sha256": "9f4307ca5c793c36e8d4ab6afc2ebd3bf347310225ecd12ccf8affe46bcda08b",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      5,
+      4,
+      25,
+      24
+    ],
+    "center_shift": [
+      0,
+      -1
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.56078431372549,
+    "processed_file": "processed/mnist_test_00997_label_0.png",
+    "processed_png_sha256": "da8f834c870b9d7a367457bc025c936b2ff78d4d404c0d5dc51d535b8f21f998",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 1,
+    "mnist_test_index": 1034,
+    "true_label": 0,
+    "original_file": "originals/mnist_test_01034_label_0.png",
+    "original_png_sha256": "5507dd738a52133f992e771198efc687cb35639960b137bb42fb98112d66c74d",
+    "raw_pixels_sha256": "ccff4a00356da14aabffe926a03e8350b80143564b2d5dbe644cc33e7e6a2d29",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      5,
+      5,
+      23,
+      25
+    ],
+    "center_shift": [
+      -1,
+      2
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.113725490196078,
+    "processed_file": "processed/mnist_test_01034_label_0.png",
+    "processed_png_sha256": "e54298136e2583b5d065f3c01ecef237de9047fe411fb66f9eb7b6f09e346c31",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 2,
+    "mnist_test_index": 1148,
+    "true_label": 0,
+    "original_file": "originals/mnist_test_01148_label_0.png",
+    "original_png_sha256": "4ca39c57195b54d013045df0a8b10f707df2f85ac6c7556331db46f994f88970",
+    "raw_pixels_sha256": "d6c4aa16919012183e8e9b8d128d2aa35edc8cd4e887678294daf8a7a35b596c",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      4,
+      23,
+      24
+    ],
+    "center_shift": [
+      0,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.309803921568626,
+    "processed_file": "processed/mnist_test_01148_label_0.png",
+    "processed_png_sha256": "dbeb0c957788cb3c52baa11adc64f2651c94de53564f1e7eeb534497e11fe82a",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 3,
+    "mnist_test_index": 2304,
+    "true_label": 0,
+    "original_file": "originals/mnist_test_02304_label_0.png",
+    "original_png_sha256": "155dfc38a7d2667e78db1d34f232fd629538b1bb6fbfdaf0de7aad6ae813d573",
+    "raw_pixels_sha256": "b830b4d829953b7c32e0e1821fe192d039462424e19ffe686cc6e8e54430087c",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      5,
+      3,
+      25,
+      23
+    ],
+    "center_shift": [
+      2,
+      -3
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.435294117647059,
+    "processed_file": "processed/mnist_test_02304_label_0.png",
+    "processed_png_sha256": "489360188775fb48c0ca58dd288caed191b129d25ae59c6effeed4070c6ba374",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 4,
+    "mnist_test_index": 4542,
+    "true_label": 0,
+    "original_file": "originals/mnist_test_04542_label_0.png",
+    "original_png_sha256": "20c2066f0c4846cfe7311ce7b7641db91256f8e9713c3fb9248d1554572fa52f",
+    "raw_pixels_sha256": "16b6aac913aba98225b8097ab874eb88a3487c49045002f0114a0b6522b73224",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      6,
+      4,
+      24,
+      24
+    ],
+    "center_shift": [
+      1,
+      -1
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.678431372549019,
+    "processed_file": "processed/mnist_test_04542_label_0.png",
+    "processed_png_sha256": "f96c6cf38b623a033d92193f5878472061ede5e0a2a049c9f1a54115ca90e81d",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 5,
+    "mnist_test_index": 4628,
+    "true_label": 0,
+    "original_file": "originals/mnist_test_04628_label_0.png",
+    "original_png_sha256": "d934074a32494c36a3cd82f51e65920d62be2c85fb4d09bb3b9ca891c5bd4767",
+    "raw_pixels_sha256": "db61b2feae408163527de95a1ec950a43fc6b2e61e379af35631092ee81f0c81",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      5,
+      5,
+      25,
+      25
+    ],
+    "center_shift": [
+      2,
+      1
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.678431372549019,
+    "processed_file": "processed/mnist_test_04628_label_0.png",
+    "processed_png_sha256": "be57eb405fef10e8595114e016700e6613beaa2b205fc81b6557e62417d75669",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 6,
+    "mnist_test_index": 6711,
+    "true_label": 0,
+    "original_file": "originals/mnist_test_06711_label_0.png",
+    "original_png_sha256": "3153dcfbeaceb42a522089ed23478f24acfb0ad0bd475cdee63bf5e74c6c5565",
+    "raw_pixels_sha256": "567fea8c29d479226ffd23918ef8bd9efd9e6c2aebadf2c959fa8a05c75202dd",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      5,
+      5,
+      25,
+      25
+    ],
+    "center_shift": [
+      1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.749019607843136,
+    "processed_file": "processed/mnist_test_06711_label_0.png",
+    "processed_png_sha256": "5ea2d58dc5ddb52bc8df70f70c7219093ad0cfdb57bfbbebea3c4ed7633bf3a0",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 7,
+    "mnist_test_index": 7133,
+    "true_label": 0,
+    "original_file": "originals/mnist_test_07133_label_0.png",
+    "original_png_sha256": "672ec9f71e9c447845153a59e9b5cda490b6ad1973eb68b3fafa0fc94d51c967",
+    "raw_pixels_sha256": "76b2e519d971a2a247a9ae369a201deca75b2da6543ce4f11f3e3a8e188855bb",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      4,
+      21,
+      24
+    ],
+    "center_shift": [
+      -2,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.811764705882354,
+    "processed_file": "processed/mnist_test_07133_label_0.png",
+    "processed_png_sha256": "b33a02eb9f3e7f29ac8408a8528b825f98b8201903affd68f3e7b27c0db22371",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 8,
+    "mnist_test_index": 7820,
+    "true_label": 0,
+    "original_file": "originals/mnist_test_07820_label_0.png",
+    "original_png_sha256": "a3f40e612dbafb54d5b0fc441f2fcc34462ed0e9e46bf684905bd8e6fa922c4f",
+    "raw_pixels_sha256": "f5acce86bf99c563fb82acca6c6363681c99cfb31ba6a312b5815617af7a1a95",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      5,
+      6,
+      25,
+      22
+    ],
+    "center_shift": [
+      0,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.56078431372549,
+    "processed_file": "processed/mnist_test_07820_label_0.png",
+    "processed_png_sha256": "7e466ef2502afc2768d5cf38127b27b0f426b45e04e578f16805e2d6dc93c16b",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 9,
+    "mnist_test_index": 8614,
+    "true_label": 0,
+    "original_file": "originals/mnist_test_08614_label_0.png",
+    "original_png_sha256": "c8a7dd7468f16c385552d8d1fd80c3bbb29c5ff773135e1e31d1274427d26c35",
+    "raw_pixels_sha256": "14737f5c4dace627f5fddea13515117b878f5a991cc93ab3c9ef922f039af719",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      4,
+      23,
+      24
+    ],
+    "center_shift": [
+      1,
+      -2
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.24313725490196,
+    "processed_file": "processed/mnist_test_08614_label_0.png",
+    "processed_png_sha256": "eb6a3b7aea8f3380c42b5a185b627744895efda3884207fd47853182ae34a38f",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 10,
+    "mnist_test_index": 1780,
+    "true_label": 1,
+    "original_file": "originals/mnist_test_01780_label_1.png",
+    "original_png_sha256": "c689ed13e4e2dd584122bec9a7dde7ff38dbad30002628671e0587162c5b1f4f",
+    "raw_pixels_sha256": "92d4e63510b5c8cc1c1ffe86dff58d95884fcc95d94711d32032a8104ccd50de",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      11,
+      4,
+      17,
+      24
+    ],
+    "center_shift": [
+      0,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 11.984313725490196,
+    "processed_file": "processed/mnist_test_01780_label_1.png",
+    "processed_png_sha256": "3e48eed31d01bb943f583c7ab40e4ebe0d55a238cd957cf6e8e3748df526d7f1",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 11,
+    "mnist_test_index": 3679,
+    "true_label": 1,
+    "original_file": "originals/mnist_test_03679_label_1.png",
+    "original_png_sha256": "82d877bf4f1d199a18513b2af8be2c90257658e44157fa60a7855d5b43cc97ad",
+    "raw_pixels_sha256": "d769621e79acf60b6afa69537b5db1daf2ad9f3828d365ded1d46100010703b8",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      12,
+      5,
+      18,
+      25
+    ],
+    "center_shift": [
+      1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.678431372549019,
+    "processed_file": "processed/mnist_test_03679_label_1.png",
+    "processed_png_sha256": "f8aedc3299a5562b6ad8112ee9b8aaa1986bf1b8afc624ec907eb6ae0d00917d",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 12,
+    "mnist_test_index": 4025,
+    "true_label": 1,
+    "original_file": "originals/mnist_test_04025_label_1.png",
+    "original_png_sha256": "1d4926b20baa9bd2c4ecb8bf8bbdd1559f988b4494575a6dbcb4344e794f12df",
+    "raw_pixels_sha256": "773e427ccc4d18812e7e151a5b80466f341b2cb5c1d1de600552ef9e90c1c138",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      13,
+      4,
+      17,
+      24
+    ],
+    "center_shift": [
+      1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.741176470588234,
+    "processed_file": "processed/mnist_test_04025_label_1.png",
+    "processed_png_sha256": "6aa0fd7e8995fe8e679b2523c37048f11462cfdbb0eafb760cc37ecafffd1418",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 13,
+    "mnist_test_index": 4491,
+    "true_label": 1,
+    "original_file": "originals/mnist_test_04491_label_1.png",
+    "original_png_sha256": "9cde7dae0508048316c0fb2bb14c0cf1a2b1f36e23b6e9b951983aa0989a124f",
+    "raw_pixels_sha256": "d7f3b858b7ef222a3214ad2185faef2674ce48707a6f68b15a8f27d7c28fc44f",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      11,
+      4,
+      21,
+      24
+    ],
+    "center_shift": [
+      4,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 12.486274509803922,
+    "processed_file": "processed/mnist_test_04491_label_1.png",
+    "processed_png_sha256": "17a2f131a20fe82034b2c7b7bfaa2155b93c0496983841512e21078a7344bd53",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 14,
+    "mnist_test_index": 4932,
+    "true_label": 1,
+    "original_file": "originals/mnist_test_04932_label_1.png",
+    "original_png_sha256": "183fd4363ea7fcb4e9f197930d4cf48b52239c32d2c941fa0e237d6528e3ab0d",
+    "raw_pixels_sha256": "4e70d7544bc44090a67bdbe1908d165ca37b2da0767a2a81611da56fd2930a22",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      10,
+      4,
+      20,
+      24
+    ],
+    "center_shift": [
+      1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 12.172549019607843,
+    "processed_file": "processed/mnist_test_04932_label_1.png",
+    "processed_png_sha256": "6ad1cc1b52f44dea5182e9e823d223cfd2a38f1841953d880b1497302177ea82",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 15,
+    "mnist_test_index": 5453,
+    "true_label": 1,
+    "original_file": "originals/mnist_test_05453_label_1.png",
+    "original_png_sha256": "52d8fff4dc6c2ac946dd09a50211675fc8a78c038cdc199b20b12a37f4f16714",
+    "raw_pixels_sha256": "34887e952baeb90a5b2528c778a82569529889f199b7edabdc99bd954b5a0e67",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      11,
+      4,
+      19,
+      24
+    ],
+    "center_shift": [
+      1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.741176470588234,
+    "processed_file": "processed/mnist_test_05453_label_1.png",
+    "processed_png_sha256": "db50b8295b05d105e0405877ff5ae4525e883b47dfafecd86dd64c5adb748df2",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 16,
+    "mnist_test_index": 6430,
+    "true_label": 1,
+    "original_file": "originals/mnist_test_06430_label_1.png",
+    "original_png_sha256": "b981c0582bc22858108a5d5c46ab58d227627362bfbf998799328af6f9c1065d",
+    "raw_pixels_sha256": "66a1bb2bdeb972d137b21e39c05eaa28eeb8193fafec60d5d235b2f1233a37ec",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      9,
+      4,
+      19,
+      24
+    ],
+    "center_shift": [
+      -1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.431372549019608,
+    "processed_file": "processed/mnist_test_06430_label_1.png",
+    "processed_png_sha256": "557a874aad2dd772905abefef7e20d3df239ace0e9a0a2bfb2b66a337ae18d9d",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 17,
+    "mnist_test_index": 7832,
+    "true_label": 1,
+    "original_file": "originals/mnist_test_07832_label_1.png",
+    "original_png_sha256": "6ab6f4b444193b036d1ce17c515811e41e8e2e2d0ecb52df016b1825faf2a67f",
+    "raw_pixels_sha256": "d82dbda5579a67c2ea520acab91ca50aefc841f121b16e0ab68407402cc9fcb7",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      8,
+      4,
+      21,
+      24
+    ],
+    "center_shift": [
+      -1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.686274509803921,
+    "processed_file": "processed/mnist_test_07832_label_1.png",
+    "processed_png_sha256": "9b1f3b3558e9210e962363a0ce4155167eaaa8bc10e1dee7289a8f919f4eea23",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 18,
+    "mnist_test_index": 8252,
+    "true_label": 1,
+    "original_file": "originals/mnist_test_08252_label_1.png",
+    "original_png_sha256": "421caf7476a7b5117a7f93739ba99e968d3cd43795796716230b5a29adedd918",
+    "raw_pixels_sha256": "5c0dfe010aafd38453dbef57adef0feb93dd3b1a8e476f94b32a2e3c2a6fa8a0",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      8,
+      5,
+      22,
+      25
+    ],
+    "center_shift": [
+      1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.058823529411764,
+    "processed_file": "processed/mnist_test_08252_label_1.png",
+    "processed_png_sha256": "6f236a8eb77dc8a2e0551e5ca75603db3dbcb6de17fb8915242d99c63082f548",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 19,
+    "mnist_test_index": 9274,
+    "true_label": 1,
+    "original_file": "originals/mnist_test_09274_label_1.png",
+    "original_png_sha256": "47b9da173bbaf010fb4f06a016389beb34f89c42b036d671bac207d2b8eb1da5",
+    "raw_pixels_sha256": "4f1c8bfdc7c6110df3f88c7025a58bdda68d15d0bcf8a6a822e059728b5b7b95",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      12,
+      4,
+      16,
+      24
+    ],
+    "center_shift": [
+      0,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.866666666666667,
+    "processed_file": "processed/mnist_test_09274_label_1.png",
+    "processed_png_sha256": "2da16e615cd5ea5d037dec0bebc9906f11adea17a10adeb0e0c4fe7012d8570b",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 20,
+    "mnist_test_index": 633,
+    "true_label": 2,
+    "original_file": "originals/mnist_test_00633_label_2.png",
+    "original_png_sha256": "e47b38f34672d00bf9ae066ec5f4a23628c61eb9c316b9b9be3061a814a54e77",
+    "raw_pixels_sha256": "757ddb6fd5e815358da19838bb7d1fbe1bf0e8d786d0582cd2ee92f2948114fc",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      3,
+      23,
+      23
+    ],
+    "center_shift": [
+      2,
+      -2
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.050980392156863,
+    "processed_file": "processed/mnist_test_00633_label_2.png",
+    "processed_png_sha256": "ee19b3f9054a0aa58db843373d23700efeb70466f222ad68bc1b348175889f57",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 21,
+    "mnist_test_index": 1462,
+    "true_label": 2,
+    "original_file": "originals/mnist_test_01462_label_2.png",
+    "original_png_sha256": "27f19ded871dcae844bc710d533076a13e7107430b2ffa74af863ffba2513cbc",
+    "raw_pixels_sha256": "e138da86d979cdddbf578679effcabf3aa7a8346d1541722b0952885d2582e34",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      4,
+      4,
+      22,
+      24
+    ],
+    "center_shift": [
+      -3,
+      -1
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 8.407843137254902,
+    "processed_file": "processed/mnist_test_01462_label_2.png",
+    "processed_png_sha256": "a6951bfe37196ae1826314d27226c47802231c50a24a3d6cf4783075e628e9f1",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 22,
+    "mnist_test_index": 2621,
+    "true_label": 2,
+    "original_file": "originals/mnist_test_02621_label_2.png",
+    "original_png_sha256": "7a05f9d520a4c756f38c8146a37a16f10ed3b68893cd30610d201c964831c17c",
+    "raw_pixels_sha256": "1c74a3fc245e08735510c0ce79725dc2820f72494a75285b1b025749251868a0",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      5,
+      2,
+      25,
+      22
+    ],
+    "center_shift": [
+      2,
+      -5
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.117647058823529,
+    "processed_file": "processed/mnist_test_02621_label_2.png",
+    "processed_png_sha256": "1428289e8ac9ebdde7d653e52e16f079c4818a6063177ab912f3d5a7f34b4e54",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 23,
+    "mnist_test_index": 3508,
+    "true_label": 2,
+    "original_file": "originals/mnist_test_03508_label_2.png",
+    "original_png_sha256": "97d154a672caaa9847aa62b8a6bdd1abda0b38b64253389012533803d1bd5e02",
+    "raw_pixels_sha256": "cdd923f8c72aad24c7cd31af9bb6ccbdfbdab96a7ba4986a6c7cc36b61926b3b",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      4,
+      21,
+      24
+    ],
+    "center_shift": [
+      0,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.749019607843136,
+    "processed_file": "processed/mnist_test_03508_label_2.png",
+    "processed_png_sha256": "199fd6f16fdb452d0174ac79d64511e9d78e77caa6be8fbc8d979e6cb2e7fd78",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 24,
+    "mnist_test_index": 4385,
+    "true_label": 2,
+    "original_file": "originals/mnist_test_04385_label_2.png",
+    "original_png_sha256": "7f9e3ad5ac68d826d1b3c526dae8738d9ec22b8fe19854e7fe0ef08a9357ccd0",
+    "raw_pixels_sha256": "890a7efe19d8705ad2cba38ff52cb5fed8e75577116eabcbfb65356f2fb32c22",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      4,
+      23,
+      24
+    ],
+    "center_shift": [
+      2,
+      -2
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.184313725490195,
+    "processed_file": "processed/mnist_test_04385_label_2.png",
+    "processed_png_sha256": "92834606550684fcb79751408a3a976f1f615d6db71ab3a8a6cd68fa46afdb9c",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 25,
+    "mnist_test_index": 6193,
+    "true_label": 2,
+    "original_file": "originals/mnist_test_06193_label_2.png",
+    "original_png_sha256": "d2d7a25639a603a6fbcdd3d9b673c857657f72bca34f2d2196aefca199645445",
+    "raw_pixels_sha256": "e4dc83e387bbcec93848662d73b46161b61557d5b20c8046fffbbe0db945c7f2",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      5,
+      3,
+      21,
+      23
+    ],
+    "center_shift": [
+      -4,
+      -2
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.811764705882354,
+    "processed_file": "processed/mnist_test_06193_label_2.png",
+    "processed_png_sha256": "41784ecd55cc05c7c3907f14e2e2599ef5731a2f39fa271b5aaf58b7f37c059e",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 26,
+    "mnist_test_index": 6878,
+    "true_label": 2,
+    "original_file": "originals/mnist_test_06878_label_2.png",
+    "original_png_sha256": "7471e966e7e3b5c22aec3b511cff9d85f8c83821188dbd411b7c9170eca5a0c5",
+    "raw_pixels_sha256": "6b7fd5dace314f1b6cadcfbe6ac1a6d268555ca2e39911117c4a8746eddbc9dd",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      8,
+      2,
+      26,
+      22
+    ],
+    "center_shift": [
+      6,
+      -5
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.68235294117647,
+    "processed_file": "processed/mnist_test_06878_label_2.png",
+    "processed_png_sha256": "dca27da7dadd3dad55aaa9f91c5a69b0cb123c2bb180bb2a9bfa4402ced446a0",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 27,
+    "mnist_test_index": 7472,
+    "true_label": 2,
+    "original_file": "originals/mnist_test_07472_label_2.png",
+    "original_png_sha256": "1799a2112963417dad8b8459016e9f00158d78028e1bdddea1a3aa448c2d4b31",
+    "raw_pixels_sha256": "15893bfacbb95acb8738529e74b1e3d2cb7ca9eb8f325b143d8b28b1b33baa49",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      1,
+      6,
+      21,
+      20
+    ],
+    "center_shift": [
+      -7,
+      -3
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 12.549019607843137,
+    "processed_file": "processed/mnist_test_07472_label_2.png",
+    "processed_png_sha256": "5be1097b71f78187c4aace8323876f5a88a5f610cc7463126bfdc8dde18f18a6",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 28,
+    "mnist_test_index": 8889,
+    "true_label": 2,
+    "original_file": "originals/mnist_test_08889_label_2.png",
+    "original_png_sha256": "3409a7309bb52f05582078082286a46d7c27e33b46385013179a5d6a5b7c8a5d",
+    "raw_pixels_sha256": "772ee1f989707f8c7dfea7faa09c8f981d4488906b2d919d4df739eb426edbf6",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      3,
+      5,
+      23,
+      23
+    ],
+    "center_shift": [
+      -3,
+      -2
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 12.925490196078432,
+    "processed_file": "processed/mnist_test_08889_label_2.png",
+    "processed_png_sha256": "1b8b70c77d1801d2ba98802e6903dad0f729ae49d5095a3c4cf58830e66955cb",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 29,
+    "mnist_test_index": 9686,
+    "true_label": 2,
+    "original_file": "originals/mnist_test_09686_label_2.png",
+    "original_png_sha256": "571884e90667846df9fb8d7837f9010cc772d4ddac5a9cc0ceb87393664622e3",
+    "raw_pixels_sha256": "1a1ed7231ec50614397356b85d8157503ee2bec587f48ddc6d7f4e756eab2e4f",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      5,
+      4,
+      25,
+      22
+    ],
+    "center_shift": [
+      0,
+      -3
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.117647058823529,
+    "processed_file": "processed/mnist_test_09686_label_2.png",
+    "processed_png_sha256": "4b14d3aba76ca0a8913ed1f82779da7ef5c8b316a6162b63d5d309d1b73335b7",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 30,
+    "mnist_test_index": 1513,
+    "true_label": 3,
+    "original_file": "originals/mnist_test_01513_label_3.png",
+    "original_png_sha256": "d27ee1a31e538ebd9b383d8cdf1dfd3b47c83947768052710636e832a1558d98",
+    "raw_pixels_sha256": "f4ef60d91b8bde5a8551460203f449d411566d211bbe9499c8441525e0b8601a",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      4,
+      21,
+      24
+    ],
+    "center_shift": [
+      -1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 9.913725490196079,
+    "processed_file": "processed/mnist_test_01513_label_3.png",
+    "processed_png_sha256": "2f3cf5880e344fcf95b7214d60e7f164a99387566147cabeddaf3f4be255d652",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 31,
+    "mnist_test_index": 3110,
+    "true_label": 3,
+    "original_file": "originals/mnist_test_03110_label_3.png",
+    "original_png_sha256": "e63ba2c3841000e7fe83b1eac5cd955d536ca14f1b58de12941a3a6331229d28",
+    "raw_pixels_sha256": "12fd4cbf4224dd85b28f87abc60f0330b356a910282b999e7b4a467713c9a11c",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      6,
+      4,
+      22,
+      24
+    ],
+    "center_shift": [
+      -1,
+      -2
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.56078431372549,
+    "processed_file": "processed/mnist_test_03110_label_3.png",
+    "processed_png_sha256": "912d5f0114ca5182fa361b5b5d839e78d508b76e3a23d3a9efbf947cc61bb7ac",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 32,
+    "mnist_test_index": 3531,
+    "true_label": 3,
+    "original_file": "originals/mnist_test_03531_label_3.png",
+    "original_png_sha256": "30d9df2035ca9a065772dcc087a730c69a56d1f5a36e0ca4d9d6dceb280b5d2e",
+    "raw_pixels_sha256": "f2b2180f3eea4034460dec782143d9be7e312d9e59d266fb35daae829222e753",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      5,
+      20,
+      25
+    ],
+    "center_shift": [
+      -4,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.870588235294118,
+    "processed_file": "processed/mnist_test_03531_label_3.png",
+    "processed_png_sha256": "ce281076f631e672ee080484518b4930e1a1b9785eae3fb852998054d531f9ee",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 33,
+    "mnist_test_index": 4087,
+    "true_label": 3,
+    "original_file": "originals/mnist_test_04087_label_3.png",
+    "original_png_sha256": "0d0b2beb7b949b8c7686c77f60432215c30c1d1d68540d963256fba7f0bc580c",
+    "raw_pixels_sha256": "e38658146906af51d942d0f0928486faf19142f3df2b4851c72b553633872358",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      4,
+      5,
+      24,
+      25
+    ],
+    "center_shift": [
+      -1,
+      1
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 11.35686274509804,
+    "processed_file": "processed/mnist_test_04087_label_3.png",
+    "processed_png_sha256": "89208340a9cc57f70bf1826852a92675370cb2b67f4ca9b928257efcb37d3157",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 34,
+    "mnist_test_index": 6857,
+    "true_label": 3,
+    "original_file": "originals/mnist_test_06857_label_3.png",
+    "original_png_sha256": "6069729e1af574e22f7e560b9825b4c6a77c29a9c853d9a16ed3169709034b30",
+    "raw_pixels_sha256": "93e679c6c8f97306ba20b41b5a0b760574bd72b9d70a948808379f6bcc5882ac",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      4,
+      21,
+      24
+    ],
+    "center_shift": [
+      0,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.807843137254903,
+    "processed_file": "processed/mnist_test_06857_label_3.png",
+    "processed_png_sha256": "a582594be0de45aaab791220992baf13b1659664e9eb0786a40ba2c6d29428cf",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 35,
+    "mnist_test_index": 7401,
+    "true_label": 3,
+    "original_file": "originals/mnist_test_07401_label_3.png",
+    "original_png_sha256": "fea4858a04c7edd17ba9b39b8bc4647cc8f07cf4ca0df4c8967553e6bd98d1b2",
+    "raw_pixels_sha256": "c8ad7d40f1cf014df1466eb2451e43823bf492fb9bc0175a438486d247821bbc",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      3,
+      4,
+      23,
+      24
+    ],
+    "center_shift": [
+      -4,
+      -1
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.556862745098039,
+    "processed_file": "processed/mnist_test_07401_label_3.png",
+    "processed_png_sha256": "efd39bff2873e6b1740cd17d284ecad368b8b23e68915eef83ad73ea28ca2329",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 36,
+    "mnist_test_index": 7435,
+    "true_label": 3,
+    "original_file": "originals/mnist_test_07435_label_3.png",
+    "original_png_sha256": "b824007a81e02a5f4227741e0a0cdd3c9f275476e1f69292ad419e04b664109c",
+    "raw_pixels_sha256": "756b99f082d09908553fd61206968b5b8a14b3a1042611544a2b5ede5eeb4e0a",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      4,
+      5,
+      22,
+      25
+    ],
+    "center_shift": [
+      -4,
+      3
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.435294117647059,
+    "processed_file": "processed/mnist_test_07435_label_3.png",
+    "processed_png_sha256": "01ff455dadbe161febe5ddbdd42abe1daded71e2f19667edcaf11831149ce1aa",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 37,
+    "mnist_test_index": 9063,
+    "true_label": 3,
+    "original_file": "originals/mnist_test_09063_label_3.png",
+    "original_png_sha256": "c78c12bc5ffa14e362ddf44f2d25cb3d41d5fb7a3556b56f8a5865708517d6ad",
+    "raw_pixels_sha256": "d32239b9d50b2a8482ddee335e2cb19b8e7f015e76897a51111e0a4b01bab5d3",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      3,
+      6,
+      23,
+      24
+    ],
+    "center_shift": [
+      -4,
+      1
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.807843137254903,
+    "processed_file": "processed/mnist_test_09063_label_3.png",
+    "processed_png_sha256": "220ef87297277aa4f8d1ce54f079cbcc28f0d0d76aaf622083b0213d92edb58e",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 38,
+    "mnist_test_index": 9182,
+    "true_label": 3,
+    "original_file": "originals/mnist_test_09182_label_3.png",
+    "original_png_sha256": "d5461b4233e967276a264a2ea5aa75fe0a9e5efe2be537836d7efa7b05d98757",
+    "raw_pixels_sha256": "e50eb72850f20757a88e4d61ca38c4f7491370c5cc67fde9370d21ac4f6a6608",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      6,
+      5,
+      21,
+      25
+    ],
+    "center_shift": [
+      -3,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.811764705882354,
+    "processed_file": "processed/mnist_test_09182_label_3.png",
+    "processed_png_sha256": "613596aeae266297c2c5e0cee7835358b4800bf510cadf1552b4fc0433a1449a",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 39,
+    "mnist_test_index": 9655,
+    "true_label": 3,
+    "original_file": "originals/mnist_test_09655_label_3.png",
+    "original_png_sha256": "389bf8a0820333093340e4cccaa6fe512040d45606816594baac18a70f96f8eb",
+    "raw_pixels_sha256": "5614b8e1803921763fea66082e862b4076b6b25904c2aa7664f9b8d23fd4fd1f",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      3,
+      8,
+      23,
+      22
+    ],
+    "center_shift": [
+      -4,
+      1
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 11.858823529411765,
+    "processed_file": "processed/mnist_test_09655_label_3.png",
+    "processed_png_sha256": "b5fd7907a3339e984a87bc4b11a30757b07719beced1a9d0550264fade462815",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 40,
+    "mnist_test_index": 1419,
+    "true_label": 4,
+    "original_file": "originals/mnist_test_01419_label_4.png",
+    "original_png_sha256": "a0046a3af545a645e02cf359ba3aff4812b8201a4447a84da744bad6bf5c527b",
+    "raw_pixels_sha256": "40896dcf77592866484f18890c9928addfdecc1919782fec2a8d707933b57ab3",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      4,
+      7,
+      24,
+      25
+    ],
+    "center_shift": [
+      -2,
+      4
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.435294117647059,
+    "processed_file": "processed/mnist_test_01419_label_4.png",
+    "processed_png_sha256": "85663ee097f07424495372dda3671f7a4c376733f40d4c900fd40fe4bb2d6966",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 41,
+    "mnist_test_index": 2043,
+    "true_label": 4,
+    "original_file": "originals/mnist_test_02043_label_4.png",
+    "original_png_sha256": "9088b60c70892fd9ee320d5c2567427fba62037ea4035d24db82e81acb4fadbf",
+    "raw_pixels_sha256": "f0bca305f911f974271bad6fb599bf4bd951817596b0fdc074cd6df2861bf9b9",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      9,
+      5,
+      23,
+      25
+    ],
+    "center_shift": [
+      6,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.113725490196078,
+    "processed_file": "processed/mnist_test_02043_label_4.png",
+    "processed_png_sha256": "f71135c0af400b643f3a288ebf40561abdcd6870b90d65305341cfbc9224e100",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 42,
+    "mnist_test_index": 3029,
+    "true_label": 4,
+    "original_file": "originals/mnist_test_03029_label_4.png",
+    "original_png_sha256": "7521fb9fe4fa78721a6da56b05a58e8670e6e61dfe08c633888366da2e1d5f00",
+    "raw_pixels_sha256": "b9f1825d3836654deab26c3aa6f463168131f9ed78df597f59c1d8eaa09a2125",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      8,
+      6,
+      22,
+      26
+    ],
+    "center_shift": [
+      1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.301960784313724,
+    "processed_file": "processed/mnist_test_03029_label_4.png",
+    "processed_png_sha256": "de050635cf1ab4e87a386ca08e63bf2aed129a983c890a00db7c28cef0d16e6f",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 43,
+    "mnist_test_index": 4192,
+    "true_label": 4,
+    "original_file": "originals/mnist_test_04192_label_4.png",
+    "original_png_sha256": "2c2a16f0de9a62e9e5325383a6eeced6fd5bd8dd5e63c895d4ec34cc6e24d5c6",
+    "raw_pixels_sha256": "d73ceeddc1333b0ec872edc1e1e052037315aa88ee0c084961b83f3dfcc850d9",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      5,
+      21,
+      25
+    ],
+    "center_shift": [
+      -2,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.745098039215685,
+    "processed_file": "processed/mnist_test_04192_label_4.png",
+    "processed_png_sha256": "ada9ce4f2df02c65309d68bdbfd67610d80979ba62fe4253f92dfbb656aca67b",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 44,
+    "mnist_test_index": 5464,
+    "true_label": 4,
+    "original_file": "originals/mnist_test_05464_label_4.png",
+    "original_png_sha256": "fa8c9d01c8de85b3b6bfadf1fde95a7489e9e8e7a9e94cf4670f2ddf353c08b0",
+    "raw_pixels_sha256": "338b2ecbf608027e409ea7958712007b790133fb25441ab8a668fd8016113710",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      6,
+      5,
+      26,
+      25
+    ],
+    "center_shift": [
+      4,
+      1
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.498039215686275,
+    "processed_file": "processed/mnist_test_05464_label_4.png",
+    "processed_png_sha256": "d28a97901e871f78d1a55608822148940153db03e2fc443328c993dd7a3159b9",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 45,
+    "mnist_test_index": 6205,
+    "true_label": 4,
+    "original_file": "originals/mnist_test_06205_label_4.png",
+    "original_png_sha256": "c2ae30c4a940a188a545ac2e34ceb54f92ff110888a5eb7be23fca433b3ad1b9",
+    "raw_pixels_sha256": "d64c71c9e9326d974abe74c7749b230af800460d7aac68b87b26c22c58821db9",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      5,
+      5,
+      25,
+      25
+    ],
+    "center_shift": [
+      1,
+      2
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.113725490196078,
+    "processed_file": "processed/mnist_test_06205_label_4.png",
+    "processed_png_sha256": "0010619f51a870ae29138fb272af56cc8d3e72eeb4f29041bd80ee718229fded",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 46,
+    "mnist_test_index": 6579,
+    "true_label": 4,
+    "original_file": "originals/mnist_test_06579_label_4.png",
+    "original_png_sha256": "7ca16d707d0e3f881d64bcf97f4950c6082a1dc2b7e709a8872866187b4c7621",
+    "raw_pixels_sha256": "3d1f9af953fbca4fa8516f294b2622a318617cd773facaf041de56065f4a4e23",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      5,
+      4,
+      21,
+      24
+    ],
+    "center_shift": [
+      -5,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.678431372549019,
+    "processed_file": "processed/mnist_test_06579_label_4.png",
+    "processed_png_sha256": "a35ead8913db0d54f2c1b77ef620593594a7291c0a53eb3bc32596bfa4d92e71",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 47,
+    "mnist_test_index": 6890,
+    "true_label": 4,
+    "original_file": "originals/mnist_test_06890_label_4.png",
+    "original_png_sha256": "4074e5bd21d4a2b3b330295b4f1d4415cbf6ddbbfb7de2b37fab2cb61ef20467",
+    "raw_pixels_sha256": "19a5f992566193c6eea50f21c11b07bdbaa214052a7b713b1970c76a27a94b53",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      5,
+      23,
+      25
+    ],
+    "center_shift": [
+      1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.996078431372549,
+    "processed_file": "processed/mnist_test_06890_label_4.png",
+    "processed_png_sha256": "8339a4aa590d26c3193f7e0242b2a30a9efd5fecea9fb12803cc91c4b24c352b",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 48,
+    "mnist_test_index": 8269,
+    "true_label": 4,
+    "original_file": "originals/mnist_test_08269_label_4.png",
+    "original_png_sha256": "5a9e1f1b1d6390ae2c6d029116c3e6dc3a6ae4f11427687a0b3ef712d923d4d8",
+    "raw_pixels_sha256": "2b79f3b5e52821e843dfc83b6c798febe4fd5a728759f6f32ed2f4dd38fc2f66",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      6,
+      5,
+      24,
+      25
+    ],
+    "center_shift": [
+      0,
+      2
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.556862745098039,
+    "processed_file": "processed/mnist_test_08269_label_4.png",
+    "processed_png_sha256": "387f9141351161dc430362aaaab327d46ad6d524c3bbe1401ac91dfd2d08e6c5",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 49,
+    "mnist_test_index": 9344,
+    "true_label": 4,
+    "original_file": "originals/mnist_test_09344_label_4.png",
+    "original_png_sha256": "f69f977d430c223d5b4b35b1b2313111e93b2fcf72b15fe48bd903370b1bfe58",
+    "raw_pixels_sha256": "97779501d1afc353556f1958d2aa58094f81dcd1746fc601b8eabd5bad9c6399",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      6,
+      5,
+      21,
+      25
+    ],
+    "center_shift": [
+      -4,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.050980392156863,
+    "processed_file": "processed/mnist_test_09344_label_4.png",
+    "processed_png_sha256": "bec176d645784ae9cf46c5a162f88fd9332dc49b912707b8a1b2b5e2a5bc5531",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 50,
+    "mnist_test_index": 102,
+    "true_label": 5,
+    "original_file": "originals/mnist_test_00102_label_5.png",
+    "original_png_sha256": "f46c3ef5f1f24fde7678e9501750d5c2c89f0ab8189b110c58ce4232c9b4f186",
+    "raw_pixels_sha256": "9bc62e5269351daea4b8aadc75b9d6c982d42b38fcf907e5921200f988683ece",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      5,
+      6,
+      25,
+      26
+    ],
+    "center_shift": [
+      2,
+      4
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 11.48235294117647,
+    "processed_file": "processed/mnist_test_00102_label_5.png",
+    "processed_png_sha256": "21df9996bd422d7b9c312985f219a130045404b5dee421ded84ba37430f8c7da",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 51,
+    "mnist_test_index": 1378,
+    "true_label": 5,
+    "original_file": "originals/mnist_test_01378_label_5.png",
+    "original_png_sha256": "c5b1eddc19291382c6cb69654d14976d94add26f7c89c9e550d5fabee02ebacb",
+    "raw_pixels_sha256": "a3271b89dc5ebf16153a7a29036320146aaa1a26d23dd7874ba99bb377bc3adc",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      8,
+      4,
+      24,
+      24
+    ],
+    "center_shift": [
+      4,
+      -2
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 10.541176470588235,
+    "processed_file": "processed/mnist_test_01378_label_5.png",
+    "processed_png_sha256": "55e4d7fba244ded124e040a276a9b9b2ae1d0f975faf8bf5ee3c4d98caae84a9",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 52,
+    "mnist_test_index": 1999,
+    "true_label": 5,
+    "original_file": "originals/mnist_test_01999_label_5.png",
+    "original_png_sha256": "2a9af4b520393f7d7342d5826fb0c7172d0ff6d6ddf69c599914b3576779042b",
+    "raw_pixels_sha256": "0ed0ad577e1e906642289ed08f2e7df0d1af09589444f3c4ab812c94c603641f",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      6,
+      20,
+      26
+    ],
+    "center_shift": [
+      -3,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.435294117647059,
+    "processed_file": "processed/mnist_test_01999_label_5.png",
+    "processed_png_sha256": "e282f7286c786c7b7f7210eac51e688a7497715f744363eec000c0597eda6ccb",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 53,
+    "mnist_test_index": 2346,
+    "true_label": 5,
+    "original_file": "originals/mnist_test_02346_label_5.png",
+    "original_png_sha256": "b48fbb260711e63fcea1edb6e5dfe6be9d8ec86822ac014a5b75298cd42edc9a",
+    "raw_pixels_sha256": "b3d74ce77bbee2b7421cef810504063a54d1df8594fc82188d27918561b9c3ea",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      5,
+      23,
+      25
+    ],
+    "center_shift": [
+      1,
+      1
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.807843137254903,
+    "processed_file": "processed/mnist_test_02346_label_5.png",
+    "processed_png_sha256": "6932009d03f6f831fcf085499ad5601d24180d67b568775e81d6f8190c2aec97",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 54,
+    "mnist_test_index": 2773,
+    "true_label": 5,
+    "original_file": "originals/mnist_test_02773_label_5.png",
+    "original_png_sha256": "2b8dec4f2b6d3d10a6e3f775c5aa5927f10271fd88ee09b0c7adc38d84dd1759",
+    "raw_pixels_sha256": "010b497d20b09b806089c4d1949aa493165181b4a8f09bf87f88dd93c0811c64",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      4,
+      5,
+      24,
+      25
+    ],
+    "center_shift": [
+      -1,
+      2
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.494117647058824,
+    "processed_file": "processed/mnist_test_02773_label_5.png",
+    "processed_png_sha256": "801eafba225d3e47f83cd1569a095f9f5a0020bc3a43242f4d9c9e7ae77c510f",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 55,
+    "mnist_test_index": 6196,
+    "true_label": 5,
+    "original_file": "originals/mnist_test_06196_label_5.png",
+    "original_png_sha256": "32c5e8d527f7fe45a97350658c754843e4137387d18344cb1d7351d1306306be",
+    "raw_pixels_sha256": "02458abc08951a6869a3ec27fd9e3c4649155e8d6cb868534759d2e933cc6b39",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      5,
+      5,
+      25,
+      25
+    ],
+    "center_shift": [
+      1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.24313725490196,
+    "processed_file": "processed/mnist_test_06196_label_5.png",
+    "processed_png_sha256": "293c75ae92ecd053250ca5b71dfeb6020317b0d6215edf1c4bbfa5593f904007",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 56,
+    "mnist_test_index": 6620,
+    "true_label": 5,
+    "original_file": "originals/mnist_test_06620_label_5.png",
+    "original_png_sha256": "f94cb86eb3ec22afa1854fd27e0aa87f4c9ebb7a6aac5d5fa8b06095db9ba49c",
+    "raw_pixels_sha256": "ee6bcd478df40a72c1593f6243f39ea1f8c7ad041c7300a983722b9bb5f98d7f",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      5,
+      27,
+      23
+    ],
+    "center_shift": [
+      6,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 9.098039215686274,
+    "processed_file": "processed/mnist_test_06620_label_5.png",
+    "processed_png_sha256": "65fc81e8af2ad47914d6d43e0f3935e950465aa5bca62c086313b6be1fc66b46",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 57,
+    "mnist_test_index": 7850,
+    "true_label": 5,
+    "original_file": "originals/mnist_test_07850_label_5.png",
+    "original_png_sha256": "da69a4006f6d7301e5c310199f47b0acf0de90edf116a39a01f586d3f618c8da",
+    "raw_pixels_sha256": "7c92786d8443c626f9f023e1aa54816ed1d784bc7e2ea4a33c19fda3cdedf2cc",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      5,
+      8,
+      25,
+      21
+    ],
+    "center_shift": [
+      1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.56078431372549,
+    "processed_file": "processed/mnist_test_07850_label_5.png",
+    "processed_png_sha256": "8fee13b8e5efb0f553e0f3bbc8a2e09e3638f2e4f2e16ff034f575eaa24db7ee",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 58,
+    "mnist_test_index": 7948,
+    "true_label": 5,
+    "original_file": "originals/mnist_test_07948_label_5.png",
+    "original_png_sha256": "c6a8a5c1448e5602234c6c002e251d29c140aa31dddb13a581af199f05e2f337",
+    "raw_pixels_sha256": "cfc374cab4f17e4c12543657b4b43fc7aa99cddb2f034bef881c62a926770468",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      5,
+      5,
+      24,
+      25
+    ],
+    "center_shift": [
+      1,
+      1
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.498039215686275,
+    "processed_file": "processed/mnist_test_07948_label_5.png",
+    "processed_png_sha256": "e3f9a12f70b7dc22b6d4ae393ef56a4f75abd13c72d5300af77fa48b180cfb60",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 59,
+    "mnist_test_index": 8185,
+    "true_label": 5,
+    "original_file": "originals/mnist_test_08185_label_5.png",
+    "original_png_sha256": "3d5a610f3c278b0261d4827538acdc723a1a13194e28ae4ecdae775e6b83e463",
+    "raw_pixels_sha256": "1d1451dad433dde21f1c95587c0cf5005788c3de2d3bb39d3f47e084996a0e22",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      6,
+      4,
+      23,
+      24
+    ],
+    "center_shift": [
+      -1,
+      -1
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.176470588235293,
+    "processed_file": "processed/mnist_test_08185_label_5.png",
+    "processed_png_sha256": "12c0ff9126e0b8e40e277e01437eca87df50af4cd49928474ad8c076204559fa",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 60,
+    "mnist_test_index": 446,
+    "true_label": 6,
+    "original_file": "originals/mnist_test_00446_label_6.png",
+    "original_png_sha256": "18141f680f92af19ead8b5b29a033f83f23632c731bfdc1beb96220d5342f905",
+    "raw_pixels_sha256": "1165bcc65276091636419c53095d16e410ccb6e40b9b61216b7e2a749ef5f2f0",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      8,
+      3,
+      22,
+      23
+    ],
+    "center_shift": [
+      2,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.874509803921569,
+    "processed_file": "processed/mnist_test_00446_label_6.png",
+    "processed_png_sha256": "81eba1287a7ebb8d4fee1727a9201e0f57073a54c940a460931647eac6c694d7",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 61,
+    "mnist_test_index": 1293,
+    "true_label": 6,
+    "original_file": "originals/mnist_test_01293_label_6.png",
+    "original_png_sha256": "bf31369f229edf97f035670184dc8c34362d7f5956c1d7e2da90161b87f6689c",
+    "raw_pixels_sha256": "6aa1576eb4bb99255640675ecd586287d28018559d36674142850c814504f1d0",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      2,
+      25,
+      22
+    ],
+    "center_shift": [
+      4,
+      -5
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.615686274509804,
+    "processed_file": "processed/mnist_test_01293_label_6.png",
+    "processed_png_sha256": "08f8ce33e58fd9305c7b56a1e837b3736ce01c7f0092de7c72a5d7f7477028bc",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 62,
+    "mnist_test_index": 1569,
+    "true_label": 6,
+    "original_file": "originals/mnist_test_01569_label_6.png",
+    "original_png_sha256": "bcb7489d6c79f7a7ed31ae5e1d579fcb9c093e474323115e58726b7ba46206f3",
+    "raw_pixels_sha256": "0decf88c0320a9d9f60b8d76e8b0c77887cd81a7a8a03d831ac4d011ba2a51ba",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      5,
+      4,
+      25,
+      20
+    ],
+    "center_shift": [
+      1,
+      -5
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 9.16078431372549,
+    "processed_file": "processed/mnist_test_01569_label_6.png",
+    "processed_png_sha256": "fd1a1f769dd9ad298a34616a2394931b24f4fdd8134db578e606bbb871d29d7a",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 63,
+    "mnist_test_index": 2643,
+    "true_label": 6,
+    "original_file": "originals/mnist_test_02643_label_6.png",
+    "original_png_sha256": "2707c5990b3985e8aebebe6db979b46b0cd1a80a54661592cb7307f2fc0c1cb5",
+    "raw_pixels_sha256": "ddec0e180373e46b47043e1f1cad3330aaa5fa2ee759195fcaea824bd806cbf4",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      8,
+      1,
+      21,
+      21
+    ],
+    "center_shift": [
+      -1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.372549019607844,
+    "processed_file": "processed/mnist_test_02643_label_6.png",
+    "processed_png_sha256": "201ed3cc1ef28ca66afc536e838e670424c9bcb1d06a5f20efb4b178fec790bb",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 64,
+    "mnist_test_index": 4557,
+    "true_label": 6,
+    "original_file": "originals/mnist_test_04557_label_6.png",
+    "original_png_sha256": "5db9c5c8f4428c9918d5de17996b3695898b4b9934277f9b4e3eeff16411b35b",
+    "raw_pixels_sha256": "bcbf5ceb4b92829ba1ca47a10f60a7e525d6184199c781aaa00da1acb305e8bb",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      9,
+      2,
+      23,
+      22
+    ],
+    "center_shift": [
+      4,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.435294117647059,
+    "processed_file": "processed/mnist_test_04557_label_6.png",
+    "processed_png_sha256": "696b2a82ff96fec2da23bfe6b28c106b76c8ce8b1b2a080c9b4b67f7984d7917",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 65,
+    "mnist_test_index": 4875,
+    "true_label": 6,
+    "original_file": "originals/mnist_test_04875_label_6.png",
+    "original_png_sha256": "3bc1d21084294a77846046a1e4dfb8842a48d7cd046bff6259a67ef660400f78",
+    "raw_pixels_sha256": "403312cdecb86eda8b27e2db8336ead2277bb60d0469cfc292c8c416c41d30f5",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      8,
+      3,
+      24,
+      23
+    ],
+    "center_shift": [
+      5,
+      -2
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.937254901960785,
+    "processed_file": "processed/mnist_test_04875_label_6.png",
+    "processed_png_sha256": "b486e8c00751492f74f9c9cb678be64e2f3fa6f650e91b40cecdade73582d3ad",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 66,
+    "mnist_test_index": 5199,
+    "true_label": 6,
+    "original_file": "originals/mnist_test_05199_label_6.png",
+    "original_png_sha256": "10bb7ee1caba04cf60d5615254e01809c62298f0cfbd44ff0218ab151f23e129",
+    "raw_pixels_sha256": "f012c9a328ca8c827c56e563929547e721b43548b2267254187c0b01998f208d",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      2,
+      23,
+      22
+    ],
+    "center_shift": [
+      2,
+      -2
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.24313725490196,
+    "processed_file": "processed/mnist_test_05199_label_6.png",
+    "processed_png_sha256": "e8af0acf2e5b34787a9c7e03075c96a1c8a13488e9db10b4321a10e7478e2eb9",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 67,
+    "mnist_test_index": 5810,
+    "true_label": 6,
+    "original_file": "originals/mnist_test_05810_label_6.png",
+    "original_png_sha256": "b1148cf6679926c7c9e28c499e6f939f74360c15f29bfa7a06e4260b1384b692",
+    "raw_pixels_sha256": "8b71354c6116c8dcf18afa982b84b809847be6b24cf770338665982221f3d3d2",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      8,
+      1,
+      22,
+      21
+    ],
+    "center_shift": [
+      1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.301960784313724,
+    "processed_file": "processed/mnist_test_05810_label_6.png",
+    "processed_png_sha256": "b6f2d556f3acf7a918a8a6a54abcb8220de31acd9f286b5c1d69ea59eb67ab22",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 68,
+    "mnist_test_index": 6685,
+    "true_label": 6,
+    "original_file": "originals/mnist_test_06685_label_6.png",
+    "original_png_sha256": "c01db640e33e7c538147b53e9f50d7504d2cfa2211403afd2be8c8959a04e8b2",
+    "raw_pixels_sha256": "c66d06c20c697debaeee8e66ba7a523e02cf00ce5ba1d5cc9bdc542048ce96c9",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      2,
+      23,
+      22
+    ],
+    "center_shift": [
+      1,
+      -2
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.678431372549019,
+    "processed_file": "processed/mnist_test_06685_label_6.png",
+    "processed_png_sha256": "02ba9773248a1b4774d844abf6112fb72eff7829730806917ed0aec94a6e0b9d",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 69,
+    "mnist_test_index": 6814,
+    "true_label": 6,
+    "original_file": "originals/mnist_test_06814_label_6.png",
+    "original_png_sha256": "c6a0e940b162dffbacc94f10c6010e702fcf66006f75c09c1ff43c5c787a954b",
+    "raw_pixels_sha256": "9821213aa38cc459b7a759e65be5b1ef66491a2fc4a301130e46d809a7676286",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      8,
+      1,
+      22,
+      21
+    ],
+    "center_shift": [
+      4,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.807843137254903,
+    "processed_file": "processed/mnist_test_06814_label_6.png",
+    "processed_png_sha256": "1fcb9bf6b3dba0acccef53607df9a20cb22b749a983002ef8ea47c5561102256",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 70,
+    "mnist_test_index": 263,
+    "true_label": 7,
+    "original_file": "originals/mnist_test_00263_label_7.png",
+    "original_png_sha256": "a12e2df6da5e80325f4640ae25952b75e50d41774c2fcc8072ae7e3efef42b08",
+    "raw_pixels_sha256": "937d8603262b718307e8ed35b721ae78ccf83d72bf7573a9292d0bad077343b5",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      5,
+      7,
+      19,
+      27
+    ],
+    "center_shift": [
+      -6,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.992156862745098,
+    "processed_file": "processed/mnist_test_00263_label_7.png",
+    "processed_png_sha256": "a67b9a2fbc9cf13e71b044381219cd11e80bb086e3a615e601875d38273200b3",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 71,
+    "mnist_test_index": 2167,
+    "true_label": 7,
+    "original_file": "originals/mnist_test_02167_label_7.png",
+    "original_png_sha256": "25180e201f06cb9ccd8f4237335247ba5e86727fa1be554fef99108ec1625559",
+    "raw_pixels_sha256": "e2d516eb73d31d0811e161de1a63873c70ffba56536d5c7b6f609932026304fc",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      7,
+      21,
+      27
+    ],
+    "center_shift": [
+      0,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.615686274509804,
+    "processed_file": "processed/mnist_test_02167_label_7.png",
+    "processed_png_sha256": "281028adb5b8ec63d3be124093472ab06807cd5b40264bf0d9a605c64f640794",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 72,
+    "mnist_test_index": 2730,
+    "true_label": 7,
+    "original_file": "originals/mnist_test_02730_label_7.png",
+    "original_png_sha256": "a5f9d83268938d1275aea718bca88d53c07fa5aa72aeee6fb71bd81461741c33",
+    "raw_pixels_sha256": "9d489b851261e65a4d85dd54514765d1e315a9a4bed646b75398f19e4d6d17e7",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      6,
+      5,
+      24,
+      25
+    ],
+    "center_shift": [
+      1,
+      1
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.68235294117647,
+    "processed_file": "processed/mnist_test_02730_label_7.png",
+    "processed_png_sha256": "98f5e1a3fd62ced305da5ca3ced4f51377c1dab642999cf88c119ea03fab766d",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 73,
+    "mnist_test_index": 3055,
+    "true_label": 7,
+    "original_file": "originals/mnist_test_03055_label_7.png",
+    "original_png_sha256": "b076b2b43babe65c531b22bdbbb52eb311dc0bf889a2daf4493d01156301a0ef",
+    "raw_pixels_sha256": "c37f341a86eef9f9931597c39738f3c3aeeb0c773cd9cba89b0b7c47c5c1bd84",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      9,
+      7,
+      22,
+      27
+    ],
+    "center_shift": [
+      2,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.24705882352941,
+    "processed_file": "processed/mnist_test_03055_label_7.png",
+    "processed_png_sha256": "75352d53453dc0080e725da4754ef91b7710fb585f8a875109a3e79aa339202b",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 74,
+    "mnist_test_index": 3399,
+    "true_label": 7,
+    "original_file": "originals/mnist_test_03399_label_7.png",
+    "original_png_sha256": "af8be95a13fb74d70a01aa2700c3a222f557447b0f67dea3d713855833bbf65a",
+    "raw_pixels_sha256": "43168344752f36472eced38a19964deebc64964b897a6a406e77a1142c539d77",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      6,
+      23,
+      26
+    ],
+    "center_shift": [
+      1,
+      2
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.058823529411764,
+    "processed_file": "processed/mnist_test_03399_label_7.png",
+    "processed_png_sha256": "581f28c42f9eb2f0b407c8d08dea2396d6bdd4a062f2fbd12ee72a592d798644",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 75,
+    "mnist_test_index": 4467,
+    "true_label": 7,
+    "original_file": "originals/mnist_test_04467_label_7.png",
+    "original_png_sha256": "4314bcca3619ec7698bad8f8e581dee50d0f9415e4a5cfb340509ca28c5b998c",
+    "raw_pixels_sha256": "a45140eb2f0687f3aa653d168fb301c30b7b87088cd0e3472c794a137561153a",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      8,
+      7,
+      22,
+      27
+    ],
+    "center_shift": [
+      3,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.749019607843136,
+    "processed_file": "processed/mnist_test_04467_label_7.png",
+    "processed_png_sha256": "a07feda98eb9041e06b3c823d34bbc9d61e887c6b67b9c96adf4d365231e6f7d",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 76,
+    "mnist_test_index": 5563,
+    "true_label": 7,
+    "original_file": "originals/mnist_test_05563_label_7.png",
+    "original_png_sha256": "cd518f19bec8377faf7e70fdf660cfb6b40028cc274c40f362793e3deb10f270",
+    "raw_pixels_sha256": "523040fd1cf8fdd43e5701588093058757a49ebc3647f54a1ecfd8882beef4eb",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      5,
+      6,
+      20,
+      26
+    ],
+    "center_shift": [
+      -6,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.56078431372549,
+    "processed_file": "processed/mnist_test_05563_label_7.png",
+    "processed_png_sha256": "07d241330d50b604c9638a29132d0e296abe1fc54c14ed7152198c10d3462443",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 77,
+    "mnist_test_index": 6069,
+    "true_label": 7,
+    "original_file": "originals/mnist_test_06069_label_7.png",
+    "original_png_sha256": "13609cf8ab1d31cea555a6b3625f77696eb1b3bb88319e2ce38dda368663bae1",
+    "raw_pixels_sha256": "ba10129af416d1831e7695faa808b06fc9b6e37546de92339a00941a884415a5",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      3,
+      7,
+      23,
+      27
+    ],
+    "center_shift": [
+      -4,
+      6
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.623529411764705,
+    "processed_file": "processed/mnist_test_06069_label_7.png",
+    "processed_png_sha256": "9475ef37c2ca3a41759317317436599334c39a6b34df644a6f28889772d5c9ef",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 78,
+    "mnist_test_index": 7985,
+    "true_label": 7,
+    "original_file": "originals/mnist_test_07985_label_7.png",
+    "original_png_sha256": "2122b7950802a61a3ff66b38a97561265dac079a87bf6be22b27032b0a9e40f8",
+    "raw_pixels_sha256": "6b085874223fc90c58c0d04b867aee91bad050c963e1691a62f804a1fa71b798",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      6,
+      22,
+      26
+    ],
+    "center_shift": [
+      -1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.749019607843136,
+    "processed_file": "processed/mnist_test_07985_label_7.png",
+    "processed_png_sha256": "2e898678c000918522aebd843c2180b1567f752d2919dcf36a5ae924f7ee2b25",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 79,
+    "mnist_test_index": 9852,
+    "true_label": 7,
+    "original_file": "originals/mnist_test_09852_label_7.png",
+    "original_png_sha256": "49e82b33e21b309bffbe03961d2b8dfb5c8fb95ee040d234e49796e88711fb99",
+    "raw_pixels_sha256": "74d2ab97ce771cc2c3c99d3f7f055fda34feaf092fe51e2551d25ecd9d31a7ef",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      8,
+      7,
+      20,
+      27
+    ],
+    "center_shift": [
+      -1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 12.423529411764706,
+    "processed_file": "processed/mnist_test_09852_label_7.png",
+    "processed_png_sha256": "19c7b996af4a24e94563fbc6318b0a64d711e84d610bc11a7e3b6fa31eb30fab",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 80,
+    "mnist_test_index": 1324,
+    "true_label": 8,
+    "original_file": "originals/mnist_test_01324_label_8.png",
+    "original_png_sha256": "e0f209d86bb7bd746bd1672e84e539aa9ba10f50fd3fd52233a5af45ff87d81d",
+    "raw_pixels_sha256": "c282058675c9c7eb20638971c3ec7c81a9f690652caca78923f5a1985f5a348c",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      8,
+      5,
+      22,
+      25
+    ],
+    "center_shift": [
+      3,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.996078431372549,
+    "processed_file": "processed/mnist_test_01324_label_8.png",
+    "processed_png_sha256": "c27b531e92f9cd8723a4394f2ebf621e1f87e88967ce1aaf143b85c27514923b",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 81,
+    "mnist_test_index": 2975,
+    "true_label": 8,
+    "original_file": "originals/mnist_test_02975_label_8.png",
+    "original_png_sha256": "a303426ca2270aa7e17c342d5c28ddd10f5dd4309b2fd4215150d7979a163379",
+    "raw_pixels_sha256": "882f93ea5b4fb379f2abe8ac0ca91feea5083588af2cc27093fa3ef11389b5b1",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      5,
+      23,
+      25
+    ],
+    "center_shift": [
+      3,
+      1
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.741176470588234,
+    "processed_file": "processed/mnist_test_02975_label_8.png",
+    "processed_png_sha256": "ae3abb99996c3f1af477906cabbfc3a787b8cfd0cdb097ad1890d4504f1d41d9",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 82,
+    "mnist_test_index": 4376,
+    "true_label": 8,
+    "original_file": "originals/mnist_test_04376_label_8.png",
+    "original_png_sha256": "ea17b0ad0b723bca2da8bedbaf21eb004b23eea2a9d4dbdf662dcc579c97cb68",
+    "raw_pixels_sha256": "f31411a94e4166a7c098ea34f7602feb98a8de715d6059218adf261a6d7d1f60",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      5,
+      5,
+      23,
+      25
+    ],
+    "center_shift": [
+      -1,
+      2
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 12.36078431372549,
+    "processed_file": "processed/mnist_test_04376_label_8.png",
+    "processed_png_sha256": "55aab31c9b1c3a3fb371b29f60a096ac7914fd4c06ba859bde01e408fe796421",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 83,
+    "mnist_test_index": 5011,
+    "true_label": 8,
+    "original_file": "originals/mnist_test_05011_label_8.png",
+    "original_png_sha256": "251799b7bf8e7a8c437becb11f6d5a0a0a9f29209a8a4ce40dff1f1e92a1db84",
+    "raw_pixels_sha256": "8ddf865ce9bb8d8c0bdbea96256406e9913650280472ba8cec1a9990737fd983",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      8,
+      4,
+      22,
+      24
+    ],
+    "center_shift": [
+      3,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.678431372549019,
+    "processed_file": "processed/mnist_test_05011_label_8.png",
+    "processed_png_sha256": "b8570a40c782f6239f25b210e8927d19fc5d62c864336fc362c3d00bd2cb7915",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 84,
+    "mnist_test_index": 5530,
+    "true_label": 8,
+    "original_file": "originals/mnist_test_05530_label_8.png",
+    "original_png_sha256": "c2deee6f8256fd2323a74c797f746f388943ff90536ce6e70f4f88b9f395ebf8",
+    "raw_pixels_sha256": "44e1a1c4bca684d22cad21634c065f3936108bf83b4f01844d882efcdb4d6018",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      8,
+      5,
+      22,
+      25
+    ],
+    "center_shift": [
+      1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.184313725490195,
+    "processed_file": "processed/mnist_test_05530_label_8.png",
+    "processed_png_sha256": "a1e720685c59f4bd3cf752bc1759713da9c2685d35bea29676ebbc668c5734ae",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 85,
+    "mnist_test_index": 6523,
+    "true_label": 8,
+    "original_file": "originals/mnist_test_06523_label_8.png",
+    "original_png_sha256": "7328a025c05abf8d53379f143eeeeac9184f2dc93beb0eea41b9ab257711054d",
+    "raw_pixels_sha256": "6c902778bbbb35c89e94ea932923ef039023539369d28585e46161f76c27d105",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      9,
+      5,
+      21,
+      25
+    ],
+    "center_shift": [
+      1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.184313725490195,
+    "processed_file": "processed/mnist_test_06523_label_8.png",
+    "processed_png_sha256": "4f6b612ca375c7f10b1c001e7267b207526fa504751805f99a45430553364cd3",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 86,
+    "mnist_test_index": 6612,
+    "true_label": 8,
+    "original_file": "originals/mnist_test_06612_label_8.png",
+    "original_png_sha256": "5bc04236056a0ecd9295962fa01a0d67934734fa347f7c0427a2936b9bfd160f",
+    "raw_pixels_sha256": "b0145b51cb9e4306ef52beebf358692e6ae919e85a9f099f811f949eb8c577ff",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      9,
+      5,
+      21,
+      25
+    ],
+    "center_shift": [
+      0,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.678431372549019,
+    "processed_file": "processed/mnist_test_06612_label_8.png",
+    "processed_png_sha256": "8e2798778228b1a3f3aaabad5977514a4e43de30823c8fdc9ae9b485887ea38e",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 87,
+    "mnist_test_index": 7774,
+    "true_label": 8,
+    "original_file": "originals/mnist_test_07774_label_8.png",
+    "original_png_sha256": "7d08f46658d56ad771df1b3e90bcb07aab94192d2fdc9ff04e0c29160fc376b0",
+    "raw_pixels_sha256": "6254542438ad32dc635899fc14350252c26cc876f8694a9bab55433e107c4e73",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      6,
+      5,
+      24,
+      25
+    ],
+    "center_shift": [
+      1,
+      1
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.749019607843136,
+    "processed_file": "processed/mnist_test_07774_label_8.png",
+    "processed_png_sha256": "57b1a6a1332359ab18203fec5a6ae2e97c3bf5312edd30becf209a1eb293a2a8",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 88,
+    "mnist_test_index": 9088,
+    "true_label": 8,
+    "original_file": "originals/mnist_test_09088_label_8.png",
+    "original_png_sha256": "359569dc9cd34b108985571351471365947764349c55cfd5b6de1dba3ae5aead",
+    "raw_pixels_sha256": "414e41168e8de927bac9b22cc7010b1ff71811df57ab3fef548b1159d52627f6",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      6,
+      5,
+      22,
+      25
+    ],
+    "center_shift": [
+      -1,
+      2
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.811764705882354,
+    "processed_file": "processed/mnist_test_09088_label_8.png",
+    "processed_png_sha256": "4cd584af6ee17e578dc75e41bd18f96dcee20b29d665b4134895e2d6283d38cd",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 89,
+    "mnist_test_index": 9934,
+    "true_label": 8,
+    "original_file": "originals/mnist_test_09934_label_8.png",
+    "original_png_sha256": "5b276fe7bb65b1217565b026168fe270cfeebbc1f9a02803692a465975e4b114",
+    "raw_pixels_sha256": "921c788d674ccb4c99d67c2dff4675294085fb8ac358aa7c1361013e2b624ce4",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      9,
+      5,
+      22,
+      25
+    ],
+    "center_shift": [
+      3,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.180392156862744,
+    "processed_file": "processed/mnist_test_09934_label_8.png",
+    "processed_png_sha256": "9da255e5123bc818f5eb93da03ad80121794556077b750e2e328f2ae3acdb368",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 90,
+    "mnist_test_index": 962,
+    "true_label": 9,
+    "original_file": "originals/mnist_test_00962_label_9.png",
+    "original_png_sha256": "79ed171749629fbfdc35beb42df09e5d8a5ec89aefe9263626074972aec15115",
+    "raw_pixels_sha256": "796a1cb0f380e06a3032910b69829fd4385eb5bd611416bef049e2fb89ddc756",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      8,
+      7,
+      20,
+      27
+    ],
+    "center_shift": [
+      -2,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.552941176470588,
+    "processed_file": "processed/mnist_test_00962_label_9.png",
+    "processed_png_sha256": "bf0b8a14804a5db5acbefb3049173852dbcd9468f19723b9d54ab0c0814006fd",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 91,
+    "mnist_test_index": 1666,
+    "true_label": 9,
+    "original_file": "originals/mnist_test_01666_label_9.png",
+    "original_png_sha256": "d3d824bfa8226c328a9ad01fec4ade8dcc94748ddfa9b9bc0f358badf1bc8f6c",
+    "raw_pixels_sha256": "bdba71ad85773d67d00a0d8d6f8ee5e2abedcc7daf86e3a56148c59dbea666e8",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      7,
+      6,
+      20,
+      26
+    ],
+    "center_shift": [
+      -4,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.741176470588234,
+    "processed_file": "processed/mnist_test_01666_label_9.png",
+    "processed_png_sha256": "e008e7ac160b5b10b5fad0dc167c05c8a97f37920cb7326601e2d1ea51bf1f54",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 92,
+    "mnist_test_index": 4511,
+    "true_label": 9,
+    "original_file": "originals/mnist_test_04511_label_9.png",
+    "original_png_sha256": "0b42db2125f9daf26f683c1dfabc571f02e6b97c43e079d6baf17a83779d4271",
+    "raw_pixels_sha256": "5800c1c2c7477b2a9000732898582a3b659db5477ef55597781da47900ed2a6f",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      4,
+      6,
+      24,
+      25
+    ],
+    "center_shift": [
+      -1,
+      3
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.615686274509804,
+    "processed_file": "processed/mnist_test_04511_label_9.png",
+    "processed_png_sha256": "8bdfb73e68d6b87156a2f1e00ead484ae0531c0c6d3c9dc7167ffe270028d08c",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 93,
+    "mnist_test_index": 4856,
+    "true_label": 9,
+    "original_file": "originals/mnist_test_04856_label_9.png",
+    "original_png_sha256": "79a4f13905dfbb4943d481d6a4fb397843724a1167fbc56773ce8f0a00bb51d9",
+    "raw_pixels_sha256": "640246e16248224f8db4489f1002535974b82476cd57148321cc9717b3431e39",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      8,
+      7,
+      20,
+      27
+    ],
+    "center_shift": [
+      -2,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 13.678431372549019,
+    "processed_file": "processed/mnist_test_04856_label_9.png",
+    "processed_png_sha256": "99dfedafde9f13786d110c8140ed18d566295bdce9f84145697802e705d0a0ae",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 94,
+    "mnist_test_index": 6827,
+    "true_label": 9,
+    "original_file": "originals/mnist_test_06827_label_9.png",
+    "original_png_sha256": "4bdb9e166eaf4b5d092ef208983379b32bdc706b7509b4d8ad72b204009d29ff",
+    "raw_pixels_sha256": "5354fdb7b8fa9b8358f99336b5ee3998d18df8c99a4dd92cbf20d542257d3897",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      9,
+      6,
+      19,
+      26
+    ],
+    "center_shift": [
+      -2,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.368627450980393,
+    "processed_file": "processed/mnist_test_06827_label_9.png",
+    "processed_png_sha256": "39fc08296c3c9dbd2dbb7763a17ddf1589f1e7066f1d6a63ddf2de8fa563ea56",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 95,
+    "mnist_test_index": 7025,
+    "true_label": 9,
+    "original_file": "originals/mnist_test_07025_label_9.png",
+    "original_png_sha256": "cc7bbdd6755f0b1b8eb4f93cf4a348a514d68cc6c899941c795754fa1b2f382c",
+    "raw_pixels_sha256": "ee915471fc447ac45449c22db5df5494e263c89e18a5913d0e75f1c8c43c4497",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      9,
+      6,
+      21,
+      26
+    ],
+    "center_shift": [
+      1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.619607843137254,
+    "processed_file": "processed/mnist_test_07025_label_9.png",
+    "processed_png_sha256": "0d388f8275898306ec9c0e7b48f5e5a52038066f5cf62ea331cea4a014216fca",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 96,
+    "mnist_test_index": 7071,
+    "true_label": 9,
+    "original_file": "originals/mnist_test_07071_label_9.png",
+    "original_png_sha256": "88ee3c5f4c84ded15b2b1305a808f027d7657100867b0bf83f8d065e3d2a8506",
+    "raw_pixels_sha256": "4c7bff931d3735a85aeb472e3ede58494d08d059d58f61b65ef999d73b7033a9",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      9,
+      7,
+      21,
+      27
+    ],
+    "center_shift": [
+      0,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 15.058823529411764,
+    "processed_file": "processed/mnist_test_07071_label_9.png",
+    "processed_png_sha256": "3c35c4acd8f365127e5a96be376b6f1eed6434a0f92f136734fdaa6a9b678912",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 97,
+    "mnist_test_index": 7557,
+    "true_label": 9,
+    "original_file": "originals/mnist_test_07557_label_9.png",
+    "original_png_sha256": "00daa1724ddabb234c7cc18082361688e7cf0d100aed4a3e3a8b64e8b6e7424e",
+    "raw_pixels_sha256": "52a85bd635a3f0cee2a2ddb5504354fd4bea58695da2f64674283fc5614effae",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      9,
+      6,
+      21,
+      26
+    ],
+    "center_shift": [
+      2,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.933333333333334,
+    "processed_file": "processed/mnist_test_07557_label_9.png",
+    "processed_png_sha256": "d678f995b5d37fd6828d0fa32a221af9c69e29273e6fd89c9a0acc862c21c219",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 98,
+    "mnist_test_index": 8906,
+    "true_label": 9,
+    "original_file": "originals/mnist_test_08906_label_9.png",
+    "original_png_sha256": "8d19138d5c4cd7a58879c608d0fe57e8dab31c8245ee6cc13b81476eb8109dba",
+    "raw_pixels_sha256": "789cdbdec467360d0f9bdbece4a89bad66aeb1801513b1289ec6ab9dea8f65f0",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      8,
+      6,
+      22,
+      26
+    ],
+    "center_shift": [
+      1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 14.807843137254903,
+    "processed_file": "processed/mnist_test_08906_label_9.png",
+    "processed_png_sha256": "799ecff8227b72a2b752dabf298be8bcb0182414bbf8ce64f2ae52f3e1be1f7a",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  },
+  {
+    "sample_order": 99,
+    "mnist_test_index": 9287,
+    "true_label": 9,
+    "original_file": "originals/mnist_test_09287_label_9.png",
+    "original_png_sha256": "3cfd1127ee990d9b66ac72665c474e62b4d6662dba4d0f0352013ad30a9f1b56",
+    "raw_pixels_sha256": "1185c09bf6d45e934f205b6f6748b4aafe2cec3e7359a4983457ff839fc7c307",
+    "background": "Nền tối → giữ nét sáng",
+    "original_size": [
+      28,
+      28
+    ],
+    "crop_box": [
+      9,
+      7,
+      21,
+      27
+    ],
+    "center_shift": [
+      1,
+      0
+    ],
+    "pixel_min": 0.0,
+    "pixel_max": 12.486274509803922,
+    "processed_file": "processed/mnist_test_09287_label_9.png",
+    "processed_png_sha256": "293b54e3b35dd16721eec4df3959686de3819370bcd6776d3017636957cfb45e",
+    "repeat_equal": true,
+    "polarity_inversion_equal": true
+  }
+]

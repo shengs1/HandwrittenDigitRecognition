@@ -2,7 +2,27 @@
 
 [Repository GitHub](https://github.com/shengs1/HandwrittenDigitRecognition) · Python 3.12 · Digits · Streamlit.
 
-**UI FROZEN — 18/11/2026:** giao diện hiện tại đã được người dùng duyệt làm bản chính thức. Giữ nguyên thiết kế/chức năng; chỉ sửa lỗi đã xác minh. Kiểm tra chốt **43/43 unittest**, đủ **3 mô hình × 3 nguồn ảnh**, dropdown và checksum đều đạt. [Bằng chứng đóng băng](outputs/freeze_20261118T154422Z_32ced9af/FREEZE_REVIEW.md), [log unittest](outputs/freeze_20261118T154422Z_32ced9af/unittest.log). Các mục kiểm tra UI bên dưới là lịch sử; hướng dẫn cài/chạy vẫn áp dụng.
+**Chốt kỹ thuật19/11/2026: UI FROZEN · CODE FROZEN · EXPERIMENTS FROZEN · DOCUMENTATION AND PRESENTATION IN PROGRESS.** Người dùng đã duyệt giữ gray_bbox và MLP MNIST28. Snapshot độc lập, Python3.12.14/venv mới cài đủ120 gói từ requirements: **53/53 unittest PASS**;14 tình huống demo/8 tình huống thiếu-hỏng model đạt; replay1200 dự đoán app khớp artifact. Bản demo tối thiểu chạy khi chặn fit/download, không cần MNIST/data/cache. [Kiểm tra chốt](outputs/optimization_freeze_20261119T045133Z_728f35c1/REVIEW.md), [log venv sạch](outputs/optimization_freeze_20261119T045133Z_728f35c1/clean_unittest.log). Không huấn luyện/tuning lại. Các dòng “chờ review/chưa push” phía dưới ghi trạng thái lịch sử trước lần chốt này; Git hiện tại xem HANDOFF.
+
+**UI FROZEN:** giữ nguyên thiết kế đã duyệt ngày18/11/2026. Yêu cầu mới ngày19/11 cho phép tối ưu nhánh upload và bổ sung lựa chọn MLP MNIST sau validation; CSS/theme/bố cục và thực nghiệm Digits vẫn giữ nguyên. [Bằng chứng đóng băng trước đó](outputs/freeze_20261118T154422Z_32ced9af/FREEZE_REVIEW.md).
+
+**Bản tối ưu ảnh ngoài đã duyệt:** đã thu thập600 ảnh viết tay từ3 nguồn, seed42, chia300 validation/300 test; giữ nguyên bytes và khóa manifest trước suy luận. Chọn `gray_bbox` bằng validation cho upload8×8, bổ sung **MLP — MNIST (ảnh ngoài)** riêng cho upload28×28. Không tự chuyển model theo xác suất; không huấn luyện khi mở app.
+
+| Hệ thống | Accuracy MNIST test9890 | Accuracy test300 ảnh ngoài | Macro F1 ngoài |
+|---|---:|---:|---:|
+|KNN + xử lý cũ|41,93%|48,00%|0,4903|
+|KNN + gray_bbox|47,07%|58,00%|0,5733|
+|MLP MNIST28|97,39%|87,33%|0,8713|
+
+MLP MNIST28 đạt82% BHMSDS,82% Bitmap Numbers,98% HwD-1000 (100 ảnh test/nguồn). Đây là ảnh giấy đã cắt/scan và ảnh vẽ tay số, **không phải accuracy ảnh điện thoại bất kỳ**. Không có writer ID đáng tin; không chứng minh tách người viết. Còn38/300 lỗi. Không gộp các bộ dữ liệu thành một accuracy. Cả ba kết quả Digits chính thức bên dưới không đổi.
+
+[Báo cáo đầy đủ, validation/tất cả7 hệ thống/giới hạn](outputs/external_optimization_20261118T175401Z_4ca3a08f/REPORT.md), [tái lập và khôi phục](outputs/external_optimization_20261118T175401Z_4ca3a08f/README.md), [nguồn/license/giới hạn nguồn gốc](data/external_handwriting/SOURCES.md), [manifest600 ảnh](data/external_handwriting/manifest.csv). **53/53 unittest đạt**, giữ43 test cũ;587 file bảo vệ không đổi. [Log test](outputs/external_optimization_20261118T175401Z_4ca3a08f/tests_final.log), [trình duyệt thật](outputs/external_optimization_20261118T175401Z_4ca3a08f/browser/checks.json). Các mục UI và kiểm thử cũ dưới đây là lịch sử.
+
+Ghi công/điều kiện phân phối dữ liệu MNIST và hình biến đổi: [SOURCES của run mở rộng](outputs/external_optimization_20261118T175401Z_4ca3a08f/SOURCES.md). Giữ license MIT/CC0 gốc đi kèm600 ảnh;Bitmap có attribution CC0 công bố nhưng chưa truy được mapping từng ảnh. Sau cập nhật4 tài liệu báo cáo/slide được yêu cầu,583/587 file bảo vệ lịch sử giữ nguyên,4 file khác là tài liệu được phép đổi;toàn bộ model/notebook/số liệu vẫn khớp hash. Verifier có thể ghi bằng chứng mới mà không sửa run cũ:
+
+```powershell
+.\.venv\Scripts\python.exe -X utf8 tests/optimize_external.py verify --directory outputs/external_optimization_20261118T175401Z_4ca3a08f --verification-output outputs/verify_release_local
+```
 
 **Thông tin kỹ thuật và tương tác:** expander hiển thị dữ liệu, bảng tham số đọc từ Pipeline đang chọn, quy trình ảnh và giới hạn ngắn. Cả5 dropdown giữ tương tác native; đã thử15 vị trí bấm và bàn phím. [Bằng chứng mới nhất, screenshot và giới hạn kiểm thử upload](outputs/interaction_20261118T122825Z_df6a5b22/INTERACTION_REVIEW.md), [43/43 unittest](outputs/interaction_20261118T122825Z_df6a5b22/tests_final.log). Không đổi model/notebook/kết quả thực nghiệm.
 
@@ -33,7 +53,7 @@ Nguồn: [model_comparison.csv](outputs/20261117T081201Z_fd32180f/model_comparis
 Nếu chưa có mã nguồn:
 
 ```powershell
-git clone https://github.com/shengs1/HandwrittenDigitRecognition.git
+git clone -c core.longpaths=true https://github.com/shengs1/HandwrittenDigitRecognition.git
 cd HandwrittenDigitRecognition
 ```
 
@@ -46,6 +66,8 @@ py -3.12 -m venv .venv
 
 Không cần activate hoặc thay ExecutionPolicy. Nếu `py`/`python` là alias Microsoft Store bị lỗi, thay `py -3.12` bằng đường dẫn Python thật. Với môi trường tạo bằng `uv` không có pip, dùng `uv pip install --python .venv/Scripts/python.exe -r requirements.txt`. Không chép `.venv` sang máy khác. requirements ghim các thư viện trực tiếp đã kiểm tra; môi trường thực nghiệm tại `outputs/<run_id>/environment.json`.
 
+Git for Windows cần `core.longpaths=true` khi clone vào thư mục sâu vì một số tên artifact kiểm thử dài. Lệnh clone trên lưu cấu hình này cho repo mới. `.gitattributes` giữ nguyên bytes LF/CRLF của nguồn/manifest/lock/CSV có SHA256; không chạy công cụ đổi line ending trên artifact đã chốt.
+
 ## Chạy demo
 
 ```powershell
@@ -54,9 +76,11 @@ Không cần activate hoặc thay ExecutionPolicy. Nếu `py`/`python` là alias
 
 Mở [http://localhost:8501](http://localhost:8501). Chọn mô hình, chọn **Ảnh mẫu Digits** (toàn dataset), **Ảnh test Digits** (360 id đúng split đã lưu, mặc định) hoặc tải PNG/JPEG/BMP/WebP từ máy rồi bấm **Nhận diện chữ số**. Ảnh Digits hiển thị một lần, phóng to rõ từng pixel; upload có ảnh gốc và ảnh sau tiền xử lý. Kết quả bên phải có đủ 10 thanh xác suất. Model mặc định là KNN đã chọn bằng CV; các thẻ tổng quan đọc số liệu chính thức. Giải thích Pipeline/thông số/giới hạn nằm trong expander phía dưới.
 
-Nguồn ảnh test đọc `outputs/<registry.run_id>/split_indices.csv`, không chia lại; thiếu/sai split thì báo lỗi. Dùng mẫu test để minh họa sau đánh giá không tạo một đánh giá độc lập mới. Ảnh Digits giữ đúng pixel gốc. Ảnh tải lên: đọc hướng EXIF, grayscale/ghép alpha, nhận biết nền từ viền (hoặc chọn màu nền), lấy vùng nét, giữ tỷ lệ, căn giữa và thu nhỏ về 8×8, đổi miền về 0–16. Không gọi StandardScaler bên ngoài Pipeline. Giới hạn file 10 MB, 16 triệu pixel; file hỏng, ảnh trống và thiếu model được báo trong giao diện.
+Nguồn ảnh test đọc `outputs/<registry.run_id>/split_indices.csv`, không chia lại; thiếu/sai split thì báo lỗi. Dùng mẫu test để minh họa sau đánh giá không tạo một đánh giá độc lập mới. Ảnh Digits giữ đúng pixel gốc. Upload của ba model Digits dùng `gray_bbox`: EXIF/grayscale/alpha/nền, crop nét, giữ tỷ lệ/căn bbox trong32×32 rồi tổng từng khối4×4 thành8×8, miền0–16. Chọn nguồn **Tải ảnh từ máy tính**, sau đó chọn **MLP — MNIST (ảnh ngoài)** để dùng tiền xử lý28×28/0–255 và Pipeline784 đặc trưng; lựa chọn này không có ở hai nguồn Digits. Bảng tham số/preview cập nhật theo model. Scaler chỉ chạy bên trong Pipeline. Giới hạn file10 MB,16 triệu pixel; file hỏng, ảnh trống và thiếu model được báo trong giao diện.
 
 Registry trỏ đến đúng run và checksum của cả Pipeline. Giữ toàn bộ `models/<run_id>/`; không chỉ copy estimator. Nếu thiếu registry/model, khôi phục từ bản đã xác nhận trong Git; app không tự fit để bù. Chỉ sử dụng joblib do project tin cậy. Khi sai phiên bản sklearn, cài đúng requirements.
+
+Để dùng bản tối ưu, giữ thêm `external_preprocessing.py`, `models/external_registry.json`, `models/external_optimization_20261118T175401Z_4ca3a08f/mlp_mnist.joblib` và `outputs/external_optimization_20261118T175401Z_4ca3a08f/selection_lock.json`. Registry phụ ràng buộc SHA256 của module/model/lock; registry Digits gốc không đổi. Không cần dataset MNIST hay600 ảnh đánh giá để chạy demo. Nếu không có registry phụ, app dùng lại ba model/tiền xử lý cũ; hash sai hiển thị cảnh báo. Hướng dẫn khôi phục app ổn định nằm trong README của run bổ sung.
 
 ## Mở và chạy notebook
 
@@ -72,6 +96,12 @@ Chọn kernel `.venv`. Notebook đã có output thật; **không cần Run All �
 
 `RUN_EXPERIMENTS=True` thực hiện CV/grid/learning curve/fit cuối và tạo run mới. Đổi thành False nếu chỉ cần dữ liệu/EDA. Mỗi run có thư mục riêng, không ghi đè; registry đang có không tự thay bằng run mới. Không chạy lại để tìm seed hoặc điểm tốt hơn, không dùng test tuning.
 
+## Kiểm tra ảnh điện thoại của nhóm
+
+Hiện **chưa có ảnh tự chụp do nhóm cung cấp**, chưa có số liệu accuracy cho nguồn này. Dùng lại app hiện có: viết một chữ số0–9 trên giấy, chụp đủ sáng, tránh bóng/nhòe, giữ ảnh gốc; lưu nhãn thật trước suy luận. Chọn **Tải ảnh từ máy**, chọn rõ **MLP — MNIST (ảnh ngoài)**, tải PNG/JPEG/BMP/WebP và kiểm ảnh gốc/preview28×28 trước khi bấm nhận diện. Có thể chọn từng model Digits để đối chiếu trên cùng ảnh; preview của chúng là8×8. Ghi filename/nhãn thật/model/dự đoán/xác suất/đúng-sai; giữ cả ảnh sai, không lấy ảnh AI/font hoặc ảnh tổng hợp thay ảnh chụp. File HEIC cần xuất JPEG/PNG trước khi dùng, không đổi file gốc lưu trữ.
+
+Không sửa preprocessing/model vì một ảnh demo sai; tập ảnh mới chỉ để ghi nhận giới hạn bản đã chốt. Nếu tự tổng hợp accuracy, nêu rõ số ảnh/cách thu thập/nguồn và báo riêng từng model, không gộp với Digits/MNIST/300 test đã công bố. Xác suất chưa hiệu chỉnh. Công cụ `tests/check_demo.py` giữ vai trò kiểm hồi quy baseline với fixture lịch sử, không phải công cụ đo accuracy ảnh điện thoại của bản tối ưu.
+
 ## Kiểm thử và giới hạn
 
 ```powershell
@@ -83,7 +113,7 @@ Test kiểm tra miền pixel, leakage, notebook, ảnh sáng/tối/trong suốt/
 
 Ở Phase 2 đã cài môi trường mới: 120 gói tương thích và 25/25 test đạt ([log cũ](outputs/demo_20261117T082316Z_b269f12c/tests_clean_environment.log)). Final review bổ sung kiểm tra khoa học dữ liệu và sửa điều kiện checkout mới: **31/31 test đạt**, [log mới](outputs/review_20261117T090347Z_9df57e69/clean_checkout_tests.log), [môi trường mới](outputs/review_20261117T090347Z_9df57e69/clean_environment.json), [đối chiếu rerun](outputs/review_20261117T090347Z_9df57e69/review_checks.json). Ảnh chọn mẫu/upload đã thử ở Phase 2: [giao diện](outputs/demo_20261117T082316Z_b269f12c/streamlit_demo.jpg).
 
-[Bằng chứng kiểm thử ảnh](outputs/demo_20261117T082316Z_b269f12c/demo_verification.json): 10 ảnh mẫu Digits (ảnh đầu mỗi lớp), LR đúng 10/10, KNN và MLP đúng 9/10. Với 10 ảnh viết tay MNIST bên ngoài, cả ba đúng 3/10. Đây là minh họa rất nhỏ, **không phải accuracy tổng quát trên ảnh ngoài Digits**. Mẫu Digits có thể thuộc train. MNIST chỉ là fixture suy luận, không đổi dataset huấn luyện. Chưa thử ảnh tự chụp của nhóm. Xác suất cao vẫn có thể sai, chưa hiệu chỉnh. Không tối ưu lại sau các kết quả này.
+[Bằng chứng kiểm thử ảnh Phase 2](outputs/demo_20261117T082316Z_b269f12c/demo_verification.json): 10 ảnh mẫu Digits (ảnh đầu mỗi lớp), LR đúng10/10, KNN và MLP đúng9/10. Với10 ảnh viết tay MNIST bên ngoài, cả ba đúng3/10. Đây là minh họa rất nhỏ, **không phải accuracy tổng quát trên ảnh ngoài Digits**. Mẫu Digits có thể thuộc train. Trong phép minh họa này MNIST chỉ là fixture suy luận, không đổi dữ liệu huấn luyện của ba Pipeline Digits. Lượt tối ưu mới ở đầu README dùng validation riêng và model MNIST riêng; giữ nguyên kết quả cũ. Chưa thử ảnh tự chụp của nhóm. Xác suất cao vẫn có thể sai, chưa hiệu chỉnh.
 
 ## File và tài liệu báo cáo
 

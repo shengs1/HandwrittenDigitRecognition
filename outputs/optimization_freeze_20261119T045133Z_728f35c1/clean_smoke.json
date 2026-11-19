@@ -1,0 +1,185 @@
+{
+  "functional_cases": [
+    {
+      "source": "Ảnh test Digits",
+      "model": "logreg_raw",
+      "predicted": 0,
+      "pass": true
+    },
+    {
+      "source": "Ảnh test Digits",
+      "model": "knn",
+      "predicted": 0,
+      "pass": true
+    },
+    {
+      "source": "Ảnh test Digits",
+      "model": "mlp",
+      "predicted": 0,
+      "pass": true
+    },
+    {
+      "source": "Ảnh mẫu Digits",
+      "model": "logreg_raw",
+      "predicted": 0,
+      "pass": true
+    },
+    {
+      "source": "Ảnh mẫu Digits",
+      "model": "knn",
+      "predicted": 0,
+      "pass": true
+    },
+    {
+      "source": "Ảnh mẫu Digits",
+      "model": "mlp",
+      "predicted": 0,
+      "pass": true
+    },
+    {
+      "source": "validation/hwd1000/7/7-007.png",
+      "model": "logreg_raw",
+      "predicted": 7,
+      "pixel_shape": [
+        8,
+        8
+      ],
+      "pass": true
+    },
+    {
+      "source": "validation/hwd1000/7/7-007.png",
+      "model": "knn",
+      "predicted": 3,
+      "pixel_shape": [
+        8,
+        8
+      ],
+      "pass": true
+    },
+    {
+      "source": "validation/hwd1000/7/7-007.png",
+      "model": "mlp",
+      "predicted": 7,
+      "pixel_shape": [
+        8,
+        8
+      ],
+      "pass": true
+    },
+    {
+      "source": "validation/hwd1000/7/7-007.png",
+      "model": "mlp_mnist",
+      "predicted": 7,
+      "pixel_shape": [
+        28,
+        28
+      ],
+      "pass": true
+    },
+    {
+      "source": "validation/bitmap_numbers/0/1058.bmp",
+      "model": "logreg_raw",
+      "predicted": 0,
+      "pixel_shape": [
+        8,
+        8
+      ],
+      "pass": true
+    },
+    {
+      "source": "validation/bitmap_numbers/0/1058.bmp",
+      "model": "knn",
+      "predicted": 0,
+      "pixel_shape": [
+        8,
+        8
+      ],
+      "pass": true
+    },
+    {
+      "source": "validation/bitmap_numbers/0/1058.bmp",
+      "model": "mlp",
+      "predicted": 0,
+      "pixel_shape": [
+        8,
+        8
+      ],
+      "pass": true
+    },
+    {
+      "source": "validation/bitmap_numbers/0/1058.bmp",
+      "model": "mlp_mnist",
+      "predicted": 0,
+      "pixel_shape": [
+        28,
+        28
+      ],
+      "pass": true
+    }
+  ],
+  "model_fault_cases": [
+    {
+      "model": "logreg_raw",
+      "condition": "corrupt",
+      "handled": "ValueError"
+    },
+    {
+      "model": "logreg_raw",
+      "condition": "missing",
+      "handled": "FileNotFoundError"
+    },
+    {
+      "model": "knn",
+      "condition": "corrupt",
+      "handled": "ValueError"
+    },
+    {
+      "model": "knn",
+      "condition": "missing",
+      "handled": "FileNotFoundError"
+    },
+    {
+      "model": "mlp",
+      "condition": "corrupt",
+      "handled": "ValueError"
+    },
+    {
+      "model": "mlp",
+      "condition": "missing",
+      "handled": "FileNotFoundError"
+    },
+    {
+      "model": "mlp_mnist",
+      "condition": "corrupt",
+      "handled": "ValueError"
+    },
+    {
+      "model": "mlp_mnist",
+      "condition": "missing",
+      "handled": "FileNotFoundError"
+    }
+  ],
+  "minimal_demo_without_datasets": "PASS",
+  "model_hashes_unchanged": {
+    "models/.gitkeep": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "models/external_registry.json": "2c8be06420ba36631e5b5dc302f23bf4b0d0ebd8581e35c9cbda6b613bd913d6",
+    "models/registry.json": "1e19d53f9a7372235db518748197a63174bcf39fecf9a677a8b59d746f102ec8",
+    "models/20261117T081201Z_fd32180f/knn.joblib": "0ffb42df1ab1cf884f9c2b09bb1116602f0226153b71542300ffeb8d63211433",
+    "models/20261117T081201Z_fd32180f/logreg_raw.joblib": "4a8b780643e4c46d32a8cdd20692b16784c52470118c2668052f6c0fe5da95f8",
+    "models/20261117T081201Z_fd32180f/metadata.json": "744b5466c6503eadf02a9f0e4184142647e9baf47fb6e47f2b0566edd345bade",
+    "models/20261117T081201Z_fd32180f/mlp.joblib": "00ef926c4aeeb8aff5e8525d392f78a015d6ff1fca78f7c1f875aa55f17d725c",
+    "models/external_optimization_20261118T175401Z_4ca3a08f/mlp_mnist.joblib": "1618a82694c6fd6255b06fb2c1a6fd8e5233d2851693077418fc58e3f8594638"
+  },
+  "fit_and_dataset_download_blocked": true,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "package_versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "streamlit": "1.67.0",
+    "pillow": "13.0.0",
+    "joblib": "1.6.0",
+    "nbformat": "5.11.1"
+  },
+  "upload_check": "AppTest/native widget mocked BytesIO; source images unmodified, no camera-photo claims"
+}

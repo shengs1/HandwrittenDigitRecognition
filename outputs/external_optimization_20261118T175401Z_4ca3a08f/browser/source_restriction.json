@@ -1,0 +1,12 @@
+{
+  "sourceRestriction": {
+    "model": "K láng giềng gần nhất (KNN)",
+    "prediction": false,
+    "source": "Ảnh test Digits"
+  },
+  "testOptions": [
+    "Logistic Regression — pixel thô",
+    "K láng giềng gần nhất (KNN)",
+    "Mạng nơ-ron nhiều lớp (MLP)"
+  ]
+}

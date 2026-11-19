@@ -1,0 +1,4 @@
+model,n_predictions,n_errors,n_predictions_p_ge_0_9,n_errors_p_ge_0_9
+knn,100,60,42,19
+logreg_raw,100,54,66,32
+mlp,100,63,33,20

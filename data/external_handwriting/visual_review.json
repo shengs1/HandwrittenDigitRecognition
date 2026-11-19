@@ -1,0 +1,16 @@
+{
+  "review_scope": "All 600 originals displayed across six contact sheets; source-label/validity audit only; no predictions inspected.",
+  "contact_sheets": {
+    "test_bhmsds.png": "9dfde77ded8275f56a2895821d9d21cf930d363c153c9cbcf474a6fa991cde0f",
+    "test_bitmap_numbers.png": "f78e48a5a243129dd0fc08379f5e2fa530bc1e1953df3fe6b161a1c4b470745d",
+    "test_hwd1000.png": "4745f873ea0121a60fbadf16a9db24596ab08278613336c81f326781c5c46405",
+    "validation_bhmsds.png": "8fe345cea7a73754fe30b0910125e7345b90da4d32a4b884c53859d81027d292",
+    "validation_bitmap_numbers.png": "805aad38dd470c5bfb2fd087e98270554df2fec797326a1f5f8f95362a9127eb",
+    "validation_hwd1000.png": "e8343c3d0311b01fcaf9ddf5edc38ba9283192caafe8126143d4e74ee21ddd36"
+  },
+  "images_reviewed": 600,
+  "obvious_label_errors_identified": 0,
+  "removed_or_relabelled": 0,
+  "notes": "Ambiguous styles and faint/stretched scans retained. Handwriting appearance supports README descriptions; full per-image provenance/writer identity not recoverable.",
+  "recorded_at_utc": "2026-11-18T18:11:09.460616+00:00"
+}

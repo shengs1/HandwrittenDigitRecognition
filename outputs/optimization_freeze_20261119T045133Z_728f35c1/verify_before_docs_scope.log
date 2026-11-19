@@ -1,0 +1,8 @@
+2026-11-19 12:30:17.305 WARNING streamlit.runtime.caching.cache_data_api: No runtime found, using MemoryCacheStorageManager
+Traceback (most recent call last):
+  File "D:\HandwrittenDigitRecognition\tests\optimize_external.py", line 411, in <module>
+    {'validation':validation,'train':train,'lock':lock,'test':final_test,'verify':verify}[args.action](out)
+  File "D:\HandwrittenDigitRecognition\tests\optimize_external.py", line 328, in verify
+    assert before==after
+           ^^^^^^^^^^^^^
+AssertionError

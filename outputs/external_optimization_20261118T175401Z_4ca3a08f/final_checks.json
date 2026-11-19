@@ -1,0 +1,38 @@
+{
+  "checked_at_utc": "2026-11-18T18:45:39.877300+00:00",
+  "sampling_reproduced_seed42": 600,
+  "raw_original_bytes_verified": 600,
+  "source_archive_hashes_verified": 3,
+  "python_sources_parsed": 7,
+  "local_markdown_links_verified": 59,
+  "browser_viewports_verified": 5,
+  "viewport_screenshot_sizes_verified": 2,
+  "protected_files_unchanged": 587,
+  "app_predictions_replayed": 1200,
+  "unittests": 53,
+  "source_sha256": {
+    "app.py": "025941bb1033db7d48c39423059f3088b3599a092364fbf9216dfd601c853b40",
+    "external_preprocessing.py": "51a87adb661b5e54e931674416db1bbad6cb06f342c804497f388ec831f56443",
+    "tests/collect_external_handwriting.py": "b43f24202e1e0ee890273768574dd0da7d251211f5ca2c2024b8e364abc3736b",
+    "tests/prepare_external_optimization.py": "ac0a4229a695a77011cc03d3231d99eab5bb9d2c67c24ef200cfedacf1015558",
+    "tests/optimize_external.py": "a0e5bf1d52745066a6720adde2d957500e44db1eb6a368925e5a48aabe8f25d6",
+    "tests/summarize_external_optimization.py": "03340cf18ae4f43f61250de2c949ff0f3ea4e68ab3cc74b63fe8f7230503015c",
+    "tests/test_external_optimization.py": "0a1b216a8f468404f327122107a8c4e57f6064b4b30431648b7ed6c1708064b7"
+  },
+  "git_head": "af7b7666eaf1046340524a0a5d109ef2783b75f2",
+  "git_status": "## main...origin/main\n M AGENTS.md\n M HANDOFF.md\n M README.md\n M app.py\n?? data/\n?? external_preprocessing.py\n?? models/external_optimization_20261118T175401Z_4ca3a08f/\n?? models/external_registry.json\n?? outputs/external_evaluation_20261118T165317Z_7e5a90dc/\n?? outputs/external_optimization_20261118T175401Z_4ca3a08f/\n?? tests/collect_external_handwriting.py\n?? tests/evaluate_external.py\n?? tests/optimize_external.py\n?? tests/prepare_external_optimization.py\n?? tests/summarize_external_optimization.py\n?? tests/test_external_optimization.py\n",
+  "committed_or_pushed_in_this_task": false,
+  "diff_check_passed": true,
+  "limits": [
+    "No fresh virtual environment installed in this task",
+    "Native OS file picker not re-tested; real browser uses fixture bytes harness",
+    "Writer-independent splitting unavailable",
+    "Bitmap per-image upstream mapping unavailable",
+    "No evaluation on new phone photos"
+  ],
+  "nonblocking_logs": [
+    "Streamlit bare-mode cache/context warnings in tests",
+    "Native Streamlit default/session-state warning logged when resetting model selection",
+    "Windows asyncio connection-reset during fixture server shutdown after browser tabs closed"
+  ]
+}

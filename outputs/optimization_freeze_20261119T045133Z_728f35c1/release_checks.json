@@ -1,0 +1,44 @@
+{
+  "checked_at_utc": "2026-11-19T05:40:58.913619+00:00",
+  "ui_frozen": true,
+  "code_frozen": true,
+  "experiments_frozen": true,
+  "documentation_and_presentation": "IN PROGRESS",
+  "scientific_metric_rows": 145,
+  "clean_unittests_pass": 53,
+  "clean_unittests_fail": 0,
+  "legacy_unchanged": 583,
+  "legacy_authorized_docs_changed": [
+    "docs/REPORT_OUTLINE.md",
+    "docs/RESULTS_INDEX.md",
+    "docs/SLIDE_OUTLINE.md",
+    "docs/VIVA_QUESTIONS.md"
+  ],
+  "all_prior_snapshot_files": 2422,
+  "authorized_changes": [
+    "AGENTS.md",
+    "HANDOFF.md",
+    "README.md",
+    "docs/REPORT_OUTLINE.md",
+    "docs/RESULTS_INDEX.md",
+    "docs/SLIDE_OUTLINE.md",
+    "docs/VIVA_QUESTIONS.md",
+    "tests/optimize_external.py"
+  ],
+  "protected_pipeline_sha256": {
+    "logreg_raw": "4a8b780643e4c46d32a8cdd20692b16784c52470118c2668052f6c0fe5da95f8",
+    "knn": "0ffb42df1ab1cf884f9c2b09bb1116602f0226153b71542300ffeb8d63211433",
+    "mlp": "00ef926c4aeeb8aff5e8525d392f78a015d6ff1fca78f7c1f875aa55f17d725c",
+    "mlp_mnist": "1618a82694c6fd6255b06fb2c1a6fd8e5233d2851693077418fc58e3f8594638"
+  },
+  "app_image_module_notebook_theme_requirements_unchanged": true,
+  "all_53_tests_sources_unchanged": true,
+  "python_files_parsed": 15,
+  "local_markdown_links_verified": 96,
+  "secret_signature_findings": [],
+  "venv_cache_tmp_in_publish_set": false,
+  "files_over_100MiB": [],
+  "new_git_file_count_before_stage": 2457,
+  "initial_head": "af7b7666eaf1046340524a0a5d109ef2783b75f2",
+  "notes": "Git commit/push recorded in HANDOFF/final response after this check."
+}

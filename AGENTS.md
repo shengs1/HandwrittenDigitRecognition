@@ -1,5 +1,23 @@
 # Hướng dẫn tiếp tục đồ án
 
+## FINAL FREEZE —19/11/2026
+
+Người dùng đã review và duyệt gray_bbox/MLP MNIST28 sau kiểm tra cuối. Trạng thái: **UI FROZEN; CODE FROZEN; EXPERIMENTS FROZEN; DOCUMENTATION AND PRESENTATION IN PROGRESS.** Không mở thêm thử nghiệm, tuning hoặc redesign. Lượt này được yêu cầu commit/push lên main sau kiểm thử đạt; quyền này thay việc “chưa push trước review” ở các mục lịch sử. Không force-push, không đổi lịch sử remote.
+
+Bằng chứng chốt `outputs/optimization_freeze_20261119T045133Z_728f35c1/`: venv mới120 gói tương thích/53 tests,14 chức năng+8 lỗi model, bản demo tối thiểu không data/download/fit,1200 replay app và audit145 dòng metric.4 Pipeline,notebook,module ảnh,CSS/requirements và artifact số liệu không đổi. Bảy tài liệu root/docs được phép cập nhật; không coi đổi tài liệu là đổi thực nghiệm. Ghi rõ giới hạn writer/Bitmap/ảnh điện thoại. Khi tiếp tục chỉ hoàn thiện tài liệu/thuyết trình hoặc sửa lỗi kỹ thuật có bằng chứng, rồi chạy kiểm tra liên quan; không dùng các test đã xem làm validation mới.
+
+## Quyết định mới nhất — ảnh ngoài (2026-11-19)
+
+Yêu cầu EXTERNAL RECOGNITION OPTIMIZATION cho phép thử preprocessing và huấn luyện một MLP MNIST riêng, sau đó tích hợp có điều kiện vào upload. Đây là ngoại lệ có phạm vi với các quy tắc lịch sử bên dưới: **giữ thiết kế UI FROZEN**, notebook,3 Pipeline/registry/số liệu Digits và toàn bộ đánh giá MNIST100 cũ. Không push bản tối ưu lên main trước người dùng review. Không thêm dependency hoặc tự huấn luyện khi mở app.
+
+Run mới `outputs/external_optimization_20261118T175401Z_4ca3a08f/`: protocol/manifest/split khóa trước suy luận, lựa chọn khóa trước test.600 ảnh bytes gốc từ3 repo,300 validation/300 test, seed42,10/lớp/nguồn/split; không có writer ID đáng tin nên không tuyên bố tách người viết. Bitmap có giới hạn truy vết từng ảnh upstream; xem data/external_handwriting/SOURCES.md. Không đổi nhãn/bỏ mẫu vì dự đoán sai.
+
+Validation chọn `gray_bbox` cho upload8×8. Một Pipeline MinMaxScaler→MLP(128,64) MNIST,54000 train/6000 validation, seed42, không augmentation; dùng `mnist28` nhất quán từ external_preprocessing.py. Loại110 MNIST test đã xem, đánh giá9890 còn lại sau khóa. Không dùng600 ảnh mới để train. Cả9890 MNIST và300 handwriting test **đã xem kết quả**, không được dùng chúng tuning hoặc chọn lại trong lượt tiếp theo.
+
+`models/external_registry.json` riêng ràng buộc hash module/model/selection lock. MLP MNIST chỉ có ở upload,784 đặc trưng/28×28/0–255;3 model Digits giữ64/8×8/0–16. Scaler ở Pipeline, không gọi ngoài. Không tự chuyển model theo confidence. Ba thẻ thống kê vẫn là Digits chính thức. Hàm baseline app.preprocess_uploaded_image và UI_STYLE giữ nguyên để đối chiếu/khôi phục. Thay đổi model/module sau khóa phải được coi là thực nghiệm mới với validation/test độc lập.
+
+Đọc REPORT.md/README.md trong run và HANDOFF để lấy số liệu, lệnh tái lập,53 tests/bằng chứng browser, giới hạn và cách rollback. Không sửa bảng số liệu chỉ để khớp nhận định. Nhận định mới là dự thảo cần nhóm rà soát/xác nhận; không bịa đóng góp. Mục UI phía dưới phản ánh phiên bản trước khi có ngoại lệ mới này.
+
 ## UI FROZEN — phiên bản chính thức (2026-11-18)
 
 Người dùng đã duyệt và chốt giao diện hiện tại. Không tiếp tục đổi thiết kế, màu, typography, bố cục hoặc thêm tính năng. Chỉ sửa lỗi chức năng có bằng chứng khi được yêu cầu. Không tự fit/tuning/chỉnh notebook, tiền xử lý hay artifact để thay đổi kết quả demo. Đọc mục UI FROZEN trong HANDOFF để lấy kiểm thử cuối và trạng thái Git; các mục UI bên dưới là lịch sử quyết định. Người dùng đã yêu cầu commit/push toàn bộ phiên bản UI đã duyệt và bằng chứng lên origin/main sau khi kiểm thử đạt; không force-push.

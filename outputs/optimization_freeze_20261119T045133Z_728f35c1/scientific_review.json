@@ -1,0 +1,59 @@
+{
+  "checked_at_utc": "2026-11-19T04:56:32.386480+00:00",
+  "no_fit_or_tuning": true,
+  "protected_legacy_files_unchanged": 587,
+  "previous_optimization_manifest_verified": 1834,
+  "handwriting": {
+    "n": 600,
+    "validation_n": 300,
+    "test_n": 300,
+    "sources": {
+      "bhmsds": 200,
+      "bitmap_numbers": 200,
+      "hwd1000": 200
+    },
+    "exact_and_canonical_duplicates": 0,
+    "known_transforms_checked": [
+      "format/RGBA",
+      "grayscale/polarity",
+      "blank-border crop",
+      "nearest normalized64"
+    ],
+    "writer_independence": "unverified: writer/sheet metadata absent",
+    "all_possible_near_duplicates_excluded": false,
+    "bitmap_per_image_upstream_mapping": "unavailable; attribution/CC0 based on derivative README and upstream license"
+  },
+  "mnist": {
+    "previous_test_ids_excluded": 110,
+    "final_test_n": 9890,
+    "train_n": 54000,
+    "outer_validation_n": 6000,
+    "split_reproduced_seed42": true,
+    "train_validation_test_exact_pixel_overlap": 0,
+    "scaler_n_samples_seen": 54000,
+    "mlp_gradient_samples_per_iteration": 48600,
+    "internal_validation_n": 5400,
+    "n_iter": 30,
+    "fit_source_review": "runner train() fits only dataset(mnist_train); metadata/split/scaler bounds/sample counters consistent; no retraining"
+  },
+  "validation_winner": {
+    "variant": "gray_bbox",
+    "mean_macro_f1": 0.5925955198620062,
+    "baseline_mean_macro_f1": 0.48979645967144353
+  },
+  "metric_rows_recomputed_all_stages": 145,
+  "confirmed_final": {
+    "external_correct": 262,
+    "external_wrong": 38,
+    "mnist_correct": 9632,
+    "mnist_n": 9890,
+    "external_accuracy": 0.8733333333333333,
+    "external_macro_f1": 0.8713264069814558,
+    "mnist_accuracy": 0.9739130434782609,
+    "by_source_correct": {
+      "bhmsds": 82,
+      "bitmap_numbers": 82,
+      "hwd1000": 98
+    }
+  }
+}

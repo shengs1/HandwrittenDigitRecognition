@@ -1,5 +1,7 @@
 # Chỉ mục số liệu và hình cho báo cáo
 
+**A — Thực nghiệm chính Digits:** các mục1–10 giữ số liệu run chính thức. **B — Mở rộng ảnh ngoài:** mục11 bên dưới, không thay kết quả hoặc lựa chọn KNN của phầnA. Code/UI/thực nghiệm đã chốt; nhận định vẫn cần nhóm rà/xác nhận trước xuất bản nộp.
+
 Run thực nghiệm cố định: **20261117T081201Z_fd32180f**; nguồn thật trong [outputs](../outputs/20261117T081201Z_fd32180f/).
 Quy tắc và thời điểm khóa: [selection_lock.json](../outputs/20261117T081201Z_fd32180f/selection_lock.json).
 Mô hình mặc định **knn** được chọn bằng CV trước test.
@@ -270,3 +272,36 @@ Chú thích dùng khi chèn hình (tất cả ảnh/bảng chính lấy từ run
 | mlp_training_history | Loss train và accuracy validation nội bộ ở hai panel; 52 iterations, khác CV macro F1 |
 
 Trả lời đủ 5 câu đề tài: xem phần cuối notebook. Chuẩn bị báo cáo10 mục và 12 slide từ REPORT_OUTLINE/SLIDE_OUTLINE; đây chưa phải xác nhận hoặc sản phẩm trình bày cuối của nhóm.
+
+## 11. B — Mở rộng nhận diện ảnh ngoài
+
+Run [external_optimization_20261118T175401Z_4ca3a08f](../outputs/external_optimization_20261118T175401Z_4ca3a08f/REPORT.md). Seed42,600 ảnh từBHMSDS/Bitmap Numbers/HwD-1000,300 validation+300 test,10/lớp/nguồn/split; giữ bytes/nhãn gốc. [Manifest](../data/external_handwriting/manifest.csv), [nguồn/license](../data/external_handwriting/SOURCES.md), [contact sheets](../data/external_handwriting/contact_sheets). Không có writer ID đáng tin; Bitmap thiếu mapping nguồn từng ảnh. Không chứng minh writer independence hoặc accuracy ảnh chụp điện thoại.
+
+Preprocessing chung chọn bằng mean macro F1 của3 Pipeline Digits trên validation300: baseline0,48980;gray_bbox**0,59260**;gray_com0,50661;binary35 0,50816;binary50 0,50569;binary35_thick0,43660;gray_wide0,49473. Điều kiện tăng≥0,02 và KNN F1 không giảm đạt. [Bảng validation từng model/nguồn](../outputs/external_optimization_20261118T175401Z_4ca3a08f/validation/metrics.csv).
+
+Một MLP MNIST28: MinMaxScaler→MLP(128,64),relu/adam,alpha0,0001,early stopping,seed42;54000 train/6000 validation ngoài, không augmentation/không train600 ảnh mới. Train23,895571s/30 iterations, Pipeline1221502byte. Validation MNIST97,3167%/F1 0,972961; ngoài90%/F1 0,896684. [Protocol](../outputs/external_optimization_20261118T175401Z_4ca3a08f/protocol.json) và [selection lock](../outputs/external_optimization_20261118T175401Z_4ca3a08f/selection_lock.json) có trước final test; loại110 MNIST test đã xem, còn9890.
+
+| Hệ thống | MNIST9890 accuracy | MNIST macro F1 | Ngoài300 accuracy | Ngoài macro F1 |
+|---|---:|---:|---:|---:|
+|LR cũ|46,4105%|0,473055|63,3333%|0,642764|
+|KNN cũ|41,9312%|0,427209|48,0000%|0,490304|
+|MLP Digits cũ|36,8049%|0,380337|49,6667%|0,489448|
+|LR gray_bbox|49,4944%|0,502436|64,6667%|0,651633|
+|KNN gray_bbox|47,0677%|0,471308|58,0000%|0,573268|
+|MLP Digits gray_bbox|42,0829%|0,434002|53,3333%|0,538202|
+|MLP MNIST28|97,3913%|0,973773|87,3333%|0,871326|
+
+Nguồn [metrics.csv](../outputs/external_optimization_20261118T175401Z_4ca3a08f/final_test/metrics.csv), tính từ giá trị gốc rồi mới làm tròn. MLP28 đúng9632/9890 MNIST;262/300 ngoài, sai38. BHMSDS82/100,Bitmap82/100,HwD98/100. KNN gray_bbox tăng10 điểm phần trăm ngoài. Không quy toàn bộ tăng của MLP28 cho preprocessing vì dataset/lượng mẫu/kiến trúc/resolution cũng đổi. Không chọn lại theo test.
+
+| Bằng chứng/hình | Vị trí trong run mở rộng |
+|---|---|
+|Precision/recall/F1/support từng chữ số và nguồn|final_test/*__per_digit.csv và *__report.json|
+|Confusion từng model/cùng tập|analysis/figures/mnist_test_confusion_annotated.png, handwriting_test_confusion_annotated.png|
+|Ảnh lỗi gốc/8×8 cũ/8×8 mới/28×28|analysis/figures/*_test_errors_before_after.png;8 ID lỗi KNN cũ đầu theo ID|
+|Phân phối và ảnh trung bình, chỉ train/validation|analysis/figures/validation_distributions.png, validation_class_means.png|
+|Training loss và early-stopping accuracy|analysis/figures/mlp_mnist_training.png; khác đơn vị, không suy ra epoch quá khớp chính xác|
+|Đúng/sai/xác suất đầy đủ|final_test/*__predictions.csv, *__correct.csv, *__incorrect.csv|
+|Chi phí và caveat phép đo|final_test/metrics_with_cost.csv; một batch predict+proba,2 luồng; khác benchmark Digits|
+|Kiểm tra sạch/code freeze|[REVIEW](../outputs/optimization_freeze_20261119T045133Z_728f35c1/REVIEW.md)|
+
+Ảnh scan/cắt/vẽ tay số là ba kiểu nguồn khác nhau. Nhóm cần phân tích38 lỗi và giới hạn bằng bảng/hình đã xuất, không sửa model từ test. Các kết quả3/10 và46/40/37 trên100 MNIST cũ là lịch sử riêng, không thay bằng score mới hoặc gộp accuracy.

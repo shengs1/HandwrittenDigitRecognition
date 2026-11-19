@@ -1,0 +1,21 @@
+2026-11-19 01:13:05.570 WARNING streamlit.runtime.caching.cache_data_api: No runtime found, using MemoryCacheStorageManager
+features mnist_test baseline 9890 rejected 0
+FINAL mnist_test logreg_raw--baseline 0.4641051567239636 0.47305461831494827
+FINAL mnist_test knn--baseline 0.41931243680485336 0.4272088591666939
+FINAL mnist_test mlp--baseline 0.36804853387259856 0.38033668310449187
+features mnist_test gray_bbox 9890 rejected 0
+FINAL mnist_test logreg_raw--gray_bbox 0.4949443882709808 0.5024359081508661
+FINAL mnist_test knn--gray_bbox 0.4706774519716886 0.47130768806666284
+FINAL mnist_test mlp--gray_bbox 0.4208291203235591 0.43400218719809924
+features mnist_test mnist28 9890 rejected 0
+FINAL mnist_test mlp_mnist--mnist28 0.9739130434782609 0.9737734344681565
+features handwriting_test baseline 300 rejected 0
+FINAL handwriting_test logreg_raw--baseline 0.6333333333333333 0.6427639596238202
+FINAL handwriting_test knn--baseline 0.48 0.490303897478298
+FINAL handwriting_test mlp--baseline 0.49666666666666665 0.4894482871915139
+features handwriting_test gray_bbox 300 rejected 0
+FINAL handwriting_test logreg_raw--gray_bbox 0.6466666666666666 0.651633089831597
+FINAL handwriting_test knn--gray_bbox 0.58 0.5732677167960754
+FINAL handwriting_test mlp--gray_bbox 0.5333333333333333 0.5382021755957508
+features handwriting_test mnist28 300 rejected 0
+FINAL handwriting_test mlp_mnist--mnist28 0.8733333333333333 0.8713264069814558

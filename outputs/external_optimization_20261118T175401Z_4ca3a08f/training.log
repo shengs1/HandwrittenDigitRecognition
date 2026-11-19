@@ -1,0 +1,71 @@
+2026-11-19 01:11:03.114 WARNING streamlit.runtime.caching.cache_data_api: No runtime found, using MemoryCacheStorageManager
+features mnist_train mnist28 54000 rejected 0
+Iteration 1, loss = 0.47929368
+Validation score: 0.934815
+Iteration 2, loss = 0.18417521
+Validation score: 0.951111
+Iteration 3, loss = 0.12924191
+Validation score: 0.958519
+Iteration 4, loss = 0.09825268
+Validation score: 0.965370
+Iteration 5, loss = 0.07756305
+Validation score: 0.969815
+Iteration 6, loss = 0.06210771
+Validation score: 0.969259
+Iteration 7, loss = 0.05134435
+Validation score: 0.969074
+Iteration 8, loss = 0.04232456
+Validation score: 0.969630
+Iteration 9, loss = 0.03469665
+Validation score: 0.973519
+Iteration 10, loss = 0.02927829
+Validation score: 0.973704
+Iteration 11, loss = 0.02489076
+Validation score: 0.972778
+Iteration 12, loss = 0.02009890
+Validation score: 0.974444
+Iteration 13, loss = 0.01809910
+Validation score: 0.973333
+Iteration 14, loss = 0.01545051
+Validation score: 0.975000
+Iteration 15, loss = 0.01225407
+Validation score: 0.971667
+Iteration 16, loss = 0.00878165
+Validation score: 0.976296
+Iteration 17, loss = 0.00721141
+Validation score: 0.974815
+Iteration 18, loss = 0.00576868
+Validation score: 0.975741
+Iteration 19, loss = 0.00589005
+Validation score: 0.974074
+Iteration 20, loss = 0.00563823
+Validation score: 0.975741
+Iteration 21, loss = 0.00341478
+Validation score: 0.977593
+Iteration 22, loss = 0.00233859
+Validation score: 0.974815
+Iteration 23, loss = 0.00222685
+Validation score: 0.976667
+Iteration 24, loss = 0.00670102
+Validation score: 0.972407
+Iteration 25, loss = 0.01494892
+Validation score: 0.970370
+Iteration 26, loss = 0.01208126
+Validation score: 0.972963
+Iteration 27, loss = 0.00406820
+Validation score: 0.977222
+Iteration 28, loss = 0.00168338
+Validation score: 0.976667
+Iteration 29, loss = 0.00091559
+Validation score: 0.977407
+Iteration 30, loss = 0.00075401
+Validation score: 0.977037
+Validation score did not improve more than tol=0.000100 for 8 consecutive epochs. Stopping.
+features mnist_validation mnist28 6000 rejected 0
+features handwriting_validation mnist28 300 rejected 0
+Specialist validation                dataset         source             system    n  rejected  accuracy  f1_macro  precision_macro  recall_macro  predict_and_proba_seconds
+      mnist_validation            all mlp_mnist--mnist28 6000         0  0.973167  0.972961         0.973236       0.97279                   0.060228
+handwriting_validation            all mlp_mnist--mnist28  300         0  0.900000  0.896684         0.911363       0.90000                   0.004084
+handwriting_validation         bhmsds mlp_mnist--mnist28  100         0  0.860000  0.853380         0.883712       0.86000                        NaN
+handwriting_validation bitmap_numbers mlp_mnist--mnist28  100         0  0.850000  0.833128         0.865079       0.85000                        NaN
+handwriting_validation        hwd1000 mlp_mnist--mnist28  100         0  0.990000  0.989975         0.990909       0.99000                        NaN

@@ -1,0 +1,4 @@
+{
+  "reason": "Preserve float64 from the exact app baseline for 8x8 candidates; initial float32 arrays retained as precision diagnostic. All methods replayed uniformly on the same locked validation, before model/test selection.",
+  "selection_or_test_had_started": false
+}

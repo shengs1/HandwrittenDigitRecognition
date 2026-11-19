@@ -1,0 +1,18 @@
+## main...origin/main
+ M AGENTS.md
+ M HANDOFF.md
+ M README.md
+ M app.py
+?? data/
+?? external_preprocessing.py
+?? models/external_optimization_20261118T175401Z_4ca3a08f/
+?? models/external_registry.json
+?? outputs/external_evaluation_20261118T165317Z_7e5a90dc/
+?? outputs/external_optimization_20261118T175401Z_4ca3a08f/
+?? outputs/optimization_freeze_20261119T045133Z_728f35c1/
+?? tests/collect_external_handwriting.py
+?? tests/evaluate_external.py
+?? tests/optimize_external.py
+?? tests/prepare_external_optimization.py
+?? tests/summarize_external_optimization.py
+?? tests/test_external_optimization.py

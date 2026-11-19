@@ -1,0 +1,8 @@
+system,all,bhmsds,bitmap_numbers,hwd1000
+knn--baseline,0.48,0.44,0.38,0.62
+knn--gray_bbox,0.58,0.55,0.48,0.71
+logreg_raw--baseline,0.6333333333333333,0.54,0.55,0.81
+logreg_raw--gray_bbox,0.6466666666666666,0.57,0.55,0.82
+mlp--baseline,0.4966666666666666,0.49,0.35,0.65
+mlp--gray_bbox,0.5333333333333333,0.54,0.41,0.65
+mlp_mnist--mnist28,0.8733333333333333,0.82,0.82,0.98

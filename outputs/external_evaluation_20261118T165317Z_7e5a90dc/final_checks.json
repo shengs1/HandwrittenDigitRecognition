@@ -1,0 +1,18 @@
+{
+  "checked_at_utc": "2026-11-18T17:05:50.485772+00:00",
+  "derived_per_digit_tables_match": true,
+  "high_confidence_counts_match": true,
+  "error_panels_use_predeclared_rule": true,
+  "official_digits_comparison_matches_canonical_csv": true,
+  "protected_count": 332,
+  "protected_files_unchanged": true,
+  "sample_locked_before_inference": true,
+  "script_snapshot_matches_inference_hash": true,
+  "current_script_only_plot_label_changed": true,
+  "all_report_links_valid": true,
+  "six_plot_files_valid": true,
+  "unittest_pass": 43,
+  "unittest_seconds": 7.309,
+  "diff_check_pass": true,
+  "official_selected_model": "knn"
+}

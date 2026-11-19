@@ -1,0 +1,22 @@
+{
+  "samples": 100,
+  "all_input_sizes_28x28": true,
+  "all_crop_boxes_valid": true,
+  "all_dark_background_preserved": true,
+  "processed_shape": [
+    100,
+    8,
+    8
+  ],
+  "processed_dtype": "float64",
+  "all_finite": true,
+  "pixel_min": 0.0,
+  "pixel_max": 15.937254901960785,
+  "minimum_nonzero_pixels": 16,
+  "unique_processed_images": 100,
+  "repeat_equal_count": 100,
+  "polarity_equal_count": 100,
+  "algorithm_changed": false,
+  "objective_fault_detected_in_checks": false,
+  "scope_note": "Contract and repeat/polarity checks plus code/visual review; not proof of optimal MNIST preprocessing."
+}

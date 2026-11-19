@@ -1,0 +1,36 @@
+{
+  "locked_at_utc": "2026-11-18T18:01:14.882480+00:00",
+  "seed": 42,
+  "numpy_version": "2.3.5",
+  "rule": "Per source/digit sorted original path; random choice 20 without replacement; first 10 validation, next 10 test; all before model inference.",
+  "manifest_sha256": "0ce0ba8f07e760e35bae945ba3e7b0e07777d952ccd564b0fa231136d0b768c0",
+  "samples": 600,
+  "per_split": {
+    "validation": 300,
+    "test": 300
+  },
+  "image_bytes_unchanged": true,
+  "writer_grouping_available": false,
+  "grouping_limit": "Selected repositories lack a reliable original writer/sheet mapping. Image-level split; identical decoded content excluded globally; writer independence cannot be claimed.",
+  "inventory_count": 31200,
+  "invalid_count": 0,
+  "duplicate_count": 0,
+  "conflicting_pixel_hashes": 0,
+  "sources": {
+    "bhmsds": {
+      "repository": "wblachowski/bhmsds",
+      "commit": "07d208e41923b061e338c241e59daacdd2752d53",
+      "archive_sha256": "5e109303251854908f361e35bf260ebb30248fa9967bd70d2bf3703df11a5274"
+    },
+    "bitmap_numbers": {
+      "repository": "KentoNishi/Bitmap-Numbers-Dataset",
+      "commit": "b83f099dd981cda1933f27726021594fa6995bb4",
+      "archive_sha256": "f5b0d42412d1a2e0d24a333ee6bdbfdf649a90074021a854a2333e6a5273583b"
+    },
+    "hwd1000": {
+      "repository": "niklashenning/hwd-1000-dataset",
+      "commit": "93b3ba9e45624ee557360229a42298eaa6b3a106",
+      "archive_sha256": "d59d694dba7df20ef95a28f8dfa6c403e97a103773d67b102840157124e60214"
+    }
+  }
+}

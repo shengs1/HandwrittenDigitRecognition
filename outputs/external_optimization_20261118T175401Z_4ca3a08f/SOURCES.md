@@ -1,0 +1,9 @@
+# Ghi công dữ liệu và quyền phân phối bản thực nghiệm
+
+MNIST: Yann LeCun, Corinna Cortes và Christopher J. C. Burges; nguồn [MNIST](http://yann.lecun.com/exdb/mnist/), archive tải HTTPS qua [CVDF mirror](https://github.com/cvdfoundation/mnist). [TensorFlow mô tả giấy phép dữ liệu](https://www.tensorflow.org/api_docs/python/tf/keras/datasets/mnist/load_data) là [Creative Commons Attribution–ShareAlike3.0](https://creativecommons.org/licenses/by-sa/3.0/). URL/MD5/SHA256 từng IDX train/test ở protocol.json; không gán license của TensorFlow/torchvision cho MNIST và không cần cài hai framework này.
+
+Giữ ghi công và CC BY-SA3.0 với archive/pixel MNIST, ảnh trích và ảnh MNIST đã biến đổi trong run này. Thay đổi đã thực hiện: chọn ID theo split/eligibility,crop/grayscale/nền/căn giữa/resize/gộp khối theo external_preprocessing.py; các ảnh trung bình/contact lỗi có ghi nguồn,không là ảnh gốc chưa xử lý. CSVsplit/prediction chỉ mục liên kết về nguồn ảnh. Dữ liệu600 handwriting không dùng làm MNIST train.
+
+Ba nguồn ngoài dùng đúng các commit trong [SOURCES dữ liệu](../../data/external_handwriting/SOURCES.md):BHMSDS (wblachowski,MIT),HwD-1000 (Niklas Henning,MIT),Bitmap Numbers (KentoNishi,bản dẫn xuất ghi tất cả mẫu từ kensanata/numbers,public-domain/CC0). Copyright/permission nguyên văn MIT và README/LICENSE upstream giữ trong provenance/; không bỏ chúng khi phân phối600 ảnh hoặc hình trích/biến đổi. Giới hạn: Bitmap không có mapping từng ảnh về upstream/người viết;quyền sử dụng dựa trên attribution/CC0 công bố của hai repo,không chứng minh toàn bộ chuỗi nguồn gốc mỗi ảnh.
+
+Nhãn và bytes600 ảnh được giữ nguyên;chỉ preview/contact sheet vàđầu vào mô hình được biến đổi. Giấy đã cắt/scan/vẽ tay số không được trình bày như ảnh điện thoại nguyên bản. Không có ảnh người dùng riêng tư trong bản dữ liệu này. Thông báo này áp dụng cho dữ liệu/hình được nêu,không áp một license dữ liệu chung lên toàn bộ mã nguồn dự án.

@@ -1,0 +1,31 @@
+{
+  "laptop": {
+    "docHeight": 768,
+    "horizontalOverflow": 0,
+    "mainClient": 768,
+    "mainHeight": 768,
+    "prediction": "7",
+    "scale": 1,
+    "viewport": [
+      1366,
+      768
+    ]
+  },
+  "smallViewport": {
+    "docHeight": 667,
+    "horizontalOverflow": 0,
+    "mainClient": 667,
+    "mainHeight": 782,
+    "scale": 1,
+    "viewport": [
+      870,
+      667
+    ]
+  },
+  "nativeUploadAccepted": "7-007.png",
+  "predicted": 7,
+  "technicalClippedCells": 0,
+  "sourceSwitchCleared": true,
+  "source": "snapshot Python fresh requirements",
+  "fileChooserAutomationDelaySeconds": 1398
+}

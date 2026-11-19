@@ -1,6 +1,6 @@
 # Dự thảo báo cáo — đúng 10 mục của PDF
 
-**Chưa được nhóm xác nhận; chưa phải bản nộp PDF/DOCX.** Các đoạn dưới để nhóm kiểm tra, sửa và sử dụng. Run chính thức: `20261117T081201Z_fd32180f`. [RESULTS_INDEX](RESULTS_INDEX.md) có bảng đầy đủ, nguồn CSV/JSON, hình và chú thích. Không lấy run hỗ trợ/log kiểm thử làm điểm mô hình.
+**Chưa được nhóm xác nhận; chưa phải bản nộp PDF/DOCX.** Các đoạn dưới để nhóm kiểm tra, sửa và sử dụng. PhầnA chính: Digits run `20261117T081201Z_fd32180f`; phầnB mở rộng: `external_optimization_20261118T175401Z_4ca3a08f`. [RESULTS_INDEX](RESULTS_INDEX.md) có bảng/hình nguồn cho cả hai phần. UI/CODE/EXPERIMENTS FROZEN, tài liệu/thuyết trình đang hoàn thiện. Giữ đúng10 mục dưới, phân biệt A/B trong từng mục; không lấy log kiểm thử làm điểm mô hình.
 
 ## 1. Trang bìa
 
@@ -15,7 +15,7 @@
 
 ## 2. Giới thiệu bài toán và mục tiêu
 
-Bài toán phân lớp có giám sát nhận một ảnh và dự đoán nhãn 0–9. Đồ án dùng Digits 8×8, không dùng MNIST để huấn luyện. Ba mục tiêu là so sánh LR pixel thô với KNN/MLP; kiểm tra chuẩn hóa lên MLP; phân tích lỗi và đánh đổi chi phí/độ chính xác.
+Bài toán phân lớp có giám sát nhận một ảnh và dự đoán nhãn0–9. PhầnA dùng Digits8×8, so LR pixel thô với KNN/MLP, kiểm tra chuẩn hóa, phân tích lỗi và chi phí. PhầnB giữ nguyên ba Pipeline Digits, so preprocessing upload và huấn luyện riêng một MLP MNIST28 để đánh giá giới hạn ảnh ngoài; không thay dataset hoặc mô hình chính của phầnA.
 
 Chọn macro F1 trung bình CV cao nhất, hòa tuyệt đối theo tên tăng dần, trước khi xem test. Macro F1 cho mỗi chữ số vai trò ngang nhau, kết hợp precision/recall; accuracy bổ sung tỷ lệ dự đoán đúng dễ hiểu. Thành công còn gồm tái lập và không rò rỉ, không buộc mạng nơ-ron phải thắng. Phạm vi đã kiểm chứng là ảnh giống Digits, chưa đủ bằng chứng cho ảnh điện thoại.
 
@@ -26,6 +26,8 @@ Chọn macro F1 trung bình CV cao nhất, hòa tuyệt đối theo tên tăng d
 Ba ảnh train id 1747/818/1766 vượt IQR độ sáng (mean 6,671875/6,765625/6,546875). Khi xem trực tiếp, chúng là số 1 nét dày, có 36/39/39 pixel khác 0, không hằng hoặc sai miền. Cờ thống kê không đủ lý do loại; run giữ cả ba. Nhóm cần kiểm tra/xác nhận nhật ký mục 3 notebook, không xem quyết định này là đã được nhóm thông qua.
 
 Chia 1.437 train/360 test, stratify=y, seed=42. Không có ảnh trùng chính xác xuyên train/test hay trong 5 folds. Chèn bảng schema/tỷ lệ thiếu và nhật ký; dẫn data_quality.json, train_image_diagnostics.csv, split_indices.csv, cv_fold_audit.csv trong RESULTS_INDEX.
+
+PhầnB:600 ảnh gốc từ3 nguồn,seed42,300 validation/300 test cân bằng. Chỉ10 ảnh/lớp/nguồn/split, không dùng để train. MNIST train60000 chia54000/6000 stratify/42; loại110 test đã xem trước khi đánh giá9890 còn lại. Ghi license/nguồn/manifest và giới hạn writer/Bitmap; không gọi scan/ảnh giấy đã cắt/ảnh vẽ số là ảnh điện thoại nguyên bản.
 
 ## 4. Khám phá và trực quan hóa
 
@@ -48,6 +50,8 @@ StratifiedKFold(5, shuffle=True, random_state=42). KNN grid k={3,5,7}, weights={
 
 Scaler fit train fold trước khi MLP chia validation nội bộ, nên thấy đặc trưng của phần nội bộ này nhưng không thấy outer validation/test. Early stopping theo accuracy nội bộ, khác CV macro F1. Đo fit cuối bằng clone một lần, predict median 5 lần sau warm-up cùng test, một luồng; tuning và bytes joblib nén mức 3 đo riêng.
 
+PhầnB:7 preprocessing cố định, chọn gray_bbox theo mean macro F1 trên validation300, tăng≥0,02 và KNN F1 không giảm. Một MLP MNIST28 MinMaxScaler→(128,64),relu/adam,alpha0,0001,early stopping; validation ngoài6000 và nội bộ5400 khác nhau. Khóa model/module/lựa chọn trước hai tập test; không chọn theo xác suất mỗi ảnh. Chi phí mở rộng là một batch predict+proba/2 luồng, không đồng nhất cách đo với phầnA.
+
 ## 6. Kết quả và so sánh với baseline
 
 Chèn bảng đầy đủ RESULTS_INDEX mục 2–5: precision/recall/F1, CV mean/std, cấu hình, scaling và chi phí. Tóm tắt:
@@ -64,6 +68,8 @@ MLP StandardScaler có CV F1 94,3452%→ 96,2365%: +1,8913 điểm phần trăm,
 
 KNN fit nhanh nhất (0,003107 s), predict chậm nhất (0,004730 s/360 ảnh). LR predict nhanh nhất (0,000798 s), nhỏ nhất (5.935 byte). MLP fit 0,279319 s, tuning 4,231378 s, chưa có lợi thế điểm số. Baseline tuning=0 vẫn có CV. Timing cùng máy/một luồng và fit một lần không bảo đảm thứ hạng tốc độ trên mọi máy/dataset.
 
+PhầnB chèn bảng7 hệ thống từ RESULTS_INDEX mục11, báo riêng MNIST9890 và ngoài300. MLP28 đúng9632/9890 (97,3913%,F1 0,973773),262/300 (87,3333%,F1 0,871326); BHMSDS82/100,Bitmap82/100,HwD98/100. KNN cũ48%→gray_bbox58% trên cùng300 ảnh. MLP28 fit23,895571s,30 iterations,1221502byte. Không dùng score mới thay KNN CV/Digits và không gộp accuracy các dataset.
+
 ## 7. Phân tích lỗi và giới hạn
 
 Chèn 3 confusion matrices, bảng cặp có hướng, vài ảnh sai, learning curve và MLP history. LR/KNN/MLP sai 15/12/14 ảnh; 8→ 1 nhiều nhất ở cả ba (4/3/3), KNN còn 4→ 7 hai lần. Ảnh 1553 (8→ 1) nét dọc nổi bật/vòng dưới kém rõ; 1022 (4→ 7) có nét ngang/chéo rõ; 1100 (9→ 8) vùng dưới có nét cong. Đây là giả thuyết trực quan, không chứng minh nguyên nhân quyết định của model. Không sửa nhãn hay xóa ảnh khó.
@@ -72,15 +78,19 @@ Tăng train/fold 229→ 1.149, validation F1 tăng cả ba. Gap cuối LR/KNN/ML
 
 Giới hạn: dataset nhỏ/8×8, chia ngẫu nhiên chưa bảo đảm tách người viết, CV có thiên lệch lựa chọn, xác suất chưa hiệu chỉnh. Mỗi model đúng 3/10 MNIST đã thử; 10 mẫu không đại diện ảnh ngoài và không dùng tuning. Chưa có ảnh tự chụp nhóm. Hướng sau: thu ảnh thật có nhãn, chốt quy trình trước và dùng tập ngoài mới độc lập; không đổi run hiện tại theo test.
 
+PhầnB chèn confusion theo nguồn/chữ số và ảnh lỗi trước/sau; giữ38 ảnh sai. Thống kê train/validation cho thấy khác độ sáng/tỷ lệ nét/vị trí,8×8 có thể mất chi tiết; đây là mô tả và giả thuyết, chưa tách hiệu ứng nhân quả. MLP28 đổi cả dữ liệu/lượng mẫu/kiến trúc/resolution. Test độc lập với bước lựa chọn ở mức ảnh, **chưa xác nhận độc lập người viết**, chưa có ảnh tự chụp. Bitmap chưa khôi phục được mapping từng ảnh upstream. Không dùng38 lỗi hoặc9890 test để tuning tiếp.
+
 ## 8. Triển khai (tùy chọn)
 
-Streamlit tiếng Việt chỉ load Pipeline qua registry/checksum, không fit. Chọn 3 model, mẫu toàn bộ Digits, mẫu test đúng split đã lưu hoặc upload. Mẫu Digits giữ nguyên pixel. Upload: EXIF → alpha/grayscale → nhận biết nền → nét sáng → crop → giữ tỷ lệ/căn giữa → 8×8/0–16. Flatten theo hàng, scaler chỉ trong Pipeline.
+Streamlit tiếng Việt chỉ load Pipeline qua registry/checksum, không fit. Hai nguồn Digits dùng3 model chính/pixel gốc. Upload dùng gray_bbox8×8/0–16 cho model Digits hoặc lựa chọn rõ MLP — MNIST (ảnh ngoài),mnist28/0–255/784 đặc trưng. Flatten theo hàng, scaler chỉ trong Pipeline. Ba thẻ thống kê vẫn là Digits, không tự chọn model theo confidence.
 
-Giao diện có ảnh gốc/8×8, dự đoán và xác suất 10 lớp chưa hiệu chỉnh. File trống/hỏng/quá lớn, thiếu registry/model/split báo lỗi, không tự train. Chèn screenshot thật và log kiểm thử cuối. Kiểm thử tương đương dùng train; giữ preprocessing vì chưa phát hiện lỗi khách quan, không sửa theo 10 MNIST.
+Giao diện có ảnh gốc/preview đúng8×8 hoặc28×28, dự đoán và xác suất10 lớp chưa hiệu chỉnh. File trống/hỏng/quá lớn, thiếu registry/model/split báo lỗi, không tự train. Chèn screenshot/53 unittest venv mới và ma trận14 chức năng+8 lỗi model ở lần freeze. Giữ baseline ảnh cũ để đối chứng; upload mới được chọn bằng validation riêng, không điều chỉnh từ10 MNIST cũ hay test đã xem.
 
 ## 9. Kết luận
 
 Đồ án có quy trình tái lập, 6 EDA, baseline và hai model Pipeline, scaling/CV/grid/lỗi/curves/demo. KNN được chọn bằng CV F1 97,6170%, accuracy test 96,6667%. LR nhẹ/nhanh khi predict; MLP chưa có lợi thế tổng thể. Chuẩn hóa giúp MLP trong đối chứng CV. Lỗi8→ 1 đáng chú ý; ảnh ngoài còn hạn chế, không cam kết mọi ảnh thực tế. Chưa xác định epoch quá khớp chính xác. Đối chiếu 5 câu trả lời cuối notebook trước chốt.
+
+PhầnB cải thiện nhận diện trong các tập ngoài đã kiểm bằng gray_bbox và MLP MNIST28; không thay kết luận chọn KNN của phầnA. Giữ bản tối ưu đã duyệt, không tiếp tục tuning; nhóm xác nhận diễn giải và kiểm ảnh tự chụp bằng app theo README trước buổi bảo vệ.
 
 ## 10. Phân công công việc, tài liệu tham khảo; phụ lục
 

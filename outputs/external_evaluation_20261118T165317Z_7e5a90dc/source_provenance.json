@@ -1,0 +1,33 @@
+{
+  "authors": [
+    "Yann LeCun",
+    "Corinna Cortes",
+    "Christopher J. C. Burges"
+  ],
+  "dataset": "MNIST official test split, original IDX 0-based indices",
+  "mirror_page": "https://github.com/cvdfoundation/mnist",
+  "original_homepage": "http://yann.lecun.com/exdb/mnist/",
+  "checksum_reference": "https://github.com/pytorch/vision/blob/main/torchvision/datasets/mnist.py",
+  "documentation": "https://www.tensorflow.org/api_docs/python/tf/keras/datasets/mnist/load_data",
+  "license_as_documented_by_tensorflow": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "modifications": "Subset extraction as lossless PNG; derived 8x8 copies from unchanged app preprocessing.",
+  "downloads": {
+    "t10k-images-idx3-ubyte.gz": {
+      "url": "https://storage.googleapis.com/cvdf-datasets/mnist/t10k-images-idx3-ubyte.gz",
+      "http_status": 200,
+      "downloaded_at_utc": "2026-11-18T16:53:20.203431+00:00",
+      "bytes": 1648877,
+      "md5": "9fb629c4189551a2d022fa330f9573f3",
+      "sha256": "8d422c7b0a1c1c79245a5bcf07fe86e33eeafee792b84584aec276f5a2dbc4e6"
+    },
+    "t10k-labels-idx1-ubyte.gz": {
+      "url": "https://storage.googleapis.com/cvdf-datasets/mnist/t10k-labels-idx1-ubyte.gz",
+      "http_status": 200,
+      "downloaded_at_utc": "2026-11-18T16:53:20.417793+00:00",
+      "bytes": 4542,
+      "md5": "ec29112dd5afa0611ce80d1b7f02629c",
+      "sha256": "f7ae60f92e00ec6debd23a6088c31dbd2371eca3ffa0defaefb259924204aec6"
+    }
+  }
+}

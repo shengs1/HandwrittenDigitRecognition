@@ -1,0 +1,29 @@
+2026-11-19 01:09:41.157 WARNING streamlit.runtime.caching.cache_data_api: No runtime found, using MemoryCacheStorageManager
+features mnist_validation baseline 6000 rejected 0
+mnist_validation baseline [{'source': 'all', 'system': 'logreg_raw--baseline', 'accuracy': 0.44266666666666665, 'f1_macro': 0.44927200200880046}, {'source': 'all', 'system': 'knn--baseline', 'accuracy': 0.4025, 'f1_macro': 0.41066009265454273}, {'source': 'all', 'system': 'mlp--baseline', 'accuracy': 0.3456666666666667, 'f1_macro': 0.35518950256252235}]
+features mnist_validation gray_bbox 6000 rejected 0
+mnist_validation gray_bbox [{'source': 'all', 'system': 'logreg_raw--gray_bbox', 'accuracy': 0.4708333333333333, 'f1_macro': 0.4755298124727573}, {'source': 'all', 'system': 'knn--gray_bbox', 'accuracy': 0.44916666666666666, 'f1_macro': 0.4523985871285657}, {'source': 'all', 'system': 'mlp--gray_bbox', 'accuracy': 0.39166666666666666, 'f1_macro': 0.40337624651270476}]
+features mnist_validation gray_com 6000 rejected 0
+mnist_validation gray_com [{'source': 'all', 'system': 'logreg_raw--gray_com', 'accuracy': 0.4483333333333333, 'f1_macro': 0.45661746472881}, {'source': 'all', 'system': 'knn--gray_com', 'accuracy': 0.4068333333333333, 'f1_macro': 0.41674565923007423}, {'source': 'all', 'system': 'mlp--gray_com', 'accuracy': 0.3501666666666667, 'f1_macro': 0.3615636996129398}]
+features mnist_validation binary35 6000 rejected 0
+mnist_validation binary35 [{'source': 'all', 'system': 'logreg_raw--binary35', 'accuracy': 0.44816666666666666, 'f1_macro': 0.45594353438085855}, {'source': 'all', 'system': 'knn--binary35', 'accuracy': 0.3925, 'f1_macro': 0.4025158371353319}, {'source': 'all', 'system': 'mlp--binary35', 'accuracy': 0.36583333333333334, 'f1_macro': 0.37759218020584007}]
+features mnist_validation binary50 6000 rejected 0
+mnist_validation binary50 [{'source': 'all', 'system': 'logreg_raw--binary50', 'accuracy': 0.44316666666666665, 'f1_macro': 0.44970277765431577}, {'source': 'all', 'system': 'knn--binary50', 'accuracy': 0.41333333333333333, 'f1_macro': 0.42225147550427167}, {'source': 'all', 'system': 'mlp--binary50', 'accuracy': 0.35883333333333334, 'f1_macro': 0.3687768169075412}]
+features mnist_validation binary35_thick 6000 rejected 0
+mnist_validation binary35_thick [{'source': 'all', 'system': 'logreg_raw--binary35_thick', 'accuracy': 0.447, 'f1_macro': 0.4571466722353703}, {'source': 'all', 'system': 'knn--binary35_thick', 'accuracy': 0.27516666666666667, 'f1_macro': 0.26906704039144286}, {'source': 'all', 'system': 'mlp--binary35_thick', 'accuracy': 0.31616666666666665, 'f1_macro': 0.3160443108893906}]
+features mnist_validation gray_wide 6000 rejected 0
+mnist_validation gray_wide [{'source': 'all', 'system': 'logreg_raw--gray_wide', 'accuracy': 0.5153333333333333, 'f1_macro': 0.5175492143273963}, {'source': 'all', 'system': 'knn--gray_wide', 'accuracy': 0.36966666666666664, 'f1_macro': 0.37907225227094565}, {'source': 'all', 'system': 'mlp--gray_wide', 'accuracy': 0.3468333333333333, 'f1_macro': 0.3515825806261877}]
+features handwriting_validation baseline 300 rejected 0
+handwriting_validation baseline [{'source': 'bhmsds', 'system': 'mlp--baseline', 'accuracy': 0.39, 'f1_macro': 0.3509082562791003}, {'source': 'bitmap_numbers', 'system': 'mlp--baseline', 'accuracy': 0.29, 'f1_macro': 0.24593550808384568}, {'source': 'hwd1000', 'system': 'mlp--baseline', 'accuracy': 0.6, 'f1_macro': 0.578047409916975}]
+features handwriting_validation gray_bbox 300 rejected 0
+handwriting_validation gray_bbox [{'source': 'bhmsds', 'system': 'mlp--gray_bbox', 'accuracy': 0.54, 'f1_macro': 0.5355683465977583}, {'source': 'bitmap_numbers', 'system': 'mlp--gray_bbox', 'accuracy': 0.36, 'f1_macro': 0.36935371852090115}, {'source': 'hwd1000', 'system': 'mlp--gray_bbox', 'accuracy': 0.68, 'f1_macro': 0.671589929678165}]
+features handwriting_validation gray_com 300 rejected 0
+handwriting_validation gray_com [{'source': 'bhmsds', 'system': 'mlp--gray_com', 'accuracy': 0.4, 'f1_macro': 0.35643279015156903}, {'source': 'bitmap_numbers', 'system': 'mlp--gray_com', 'accuracy': 0.35, 'f1_macro': 0.34075672693319753}, {'source': 'hwd1000', 'system': 'mlp--gray_com', 'accuracy': 0.59, 'f1_macro': 0.5664158064158064}]
+features handwriting_validation binary35 300 rejected 0
+handwriting_validation binary35 [{'source': 'bhmsds', 'system': 'mlp--binary35', 'accuracy': 0.42, 'f1_macro': 0.39422330100228153}, {'source': 'bitmap_numbers', 'system': 'mlp--binary35', 'accuracy': 0.34, 'f1_macro': 0.33636606817381565}, {'source': 'hwd1000', 'system': 'mlp--binary35', 'accuracy': 0.62, 'f1_macro': 0.6122807017543859}]
+features handwriting_validation binary50 300 rejected 0
+handwriting_validation binary50 [{'source': 'bhmsds', 'system': 'mlp--binary50', 'accuracy': 0.42, 'f1_macro': 0.3862703217498614}, {'source': 'bitmap_numbers', 'system': 'mlp--binary50', 'accuracy': 0.33, 'f1_macro': 0.3277527384975999}, {'source': 'hwd1000', 'system': 'mlp--binary50', 'accuracy': 0.6, 'f1_macro': 0.5871417840789657}]
+features handwriting_validation binary35_thick 300 rejected 0
+handwriting_validation binary35_thick [{'source': 'bhmsds', 'system': 'mlp--binary35_thick', 'accuracy': 0.27, 'f1_macro': 0.24267784846732215}, {'source': 'bitmap_numbers', 'system': 'mlp--binary35_thick', 'accuracy': 0.36, 'f1_macro': 0.3449898322295955}, {'source': 'hwd1000', 'system': 'mlp--binary35_thick', 'accuracy': 0.43, 'f1_macro': 0.4185045874841271}]
+features handwriting_validation gray_wide 300 rejected 0
+handwriting_validation gray_wide [{'source': 'bhmsds', 'system': 'mlp--gray_wide', 'accuracy': 0.38, 'f1_macro': 0.3382925407925408}, {'source': 'bitmap_numbers', 'system': 'mlp--gray_wide', 'accuracy': 0.39, 'f1_macro': 0.35796962796962795}, {'source': 'hwd1000', 'system': 'mlp--gray_wide', 'accuracy': 0.53, 'f1_macro': 0.4964957264957265}]

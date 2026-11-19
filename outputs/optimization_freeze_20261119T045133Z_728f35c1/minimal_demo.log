@@ -1,0 +1,4 @@
+MINIMAL_DEMO_PASS: Digits0 and uploadMNIST7; no dataset/cache/download/fit
+2026-11-19 12:01:26.568 WARNING streamlit.runtime.caching.cache_data_api: No runtime found, using MemoryCacheStorageManager
+2026-11-19 12:01:26.571 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-19 12:01:27.797 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.

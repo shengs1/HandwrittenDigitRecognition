@@ -1,0 +1,11 @@
+{
+  "seconds": 0.3256139000004623,
+  "n": 300,
+  "shape": [
+    300,
+    784
+  ],
+  "dtype": "float32",
+  "rejections": [],
+  "preprocessing_module_sha256": "51a87adb661b5e54e931674416db1bbad6cb06f342c804497f388ec831f56443"
+}

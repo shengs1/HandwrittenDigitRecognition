@@ -1,0 +1,20 @@
+{
+  "at_utc": "2026-11-19T05:33:41.681418+00:00",
+  "protected_files_unchanged": 583,
+  "external_images_unchanged": 600,
+  "authorized_documentation_changes": [
+    "docs/REPORT_OUTLINE.md",
+    "docs/RESULTS_INDEX.md",
+    "docs/SLIDE_OUTLINE.md",
+    "docs/VIVA_QUESTIONS.md"
+  ],
+  "external_split_counts_correct": true,
+  "metrics_rows_recomputed": 35,
+  "official_digits_model": "knn",
+  "app_test_predictions_replayed": 1200,
+  "frozen_css_unchanged": true,
+  "original_preprocessing_ast_unchanged": true,
+  "active_app_registry_matches_run": true,
+  "per_class_reports_and_error_lists_verified": true,
+  "test_started_after_lock": true
+}

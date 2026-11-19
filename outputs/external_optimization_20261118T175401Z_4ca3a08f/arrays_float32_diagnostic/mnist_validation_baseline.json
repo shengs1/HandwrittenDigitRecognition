@@ -1,0 +1,10 @@
+{
+  "seconds": 5.664246799991815,
+  "n": 6000,
+  "shape": [
+    6000,
+    64
+  ],
+  "rejections": [],
+  "preprocessing_module_sha256": "51a87adb661b5e54e931674416db1bbad6cb06f342c804497f388ec831f56443"
+}
