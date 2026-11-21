@@ -19,10 +19,10 @@ from external_preprocessing import preprocess_external_image
 
 ROOT = Path(__file__).resolve().parent
 MODEL_DIR = ROOT / "models"
-MODEL_NAMES = {"logreg_raw": "Logistic Regression — pixel thô", "knn": "K láng giềng gần nhất (KNN)",
-               "mlp": "Mạng nơ-ron nhiều lớp (MLP)"}
+MODEL_NAMES = {"logreg_raw": "Logistic Regression", "knn": "K-Nearest Neighbors (KNN)",
+               "mlp": "Multilayer Perceptron (MLP)"}
 MODEL_SHORT_NAMES = {"logreg_raw": "Logistic Regression", "knn": "KNN", "mlp": "MLP"}
-EXTERNAL_MODEL_NAME = "MLP — MNIST (ảnh ngoài)"
+EXTERNAL_MODEL_NAME = "Multilayer Perceptron (MLP) — MNIST"
 MODEL_SHORT_NAMES["mlp_mnist"] = "MLP · MNIST"
 BACKGROUND_OPTIONS = ["Tự động", "Nền sáng, nét tối", "Nền tối, nét sáng"]
 MAX_FILE_BYTES = 10 * 1024 * 1024
@@ -34,7 +34,7 @@ def read_model_registry(model_dir=None):
     model_dir = Path(model_dir) if model_dir is not None else MODEL_DIR
     path = model_dir / "registry.json"
     if not path.is_file():
-        raise FileNotFoundError("Chưa có models/registry.json. Cần xuất Pipeline từ notebook trước khi dự đoán.")
+        raise FileNotFoundError("Chưa có danh sách mô hình đã lưu (models/registry.json). Hãy khôi phục bộ mô hình của dự án.")
     try:
         registry = json.loads(path.read_text(encoding="utf-8"))
     except (ValueError, OSError) as exc:
@@ -63,7 +63,7 @@ def load_saved_pipeline(path_text, expected_sha256, modified_ns, file_size, expe
     """Cache theo file/hash/mtime/size; chỉ load artifact local tin cậy của project."""
     path = Path(path_text)
     if not path.is_file():
-        raise FileNotFoundError("Thiếu file Pipeline đã chọn. Khôi phục đúng bộ models/ đã xuất.")
+        raise FileNotFoundError("Thiếu tệp mô hình đã chọn. Khôi phục đúng thư mục models/ đã lưu.")
     if hashlib.sha256(path.read_bytes()).hexdigest() != expected_sha256:
         raise ValueError("File mô hình không khớp mã kiểm tra trong registry. Không sử dụng file này.")
     with warnings.catch_warnings():
@@ -72,12 +72,12 @@ def load_saved_pipeline(path_text, expected_sha256, modified_ns, file_size, expe
         warnings.simplefilter("error", InconsistentVersionWarning)
         pipeline = joblib.load(path)
     if not isinstance(pipeline, Pipeline) or not callable(getattr(pipeline, "predict_proba", None)):
-        raise ValueError("File phải chứa toàn bộ Pipeline có predict_proba.")
+        raise ValueError("Tệp mô hình phải chứa đầy đủ chuỗi xử lý và hỗ trợ dự đoán xác suất.")
     check_is_fitted(pipeline)
     classifier = pipeline.steps[-1][1]
     # sklearn 1.7 không chuyển tiếp n_features_in_ qua bước đầu là chuỗi passthrough.
     if expected_features not in {64, 784} or getattr(classifier, "n_features_in_", None) != expected_features or not np.array_equal(pipeline.classes_, np.arange(10)):
-        raise ValueError(f"Pipeline phải nhận {expected_features} pixel và phân loại đủ các nhãn 0–9.")
+        raise ValueError(f"Mô hình phải nhận {expected_features} điểm ảnh và phân loại đủ các nhãn 0–9.")
     return pipeline
 
 
@@ -98,15 +98,15 @@ def read_external_registry(model_dir=None):
         raise ValueError("Mã tiền xử lý ảnh ngoài không khớp bản đã đánh giá.")
     lock = json.loads(lock_path.read_text(encoding="utf-8"))
     if config["shared_variant"] != lock["shared_variant"] or config["specialist_enabled"] != lock["specialist_upload_option"]:
-        raise ValueError("Cấu hình upload khác quyết định validation.")
+        raise ValueError("Cấu hình ảnh tải lên khác lựa chọn từ tập xác thực.")
     entry = config["specialist"]
     selected_specialist = next((item for item in lock["evaluation_systems"] if item["model"] == "mlp_mnist"), None)
     if (not selected_specialist or entry["sha256"] != selected_specialist["sha256"]
             or config["preprocessing_module_sha256"] != lock["preprocessing_module_sha256"]):
-        raise ValueError("Mô hình hoặc tiền xử lý khác artifact đã khóa bằng validation.")
+        raise ValueError("Mô hình hoặc tiền xử lý khác phiên bản đã khóa bằng tập xác thực.")
     candidate = (model_dir / entry["path"]).resolve()
     if not candidate.is_relative_to(model_dir.resolve()) or candidate.suffix != ".joblib" or entry["input_features"] != 784:
-        raise ValueError("Đường dẫn/shape mô hình MNIST không hợp lệ.")
+        raise ValueError("Đường dẫn hoặc kích thước đầu vào của mô hình MNIST không hợp lệ.")
     return config
 
 
@@ -224,10 +224,10 @@ def saved_test_indices(registry):
     """Đọc đúng split của run trong registry; không chia lại hoặc chọn theo kết quả dự đoán."""
     run_id = registry.get("run_id", "") if registry else ""
     if not isinstance(run_id, str) or not run_id or any(c not in "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_" for c in run_id):
-        raise ValueError("Thiếu mã run hợp lệ để đọc tập test.")
+        raise ValueError("Thiếu mã thực nghiệm hợp lệ để đọc tập kiểm tra.")
     path = ROOT / "outputs" / run_id / "split_indices.csv"
     if not path.is_file():
-        raise FileNotFoundError("Thiếu split_indices.csv của run đã lưu. Không tự chia lại tập test.")
+        raise FileNotFoundError("Thiếu tệp split_indices.csv của lần thực nghiệm đã lưu. Không tự chia lại tập kiểm tra.")
     try:
         split = pd.read_csv(path)
         indices = split["sample_index"].to_numpy()
@@ -236,9 +236,9 @@ def saved_test_indices(registry):
                  and split["split"].isin(["train", "test"]).all()
                  and int((split["split"] == "test").sum()) == 360)
     except (KeyError, ValueError, OSError) as exc:
-        raise ValueError("Không đọc được split Digits đã lưu.") from exc
+        raise ValueError("Không đọc được cách chia dữ liệu Digits đã lưu.") from exc
     if not valid:
-        raise ValueError("Split đã lưu không đúng cấu trúc Digits 1.437 train / 360 test.")
+        raise ValueError("Cách chia đã lưu không đúng cấu trúc Digits: 1.437 ảnh huấn luyện và 360 ảnh kiểm tra.")
     return indices[split["split"].to_numpy() == "test"]
 
 
@@ -267,15 +267,15 @@ def model_parameter_rows(pipeline):
     classifier = pipeline.steps[-1][1]
     params = classifier.get_params(deep=False)
     class_name = type(classifier).__name__
-    algorithms = {"KNeighborsClassifier": "K-Nearest Neighbors", "MLPClassifier": "MLP",
+    algorithms = {"KNeighborsClassifier": "K-Nearest Neighbors (KNN)", "MLPClassifier": "Multilayer Perceptron (MLP)",
                   "LogisticRegression": "Logistic Regression"}
     rows = [("Thuật toán", algorithms.get(class_name, class_name))]
     fields = {"KNeighborsClassifier": [("Số láng giềng", "n_neighbors"), ("Trọng số", "weights"),
-                                       ("Metric khoảng cách", "metric"), ("Bậc khoảng cách (p)", "p")],
-              "MLPClassifier": [("Kiến trúc lớp ẩn", "hidden_layer_sizes"), ("Activation", "activation"),
-                                ("Optimizer / solver", "solver"), ("Alpha", "alpha"),
-                                ("Early stopping", "early_stopping"), ("Số vòng lặp tối đa", "max_iter")],
-              "LogisticRegression": [("C", "C"), ("Solver", "solver"), ("Penalty", "penalty"),
+                                       ("Độ đo khoảng cách", "metric"), ("Bậc khoảng cách (p)", "p")],
+              "MLPClassifier": [("Kiến trúc lớp ẩn", "hidden_layer_sizes"), ("Hàm kích hoạt", "activation"),
+                                ("Thuật toán tối ưu", "solver"), ("Hệ số phạt (alpha)", "alpha"),
+                                ("Dừng sớm", "early_stopping"), ("Số vòng lặp tối đa", "max_iter")],
+              "LogisticRegression": [("C", "C"), ("Thuật toán tối ưu", "solver"), ("Dạng phạt", "penalty"),
                                      ("Số vòng lặp tối đa", "max_iter")]}
     for label, key in fields.get(class_name, []):
         value = params[key]
@@ -284,11 +284,11 @@ def model_parameter_rows(pipeline):
         elif isinstance(value, bool):
             value = "Có" if value else "Không"
         elif key == "weights" and isinstance(value, str):
-            value = value.capitalize()
+            value = {"uniform": "Đồng đều", "distance": "Theo khoảng cách"}.get(value, value)
         rows.append((label, str(value)))
     scale = pipeline.named_steps.get("scale")
     raw = scale is None or isinstance(scale, str) and scale == "passthrough"
-    rows.append(("Chuẩn hóa", "Không chuẩn hóa · pixel thô" if raw else type(scale).__name__))
+    rows.append(("Chuẩn hóa", "Không chuẩn hóa · điểm ảnh thô" if raw else type(scale).__name__))
     return rows
 
 
@@ -309,29 +309,32 @@ def technical_information_html(summary, parameter_rows):
         shape = "×".join(str(value) for value in summary["image_shape"])
         features = str(summary["n_features"])
         pixel_range = f'{summary["pixel_min"]:g}–{summary["pixel_max"]:g}'
-        dataset_rows = [("Dataset", summary.get("dataset_name", "Digits · scikit-learn")), ("Số lượng mẫu", f'{summary["n_samples"]:,}'.replace(",", ".")),
-                        ("Kích thước ảnh", shape), ("Số đặc trưng", features), ("Miền pixel", pixel_range)]
+        dataset_name = summary.get("dataset_name", "Digits · scikit-learn")
+        if dataset_name == "MNIST train":
+            dataset_name = "MNIST (tập huấn luyện)"
+        dataset_rows = [("Bộ dữ liệu", dataset_name), ("Số lượng mẫu", f'{summary["n_samples"]:,}'.replace(",", ".")),
+                        ("Kích thước ảnh", shape), ("Số đặc trưng", features), ("Miền điểm ảnh", pixel_range)]
         data_html = table(dataset_rows, "Thông tin dữ liệu")
-        flow = (f'Ảnh upload → Grayscale và xử lý nền → Crop, giữ tỷ lệ và căn giữa → Resize {shape} '
-                f'({pixel_range}) → Vector {features} pixel theo hàng → Pipeline → Kết quả dự đoán')
-        digits_note = (f'Ảnh mẫu/test Digits giữ nguyên {features} pixel gốc, không crop hoặc resize lại. '
-                       'Mẫu test lấy từ split đã lưu; minh họa sau khi xem test không phải đánh giá độc lập mới.')
+        flow = (f'Ảnh tải lên → Chuyển thang xám và xử lý nền → Cắt vùng chữ, giữ tỷ lệ và căn giữa → Đổi kích thước {shape} '
+                f'({pixel_range}) → {features} điểm ảnh theo hàng → Chuỗi xử lý và mô hình → Kết quả dự đoán')
+        digits_note = (f'Ảnh mẫu và ảnh kiểm tra Digits giữ nguyên {features} điểm ảnh gốc, không cắt hoặc đổi kích thước lại. '
+                       'Ảnh kiểm tra lấy từ cách chia đã lưu; minh họa sau khi xem tập kiểm tra không phải đánh giá độc lập mới.')
         if summary.get("dataset_name"):
-            digits_note = ('Mô hình MNIST chỉ dùng cho ảnh upload. Ảnh mẫu/test Digits tiếp tục dùng ba Pipeline 8×8 chính thức. '
-                           'Số mẫu trên là phần MNIST train thực sự dùng để fit, không gồm validation ngoài.')
+            digits_note = ('Mô hình MNIST chỉ dùng cho ảnh tải lên. Ảnh mẫu và ảnh kiểm tra Digits tiếp tục dùng ba mô hình 8×8 chính thức. '
+                           'Số mẫu trên là phần MNIST thực sự dùng để huấn luyện, không gồm tập xác thực bên ngoài.')
     else:
-        data_html = '<p>Chưa đọc được metadata dữ liệu.</p>'
-        flow = 'Chưa có thông tin kích thước đầu vào từ metadata.'
-        digits_note = 'Ảnh mẫu/test Digits giữ nguyên pixel gốc.'
+        data_html = '<p>Chưa đọc được thông tin dữ liệu đã lưu.</p>'
+        flow = 'Chưa đọc được thông tin kích thước đầu vào.'
+        digits_note = 'Ảnh mẫu và ảnh kiểm tra Digits giữ nguyên điểm ảnh gốc.'
     parameters_html = (table(parameter_rows, "Cấu hình mô hình đang chọn") if parameter_rows else
-                       '<p>Chưa đọc được Pipeline đang chọn. Kiểm tra file mô hình và phiên bản thư viện.</p>')
-    limits_text = MODEL_LIMITS_TEXT.replace("Digits", summary["dataset_name"]) if summary and summary.get("dataset_name") else MODEL_LIMITS_TEXT
+                       '<p>Chưa đọc được cấu hình mô hình đang chọn. Kiểm tra tệp mô hình và phiên bản thư viện.</p>')
+    limits_text = MODEL_LIMITS_TEXT.replace("Digits", dataset_name) if summary and summary.get("dataset_name") else MODEL_LIMITS_TEXT
     return ('<div class="technical-info"><section class="technical-group"><h3>Thông tin dữ liệu</h3>'
             + data_html + '</section><section class="technical-group"><h3>Cấu hình mô hình</h3>'
             + parameters_html + '</section><section class="technical-group wide"><h3>Quy trình xử lý ảnh</h3>'
             + f'<div class="technical-flow">{escape(flow)}</div><p>{escape(digits_note)}</p>'
-            + '<p>Ảnh upload còn được xử lý hướng EXIF và ghép alpha trước grayscale. '
-              'Scaler của mô hình chỉ thực hiện bên trong Pipeline, không áp dụng scaler hai lần.</p></section>'
+            + '<p>Ảnh tải lên còn được xoay theo thông tin hướng ảnh và ghép nền cho vùng trong suốt trước khi chuyển thang xám. '
+              'Bộ chuẩn hóa chỉ chạy trong chuỗi xử lý của mô hình, không chuẩn hóa hai lần.</p></section>'
             + '<section class="technical-group wide technical-limits"><h3>Giới hạn mô hình</h3>'
             + f'<p>{escape(limits_text)}</p></section></div>')
 
@@ -534,16 +537,16 @@ def main():
         files_present = registry and all((MODEL_DIR / item["path"]).is_file() for item in registry["models"].values())
         status = "Mô hình đã lưu" if files_present else "Thiếu mô hình"
         st.markdown(f'<header class="demo-header"><div class="brand"><div class="brand-icon">{SCAN_ICON}</div>'
-                    '<div><h1>Nhận diện chữ số viết tay</h1><p>Handwritten Digit Recognition · Đề tài 13</p></div></div>'
+                    '<div><h1>Nhận diện chữ số viết tay</h1><p>Ứng dụng minh họa · Đề tài 13</p></div></div>'
                     f'<span class="status-pill {"" if files_present else "offline"}"><span class="status-dot"></span>{status}</span></header>',
                     unsafe_allow_html=True)
         if summary:
             best_name = MODEL_SHORT_NAMES[summary["selected_model"]]
-            cards = [("Dataset Digits", f'{summary["n_samples"]:,} ảnh'.replace(",", ".")),
-                     ("Mô hình tốt nhất theo CV", best_name),
-                     (f"Accuracy test · {best_name}", f'{summary["accuracy"]:.2%}'.replace(".", ","))]
+            cards = [("Bộ dữ liệu Digits", f'{summary["n_samples"]:,} ảnh'.replace(",", ".")),
+                     ("Tốt nhất qua kiểm định chéo", best_name),
+                     (f"Độ chính xác kiểm tra · {best_name}", f'{summary["accuracy"]:.2%}'.replace(".", ","))]
         else:
-            cards = [("Dataset Digits", "—"), ("Mô hình tốt nhất theo CV", "—"), ("Accuracy test", "—")]
+            cards = [("Bộ dữ liệu Digits", "—"), ("Tốt nhất qua kiểm định chéo", "—"), ("Độ chính xác kiểm tra", "—")]
         st.markdown('<div class="overview">' + ''.join(
             f'<div class="overview-card"><div class="overview-label">{escape(label)}</div>'
             f'<div class="overview-value">{escape(value)}</div></div>' for label, value in cards) + '</div>', unsafe_allow_html=True)
@@ -563,16 +566,17 @@ def main():
                 model_name = st.selectbox("Mô hình phân loại", options, index=options.index(registry["selected_model"]),
                     format_func=lambda name: MODEL_NAMES.get(name, EXTERNAL_MODEL_NAME), key="model") if options else None
                 if not options:
-                    st.selectbox("Mô hình phân loại", ["Chưa có Pipeline đã lưu"], disabled=True)
+                    st.selectbox("Mô hình phân loại", ["Chưa có mô hình đã lưu"], disabled=True)
             with source_column:
                 source = st.selectbox("Nguồn ảnh", ["Ảnh test Digits", "Ảnh mẫu Digits", "Tải ảnh từ máy"],
-                                      index=0 if registry else 1, key="source")
+                                      index=0 if registry else 1, key="source",
+                                      format_func=lambda value: "Ảnh kiểm tra Digits" if value == "Ảnh test Digits" else value)
 
         with st.container(key="workspace"):
             left, right = st.columns(2, gap="medium")
             side, pixel_maximum = (28, 255) if model_name == "mlp_mnist" else (8, 16)
             with left:
-                st.markdown(f'<div class="section-heading"><h2>Ảnh đầu vào</h2><span>{side} × {side} pixel · 0–{pixel_maximum}</span></div>', unsafe_allow_html=True)
+                st.markdown(f'<div class="section-heading"><h2>Ảnh đầu vào</h2><span>{side} × {side} điểm ảnh · 0–{pixel_maximum}</span></div>', unsafe_allow_html=True)
                 pixels, original, actual_label, info = None, None, None, {}
                 image_meta, upload_data, index, background = "", None, None, None
                 if source in {"Ảnh mẫu Digits", "Ảnh test Digits"}:
@@ -585,12 +589,12 @@ def main():
                             label = label_column.selectbox("Chữ số mẫu", list(range(10)), key="sample_label")
                             indices = available[labels[available] == label].astype(int).tolist()
                             key = f"test_sample_{label}" if test_mode else f"sample_{label}"
-                            index = id_column.selectbox("ID ảnh trong Digits", options=indices, index=0, key=key)
+                            index = id_column.selectbox("Mã ảnh trong Digits", options=indices, index=0, key=key)
                         pixels = images[index].copy()
                         original = np.uint8(np.rint(pixels * 255/16))
                         actual_label = int(labels[index])
-                        subset = "Tập test chính thức" if test_mode else "Toàn bộ Digits · gồm train/test"
-                        image_meta = f"{subset} · ID {index} · Nhãn {actual_label} · 8×8"
+                        subset = "Tập kiểm tra chính thức" if test_mode else "Toàn bộ Digits · gồm tập huấn luyện và kiểm tra"
+                        image_meta = f"{subset} · Mã ảnh {index} · Nhãn {actual_label} · 8×8"
                     except (FileNotFoundError, ValueError) as exc:
                         st.error(str(exc))
                 else:
@@ -632,7 +636,7 @@ def main():
                         with st.spinner("Đang nhận diện…"):
                             path = (MODEL_DIR / entry["path"]).resolve()
                             if not path.is_file():
-                                raise FileNotFoundError("Thiếu file Pipeline đã chọn. Khôi phục đúng bộ models/ đã xuất.")
+                                raise FileNotFoundError("Thiếu tệp mô hình đã chọn. Khôi phục đúng thư mục models/ đã lưu.")
                             stat = path.stat()
                             pipeline = load_saved_pipeline(str(path), entry["sha256"], stat.st_mtime_ns, stat.st_size, side*side)
                             predicted, probabilities = predict_digit(pipeline, pixels)
@@ -642,7 +646,7 @@ def main():
                     except Exception as exc:
                         st.error(f"Không thể dự đoán: {exc}")
             with right:
-                st.markdown('<div class="section-heading"><h2>Kết quả dự đoán</h2><span>Pipeline đã huấn luyện</span></div>', unsafe_allow_html=True)
+                st.markdown('<div class="section-heading"><h2>Kết quả dự đoán</h2><span>Mô hình đã huấn luyện</span></div>', unsafe_allow_html=True)
                 result = st.session_state.get("prediction_result")
                 if result:
                     st.markdown(prediction_html(result, actual_label), unsafe_allow_html=True)

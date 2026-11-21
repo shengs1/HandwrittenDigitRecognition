@@ -1,5 +1,27 @@
 # Chuyển giao Codex / Antigravity
 
+## Bàn giao thay đổi ngôn ngữ —21/11/2026
+
+Người dùng đã duyệt và yêu cầu commit/push thay đổi tên mô hình tiếng Anh,nhãn/chú thích tiếng Việt lên main. Phạm vi gồm app.py,README.md,HANDOFF.md và2testUI cập nhật chuỗi kỳ vọng;53/53test đã đạt trên bản code cuối (12,229s),không sửa code thêm trong lượt push. git diff--check sạch;không huấn luyện hoặc thay model/preprocessing/notebook/artifact. SHA và trạng thái đồng bộ sau push được xác minh bằng Git,tra `git log -1` và `git status`;các dòng “chưa commit/push” bên dưới ghi trạng thái lịch sử trước yêu cầu bàn giao này.
+
+## Thống nhất ngôn ngữ giao diện —21/11/2026
+
+Yêu cầu điều chỉnh mới thay quyết định tên ở mục ngay dưới: **toàn bộ tên mô hình dùng tiếng Anh** (Logistic Regression,K-Nearest Neighbors (KNN),Multilayer Perceptron (MLP),bản MLP có hậu tốMNIST); **nhãn và ghi chú dùng tiếng Việt**. Ba thẻ là “Bộ dữ liệu Digits”,“Tốt nhất qua kiểm định chéo”,“Độ chính xác kiểm tra · KNN”. Đã Việt hóa phụ đề,nguồn ảnh kiểm tra,mã ảnh,chú thích dữ liệu/quy trình,tên tham số và thông báo lỗi;giữ tên thuật toán/thư viện/giá trị kỹ thuật nhưReLU,adam,StandardScaler,MinMaxScaler. Nguồn ảnh vẫn giữ khóa nội bộ cũ và chỉ đổiformat hiển thị,không đổi cácID/tập ảnh được chọn. README dùng tên nguồn ảnh mới.
+
+Chỉ thay văn bản/trình bày tham số,không đổiCSS,bố cục,preprocessing/inference hoặc số liệu. Các assertion trong2testUI được dịch tương ứng,giữ nguyên kiểm tra giá trị lấy từPipeline/clone,shape,scaler,checksum,lỗi vàsession.53/53unittest PASS,0FAIL,11,416s trước lượt rà chữ cuối;log `tmp/vietnamese_ui_tests_final_20261121.log`. Đã kiểm bốnSHA256Pipeline vàAST ba hàm ảnh/suy luận cùngCSS bằngHEAD. Browser thật1366×768:dropdown đủ ba tên tiếngAnh,ba thẻ tiếngViệt,technical0ô bị cắt,tràn ngang/dọc0 khi đóng;ảnh `tmp/ui_language_20261121.jpg`. Không thử lạifilechooser hoặc huấn luyện. Đã đóngtab/dừngserver8519/resetviewport.
+
+File sửa trongcụm này:app.py,README.md,HANDOFF.md,tests/test_demo.py,tests/test_external_optimization.py. Các test chỉ đổi khóa/chuỗi kỳ vọng theo văn bản mới,không xóa assertion hoặc giảm kiểm tra. Giữ nguyênmanifest/checksum lịch sử;các khác biệtapp/testUI là thay đổi nhãn được người dùng yêu cầu. Gitmain vẫn2013875,thay đổi cònlocal,chưacommit/push;không ghi nhận các phần phân tích/số liệu mới.
+
+Kiểm tra đúng bản chữ cuối: **53/53 PASS,0FAIL,12,229s**,log `tmp/vietnamese_ui_tests_current_20261121.log`;git diff--check sạch. Bảng kỹ thuật dùng “Miền điểm ảnh” để thống nhất với phần xem ảnh. Chỉ bổ sung kết quả vàoHANDOFF sau kiểm thử,không sửa code tiếp.
+
+## Chuẩn hóa tên hiển thị mô hình —21/11/2026
+
+Theo yêu cầu mới của người dùng, chỉ đổi nhãn trong app: **Hồi quy logistic**, **K-Nearest Neighbors (KNN)**, **Multilayer Perceptron (MLP)** và **Multilayer Perceptron (MLP) — MNIST**. Dùng tên tiếng Việt quen thuộc cho hồi quy logistic; giữ tên kỹ thuật tiếng Anh của KNN/MLP để tránh cách diễn đạt gượng. Đồng bộ dropdown, tên ngắn hồi quy logistic trong kết quả và tên thuật toán trong bảng kỹ thuật; README dùng đúng tên lựa chọn MNIST mới. Đây là ngoại lệ nhỏ được người dùng yêu cầu đối với tên hiển thị, không thay thiết kế/layout/chức năng hoặc mở lại thực nghiệm.
+
+Kiểm tra: `.venv/Scripts/python.exe -X utf8 -m unittest discover -s tests -p "test_*.py" -v` đạt **53/53 PASS,0FAIL,17,060s**; log local `tmp/model_name_tests_20261121.log`. SHA256 cả4 Pipeline vẫn khớp registry; AST của preprocess_uploaded_image/preprocess_upload_for_model/predict_digit giữ nguyên so HEAD. Không sửa notebook/module tiền xử lý, model/registry hoặc artifact cũ; giữ manifest frozen lịch sử, thay đổi app.py lần này là nhãn được phép đổi. Không bổ sung test chỉ lặp lại chuỗi tên.
+
+File sửa: app.py,README.md,HANDOFF.md. Đầu lượt Git sạch trên main/origin/main tại2013875; cuối lượt thay đổi nhãn/tài liệu còn local, chưa commit/push trong lượt này. Nhóm tiếp tục các việc tài liệu/bảo vệ đã ghi bên dưới; không có việc triển khai mô hình mới từ yêu cầu này.
+
 ## FINAL OPTIMIZATION REVIEW — CODE FREEZE (19/11/2026)
 
 **Xác nhận phát hành:**đã commit bản tốiưu/bằngchứng bằng `a15bcbef95a12d16bdad9297423bde383326c862` (`Freeze validated external digit recognition release`) và `git push origin main` thành công. `git ls-remote origin refs/heads/main` xác nhận đúngSHA này;workingtree sạch/đồngbộ ngay saupush. Commit tài liệu tiếp theo chỉ ghi xácnhận này,không đổi code/model/metric/test;SHA mới nhất xem `git log -1`. Không force-push. Bộ2161 hash trong frozen_artifacts_sha256.json chốt mã/dữliệu/model/artifact;UI/CODE/EXPERIMENTS tiếp tụcFROZEN,tài liệu/thuyếttrình IN PROGRESS.

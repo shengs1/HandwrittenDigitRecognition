@@ -155,17 +155,17 @@ class SavedPipelineTests(unittest.TestCase):
             params = pipeline.steps[-1][1].get_params(deep=False)
             if name == 'knn':
                 self.assertEqual(rows['Số láng giềng'], str(params['n_neighbors']))
-                self.assertEqual(rows['Trọng số'].lower(), params['weights'])
-                self.assertEqual(rows['Metric khoảng cách'], params['metric'])
+                self.assertEqual(rows['Trọng số'], {'uniform':'Đồng đều','distance':'Theo khoảng cách'}[params['weights']])
+                self.assertEqual(rows['Độ đo khoảng cách'], params['metric'])
             elif name == 'mlp':
                 self.assertEqual(rows['Kiến trúc lớp ẩn'], ' → '.join(map(str, params['hidden_layer_sizes'])))
-                self.assertEqual(rows['Activation'], params['activation'])
-                self.assertEqual(rows['Optimizer / solver'], params['solver'])
-                self.assertEqual(rows['Alpha'], str(params['alpha']))
+                self.assertEqual(rows['Hàm kích hoạt'], params['activation'])
+                self.assertEqual(rows['Thuật toán tối ưu'], params['solver'])
+                self.assertEqual(rows['Hệ số phạt (alpha)'], str(params['alpha']))
             else:
                 self.assertEqual(rows['C'], str(params['C']))
-                self.assertEqual(rows['Solver'], params['solver'])
-                self.assertIn('pixel thô', rows['Chuẩn hóa'])
+                self.assertEqual(rows['Thuật toán tối ưu'], params['solver'])
+                self.assertIn('điểm ảnh thô', rows['Chuẩn hóa'])
             if name != 'logreg_raw':
                 self.assertEqual(rows['Chuẩn hóa'], type(pipeline.named_steps['scale']).__name__)
 
@@ -177,7 +177,7 @@ class SavedPipelineTests(unittest.TestCase):
             alternative = clone(original).set_params(clf__n_neighbors=old_neighbors + 2, clf__weights='distance')
             rows = dict(app.model_parameter_rows(alternative))
         self.assertEqual(rows['Số láng giềng'], str(old_neighbors + 2))
-        self.assertEqual(rows['Trọng số'], 'Distance')
+        self.assertEqual(rows['Trọng số'], 'Theo khoảng cách')
         self.assertEqual(original.named_steps['clf'].n_neighbors, old_neighbors)
 
     def test_invalid_feature_domain_is_rejected(self):
@@ -361,7 +361,7 @@ class AppFlowTests(unittest.TestCase):
             at.button[0].click().run()
             self.assertFalse(at.exception)
             self.assertTrue(at.error)
-            self.assertIn("Thiếu file Pipeline", at.error[0].value)
+            self.assertIn("Thiếu tệp mô hình", at.error[0].value)
 
     def test_default_test_source_has_honest_empty_state_and_artifact_overview(self):
         at = AppTest.from_string('from app import main\nmain()', default_timeout=30).run()

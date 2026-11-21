@@ -132,12 +132,12 @@ class ExternalIntegrationTests(unittest.TestCase):
             self.assertFalse(at.exception)
             self.assertEqual(at.session_state['prediction_result']['model'],'mlp_mnist')
             rendered='\n'.join(item.value for item in at.markdown)
-            self.assertIn('28 × 28 pixel · 0–255',rendered)
+            self.assertIn('28 × 28 điểm ảnh · 0–255',rendered)
             self.assertIn('Sau tiền xử lý · 28×28',rendered)
             technical=next(item.proto.body for item in at.get('html') if '<div class="technical-info">' in item.proto.body)
-            for text in ['MNIST train','54.000','784','MinMaxScaler','128 → 64']:
+            for text in ['MNIST (tập huấn luyện)','54.000','784','MinMaxScaler','128 → 64']:
                 self.assertIn(text,technical)
-            self.assertIn('bộ dữ liệu MNIST train',technical)
+            self.assertIn('bộ dữ liệu MNIST (tập huấn luyện)',technical)
             self.assertIn('96,67%',rendered)  # Thẻ Digits chính thức giữ nguyên.
             at.selectbox(key='model').select('knn').run()
             self.assertNotIn('prediction_result',at.session_state)
@@ -171,7 +171,7 @@ class ExternalIntegrationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory(dir=ROOT/'tmp') as directory:
             path=Path(directory)
             (path/'external_registry.json').write_text(json.dumps(config),encoding='utf-8')
-            with self.assertRaisesRegex(ValueError,'artifact đã khóa'):
+            with self.assertRaisesRegex(ValueError,'phiên bản đã khóa'):
                 app.read_external_registry(path)
 
 
