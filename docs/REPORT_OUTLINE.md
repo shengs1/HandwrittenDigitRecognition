@@ -1,5 +1,7 @@
 # Dự thảo báo cáo — đúng 10 mục của PDF
 
+Cập nhật 23/11/2026 theo code giao diện `f47a709`. Tên mô hình giữ tiếng Anh; nhãn giao diện dùng tiếng Việt. Đây là nội dung hỗ trợ biên soạn, không phải báo cáo đã được nhóm xác nhận hoặc bản nộp chính thức. Tiến độ/kiểm thử hiện hành ở [FINAL_REVIEW](FINAL_REVIEW.md); không coi lượt cập nhật tài liệu là lần chạy thí nghiệm mới.
+
 **Chưa được nhóm xác nhận; chưa phải bản nộp PDF/DOCX.** Các đoạn dưới để nhóm kiểm tra, sửa và sử dụng. PhầnA chính: Digits run `20261117T081201Z_fd32180f`; phầnB mở rộng: `external_optimization_20261118T175401Z_4ca3a08f`. [RESULTS_INDEX](RESULTS_INDEX.md) có bảng/hình nguồn cho cả hai phần. UI/CODE/EXPERIMENTS FROZEN, tài liệu/thuyết trình đang hoàn thiện. Giữ đúng10 mục dưới, phân biệt A/B trong từng mục; không lấy log kiểm thử làm điểm mô hình.
 
 ## 1. Trang bìa
@@ -76,13 +78,15 @@ Chèn 3 confusion matrices, bảng cặp có hướng, vài ảnh sai, learning 
 
 Tăng train/fold 229→ 1.149, validation F1 tăng cả ba. Gap cuối LR/KNN/MLP là 3,70/1,15/3,11 điểm phần trăm. LR train 100% nhưng validation96,30% cho thấy khoảng cách tổng quát hóa, chưa đủ gọi quá khớp nghiêm trọng. MLP ít mẫu dao động hơn. MLP cuối chạy 52 iterations, loss2,3952→ 0,0208, best/cuối accuracy validation nội bộ97,9167%. Validation bão hòa; chưa xác định chính xác epoch quá khớp. Loss và accuracy khác đơn vị.
 
-Giới hạn: dataset nhỏ/8×8, chia ngẫu nhiên chưa bảo đảm tách người viết, CV có thiên lệch lựa chọn, xác suất chưa hiệu chỉnh. Mỗi model đúng 3/10 MNIST đã thử; 10 mẫu không đại diện ảnh ngoài và không dùng tuning. Chưa có ảnh tự chụp nhóm. Hướng sau: thu ảnh thật có nhãn, chốt quy trình trước và dùng tập ngoài mới độc lập; không đổi run hiện tại theo test.
+Giới hạn phần A: dữ liệu nhỏ/8×8, chia ngẫu nhiên chưa bảo đảm tách người viết, CV có thiên lệch lựa chọn, xác suất chưa hiệu chỉnh. Minh họa lịch sử với 10 MNIST cho 3/10 đúng mỗi model; lượt 100 MNIST tiếp theo đạt46/40/37. Hai lượt cũ được báo riêng, không thay cho đánh giá mở rộng bên dưới. Chưa có ảnh tự chụp của nhóm. Không chỉnh run theo các tập kiểm tra đã xem.
 
 PhầnB chèn confusion theo nguồn/chữ số và ảnh lỗi trước/sau; giữ38 ảnh sai. Thống kê train/validation cho thấy khác độ sáng/tỷ lệ nét/vị trí,8×8 có thể mất chi tiết; đây là mô tả và giả thuyết, chưa tách hiệu ứng nhân quả. MLP28 đổi cả dữ liệu/lượng mẫu/kiến trúc/resolution. Test độc lập với bước lựa chọn ở mức ảnh, **chưa xác nhận độc lập người viết**, chưa có ảnh tự chụp. Bitmap chưa khôi phục được mapping từng ảnh upstream. Không dùng38 lỗi hoặc9890 test để tuning tiếp.
 
 ## 8. Triển khai (tùy chọn)
 
-Streamlit tiếng Việt chỉ load Pipeline qua registry/checksum, không fit. Hai nguồn Digits dùng3 model chính/pixel gốc. Upload dùng gray_bbox8×8/0–16 cho model Digits hoặc lựa chọn rõ MLP — MNIST (ảnh ngoài),mnist28/0–255/784 đặc trưng. Flatten theo hàng, scaler chỉ trong Pipeline. Ba thẻ thống kê vẫn là Digits, không tự chọn model theo confidence.
+Streamlit chỉ tải Pipeline qua registry/checksum, không huấn luyện khi mở. Tên mô hình là Logistic Regression, K-Nearest Neighbors (KNN), Multilayer Perceptron (MLP) và Multilayer Perceptron (MLP) — MNIST; nhãn/chú thích dùng tiếng Việt. **Ảnh kiểm tra Digits** dùng360 mã ảnh đúng split; **Ảnh mẫu Digits** có thể gồm tập huấn luyện. Cả hai giữ điểm ảnh gốc và dùng ba model Digits. **Tải ảnh từ máy** dùng gray_bbox8×8/0–16 cho model Digits hoặc mnist28/28×28/0–255/784 đặc trưng cho bản MNIST. Flatten theo hàng, scaler chỉ trong Pipeline.
+
+Ba thẻ là **Bộ dữ liệu Digits**, **Tốt nhất qua kiểm định chéo**, **Độ chính xác kiểm tra · KNN**; không phải độ chính xác của model đang nhận ảnh tải lên. App không tự chọn theo xác suất; đổi ảnh/model xóa kết quả cũ. Cấu hình mô hình đọc từ artifact thực tế.
 
 Giao diện có ảnh gốc/preview đúng8×8 hoặc28×28, dự đoán và xác suất10 lớp chưa hiệu chỉnh. File trống/hỏng/quá lớn, thiếu registry/model/split báo lỗi, không tự train. Chèn screenshot/53 unittest venv mới và ma trận14 chức năng+8 lỗi model ở lần freeze. Giữ baseline ảnh cũ để đối chứng; upload mới được chọn bằng validation riêng, không điều chỉnh từ10 MNIST cũ hay test đã xem.
 
@@ -100,4 +104,4 @@ PhầnB cải thiện nhận diện trong các tập ngoài đã kiểm bằng g
 
 Tham khảo: [PDF học phần](Huong_Dan_Do_An_CuoiKy.pdf); [scikit-learn load_digits](https://scikit-learn.org/1.7/modules/generated/sklearn.datasets.load_digits.html); [UCI Digits](https://archive.ics.uci.edu/dataset/80/optical+recognition+of+handwritten+digits); API Pipeline/MLP trong notebook; Streamlit/Pillow theo requirements; [nguồn MNIST fixture](../tests/fixtures/external_digits/README.md). Phụ lục: phiên bản/seed/grid/run_id/checksum, CV/report/CSV/hình và lệnh từ README/HANDOFF. Không có BM06 để suy đoán thêm thang điểm.
 
-Trước xuất PDF/DOCX: nhóm đọc/sửa/xác nhận dự thảo, điền thông tin thật, chèn hình đủ lớn có nguồn/chú thích, kiểm tra trang và số liệu, hoàn thành phân công và tập bảo vệ. Bản Markdown này chưa thay sản phẩm nộp.
+Trước xuất PDF/DOCX: nhóm đọc/sửa/xác nhận dự thảo, điền thông tin thật, chèn hình đủ lớn có nguồn/chú thích, kiểm tra trang và số liệu, hoàn thành phân công và tập bảo vệ. Đến23/11 chưa có xác nhận bản báo cáo/slide nộp chính thức hoặc đóng góp từng thành viên. Bản Markdown này chưa thay sản phẩm nộp.

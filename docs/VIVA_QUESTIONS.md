@@ -1,5 +1,7 @@
 # Câu hỏi vấn đáp theo code và số liệu thật
 
+Cập nhật23/11/2026 theo giao diện `f47a709`. Tên model giữ tiếng Anh; nhãn hiển thị tiếng Việt. Các câu về3/10 MNIST là lịch sử trước tối ưu, cần phân biệt với phần B phía dưới và không suy ra accuracy ảnh điện thoại. Nhóm chưa có xác nhận nhận định hoặc kết quả vấn đáp; bảng này là hướng dẫn luyện tập.
+
 Nhóm tự trả lời bằng lời của mình. Gợi ý chỉ vị trí kiểm chứng. Mỗi thành viên thử thao tác ở bản thử riêng; không tuning run đã khóa theo test.
 
 | Câu hỏi | Kiểm chứng / gợi ý |
@@ -52,7 +54,7 @@ Thực hành: chỉ ra đường đi dữ liệu trong app; đọc một cặp n
 | Mô hình quá khớp ở epoch nào? | Chưa đủ bằng chứng xác định. MLP 52 iterations, loss giảm nhưng validation nội bộ bão hòa, không sụt kéo dài |
 | Gap train/validation cuối bao nhiêu? | LR/KNN/MLP 3,70/1,15/3,11 điểm phần trăm; validation vẫn tăng khi tăng train |
 | Validation nào scaler đã thấy? | Đặc trưng validation nội bộ MLP thuộc train fold; outer fold/test không được fit scaler |
-| Nút Ảnh test Digits lấy đâu? | saved_test_indices đọc outputs/<registry.run_id>/split_indices.csv; không chia lại. Mở id trong test_predictions |
+| Nguồn Ảnh kiểm tra Digits lấy đâu? | saved_test_indices đọc outputs/<registry.run_id>/split_indices.csv; giữ360 ID, không chia lại. Khóa nội bộ `Ảnh test Digits` được giữ,format_func chỉ Việt hóa tên hiển thị |
 | Vì sao không preprocess lại ảnh mẫu? | Giữ nguyên pixel dataset; crop/resize có thể thay biểu diễn mà model đã học |
 | Flatten theo thứ tự nào? | reshape(1,64), mặc định C theo hàng; DataFrame giữ tên pixel như lúc fit |
 | Làm sao biết upload không scale hai lần? | Preprocess trả64 giá trị0–16 hoặc784 giá trị0–255;predict_digit gọi toàn Pipeline;test so predict_proba trực tiếp |
@@ -86,3 +88,10 @@ Nguồn số liệu: [RESULTS_INDEX mục11](RESULTS_INDEX.md), [REPORT mở r�
 |Thời gianpredict mở rộng so trực tiếp với bảngDigits?|Không hoàn toàn: mở rộng1 batch gồm predict+proba/2 luồng;Digits median5predict/1 luồng,cỡtest khác|
 
 Nhóm tập giải thích một trong38 lỗi bằng ảnh gốc và hai preview; nêu quan sát thay vì khẳng định nguyên nhân. Không sửa nhãn hoặc bỏ ảnh khó. Các gợi ý trên chưa thay xác nhận và phần đóng góp thực tế của sinh viên.
+
+| Câu hỏi giao diện hiện tại | Gợi ý |
+|---|---|
+| Vì sao đang chọn MLP MNIST mà thẻ đầu vẫn96,67%/KNN? | Thẻ **Độ chính xác kiểm tra · KNN** là kết quả Digits chính thức; xác suất ảnh ở khung dự đoán là đại lượng khác |
+| Tên model/nguồn trên màn hình là gì? | Logistic Regression,K-Nearest Neighbors (KNN),Multilayer Perceptron (MLP),bản MNIST;Ảnh kiểm tra Digits/Ảnh mẫu Digits/Tải ảnh từ máy |
+| Có phải23/11 vừa huấn luyện hoặc chạy test mới? | Không;đó là lượt tài liệu. Code gần nhất53/53 test ngày21/11,venv sạch đã kiểm19/11 |
+| Checksum toàn snapshot khác sau đổi chữ có nghĩa trọng số hỏng? | Không tự kết luận;đọc phạm vi/thời điểm manifest. Hash Pipeline kiểm theo registry,các lần đổi nhãn/tài liệu được ghi trong Git/HANDOFF;không sửa manifest để che khác biệt |

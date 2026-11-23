@@ -1,5 +1,7 @@
 # Nội dung dự thảo 12 slide
 
+Cập nhật 23/11/2026. Đồng bộ giao diện `f47a709`: tên mô hình tiếng Anh, nhãn/chú thích tiếng Việt. Kết quả A/B giữ nguyên; 53/53 test gần nhất của code ghi nhận ngày21/11. Chưa có slide PPTX/PDF chính thức hoặc xác nhận nội dung của nhóm. Xem [FINAL_REVIEW](FINAL_REVIEW.md) để phân biệt bằng chứng kỹ thuật và việc còn thiếu.
+
 **Chưa được nhóm xác nhận; chưa có PPTX/PDF nộp chính thức.** Run `20261117T081201Z_fd32180f`; nguồn bảng/hình tại [RESULTS_INDEX](RESULTS_INDEX.md). Mỗi slide 3–4 ý, hình đủ lớn; nhóm diễn đạt lại lời nói.
 
 Phân biệtA:Digits chính (slide2–9), B:mở rộng ảnh ngoài (slide10), demo/giới hạn (11). UI/CODE/EXPERIMENTS FROZEN; phần thuyết trình đang hoàn thiện. Không thay score Digits bằng score MNIST.
@@ -17,7 +19,7 @@ Gợi ý lời nói: Digits là thực nghiệm chính; MLP MNIST là mô hình 
 ## 2. Bài toán và mục tiêu
 
 - 8×8 → 64 pixel → nhãn 0–9.
-- So LR thô, KNN, MLP; chuẩn hóa, lỗi và chi phí.
+- So Logistic Regression điểm ảnh thô, K-Nearest Neighbors (KNN), Multilayer Perceptron (MLP); chuẩn hóa, lỗi và chi phí.
 - Chọn mean CV macro F1; accuracy bổ sung tỷ lệ đúng.
 
 Hình/bảng: Sơ đồ đầu vào → phân lớp.
@@ -98,10 +100,10 @@ Gợi ý lời nói: Mô tả nét chỉ là giả thuyết; không sửa model 
 
 ## 10. B — Mở rộng nhận diện ảnh ngoài
 
--600 ảnh gốc,3 nguồn,300 validation/300 test;seed42,khóa trước suy luận.
--gray_bbox thắng mean validation F1 0,59260 so0,48980;KNN ngoài48%→58%.
--Một MLP MNIST28:54000 train/6000 validation;test loại110 ảnh đã xem,còn9890,đạt97,39%.
--Ngoài300:262 đúng/38 sai,87,33%,F1 0,8713;BHMSDS/Bitmap/HwD:82/82/98 trên100 ảnh mỗi nguồn.
+- 600 ảnh gốc,ba nguồn,300 xác thực/300 kiểm tra;seed42,khóa trước suy luận.
+- gray_bbox thắng mean validation F1 0,59260 so0,48980;KNN ngoài48%→58%.
+- Một MLP MNIST28:54.000 huấn luyện/6.000 xác thực;loại110 ảnh kiểm tra đã xem,còn9.890,đạt97,39%.
+- Ngoài300:262 đúng/38 sai,87,33%,F1 0,8713;BHMSDS/Bitmap/HwD:82/82/98 trên100 ảnh mỗi nguồn.
 
 Hình/bảng: Bảng riêng từng tập từ RESULTS_INDEX mục11;confusion MLP28/ảnh lỗi trước-sau trong run mở rộng.
 
@@ -109,14 +111,14 @@ Gợi ý lời nói: Chọn bằng validation trước test. MLP28 thay data/ki�
 
 ## 11. Demo và giới hạn
 
--Digits vẫn3 Pipeline/8×8 gốc;upload chọn rõ MLP MNIST28 hoặc model Digits/gray_bbox.
--Không train/tự chọn theo confidence;preview đúng input,scaler trong Pipeline;53 tests venv mới đạt.
--Nguồn ngoài gồm giấy đã cắt/scan/vẽ tay số;chưa kiểm ảnh điện thoại nhóm,chưa tách writer,Bitmap thiếu mapping từng ảnh.
--Giữ38 lỗi,không tuning lại từ test;xác suất cao vẫn có thể sai.
+- **Ảnh kiểm tra Digits** và **Ảnh mẫu Digits**: ba Pipeline, giữ nguyên8×8; **Tải ảnh từ máy**: gray_bbox hoặc chọn rõ **Multilayer Perceptron (MLP) — MNIST**.
+- Ba thẻ đầu luôn là Digits/KNN; không nhầm xác suất một ảnh với độ chính xác tập kiểm tra. Preview8×8/28×28 đúng model; scaler chỉ trong Pipeline, không train hoặc tự chuyển model.
+- Kiểm thử:53 tests trên venv mới19/11;53 tests sau cập nhật ngôn ngữ21/11. Không gọi lượt tài liệu23/11 là kiểm thử code mới.
+- Giữ38 lỗi ngoài; chưa có ảnh điện thoại nhóm, chưa tách người viết, Bitmap thiếu ánh xạ từng ảnh. Xác suất cao vẫn có thể sai, không tuning lại từ test.
 
 Hình/bảng: Screenshot [demo sạch](../outputs/optimization_freeze_20261119T045133Z_728f35c1/clean_upload_1366x768.jpg),một lỗi MLP28 và nguồn ảnh thật.
 
-Gợi ý lời nói: Ba thẻ đầu là số liệu Digits,không phải accuracy của model đang upload. Chuẩn bị ảnh dự phòng offline và ghi nhận ảnh tự chụp riêng,không tạo số liệu thay thế.
+Gợi ý lời nói: Chỉ đúng vị trí ba thẻ Bộ dữ liệu Digits/Tốt nhất qua kiểm định chéo/Độ chính xác kiểm tra · KNN. Ảnh trong screenshot freeze là trạng thái tại19/11; nếu chụp bản hiện tại phải dùng đúng tên model/nhãn mới. Chuẩn bị ảnh dự phòng offline và ghi nhận ảnh tự chụp riêng, không tạo số liệu thay thế.
 
 ## 12. Kết luận và phân công
 

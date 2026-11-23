@@ -1,5 +1,7 @@
 # Nguồn 600 ảnh viết tay ngoài Digits
 
+Cập nhật tài liệu23/11/2026; không lấy mẫu,đổi nhãn hoặc thay ảnh/manifest/khóa. Dữ liệu đã dùng để chọn phương pháp trên300 xác thực vàđánh giá saukhóa trên300 kiểm tra,không dùng để huấn luyện MLP MNIST. Không dùng lại hai tập này tuning trong phiên sau. Kết quả/giới hạn hiện tại ở [RESULTS_INDEX](../../docs/RESULTS_INDEX.md);các README/LICENSE trongprovenance/ được giữ nguyên văn nguồn.
+
 Lấy mẫu seed42 trước suy luận:20 ảnh/chữ số/nguồn, chia10 validation+10 test. Mỗi tập300 ảnh; mỗi nguồn100/tập. Giữ nguyên bytes tải từ repository gốc, không resize/làm sạch file cấp cho preprocessing. PNG contact sheet chỉ là bản xem. Manifest ghi đường dẫn, nhãn tác giả, tên/path gốc, mode/kích thước, SHA256 byte và pixel, commit và split. sample_lock.json khóa manifest lúc18:01:14UTC18/11 (01:01:14 ngày19/11/2026 Việt Nam).
 
 | Nguồn | Commit tải | Quyền sử dụng dữ liệu | Bản chất ảnh |
@@ -17,3 +19,5 @@ Không có writer/sheet ID đáng tin trong3 repository được lấy. Số th�
 Contact sheets:6 trang, mỗi trang100 ảnh, bao phủ600 ảnh. Nhãn lấy từ tác giả, review hình chỉ để kiểm tính hợp lệ. Một số kiểu1/4/7, số2 có vòng và nét5 mảnh dễ gây nhầm; giữ nguyên mẫu/nhãn. Test đã được xem ở mức kiểm dữ liệu theo yêu cầu, không dùng dự đoán/test metrics để chọn preprocessing. Việc nhìn contact sheet không chứng minh tính mù hoàn toàn của con người; giới hạn này được ghi rõ.
 
 Lệnh lấy mẫu từ gốc repo: `.venv/Scripts/python.exe -X utf8 tests/collect_external_handwriting.py`. Script tải archive ở commit/digest cố định nếu cache tmp chưa có, không chạy code trong repository nguồn. Từ chối ghi đè manifest đã khóa. Phiên bản script chỉ đổi font contact sheet sang font mặc định Pillow để chạy không cần đường dẫn Windows; mẫu và bytes ảnh không đổi.
+
+Lệnh trên là hướng dẫn thu thập ban đầu,khi chưa cómanifest;không chạy lại để thay600 ảnh hoặc chọn mẫu dự đoán đúng hơn. App hiện tại chỉ cần Pipeline/registry/lock vàmetadata nhỏ,không cần600 ảnh để mở. Chưa có dữ liệu điện thoại mới của nhóm được cung cấp;nguồn này không được trình bày như bộ ảnh chụp điện thoại nguyên bản.

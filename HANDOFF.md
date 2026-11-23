@@ -1,5 +1,19 @@
 # Chuyển giao Codex / Antigravity
 
+## Đồng bộ tài liệu hiện hành —23/11/2026
+
+Người dùng yêu cầu cập nhật toàn bộ tài liệu theo tiến độ mới và push main. Đầu lượt Git sạch tại `f47a709`,bản tên mô hình tiếng Anh/nhãn tiếng Việt đã phát hành21/11. Cụm này **chỉ sửa Markdown hiện hành**;giữ nguyên app/module ảnh/tests/notebook/requirements,4Pipeline/2registry,manifest600,locks/metrics/predictions vàtoàn bộoutputs/. README/LICENSE nguồn bên thứ ba trongprovenance/giữ nguyên,không viết lại hồ sơ lịch sử.
+
+Đã sắp xếp lại README/AGENTS để mô tả một trạng thái hiện hành thay vì lẫn các phase cũ;đồng bộ tên hiển thị,ba nguồn ảnh/ba thẻ thống kê,quy trình8×8 hoặc28×28 vàlệnhWindows. Cập nhật7 tài liệu docs/ (báo cáo10 mục,12slide,vấn đáp,chỉ mục kết quả,yêu cầuPDF,final review,auditA–I),README fixture10MNIST vàSOURCES600 để phân biệt phần A Digits,phần B mở rộng vàcác lượt kiểm tra lịch sử. Không thay số liệu hoặc tạo phân tích mới để tăng kết quả.
+
+**Trạng thái:**UI FROZEN · CODE FROZEN · EXPERIMENTS FROZEN · DOCUMENTATION AND PRESENTATION IN PROGRESS. Bản code gần nhất53/53tests PASS21/11 (12,229s);môi trường mới/120gói/53tests/Gitexport vàma trận14+8 đã kiểm19/11. Không báo lượt23/11 làrerun53tests,venv sạch hoặc huấn luyện. Các manifest toàn snapshot cũ gồmsource/docs nên cókhác biệt hợp lệ sauđổichữ/tài liệu;giữ chúng đểtruyvết,kiểmtrọngsốtheoregistry vàkhôngquảngbálệnhverifierlịchsử nhưkiểm hiệntrạngkhôngđiềukiện.
+
+Nhóm vẫn cần xác nhận nhận định/nhật ký,điền tên/MSSV/lớp/phân công thật,xuấtPDF/DOCX vàPPTX/PDF,tậpvấnđáp/demooffline vàthửảnhđiệnthoạicónhãn riêng. Chưa cóbằngchứng mới cho các việc này. Giữ côngkhai giới hạn người viết/nguồn gốc từngảnhBitmap,xácsuấtchưahiệuchỉnh vàkhônggộp accuracyDigits/MNIST/ba nguồn ngoài. Khôngtuningtheocác tập đãxem.
+
+File thuộc phạm vi:README.md,AGENTS.md,HANDOFF.md,docs/RESULTS_INDEX.md,REPORT_OUTLINE.md,SLIDE_OUTLINE.md,VIVA_QUESTIONS.md,REQUIREMENTS_MAP.md,FINAL_REVIEW.md,FINAL_AUDIT.md,tests/fixtures/external_digits/README.md,data/external_handwriting/SOURCES.md. Lệnh/kiểm tra cập nhật gồm gitstatus/diff,đọcPDF6trang/notebook51cell/23codecell,tài liệu vànguồnCSV/JSON,kiểmliênkết/độđo/hashngoàiphạmviMarkdown;không chạylại môhình. Kết quả kiểmtra chốt được bổ sung trướccommit;commit/push theo yêu cầu,khôngforce-push. Các mục bên dưới là lịch sử.
+
+**Kết quả kiểm tra23/11:**PASS12tệpMarkdown,108liênkết nội bộ,10mục báo cáo/12slide/auditA–I;35dòng metric cuối tái tính accuracy/macroF1 từprediction đều khớp;MLPngoài262đúng/38sai,BHMSDS/Bitmap/HwD82/82/98. SHA2564Pipeline khớp registry và2.446tệp ngoài12tài liệu giữ nguyên sođầu lượt,bao gồm mọioutput/provenance gốc/code/test/notebook/dataset/model. Không rerun53unittest vì không sửa code. Log/JSONkiểmtra local:tmp/docs_validation_20261123.log và.json,script tmp/validate_docs_20261123.py. gitdiff--check PASS;fetchoriginmain xác nhận không lệch tại thờiđiểm chuẩn bịcommit. Lượt này được yêu cầu commit/push toànbộ12tài liệu;commit hiệnhành xemgitlog -1,trạng thái remote được đối chiếu saupush.
+
 ## Bàn giao thay đổi ngôn ngữ —21/11/2026
 
 Người dùng đã duyệt và yêu cầu commit/push thay đổi tên mô hình tiếng Anh,nhãn/chú thích tiếng Việt lên main. Phạm vi gồm app.py,README.md,HANDOFF.md và2testUI cập nhật chuỗi kỳ vọng;53/53test đã đạt trên bản code cuối (12,229s),không sửa code thêm trong lượt push. git diff--check sạch;không huấn luyện hoặc thay model/preprocessing/notebook/artifact. SHA và trạng thái đồng bộ sau push được xác minh bằng Git,tra `git log -1` và `git status`;các dòng “chưa commit/push” bên dưới ghi trạng thái lịch sử trước yêu cầu bàn giao này.

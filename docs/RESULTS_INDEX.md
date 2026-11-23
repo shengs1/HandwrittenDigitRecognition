@@ -1,5 +1,7 @@
 # Chỉ mục số liệu và hình cho báo cáo
 
+Cập nhật tài liệu 23/11/2026. Bảng/hình A/B giữ từ các run đã khóa, không tính lại hoặc huấn luyện mới để đổi kết quả. Code giao diện `f47a709` dùng tên model tiếng Anh và nhãn tiếng Việt; các ảnh chụp trong outputs/ giữ đúng thời điểm tạo nên có thể có chữ cũ. Đối chiếu trạng thái kiểm thử và phần còn thiếu ở [FINAL_REVIEW](FINAL_REVIEW.md).
+
 **A — Thực nghiệm chính Digits:** các mục1–10 giữ số liệu run chính thức. **B — Mở rộng ảnh ngoài:** mục11 bên dưới, không thay kết quả hoặc lựa chọn KNN của phầnA. Code/UI/thực nghiệm đã chốt; nhận định vẫn cần nhóm rà/xác nhận trước xuất bản nộp.
 
 Run thực nghiệm cố định: **20261117T081201Z_fd32180f**; nguồn thật trong [outputs](../outputs/20261117T081201Z_fd32180f/).
@@ -131,7 +133,7 @@ MLP chạy 52 iterations; best validation accuracy nội bộ 0.979167. Không p
 - [Ảnh sai knn](../outputs/20261117T081201Z_fd32180f/figures/misclassified_knn.png)
 - [Ảnh sai mlp](../outputs/20261117T081201Z_fd32180f/figures/misclassified_mlp.png)
 
-## 9. Kiểm thử demo ngoài tập Digits
+## 9. Hồ sơ minh họa ban đầu — không phải kết quả bản tối ưu hiện tại
 
 Kiểm thử môi trường sạch: [25/25 tests](../outputs/demo_20261117T082316Z_b269f12c/tests_clean_environment.log), [trạng thái Phase 2](../outputs/demo_20261117T082316Z_b269f12c/phase2_status.json), [ảnh giao diện thật](../outputs/demo_20261117T082316Z_b269f12c/streamlit_demo.jpg).
 
@@ -146,7 +148,7 @@ Mẫu Digits đầu mỗi lớp: LR 10/10, KNN 9/10, MLP 9/10; không thay cho �
 không tính như mẫu độc lập. Không train/tune từ dữ liệu này; checksum model trước/sau khớp.
 Chưa có ảnh chụp do nhóm cung cấp. Nhóm tự viết phân tích giới hạn, không suy ra accuracy tổng quát từ 10 mẫu.
 
-## 10. Nhận định dự thảo và chú thích hình
+## 10. Nhận định dự thảo và chú thích hình của phần A
 
 **Chưa được nhóm xác nhận.** Các số bổ sung (tỷ lệ pixel 0/std) được tính từ đúng train theo split đã lưu, không huấn luyện lại. Các quan sát hình đã được xem trực tiếp.
 
@@ -305,3 +307,11 @@ Nguồn [metrics.csv](../outputs/external_optimization_20261118T175401Z_4ca3a08f
 |Kiểm tra sạch/code freeze|[REVIEW](../outputs/optimization_freeze_20261119T045133Z_728f35c1/REVIEW.md)|
 
 Ảnh scan/cắt/vẽ tay số là ba kiểu nguồn khác nhau. Nhóm cần phân tích38 lỗi và giới hạn bằng bảng/hình đã xuất, không sửa model từ test. Các kết quả3/10 và46/40/37 trên100 MNIST cũ là lịch sử riêng, không thay bằng score mới hoặc gộp accuracy.
+
+## 12. Giao diện, kiểm thử và trạng thái biên soạn hiện tại
+
+Tên lựa chọn: Logistic Regression, K-Nearest Neighbors (KNN), Multilayer Perceptron (MLP), Multilayer Perceptron (MLP) — MNIST. Nguồn: **Ảnh kiểm tra Digits**, **Ảnh mẫu Digits**, **Tải ảnh từ máy**. Tên cũ trong ảnh/log không phải yêu cầu đổi lại giao diện.
+
+53/53 unittest của bản ngôn ngữ21/11 đã ghi trong HANDOFF. Bằng chứng môi trường sạch19/11,14 tình huống demo/8 lỗi model,1.200 replay và145 dòng độ đo nằm trong [review freeze](../outputs/optimization_freeze_20261119T045133Z_728f35c1/REVIEW.md). Không xem lần cập nhật tài liệu23/11 là test hoặc phép đo mô hình mới.
+
+Nhóm cần rà/xác nhận nhật ký và nhận định, điền thông tin/phân công thật, xuất báo cáo/slide và tập bảo vệ. Chưa có ảnh điện thoại nhóm hoặc xác nhận sản phẩm nộp chính thức. Manifest snapshot toàn repo giữ lịch sử source/docs; dùng registry để đối chiếu checksum trọng số, không sửa manifest cũ cho khớp chữ mới.

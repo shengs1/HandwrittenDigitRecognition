@@ -1,84 +1,61 @@
 # Hướng dẫn tiếp tục đồ án
 
-## FINAL FREEZE —19/11/2026
+Cập nhật 23/11/2026. Đây là quy tắc hiện hành; lịch sử quyết định nằm trong HANDOFF.md, Git và outputs/.
 
-Người dùng đã review và duyệt gray_bbox/MLP MNIST28 sau kiểm tra cuối. Trạng thái: **UI FROZEN; CODE FROZEN; EXPERIMENTS FROZEN; DOCUMENTATION AND PRESENTATION IN PROGRESS.** Không mở thêm thử nghiệm, tuning hoặc redesign. Lượt này được yêu cầu commit/push lên main sau kiểm thử đạt; quyền này thay việc “chưa push trước review” ở các mục lịch sử. Không force-push, không đổi lịch sử remote.
+## Trạng thái và phạm vi
 
-Bằng chứng chốt `outputs/optimization_freeze_20261119T045133Z_728f35c1/`: venv mới120 gói tương thích/53 tests,14 chức năng+8 lỗi model, bản demo tối thiểu không data/download/fit,1200 replay app và audit145 dòng metric.4 Pipeline,notebook,module ảnh,CSS/requirements và artifact số liệu không đổi. Bảy tài liệu root/docs được phép cập nhật; không coi đổi tài liệu là đổi thực nghiệm. Ghi rõ giới hạn writer/Bitmap/ảnh điện thoại. Khi tiếp tục chỉ hoàn thiện tài liệu/thuyết trình hoặc sửa lỗi kỹ thuật có bằng chứng, rồi chạy kiểm tra liên quan; không dùng các test đã xem làm validation mới.
+**UI FROZEN · CODE FROZEN · EXPERIMENTS FROZEN · DOCUMENTATION AND PRESENTATION IN PROGRESS.** Bản tối ưu được duyệt ngày 19/11; ngôn ngữ giao diện được duyệt và push tại `f47a709` ngày 21/11. Ngày 23/11, người dùng yêu cầu đồng bộ tài liệu và push lên main. Không mở thêm phase mô hình hoặc UI, huấn luyện lại hay tuning để tăng điểm demo.
 
-## Quyết định mới nhất — ảnh ngoài (2026-11-19)
+Đề tài 13: phân loại chữ số 0–9. Phần A chính dùng `load_digits()`, baseline Logistic Regression trên điểm ảnh thô và KNN/MLP. Phần B mở rộng dùng một MLP MNIST riêng và đánh giá ảnh ngoài; không thay dataset, lựa chọn hoặc số liệu phần A. Kiến trúc hiện tại cho phép Streamlit; không thêm database, tài khoản hoặc backend riêng.
 
-Yêu cầu EXTERNAL RECOGNITION OPTIMIZATION cho phép thử preprocessing và huấn luyện một MLP MNIST riêng, sau đó tích hợp có điều kiện vào upload. Đây là ngoại lệ có phạm vi với các quy tắc lịch sử bên dưới: **giữ thiết kế UI FROZEN**, notebook,3 Pipeline/registry/số liệu Digits và toàn bộ đánh giá MNIST100 cũ. Không push bản tối ưu lên main trước người dùng review. Không thêm dependency hoặc tự huấn luyện khi mở app.
+## Quy trình mỗi phiên
 
-Run mới `outputs/external_optimization_20261118T175401Z_4ca3a08f/`: protocol/manifest/split khóa trước suy luận, lựa chọn khóa trước test.600 ảnh bytes gốc từ3 repo,300 validation/300 test, seed42,10/lớp/nguồn/split; không có writer ID đáng tin nên không tuyên bố tách người viết. Bitmap có giới hạn truy vết từng ảnh upstream; xem data/external_handwriting/SOURCES.md. Không đổi nhãn/bỏ mẫu vì dự đoán sai.
+- Đọc PDF `docs/Huong_Dan_Do_An_CuoiKy.pdf`, HANDOFF.md, notebook và tài liệu/kết quả liên quan trước khi sửa. AI_USAGE.md đã xóa theo yêu cầu người dùng, không tạo lại.
+- Chạy `git status --short --branch` và `git diff`. Không xóa hoặc ghi đè thay đổi có sẵn của người dùng.
+- Chỉ commit/push khi đã được yêu cầu. Repo `https://github.com/shengs1/HandwrittenDigitRecognition`, nhánh main; không force-push hoặc sửa lịch sử remote.
+- Sau cụm việc lớn, cập nhật HANDOFF: việc thực sự làm, file, lý do, lệnh và kết quả kiểm tra, lỗi/giới hạn, việc nhóm cần làm và trạng thái Git. Không báo đã chạy test hoặc huấn luyện khi chưa chạy.
 
-Validation chọn `gray_bbox` cho upload8×8. Một Pipeline MinMaxScaler→MLP(128,64) MNIST,54000 train/6000 validation, seed42, không augmentation; dùng `mnist28` nhất quán từ external_preprocessing.py. Loại110 MNIST test đã xem, đánh giá9890 còn lại sau khóa. Không dùng600 ảnh mới để train. Cả9890 MNIST và300 handwriting test **đã xem kết quả**, không được dùng chúng tuning hoặc chọn lại trong lượt tiếp theo.
+## Yêu cầu và tính trung thực
 
-`models/external_registry.json` riêng ràng buộc hash module/model/selection lock. MLP MNIST chỉ có ở upload,784 đặc trưng/28×28/0–255;3 model Digits giữ64/8×8/0–16. Scaler ở Pipeline, không gọi ngoài. Không tự chuyển model theo confidence. Ba thẻ thống kê vẫn là Digits chính thức. Hàm baseline app.preprocess_uploaded_image và UI_STYLE giữ nguyên để đối chiếu/khôi phục. Thay đổi model/module sau khóa phải được coi là thực nghiệm mới với validation/test độc lập.
+PDF yêu cầu baseline, ít nhất hai mô hình so sánh, ít nhất năm EDA có nhãn/nhận định, làm sạch có lý do, Pipeline, chia dữ liệu đúng, kiểm định chéo/tuning, độ đo, phân tích lỗi, seed/phiên bản và tái lập. Điểm: dữ liệu/EDA/chuẩn bị 4; mô hình/đánh giá 4; trình bày/vấn đáp 2. Xem docs/REQUIREMENTS_MAP.md.
 
-Đọc REPORT.md/README.md trong run và HANDOFF để lấy số liệu, lệnh tái lập,53 tests/bằng chứng browser, giới hạn và cách rollback. Không sửa bảng số liệu chỉ để khớp nhận định. Nhận định mới là dự thảo cần nhóm rà soát/xác nhận; không bịa đóng góp. Mục UI phía dưới phản ánh phiên bản trước khi có ngoại lệ mới này.
+Năm câu đề tài: vector/shape và chuẩn hóa; baseline và MLP cải thiện thế nào; cặp nhầm; learning curve và bằng chứng quá khớp; chi phí so độ chính xác. Không ép MLP phải thắng hoặc xác định epoch quá khớp khi chưa đủ bằng chứng.
 
-## UI FROZEN — phiên bản chính thức (2026-11-18)
+Nhóm cần báo cáo 10 mục, slide, thông tin/phân công thật và khả năng giải thích toàn bài. Nhận định hiện là dự thảo từ output thật, chưa được nhóm xác nhận. Không bịa dữ liệu, số liệu, đóng góp hoặc kết quả vấn đáp; fixture tổng hợp không phải accuracy ảnh thực tế. Theo phạm vi người dùng đã chốt, mục 6 PDF không được đưa lại thành blocker của audit; giữ nguyên PDF gốc.
 
-Người dùng đã duyệt và chốt giao diện hiện tại. Không tiếp tục đổi thiết kế, màu, typography, bố cục hoặc thêm tính năng. Chỉ sửa lỗi chức năng có bằng chứng khi được yêu cầu. Không tự fit/tuning/chỉnh notebook, tiền xử lý hay artifact để thay đổi kết quả demo. Đọc mục UI FROZEN trong HANDOFF để lấy kiểm thử cuối và trạng thái Git; các mục UI bên dưới là lịch sử quyết định. Người dùng đã yêu cầu commit/push toàn bộ phiên bản UI đã duyệt và bằng chứng lên origin/main sau khi kiểm thử đạt; không force-push.
+## Kiến trúc và giao diện
 
-## UI hiện tại (2026-11-18)
+Notebook `digit_classification.ipynb` gồm 16 mục là tài liệu chính. `app.py` chứa giao diện/tải mô hình/suy luận; `external_preprocessing.py` chứa các biến thể ảnh ngoài đã khóa. Dùng hàm ngắn, tránh framework/class/module phụ không cần thiết. tests/ kiểm hợp đồng, artifact và luồng app; docs/ phục vụ báo cáo, slide và vấn đáp.
 
-Technical expander dùng bảng thông số đọc trực tiếp Pipeline đã lưu và metadata dữ liệu; không repr/code block, run ID/checksum dài trên giao diện người dùng. Giữ kết quả MNIST3/10 mỗi model trong notebook/README/tài liệu/artifact. Văn bản technical tự giãn/đổi dòng, không fixed height. Reset cả margin âm stCaptionContainer trong phạm vi demo. CSS nút predict không được ép min-height lên nút native dropdown; giữ hành vi chuột/bàn phím native. Bằng chứng mới nhất15 vùng bấm/3 model/43 tests và screenshot trong HANDOFF mục Interaction Fix.
+Tên mô hình bằng tiếng Anh: Logistic Regression, K-Nearest Neighbors (KNN), Multilayer Perceptron (MLP), Multilayer Perceptron (MLP) — MNIST. Nhãn/chú thích bằng tiếng Việt. Ba thẻ: Bộ dữ liệu Digits, Tốt nhất qua kiểm định chéo, Độ chính xác kiểm tra · KNN. Tên thuật toán/thư viện và giá trị kỹ thuật giữ đúng tên gốc.
 
-Bản Responsive Fix đặt chọn chữ số/ID selectbox trong cột ảnh, chỉ lấy option từ đúng nguồn/lớp/split đã lưu. Không đưa slider ID ra hàng toàn trang. Đánh giá vừa màn hình phải đo cả document và stMain (Streamlit có vùng cuộn riêng), ở zoom100% và actual innerWidth/innerHeight. Không dùng CSS zoom/scale/giấu nội dung để vượt kiểm tra. Margin âm của Markdown đã được reset trong phạm vi demo để wrapper HTML không chồng nhau. Bằng chứng45 trạng thái/năm viewport và40 tests mới nhất ở đầu HANDOFF.
+Nguồn hiển thị: Ảnh kiểm tra Digits, Ảnh mẫu Digits, Tải ảnh từ máy. Khóa nội bộ `Ảnh test Digits` được giữ; format_func chỉ đổi tên hiển thị. Đọc đúng split_indices.csv của registry, không chia lại hoặc cho chọn ID ngoài tập. Ảnh Digits giữ nguyên điểm ảnh. MLP MNIST chỉ có ở nguồn tải ảnh, không tự đổi mô hình theo xác suất.
 
-Giao diện được thiết kế lại trong app.py + `.streamlit/config.toml`, giữ nguyên notebook/requirements/Pipeline/tiền xử lý. Mặc định nguồn test đúng split; preview Digits nearest-neighbor chỉ phục vụ hiển thị. Overview đọc artifact chính thức. Session state lưu kết quả kèm ngữ cảnh model/checksum/nguồn/ID/nền/ảnh, phải xóa kết quả khi ngữ cảnh đổi. Giữ các kiểm tra chức năng khi chỉnh widget, không thay số liệu hoặc xác suất để giống ảnh tham chiếu. CSS ưu tiên class riêng và class theo key container, không dùng class sinh ngẫu nhiên. Đọc HANDOFF để lấy log 40 tests, screenshot 3 viewport và trạng thái Git mới nhất.
+Giữ dark theme, typography, hai cột và native dropdown. Đổi ảnh/mô hình/nguồn/nền phải xóa kết quả cũ. Thông số đọc từ Pipeline/metadata, không hardcode kết quả. Không dùng CSS zoom/scale/giấu overflow; văn bản tự xuống dòng, expander cuộn tự nhiên. Khi kiểm responsive, đo actual viewport và cả document/stMain.
 
-## Trạng thái hiện tại — Final Completion
+## Phần A — Digits cố định
 
-Run chính thức `20261117T081201Z_fd32180f` và registry/Pipeline/số liệu được giữ nguyên. Lượt hoàn thiện này được phép soạn nhận định **dự thảo có nguồn thật**, chưa xác nhận thay nhóm. Notebook là bản thực nghiệm đầy đủ, không còn TODO nhận định; báo cáo Markdown 10 mục và nội dung 12 slide vẫn cần nhóm rà soát và xuất bản nộp. Sau lượt hoàn thiện, người dùng đã yêu cầu **commit và push các thay đổi mới lên main** (2026-11-17); yêu cầu này thay thế việc giữ local ở lượt trước. Không force-push hoặc đổi lịch sử remote.
+Run `20261117T081201Z_fd32180f`, registry `models/registry.json`: 1.797 ảnh, 8×8/64 đặc trưng/0–16; 1.437 huấn luyện, 360 kiểm tra; 80/20, stratify=y, seed 42. Không đổi dataset/split.
 
-Demo có nguồn “Ảnh test Digits” đọc đúng `outputs/<registry.run_id>/split_indices.csv`; không chia lại. Kiểm thử bất biến tiền xử lý dùng ảnh train; không dùng 10 MNIST đã xem để tối ưu. Chỉ sửa preprocessing khi có lỗi khách quan; hiện giữ thuật toán cũ. Đọc HANDOFF.md để lấy bằng chứng kiểm thử mới nhất; các phase cũ trong đó là lịch sử.
+Baseline passthrough→LogisticRegression(C=1, lbfgs, max_iter=3000). KNN/MLP dùng StandardScaler. MLP ban đầu `(64,32)`, relu/adam, early_stopping=True, seed 42. Đối chứng MLP thô/chuẩn hóa giữ cùng cấu hình và folds. StratifiedKFold 5, shuffle=True, seed 42; grid nhỏ, chọn mean macro F1 cao nhất, hòa theo tên tăng dần. KNN chính thức k=3/uniform, khóa theo CV trước test; CV sau tuning có thiên lệch lựa chọn.
 
-## Bắt đầu mỗi phiên
+EDA/PCA chỉ fit train. Fit cuối một lần; predict median 5 lần sau warm-up, cùng test/máy/một luồng; tuning riêng, joblib nén 3 toàn Pipeline. Learning curve chỉ dùng train/CV; loss và validation accuracy MLP khác đơn vị. Mục 11–14 định nghĩa hàm; test chỉ gọi sau khóa ở mục 15.
 
-Đọc toàn bộ `docs/Huong_Dan_Do_An_CuoiKy.pdf`, `HANDOFF.md`, notebook và outputs trước khi sửa. Chạy `git status --short --branch` và `git diff`. Không xóa hoặc ghi đè thay đổi của người dùng. Chỉ khởi tạo Git, commit hoặc push khi người dùng đã yêu cầu; không đổi dataset. Repo là `https://github.com/shengs1/HandwrittenDigitRecognition`, nhánh `main`. Không force-push hoặc thay đổi lịch sử remote.
+## Phần B — mở rộng đã khóa
 
-## Mục tiêu và yêu cầu
+Run `external_optimization_20261118T175401Z_4ca3a08f`, registry phụ `models/external_registry.json`. Upload với ba model Digits dùng gray_bbox→8×8/64/0–16. MLP MNIST dùng mnist28→28×28/784/0–255, float32, Pipeline MinMaxScaler→MLP(128,64), relu/adam, alpha0,0001, dừng sớm, seed42. Không scaler ngoài Pipeline, không train khi mở app.
 
-Đề tài 13: phân loại chữ số 0–9 bằng `sklearn.datasets.load_digits()`. Python, NumPy, Pandas, Matplotlib, Seaborn, scikit-learn, Jupyter và Joblib. Phase 2 được phép dùng Streamlit và Pillow để làm demo local đơn giản. Không database, tài khoản hoặc backend riêng.
+MNIST 60.000 chia 54.000/6.000, stratify/42, không augmentation hoặc dùng 600 ảnh mới để train. MLP giữ 5.400 xác thực nội bộ, còn 48.600 cập nhật gradient; scaler thấy outer train trước chia nội bộ nhưng không thấy 6.000 xác thực ngoài. Loại 110 MNIST test đã xem, còn 9.890 đánh giá sau khóa. Không refit train+validation sau chọn.
 
-PDF: có baseline, ≥2 mô hình so với baseline, EDA ≥5 biểu đồ có nhãn và nhận định, kiểm tra/làm sạch có lý do, Pipeline, chia dữ liệu đúng, CV/tuning, phân tích lỗi, seed và phiên bản thư viện. Thang điểm: dữ liệu/EDA/chuẩn bị 4; mô hình/đánh giá 4; trình bày/vấn đáp 2. Nhóm cần báo cáo, slide, phân công thật và khả năng giải thích toàn bộ bài; demo là tùy chọn trong quy trình PDF.
+600 ảnh gốc từ BHMSDS/Bitmap Numbers/HwD-1000, 200/nguồn, 20/chữ số/nguồn; seed42, chia 300 xác thực/300 kiểm tra cân bằng. Chọn tiền xử lý theo mean macro F1 của ba model trên validation300; gray_bbox đạt 0,59260 so 0,48980 cũ, thỏa tăng≥0,02 và KNN không giảm. MLP mới thỏa tiêu chí validation đặt trước rồi mới kiểm test. Manifest, split, protocol, lựa chọn và hash module/model đã khóa.
 
-Năm câu hỏi đề tài: (1) vector/shape và chuẩn hóa pixel; (2) baseline đạt bao nhiêu, MLP cải thiện thế nào; (3) cặp nhầm lẫn; (4) learning curve và bằng chứng quá khớp; (5) chi phí so với độ chính xác. Không giả định có cải thiện hoặc quá khớp.
+Cả 9.890 MNIST và 300 test ngoài đều đã xem kết quả; không dùng tuning/chọn lại. Không đổi nhãn hoặc bỏ ảnh vì sai. Nguồn/giấy phép ở data/external_handwriting/SOURCES.md: không có writer/sheet ID đáng tin, Bitmap mất ánh xạ từng ảnh; không chứng minh độc lập người viết. Scan, giấy đã cắt và vẽ tay số không phải ảnh điện thoại nguyên bản.
 
-## Kiến trúc và quyết định
+## Bảo toàn và bàn giao
 
-Notebook `digit_classification.ipynb` là tài liệu chính, 16 mục đúng thứ tự yêu cầu người dùng. Chỉ dùng hàm ngắn, không framework/module/class phụ. `tests/` kiểm tra hợp đồng dữ liệu và khung notebook; `docs/` giữ tài liệu gốc, hướng dẫn đối chiếu. `models/`, `outputs/` chỉ chứa kết quả thật, có nguồn gốc rõ ràng.
-
-Người dùng đã yêu cầu hoàn thiện code cốt lõi và xác nhận huấn luyện lần đầu theo cấu hình hiện tại (2026-11-17). Run xác nhận: `20261117T081201Z_fd32180f`; giữ nguyên Pipeline và kết quả này, không tự fit/tuning lại chỉ để tăng điểm. KNN được chọn bằng CV; registry/hash tại `models/registry.json` là bộ artifact cố định của demo. Notebook chạy offline tạo run mới nhưng không tự thay registry đang có.
-
-`app.py` chứa giao diện và các hàm ngắn tiền xử lý/tải Pipeline/suy luận; import không chạy UI. App chỉ load joblib, cache theo checksum/mtime/size, không `.fit`, không tự chọn theo test. Mẫu Digits giữ nguyên pixel, ảnh upload xử lý màu nền/grayscale/crop/căn giữa/resize 8×8/0–16. StandardScaler chỉ nằm trong Pipeline, không chuẩn hóa hai lần. Xác suất phải gắn đúng classes_, không gọi là xác suất đã hiệu chỉnh.
-
-10 ảnh MNIST test trong `tests/fixtures/external_digits/` chỉ dùng kiểm thử suy luận bên ngoài; không đổi dataset huấn luyện, chọn lại ảnh hoặc sửa mô hình theo kết quả này. Chưa có ảnh chụp của nhóm, không giả định MNIST đại diện ảnh điện thoại.
-
-Train/test 80/20, `stratify=y`, `random_state=42`. Baseline Logistic Regression trên pixel thô, bước preprocessing `passthrough`. Hai mô hình KNN và MLP dùng Pipeline. MLP ban đầu `(64,32)`, relu, adam, early_stopping=True; seed 42. Chuẩn hóa dùng StandardScaler trong Pipeline. Thử MLP thô/chuẩn hóa cùng cấu hình và folds. StratifiedKFold 5, shuffle=True, seed 42. Grid nhỏ; chọn theo CV macro F1, hòa tuyệt đối dùng thứ tự tên ổn định; không chọn theo điểm test. Ghi rõ CV sau tuning có thiên lệch lựa chọn, không phải đánh giá độc lập.
-
-Đo fit cuối bằng clone Pipeline rồi fit một lần trên cùng train; predict cùng test, cùng máy và số luồng, lặp đo có ghi rõ; tuning tính riêng, không nhập thời gian refit vào fit cuối. Dung lượng là byte của toàn bộ Pipeline với cùng quy tắc joblib. Learning curve chỉ dùng train/CV; loss MLP và validation score khác đơn vị. Thứ tự mục 11–14 là nơi hướng dẫn/khai báo hàm; chỉ gọi test sau khi khóa lựa chọn ở mục 15.
-
-## Chống rò rỉ
-
-- Không fit scaler, PCA, imputer hoặc lựa chọn đặc trưng trên toàn bộ dữ liệu trước CV. PCA EDA chỉ fit train, không đưa tọa độ EDA vào mô hình.
-- Không sử dụng test để tuning, chọn preprocessing, threshold, số vòng lặp, mô hình hoặc xử lý ảnh khó. Chỉ kiểm tra hợp lệ và trùng xuyên tập; không xem phân bố/ảnh test trước đánh giá cuối.
-- Kiểm tra ảnh giống hệt trong dữ liệu, giữa train/test và giữa các fold. Nếu gặp trùng xuyên tập: dừng; nhóm ghi quyết định loại trùng trước split hoặc đề xuất chia theo nhóm; không âm thầm đổi tỷ lệ/seed/yêu cầu.
-- Không xóa ảnh chỉ vì khó hoặc dự đoán sai. Bất thường thống kê chỉ là gợi ý xem xét; mọi quyết định làm sạch do nhóm ghi bằng chứng và lý do.
-- StandardScaler trong Pipeline được fit trên train của mỗi CV fold. Early stopping MLP có validation nội bộ; scaler thấy các đặc trưng của phần validation nội bộ đó nhưng không thấy fold validation ngoài hay test. Nêu giới hạn này khi diễn giải.
-- Mục 15 khóa lựa chọn bằng kết quả CV trước predict test. Sau xem test chỉ phân tích, không quay lại tuning.
-
-## Nội dung báo cáo và tính trung thực
-
-Code cốt lõi đã hoàn thiện và huấn luyện lần đầu được xác nhận; không còn TODO triển khai cũ. Theo yêu cầu Final Completion mới nhất, được viết nhận định dự thảo từ output thật; phải ghi chưa được nhóm xác nhận. Nhóm kiểm tra/sửa/xác nhận, hoàn thiện báo cáo/slide, hiểu và bảo vệ được quyết định. Không gán dự thảo hoặc công việc chưa xác minh thành đóng góp của sinh viên.
-
-Không bịa số liệu, đóng góp thành viên hoặc kết quả test; không dùng fixture tổng hợp như số liệu thực nghiệm thật. Người dùng yêu cầu xóa file nhật ký công cụ riêng; không tạo lại file đó. Giữ lịch sử kỹ thuật trong HANDOFF.md, không chỉnh sửa lịch sử Git đã công bố.
-
-Final review ở `docs/FINAL_REVIEW.md`. Chỉ PASS khi có bằng chứng; không biến dàn ý/TODO thành phân tích đã được nhóm xác nhận. Rerun kiểm chứng được phép trong checkout riêng theo yêu cầu review, giữ registry/model/số liệu canonical; không chọn run có điểm tốt hơn. Dòng accuracy trong CSV classification report là metric scalar: precision/recall để trống, support là số mẫu, không broadcast accuracy vào cột support.
-
-Theo yêu cầu mới nhất, mục 6 về sử dụng công cụ trong PDF không thuộc phạm vi audit hoặc danh sách việc cần làm; không nhắc lại như điều kiện cản trở hoàn thành. Giữ nguyên PDF gốc. Quyết định này không bỏ các kiểm tra kỹ thuật notebook/code. Bản tổng hợp Final Audit A–I ở `docs/FINAL_AUDIT.md`.
-
-Sau mỗi cụm việc lớn cập nhật `HANDOFF.md`: phase, việc thực sự hoàn thành, file, quyết định, TODO sinh viên, lệnh và test thật, lỗi, bước tiếp theo, Git. Phân biệt chạy hết khung hỗ trợ và hoàn thành thực nghiệm; không tuyên bố đồ án hoàn tất khi TODO chưa triển khai.
+- Không fit scaler/PCA/imputer/lựa chọn đặc trưng trên toàn bộ dữ liệu trước CV. Không tuning bằng test hoặc dùng ảnh khó đã xem để chỉnh preprocessing.
+- Nếu có ảnh trùng xuyên tập, dừng và ghi bằng chứng/quyết định; không âm thầm đổi split/seed/tỷ lệ. Không loại ảnh chỉ vì khó hoặc bất thường thống kê.
+- Giữ đủ Pipeline/registry/selection lock khi đóng gói. Chỉ load joblib tin cậy. `.gitattributes` bảo toàn bytes; Windows clone cần core.longpaths=true khi đường dẫn sâu.
+- App đã có 53/53 test PASS ngày 21/11. Sửa tài liệu không đồng nghĩa rerun mô hình hoặc venv sạch. Chỉ chạy lại kiểm tra phù hợp thay đổi.
+- README và docs/ là tài liệu hiện hành; outputs/ và README/LICENSE nguồn bên thứ ba là hồ sơ lịch sử, không sửa lại để khớp hiện tại. Manifest snapshot chứa source/docs tại ngày chốt; thay nhãn/tài liệu không đồng nghĩa đổi trọng số. Kiểm Pipeline theo registry và test hiện tại, không sửa manifest để che khác biệt.
+- Chưa có ảnh điện thoại nhóm, báo cáo/slide chính thức, thông tin/phân công hoặc xác nhận nhận định. Giữ trạng thái tài liệu/thuyết trình đang hoàn thiện; không tự đánh dấu đồ án sẵn sàng nộp.
